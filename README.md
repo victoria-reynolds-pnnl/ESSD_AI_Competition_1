@@ -1,3 +1,24 @@
+# ESSD AI Competetion 
+
+**Project Title**: TBD
+
+
+**Team Name**: AI Delinquents
+
+**Team Members**:
+
+| Name | Role | Favorite Sci-fi Robot or AI | Expertise | Responsibilities |
+| --- | --- | --- | --- | --- |
+| @cameronbracken |  Domain, compute, data |  Chappy, Johnny 5 | Hydrology, Water resources, Hydropower| data managment, AI techniques|
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+|  |  |  |  |  |
+
+
+
+
 # Dataset links
 
 | Name | Format | Time range (Years) | Link |
