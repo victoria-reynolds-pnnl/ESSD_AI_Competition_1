@@ -10,11 +10,11 @@
 | Name | Role | Favorite Sci-fi Robot or AI | Expertise | Responsibilities |
 | --- | --- | --- | --- | --- |
 | @cameronbracken |  Domain, compute, data |  Chappy, Johnny 5 | Hydrology, Water resources, Hydropower| data managment, AI techniques|
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
+| @stefan-rose |  |  |  |  |
+| @MindyDeLong-Weetch |  |  |  |  |
+| @mdsturtevant-pnnl |  |  |  |  |
+| @amanda-lawter |  |  |  |  |
+| @JanaSimo |  |  |  |  |
 
 
 
