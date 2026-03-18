@@ -1,3 +1,12 @@
+# Project Title: TBD
+# Team Name: Data Duelists
+# Team MembersL 
+| Name | Role | Favorite Sci-fi <br> Robot or AI | Expertise | Responsibilities |
+| Ashley Kennedy | TBD | Data from Star Trek | Novice/New | Shared/TBD |
+| Brett Pflugrath | TBD | IG-11 | Limited | Shared/TBD |
+| Rachel Long | TBD | Bumblebee | Some/Limited | Shared/TBD |
+| Heng Wan | TBD | Sophon | Some/Limited | Shared/TBD |
+
 # Dataset links
 
 | Name | Format | Time range (Years) | Link |
