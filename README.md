@@ -1,6 +1,6 @@
-# Project Title: TBD
-# Team Name: Data Duelists
-# Team Members: 
+***Project Title***: TBD
+***Team Name***: Data Duelists
+***Team Member***s: 
 
 | Name | Role | Favorite Sci-fi Robot or AI | Expertise | Responsibilities |
 | :---: | :---: | :---: | :---: | :---: |
