@@ -4,11 +4,11 @@
 
 | Name | Role | Favorite Sci-fi Robot or AI | Expertise | Responsibilities |
 | :---: | :---: | :---: | :---: | :---: |
-| James Kershaw | Software Engineer | R2D2 | full-stack web development and project management | Shared/TBD |
-| Philip Meyer | Data analysis | The Iron Giant | Applied domain science | Shared/TBD |
-| Zihao Li | TBD | TBD |  | Shared/TBD |
-| Mengqi Zhao | Earth Scientist | Sophon | **Research Expertise:** water-energy <br> **Technical Expertise:** software development, data analysis, human-Earth system modeling | Shared/TBD |
-| Kofi Poku | Code and Compute | Demerzel | HPC, algorithm development, systems programming <br> **AI Expertise:** academic | Shared/TBD |
+| James Kershaw | Software Engineer | R2D2 | full-stack web development and project management | To be determined |
+| Philip Meyer | Data analysis | The Iron Giant | Applied domain science | To be determined |
+| Zihao Li | Post Doctorate RA |  | Energy and critical materials | To be determined |
+| Mengqi Zhao | Earth Scientist | Sophon | **Research Expertise:** water-energy <br> **Technical Expertise:** software development, data analysis, human-Earth system modeling | To be determined |
+| Kofi Poku | Generalist | Demerzel | Algorithm development, HPC, systems/low-level programming <br> **AI Expertise:** mostly academic | Code & Compute |
 
 # Dataset links
 
