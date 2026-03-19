@@ -1,3 +1,15 @@
+# Project Title: Behind the Curtain
+# Team Name: MAJIK Φ
+# Team Members:
+
+| Name | Role | Favorite Sci-fi Robot or AI | Expertise | Responsibilities |
+| :---: | :---: | :---: | :---: | :---: |
+| James Kershaw | Software Engineer | R2D2 | full-stack web development and project management | Shared/TBD |
+| Philip Meyer | Data analysis | The Iron Giant | Applied domain science | Shared/TBD |
+| Zihao Li | TBD | TBD |  | Shared/TBD |
+| Mengqi Zhao | Earth Scientist | Sophon | **Research Expertise:** water-energy <br> **Technical Expertise:** software development, data analysis, human-Earth system modeling | Shared/TBD |
+| Kofi Poku | Code and Compute | Demerzel | HPC, algorithm development, systems programming <br> **AI Expertise:** academic | Shared/TBD |
+
 # Dataset links
 
 | Name | Format | Time range (Years) | Link |
