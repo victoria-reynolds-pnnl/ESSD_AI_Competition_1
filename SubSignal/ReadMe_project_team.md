@@ -1,4 +1,4 @@
-Project Title: TDB
+Project Title: TDB  
 Team Name: SubSignal
 
 |Name|Role|Expertise|Responsibilities|
