@@ -11,7 +11,7 @@
 | --- | --- | --- | --- | --- |
 | @cameronbracken |  Domain, compute, data |  Chappy, Johnny 5 | Hydrology, Water resources, Hydropower| data managment, AI techniques|
 | @stefan-rose | Geospatial analysis, data processing | TARS, Baymax | GIS, Remote Sensing, Data Viz | data analysis and viz |
-| @MindyDeLong-Weetch |  |  |  |  |
+| @MindyDeLong-Weetch | Research Analyst, Risk Management | Bender, Codsworth | Tailored risk management, Defense Programs | Program and Project Risk Management|
 | @mdsturtevant-pnnl |  |  |  |  |
 | @amanda-lawter |  |  |  |  |
 | @JanaSimo |  |  |  |  |
