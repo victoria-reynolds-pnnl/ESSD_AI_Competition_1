@@ -1,10 +1,20 @@
-# Dataset links
+### Project Title: TBD
 
-| Name | Format | Time range (Years) | Link |
-| --- | --- | --- | --- |
-| DEMO-FTES Test 1: Water Flow, Pressure, Temperature, and Electrical Conductivity Data | CSV (plus DOCX metadata) | 2024-2025 | https://gdr.openei.org/submissions/1730 |
-| USGS Water Data for Washington (water conditions and monitoring locations) | Web portal (various data types) | Varies (site dependent) | https://waterdata.usgs.gov/state/Washington/ |
-| Combined wildfire datasets for the United States and certain territories, 1800s-Present (combined wildland fire polygons) | Geospatial polygons | 1835-2020 | https://data.usgs.gov/datacatalog/data/USGS:61aa537dd34eb622f699df81 |
-| Heat wave and cold snap event library under various technical choices for NERC subregions in the conterminous U.S. | CSV | 44 | https://data.pnnl.gov/group/nodes/dataset/34393 |
-| An Inventory of AI-ready Benchmark Data for US Fires, Heatwaves, and Droughts | CSV | 20 | https://data.pnnl.gov/group/nodes/dataset/33650 |
-| Simulated wildfire burned area over the CONUS | CSV | 20 | https://data.pnnl.gov/group/nodes/dataset/34052 |
+### Selected Data Set:
+
+| Title                                                                         | Source                                          |
+| ----------------------------------------------------------------------------- | ----------------------------------------------- |
+| An Inventory of AI-ready Benchmark Data for US Fires, Heatwaves, and Droughts | https://data.pnnl.gov/group/nodes/dataset/33650 |
+
+### Team Name: The Philadelphia Eagles
+
+### Team Members:
+
+| Name                    | Role                   | Favorite Sci-fi Robot or AI | Expertise                                 | Responsibility                  |
+| ----------------------- | ---------------------- | --------------------------- | ----------------------------------------- | ------------------------------- |
+| Haiden Deaton           | Individual contributor | WALL-E                      | GenAI, Application development, Python    | TBD                             |
+| Brian Dean              | Individual contributor | D-O                         | Frontend web development, Python, GraphQL | TBD                             |
+| Jace Olsen              | Individual contributor | The Iron Giant              | Machine Learning, Python                  | TBD                             |
+| Jason Pope              | Individual contributor | C-3PO                       | Electrical engineering, energy systems    | problem formation, investigator |
+| Habilou Ouro-Koura      | Individual contributor | Claude-AI                   | Mechanical engineering                    | TBD                             |
+| Ilan Gonzalez-Hirshfeld | Individual contributor | N/A                         | Geospatial modeling/processing, Python    | TBD                             |
