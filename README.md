@@ -14,7 +14,7 @@
 | @MindyDeLong-Weetch | Research Analyst, Risk Management | Bender, Codsworth | Tailored risk management, Defense Programs | Program and Project Risk Management|
 | @mdsturtevant-pnnl | Software Engineer | C3PO, Liberty Prime | Web Apps and UIs | Flashy Deliverables? |
 | @amanda-lawter |Resarch Analyst, data processing  | Roz | Geochemistry, Subsurface, Contaminant Monitoring and Remediation | data analysis |
-| @JanaSimo |  |  |  |  |
+| @JanaSimo |Subsurface Science | Roz | Subsurface, fluid flow, reservoir geoscience | data analysis, application |
 
 
 
