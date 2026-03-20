@@ -1,4 +1,4 @@
-# Project Title: Behind the Curtain<sup>*</sup>
+# Project Title: Behind the Curtain<sup>†</sup>
 # Team Name: MAJIK Φ
 # Team Members:
 
@@ -10,5 +10,8 @@
 | Mengqi Zhao | Earth Scientist | Sophon | **Research Expertise:** water-energy <br> **Technical Expertise:** software development, data analysis, human-Earth system modeling | To be determined |
 | Kofi Poku | Generalist | Demerzel | Algorithm development, HPC, systems/low-level programming <br> **AI Expertise:** mostly academic | Code & Compute |
 
+# Team Logo<sup>‡</sup>:
+![MAJIK Φ logo](team_logo.png)
+<b>†</b>Working title
 
-<b>*</b>Working title
+<b>‡</b>Working logo (unilateral decision)
