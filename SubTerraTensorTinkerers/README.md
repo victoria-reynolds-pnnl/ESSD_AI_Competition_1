@@ -1,9 +1,13 @@
 # Sub‑Terra Tensor Tinkerers - Week 1 Submission
 
 **Project Title:** Work in progress - # DEMO-FTES Test 1 Data
+
 **Problem Statement:**
+
 **Goal:** 
+
 **Data source:** 
+
 &emsp; DEMO-FTES Test 1: Water Flow, Pressure, Temperature, and Electrical Conductivity Data
 &emsp; https://gdr.openei.org/submissions/1730
 
