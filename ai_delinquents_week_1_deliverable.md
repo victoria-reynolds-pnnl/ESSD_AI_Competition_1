@@ -40,6 +40,7 @@ Using streamflow data and other public resources, come up with a risk assessment
 [Link](https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/ai_delinquents_week_1/claude_chat_history_2026-03-20.md)
 
 ### Chat history link 2 (GPT):
+[GPT-5.3-Codex](gpt_chat_history_2026-03-23.md)
 
 ## Data Discovery Paragraph:
 **A single paragraph detailing data discovery that describes the data and addresses
