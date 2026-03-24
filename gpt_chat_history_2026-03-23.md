@@ -5,13 +5,11 @@
 
 You want me to run the repository prompt and produce a dam-removal plan output, so I’ll read the current prompt and related Idea 1 docs first, then generate the result content in a new file format.
 
-Read [](inital_prompt.md)
+Read [inital_prompt.md](inital_prompt.md)
 
-Read [](file:///c%3A/Users/stur817/Code/ESSD_AI_Competition_1)
+Read [idea1_dam_removal_risk_plan.md](idea1_dam_removal_risk_plan.md)
 
-Read [](file:///c%3A/Users/stur817/Code/ESSD_AI_Competition_1/idea1_dam_removal_risk_plan.md)
-
-Read [](file:///c%3A/Users/stur817/Code/ESSD_AI_Competition_1/idea1_dam_removal_risk.md)
+Read [idea1_dam_removal_risk.md](idea1_dam_removal_risk.md)
 
 I found the prompt and confirmed it asks for an Idea 1 technical workflow with statistical risk quantification and trusted-data validation; next I’ll produce that result in finalized markdown and persist it in the session plan record.
 
@@ -19,9 +17,9 @@ Read memory
 
 I located an existing session plan file, so I’m replacing it with the new Idea 1 execution result to keep the handoff state accurate and reusable.
 
-Deleted memory [](file:///c%3A/Users/stur817/AppData/Roaming/Code/User/workspaceStorage/6003466307adbe097f3eb1435f2f9e5c/GitHub.copilot-chat/memory-tool/memories/NTBlYzQ3MzktMWYyZS00ZmM0LTk3N2MtYTQ3MDQ0MTQxNzgz/plan.md)
+Deleted memory [plan.md](plan.md)
 
-Created memory file [](file:///c%3A/Users/stur817/AppData/Roaming/Code/User/workspaceStorage/6003466307adbe097f3eb1435f2f9e5c/GitHub.copilot-chat/memory-tool/memories/NTBlYzQ3MzktMWYyZS00ZmM0LTk3N2MtYTQ3MDQ0MTQxNzgz/plan.md)
+Created memory file [plan.md](plan.md)
 
 ## Plan: Dam Removal Risk Workflow (GPT Output)
 
@@ -62,17 +60,15 @@ If you want, switch me to implementation mode and I will create idea_dam_removal
 
 You asked to start implementation, so I’m now creating the requested output file in the workspace using the finalized dam-removal plan content from the executed prompt result.
 
-Read [](file:///c%3A/Users/stur817/Code/ESSD_AI_Competition_1)
-
-Read memory [](file:///c%3A/Users/stur817/AppData/Roaming/Code/User/workspaceStorage/6003466307adbe097f3eb1435f2f9e5c/GitHub.copilot-chat/memory-tool/memories/NTBlYzQ3MzktMWYyZS00ZmM0LTk3N2MtYTQ3MDQ0MTQxNzgz/plan.md)
+Read memory [plan.md](plan.md)
 
 I confirmed the target file is not present and have the finalized plan text ready, so I’m writing it now to the new GPT-specific plan file.
 
-Created [](file:///c%3A/Users/stur817/Code/ESSD_AI_Competition_1/idea_dam_removal_risk_plan.gpt.md)
+Created [idea_dam_removal_risk_plan.gpt.md](idea1_dam_removal_risk_plan.gpt.md)
 
 The new file is in place; I’ll run a quick read check to verify the heading and structure persisted correctly before I hand it off.
 
-Read [](file:///c%3A/Users/stur817/Code/ESSD_AI_Competition_1/idea_dam_removal_risk_plan.gpt.md#1-1), lines 1 to 40
+Read [idea1_dam_removal_risk_plan.gpt.md#1-1](idea_dam_removal_risk_plan.gpt.md#1-1), lines 1 to 40
 
 Implemented. The prompt result has been executed and written to idea_dam_removal_risk_plan.gpt.md.
 
