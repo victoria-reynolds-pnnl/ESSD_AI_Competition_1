@@ -37,7 +37,7 @@ Using streamflow data and other public resources, come up with a risk assessment
 | @JanaSimo           |                     |                       |
 
 ### Chat history link 1 (Claude):
-[Link](https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/ai_delinquents_week_1/claude_chat_history_2026-03-20.md)
+[Claude](claude_chat_history_2026-03-20.md)
 
 ### Chat history link 2 (GPT):
 [GPT-5.3-Codex](gpt_chat_history_2026-03-23.md)
