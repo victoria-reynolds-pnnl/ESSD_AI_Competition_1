@@ -47,11 +47,30 @@ Using streamflow data and other public resources, come up with a risk assessment
 **A single paragraph detailing data discovery that describes the data and addresses
 potential biases and data limitations.**
 
-X
+### @cameronbracken
 
+### @stefan-rose
+
+### @MindyDeLong-Weetch
+
+### @mdsturtevant-pnnl
+
+### @amanda-lawter
+
+### @JanaSimo 
 
 ## LLM Reflection Paragraph:
 **A single paragraph that: Details at least 2 LLM Errors or missing QC steps identified during data discovery
 and prompt engineering; Compares the responses of each model, highlighting observed differences; Quantitative LLM vs. LLM evaluation (Time to complete QC (wall clock timing from entering prompt to result), Inter-model agreement rate – differences between LLMs on which values within the data array changed, resulting values data was changed to, any hallucinations (bad data, new data)? Output tokens – which LLM used fewer output tokens, or is there a balance between number of tokens & accuracy to consider?**
 
-X
+### @cameronbracken
+
+### @stefan-rose
+
+### @MindyDeLong-Weetch
+
+### @mdsturtevant-pnnl
+
+### @amanda-lawter
+
+### @JanaSimo 
