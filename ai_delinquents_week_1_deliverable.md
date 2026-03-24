@@ -37,11 +37,25 @@ Using streamflow data and other public resources, come up with a risk assessment
 | @amanda-lawter      | Resarch Analyst, data processing     | Data analysis                       |
 | @JanaSimo           | Subsurface Science                   | Data analysis, application          |
 
+## AI Costs
+
+### Claude
+❯ /cost                                                                                                                                                                                                    
+  ⎿  Total cost:            $1.19
+     Total duration (API):  4m 0s                                                                                                                                                                          
+     Total duration (wall): 20m 27s                                                                                                                                                                      
+     Total code changes:    488 lines added, 6 lines removed                                                                           
+     Usage by model:                                                                                                                   
+          claude-opus-4-5:  2.9k input, 11.5k output, 605.1k cache read, 93.9k cache write ($1.19)            
+
+## AI chat history
+
 ### Chat history link 1 (Claude):
 [Claude Opus/Sonnet 4.6](idea1_claude_chat_history_2026-03-20.md)
 
 ### Chat history link 2 (GPT):
 [GPT-5.3-Codex](idea1_gpt_chat_history_2026-03-23.md)
+
 
 ## Data Discovery Paragraph:
 **A single paragraph detailing data discovery that describes the data and addresses
