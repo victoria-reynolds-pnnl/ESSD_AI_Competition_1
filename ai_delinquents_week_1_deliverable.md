@@ -40,6 +40,7 @@ Using streamflow data and other public resources, come up with a risk assessment
 ## AI Costs
 
 ### Claude
+```
 ❯ /cost                                                                                                                                                                                                    
   ⎿  Total cost:            $1.19
      Total duration (API):  4m 0s                                                                                                                                                                          
@@ -47,6 +48,7 @@ Using streamflow data and other public resources, come up with a risk assessment
      Total code changes:    488 lines added, 6 lines removed                                                                           
      Usage by model:                                                                                                                   
           claude-opus-4-5:  2.9k input, 11.5k output, 605.1k cache read, 93.9k cache write ($1.19)            
+```
 
 ## AI chat history
 
