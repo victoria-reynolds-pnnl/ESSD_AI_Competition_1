@@ -132,8 +132,8 @@ def append_csv_from_geojsonl(geojsonl_path, csv_path, write_header_if_new=True):
             lon, lat = (coords[0], coords[1]) if coords and len(coords) >= 2 else (None, None)
 
             row = dict(props)
-            row["longitude"] = lon
             row["latitude"] = lat
+            row["longitude"] = lon
 
             if fieldnames is None:
                 fieldnames = list(row.keys())
