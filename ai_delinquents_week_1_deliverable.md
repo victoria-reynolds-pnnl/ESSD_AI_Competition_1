@@ -63,6 +63,8 @@ Using streamflow data and other public resources, come up with a risk assessment
 **A single paragraph detailing data discovery that describes the data and addresses
 potential biases and data limitations.**
 
+Based on the data sets we have identified for use, the category for social impact has limited data, much of which comes from self-reporting or surveys, which can present reporting bias and missing data. The data also comes from multiple agencies, each with different goals and objectives for the data they collect. This creates a potential for more diverse and inclusive data, but also creates potential for different information available for each dam we are evaluating. The data also varies from daily, annual, or as-needed data collection, creating a limitation in temporal evaluation for some data points. In addition, much of the data is higher level (state or federal) and may obscure local-level information that would be important particularly for some of the social or cultural indicators. Both LLMs used this week suggested adding two databases, the National Inventory of Dams and the American Rivers Dam Removal Database, that will help ensure the baseline data for dams and dam removals is available. 
+
 ### @cameronbracken
 
 ### @stefan-rose
@@ -78,6 +80,8 @@ potential biases and data limitations.**
 ## LLM Reflection Paragraph:
 **A single paragraph that: Details at least 2 LLM Errors or missing QC steps identified during data discovery
 and prompt engineering; Compares the responses of each model, highlighting observed differences; Quantitative LLM vs. LLM evaluation (Time to complete QC (wall clock timing from entering prompt to result), Inter-model agreement rate – differences between LLMs on which values within the data array changed, resulting values data was changed to, any hallucinations (bad data, new data)? Output tokens – which LLM used fewer output tokens, or is there a balance between number of tokens & accuracy to consider?**
+
+The two LLMs, Claude and GPT, developed similar plans that employed comparable strategies. Both incorporated relevant and useful datasets not mentioned in the initial prompt, such as the National Inventory of Dams and the American Rivers Dam Removal Database. The latter dataset was used by both LLMs for test cases to determine whether dams that have already been removed would receive a high removal risk score under this project. Both plans also included processes to flag any critical missing data that could significantly impact the final outcomes for each dam. Additionally, both proposed starting with equal weighting for each category while keeping the weighting configurable. However, despite these broad similarities, the final products envisioned by the two LLMs diverged notably. GPT emphasized data quality and provenance, suggesting a deliverable in the form of a detailed report along with instructions for rerunning and reconfiguring the process to ensure reproducibility. Claude, on the other hand, prioritized usability by proposing a more interactive final product, including tiered dam mapping and an interactive dashboard to display rankings and other information for each dam.
 
 ### @cameronbracken
 
