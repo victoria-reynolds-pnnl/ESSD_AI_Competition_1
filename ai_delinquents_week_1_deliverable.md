@@ -68,6 +68,7 @@ Based on the data sets we have identified for use, the category for social impac
 ### @cameronbracken
 
 ### @stefan-rose
+Key limitations include validation bias from the American Rivers Dam Removal Database, which overrepresents small, non-hydropower removals in the eastern U.S., incomplete and potentially inconsistent regulatory features from semi-manual FERC document extraction, missing Canadian coverage that leaves cross-border gaps for a transboundary system, and temporal misalignment between long-run disturbance metrics and more recent energy and Census data that may distort risk estimates for older infrastructure.
 
 ### @MindyDeLong-Weetch
 
@@ -86,7 +87,7 @@ The two LLMs, Claude and GPT, developed similar plans that employed comparable s
 ### @cameronbracken
 
 ### @stefan-rose
-
+Claude misses field-level data provenance and quality flags during ingestion and relies on a single validation source, while GPT-4o specifies scripted ingestion with timestamps, raw snapshot preservation, per-field metadata, and a broader validation set and metric suite, reducing lineage gaps and validation bias. Claude’s run shows iterative refinement (20:27 wall time, 11.5k output tokens, heavy cache reuse, $1.19), whereas GPT’s runtime and token usage are NEED INFO TO FILL. Structurally, Claude is more exploratory, and GPT is a tighter, phase-gated plan with explicit deliverables and checks; GPT also briefly misrepresented its ability to read/write files in planning-only mode, creating a transparency risk about what was actually occurring.
 ### @MindyDeLong-Weetch
 
 ### @mdsturtevant-pnnl
