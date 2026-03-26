@@ -6,3 +6,5 @@ SubSignal
 ByteMe
 TRACK
 Terra Trenders
+Zero Shot Hopefuls
+The Philadelphia Eagles
