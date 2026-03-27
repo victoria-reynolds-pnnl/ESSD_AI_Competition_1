@@ -9,7 +9,7 @@ Using streamflow data and other public resources, come up with a risk assessment
 ## Data source(s):
 | Category                         | Link(s)                                                                                                                                               |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| USGS/WA state water data         | (USGS)(https://waterdata.usgs.gov/state/Washington/)                                                                                                  |
+| USGS/WA state water data         | [USGS](https://waterdata.usgs.gov/state/Washington/)                                                                                                  |
 | FERC License docs                | [FERC Licensing](https://www.ferc.gov/licensing)                                                                                                      |
 | EIA data                         | [EIA 930](https://www.eia.gov/electricity/gridmonitor/about)                                                                                          |
 |                                  | [EIA 923](https://www.eia.gov/electricity/data/eia923/)                                                                                               |
