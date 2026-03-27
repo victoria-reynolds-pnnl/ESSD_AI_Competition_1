@@ -75,11 +75,12 @@ The datasets identified by claude were informed by my own bias towards quantitat
 Key limitations include validation bias from the American Rivers Dam Removal Database, which overrepresents small, non-hydropower removals in the eastern U.S., incomplete and potentially inconsistent regulatory features from semi-manual FERC document extraction, missing Canadian coverage that leaves cross-border gaps for a transboundary system, and temporal misalignment between long-run disturbance metrics and more recent energy and Census data that may distort risk estimates for older infrastructure.
 
 ### @MindyDeLong-Weetch
-Based on the data sets we have identified for use, the category for social impact has limited data, much of which comes from self-reporting or surveys, which can present reporting bias and missing data. The data also comes from multiple agencies, each with different goals and objectives for the data they collect. This creates a potential for more diverse and inclusive data, but also creates potential for different information available for each dam we are evaluating. The data also varies from daily, annual, or as-needed data collection, creating a limitation in temporal evaluation for some data points. In addition, much of the data is higher level (state or federal) and may obscure local-level information that would be important particularly for some of the social or cultural indicators. Both LLMs used this week suggested adding two databases, the National Inventory of Dams and the American Rivers Dam Removal Database, that will help ensure the baseline data for dams and dam removals is available. 
 
 ### @mdsturtevant-pnnl
 
 ### @amanda-lawter
+Based on the data sets we have identified for use, the category for social impact has limited data, much of which comes from self-reporting or surveys, which can present reporting bias and missing data. The data also comes from multiple agencies, each with different goals and objectives for the data they collect. This creates a potential for more diverse and inclusive data, but also creates potential for different information available for each dam we are evaluating. The data also varies from daily, annual, or as-needed data collection, creating a limitation in temporal evaluation for some data points. In addition, much of the data is higher level (state or federal) and may obscure local-level information that would be important particularly for some of the social or cultural indicators. Both LLMs used this week suggested adding two databases, the National Inventory of Dams and the American Rivers Dam Removal Database, that will help ensure the baseline data for dams and dam removals is available. 
+
 
 ### @JanaSimo 
 
@@ -97,10 +98,12 @@ Claude misses field-level data provenance and quality flags during ingestion and
 
 ### @MindyDeLong-Weetch
 
-The two LLMs, Claude and GPT, developed similar plans that employed comparable strategies. Both incorporated relevant and useful datasets not mentioned in the initial prompt, such as the National Inventory of Dams and the American Rivers Dam Removal Database. The latter dataset was used by both LLMs for test cases to determine whether dams that have already been removed would receive a high removal risk score under this project. Both plans also included processes to flag any critical missing data that could significantly impact the final outcomes for each dam. Additionally, both proposed starting with equal weighting for each category while keeping the weighting configurable. However, despite these broad similarities, the final products envisioned by the two LLMs diverged notably. GPT emphasized data quality and provenance, suggesting a deliverable in the form of a detailed report along with instructions for rerunning and reconfiguring the process to ensure reproducibility. Claude, on the other hand, prioritized usability by proposing a more interactive final product, including tiered dam mapping and an interactive dashboard to display rankings and other information for each dam.
+
 
 ### @mdsturtevant-pnnl
 
 ### @amanda-lawter
+
+The two LLMs, Claude and GPT, developed similar plans that employed comparable strategies. Both incorporated relevant and useful datasets not mentioned in the initial prompt, such as the National Inventory of Dams and the American Rivers Dam Removal Database. The latter dataset was used by both LLMs for test cases to determine whether dams that have already been removed would receive a high removal risk score under this project. Both plans also included processes to flag any critical missing data that could significantly impact the final outcomes for each dam. Additionally, both proposed starting with equal weighting for each category while keeping the weighting configurable. However, despite these broad similarities, the final products envisioned by the two LLMs diverged notably. GPT emphasized data quality and provenance, suggesting a deliverable in the form of a detailed report along with instructions for rerunning and reconfiguring the process to ensure reproducibility. Claude, on the other hand, prioritized usability by proposing a more interactive final product, including tiered dam mapping and an interactive dashboard to display rankings and other information for each dam.
 
 ### @JanaSimo 
