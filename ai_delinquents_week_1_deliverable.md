@@ -50,6 +50,10 @@ Using streamflow data and other public resources, come up with a risk assessment
           claude-opus-4-5:  2.9k input, 11.5k output, 605.1k cache read, 93.9k cache write ($1.19)            
 ```
 
+### GPT
+
+At this time, we are unable to report the same detailed AI usage metrics from the GitHub Copilot extension in VS Code that are available in tools such as Cline. 
+
 ## AI chat history
 
 ### Chat history link 1 (Claude):
