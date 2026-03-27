@@ -4,7 +4,7 @@
 
 **Problem Statement:**
 
-Fracture Thermal Energy Storage (FTES) stores heat in hot rock by injecting warm water into one well and producing water from nearby wells. Operators need to anticipate **rising injection pressures** (which can force them to reduce pumping rate) and **changes in produced water temperature and flow** (which determine how much useful heat is recovered). The challenge is to build a model that uses high‑frequency well telemetry to **forecast injection pressure and producer temperature/flow**, enabling earlier and better operational decisions.
+Fracture Thermal Energy Storage (FTES) stores heat in subsurface rock by injecting warm water into one well and producing water from nearby wells. Operators need to anticipate **rising injection pressures** (which can force them to reduce pumping rate) and **changes in produced water temperature and flow** (which determine how much useful heat is recovered). The challenge is to build a model that uses high‑frequency well telemetry to **forecast injection pressure and producer temperature/flow**, enabling earlier and better operational decisions.
 
 **Goal:** 
 
