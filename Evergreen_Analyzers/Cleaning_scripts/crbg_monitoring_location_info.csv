@@ -1,0 +1,70 @@
+id,monitoring_location_name,site_type,state_name,county_name,county_code,hydrologic_unit_code,basin_code,altitude,altitude_accuracy,vertical_datum,vertical_datum_name,drainage_area,contributing_drainage_area,aquifer_code,national_aquifer_code,aquifer_type_code,county_significance
+USGS-12422000,"SPOKANE RIVER BELOW N GREENE ST AT SPOKANE, WA",Stream,Washington,Spokane County,063,170103050402,,,,,,4220.0,,,,,significant
+USGS-12422500,"Spokane River at Spokane, WA",Stream,Washington,Spokane County,063,170103050402,,1696.6,10.0,NGVD29,National Geodetic Vertical Datum of 1929,4290.0,4290.0,,,,significant
+USGS-12422990,"HANGMAN CREEK AT STATE LINE ROAD NEAR TEKOA, WA",Stream,Washington,Whitman County,075,170103060105,,2483.75,0.08,NAVD88,North American Vertical Datum of 1988,127.0,,,,,significant
+USGS-12424000,"Hangman Creek at Spokane, WA",Stream,Washington,Spokane County,063,170103060306,,1717.42,10.0,NGVD29,National Geodetic Vertical Datum of 1929,689.0,689.0,,,,significant
+USGS-12426000,"SPOKANE RIVER BELOW NINE MILE DAM AT SPOKANE, WA",Stream,Washington,Spokane County,063,170103070106,,1550.0,20.0,NGVD29,National Geodetic Vertical Datum of 1929,5220.0,,,,,significant
+USGS-12431000,"LITTLE SPOKANE RIVER AT DARTFORD, WA",Stream,Washington,Spokane County,063,170103080306,,1589.71,0.08,NAVD88,North American Vertical Datum of 1988,665.0,,,,,significant
+USGS-12431500,"LITTLE SPOKANE RIVER NEAR DARTFORD, WA",Stream,Washington,Spokane County,063,170103080306,,1550.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,698.0,,,,,significant
+USGS-12438905,"NINEMILE CREEK AT EASTLAKE RD NEAR OROVILLE, WA",Stream,Washington,Okanogan County,047,170200061504,,972.0,4.3,NAVD88,North American Vertical Datum of 1988,47.1,,,,,core
+USGS-12439500,"OKANOGAN RIVER AT OROVILLE, WA",Stream,Washington,Okanogan County,047,170200061506,,900.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,3195.0,,,,,core
+USGS-12442500,"SIMILKAMEEN RIVER NEAR NIGHTHAWK, WA",Stream,Washington,Okanogan County,047,170200072009,,1137.7,10.0,NGVD29,National Geodetic Vertical Datum of 1929,3550.0,,,,,core
+USGS-12444290,"ANTOINE CREEK AT US HWY 97 NEAR ELLISFORDE, WA",Stream,Washington,Okanogan County,047,170200061605,,917.59,0.1,NAVD88,North American Vertical Datum of 1988,73.4,,,,,core
+USGS-12444550,"BONAPARTE CREEK AT TONASKET, WA",Stream,Washington,Okanogan County,047,170200061703,,916.38,0.1,NAVD88,North American Vertical Datum of 1988,161.0,,,,,core
+USGS-12445000,"OKANOGAN RIVER NEAR TONASKET, WA",Stream,Washington,Okanogan County,047,170200061808,,860.78,10.0,NGVD29,National Geodetic Vertical Datum of 1929,7260.0,,,,,core
+USGS-12445500,"JOHNSON CREEK NEAR RIVERSIDE, WA",Stream,Washington,Okanogan County,047,170200062104,,944.48,0.1,NAVD88,North American Vertical Datum of 1988,68.2,,,,,core
+USGS-12445900,"OMAK CREEK NEAR OMAK, WA",Stream,Washington,Okanogan County,047,170200061905,,1206.72,0.1,NAVD88,North American Vertical Datum of 1988,119.0,,,,,core
+USGS-12446150,"NORTH FORK SALMON CREEK NEAR CONCONULLY, WA",Stream,Washington,Okanogan County,047,170200062003,,2844.32,0.13,NAVD88,North American Vertical Datum of 1988,36.7,,,,,core
+USGS-12446400,"WEST FORK SALMON CREEK NEAR CONCONULLY, WA",Stream,Washington,Okanogan County,047,170200062002,,2278.58,0.11,NAVD88,North American Vertical Datum of 1988,64.6,,,,,core
+USGS-12446995,"SALMON CREEK ABOVE DIVERSION NEAR OKANOGAN, WA",Stream,Washington,Okanogan County,047,170200062004,,1398.0,4.3,NAVD88,North American Vertical Datum of 1988,148.0,,,,,core
+USGS-12447200,"OKANOGAN RIVER AT MALOTT, WA",Stream,Washington,Okanogan County,047,170200062205,,783.55,10.0,NGVD29,National Geodetic Vertical Datum of 1929,8080.0,,,,,core
+USGS-12447285,"LOUP LOUP CREEK AT MALOTT, WA",Stream,Washington,Okanogan County,047,170200062203,,803.34,0.1,NAVD88,North American Vertical Datum of 1988,64.8,,,,,core
+USGS-12447383,"METHOW RIVER ABOVE GOAT CREEK NEAR MAZAMA, WA",Stream,Washington,Okanogan County,047,170200080602,,2040.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,373.0,,,,,core
+USGS-12447390,"ANDREWS CREEK NEAR MAZAMA, WA",Stream,Washington,Okanogan County,047,170200080304,,4271.56,0.11,NAVD88,North American Vertical Datum of 1988,22.1,,,,,core
+USGS-12448000,"CHEWUCH RIVER AT WINTHROP, WA",Stream,Washington,Okanogan County,047,170200080408,,1736.26,10.0,NGVD29,National Geodetic Vertical Datum of 1929,525.0,,,,,core
+USGS-12448500,"METHOW RIVER AT WINTHROP, WA",Stream,Washington,Okanogan County,047,170200080605,,1718.09,0.01,NGVD29,National Geodetic Vertical Datum of 1929,1007.0,,,,,core
+USGS-12448998,"TWISP RIVER NEAR TWISP, WA",Stream,Washington,Okanogan County,047,170200080509,,1640.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,245.0,,,,,core
+USGS-12449500,"METHOW RIVER AT TWISP, WA",Stream,Washington,Okanogan County,047,170200080610,,1580.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,1301.0,,,,,core
+USGS-12449950,"METHOW RIVER NEAR PATEROS, WA",Stream,Washington,Okanogan County,047,170200080709,,900.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,1772.0,,,,,core
+USGS-12451000,"STEHEKIN RIVER AT STEHEKIN, WA",Stream,Washington,Chelan County,007,170200090114,,1098.5,10.0,NGVD29,National Geodetic Vertical Datum of 1929,321.0,,,,,core
+USGS-12452500,"CHELAN RIVER AT CHELAN, WA",Stream,Washington,Chelan County,007,170200090305,,,,,,924.0,,,,,core
+USGS-12452550,"CHELAN R AT HABITAT 4 CHANNEL AT CHELAN FALLS, WA",Stream,Washington,Chelan County,007,170200090305,,721.0,1.6,NAVD88,North American Vertical Datum of 1988,,,,,,core
+USGS-12452800,"ENTIAT RIVER NEAR ARDENVOIR, WA",Stream,Washington,Chelan County,007,170200100207,,1560.97,10.0,NGVD29,National Geodetic Vertical Datum of 1929,203.0,,,,,core
+USGS-12452890,"MAD RIVER AT ARDENVOIR, WA",Stream,Washington,Chelan County,007,170200100103,,1260.0,20.0,NGVD29,National Geodetic Vertical Datum of 1929,92.4,92.4,,,,core
+USGS-12452990,"ENTIAT RIVER NEAR ENTIAT, WA",Stream,Washington,Chelan County,007,170200100209,00,731.84,0.02,NAVD88,North American Vertical Datum of 1988,419.0,,,,,core
+USGS-12456500,"CHIWAWA RIVER NEAR PLAIN, WA",Stream,Washington,Chelan County,007,170200110308,,2097.25,0.12,NAVD88,North American Vertical Datum of 1988,170.0,,,,,core
+USGS-12457000,"WENATCHEE RIVER AT PLAIN, WA",Stream,Washington,Chelan County,007,170200110701,,1808.87,0.12,NAVD88,North American Vertical Datum of 1988,591.0,,,,,core
+USGS-12458000,"ICICLE CREEK ABOVE SNOW CREEK NEAR LEAVENWORTH, WA",Stream,Washington,Chelan County,007,170200110406,,1414.27,0.12,NAVD88,North American Vertical Datum of 1988,193.0,,,,,core
+USGS-12459000,"WENATCHEE RIVER AT PESHASTIN, WA",Stream,Washington,Chelan County,007,170200110706,,1031.71,0.12,NAVD88,North American Vertical Datum of 1988,1000.0,,,,,core
+USGS-12462500,"WENATCHEE RIVER AT MONITOR, WA",Stream,Washington,Chelan County,007,170200110708,,689.65,0.12,NAVD88,North American Vertical Datum of 1988,1301.0,,,,,core
+USGS-12464800,"COAL CREEK AT MOHLER, WA",Stream,Washington,Lincoln County,043,170200130404,,2000.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,64.7,,,,,partial
+USGS-12465000,"CRAB CREEK AT IRBY, WA",Stream,Washington,Lincoln County,043,170200130509,,1386.3,10.0,NGVD29,National Geodetic Vertical Datum of 1929,1042.0,,,,,partial
+USGS-12465400,"WILSON CREEK BELOW CORBETT DRAW NEAR ALMIRA, WA",Stream,Washington,Lincoln County,043,170200130607,,1670.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,327.0,,,,,partial
+USGS-12466015,"CRAB CREEK NEAR STRATFORD, WA",Stream,Washington,Grant County,025,170200130806,43,1260.0,1.6,NAVD88,North American Vertical Datum of 1988,1818.0,,,,,partial
+USGS-12467000,"CRAB CREEK NEAR MOSES LAKE, WA",Stream,Washington,Grant County,025,170200150406,,1070.39,10.0,NGVD29,National Geodetic Vertical Datum of 1929,2228.0,,,,,partial
+USGS-12472600,"CRAB CREEK NEAR BEVERLY, WA",Stream,Washington,Grant County,025,170200151012,,504.51,0.08,NAVD88,North American Vertical Datum of 1988,4840.0,,,,,partial
+USGS-12472800,"COLUMBIA RIVER BELOW PRIEST RAPIDS DAM, WA",Stream,Washington,Grant County,025,170200160106,,393.38,0.08,NAVD88,North American Vertical Datum of 1988,96000.0,,,,,partial
+USGS-12484500,"YAKIMA RIVER AT UMTANUM, WA",Stream,Washington,Kittitas County,037,170300010705,,1300.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,1594.0,,,,,core
+USGS-12488500,"AMERICAN RIVER NEAR NILE, WA",Stream,Washington,Yakima County,077,170300020107,,2700.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,78.9,,,,,core
+USGS-12492900,"OAK CREEK ABOVE TIETON RIVER NEAR NACHES, WA",Stream,Washington,Yakima County,077,170300020307,38,1721.0,1.0,NAVD88,North American Vertical Datum of 1988,,,,,,core
+USGS-12500450,"YAKIMA RIVER ABOVE AHTANUM CREEK AT UNION GAP, WA",Stream,Washington,Yakima County,077,170300030206,,903.42,0.21,NAVD88,North American Vertical Datum of 1988,3479.0,,,,,core
+USGS-12502500,"AHTANUM CREEK AT UNION GAP, WA",Stream,Washington,Yakima County,077,170300030105,,940.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,173.0,,,,,core
+USGS-12505450,"GRANGER DRAIN AT GRANGER, WA",Stream,Washington,Yakima County,077,170300030505,,714.19,0.09,NAVD88,North American Vertical Datum of 1988,,62.0,,,,core
+USGS-12506000,"TOPPENISH CREEK NEAR FORT SIMCOE, WA",Stream,Washington,Yakima County,077,170300030605,,1306.0,20.0,NGVD29,National Geodetic Vertical Datum of 1929,122.0,,,,,core
+USGS-12508990,"YAKIMA RIVER AT MABTON, WA",Stream,Washington,Yakima County,077,170300031003,,635.12,0.05,NAVD88,North American Vertical Datum of 1988,5359.0,,,,,core
+USGS-12510500,"YAKIMA RIVER AT KIONA, WA",Stream,Washington,Benton County,005,170300031203,,454.41,10.0,NGVD29,National Geodetic Vertical Datum of 1929,5615.0,,,,,significant
+USGS-13334300,"SNAKE RIVER NEAR ANATONE, WA",Stream,Washington,Asotin County,003,170601030303,,810.35,0.08,NAVD88,North American Vertical Datum of 1988,92960.0,,,,,core
+USGS-13335050,"ASOTIN CREEK AT ASOTIN, WA",Stream,Washington,Asotin County,003,170601030209,,745.76,0.07,NAVD88,North American Vertical Datum of 1988,323.0,,,,,core
+USGS-13344500,"TUCANNON RIVER NEAR STARBUCK, WA",Stream,Washington,Columbia County,013,170601070703,,730.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,431.0,,,,,core
+USGS-13348000,"SOUTH FORK PALOUSE RIVER AT PULLMAN, WA",Stream,Washington,Whitman County,075,170601080204,,2329.72,0.1,NAVD88,North American Vertical Datum of 1988,132.0,,,,,significant
+USGS-13351000,"PALOUSE RIVER AT HOOPER, WA",Stream,Washington,Whitman County,075,170601080803,,1042.26,0.09,NAVD88,North American Vertical Datum of 1988,2500.0,2500.0,,,,significant
+USGS-14013000,"MILL CREEK NEAR WALLA WALLA, WA",Stream,Washington,Walla Walla County,071,170701020202,,1998.59,0.14,NAVD88,North American Vertical Datum of 1988,59.6,,,,,significant
+USGS-14013500,"BLUE CREEK NEAR WALLA WALLA, WA",Stream,Washington,Walla Walla County,071,170701020203,,1700.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,17.0,,,,,significant
+USGS-14013700,"MILL CREEK AT FIVE MILE RD BR NR WALLA WALLA, WA",Stream,Washington,Walla Walla County,071,170701020204,,1330.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,92.7,,,,,significant
+USGS-14015000,"MILL CREEK AT WALLA WALLA, WA",Stream,Washington,Walla Walla County,071,170701020204,,1120.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,95.7,,,,,significant
+USGS-14015350,"MILL CR AT LAST CHANCE RD BR NR COLLEGE PLACE, WA",Stream,Washington,Walla Walla County,071,170701020204,,649.11,0.08,NAVD88,North American Vertical Datum of 1988,,,,,,significant
+USGS-14016820,"TOUCHET RIVER AT GALLAHER RD NEAR WAITSBURG, WA",Stream,Washington,Columbia County,013,170701020401,,1309.0,0.14,NAVD88,North American Vertical Datum of 1988,259.9,,,,,core
+USGS-14018500,"WALLA WALLA RIVER NEAR TOUCHET, WA",Stream,Washington,Walla Walla County,071,170701021103,,401.93,0.07,NAVD88,North American Vertical Datum of 1988,1657.0,,,,,significant
+USGS-14107000,"KLICKITAT RIVER ABOVE WEST FORK NEAR GLENWOOD, WA",Stream,Washington,Yakima County,077,170701060104,,2720.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,151.0,,,,,core
+USGS-14111400,"KLICKITAT RIVER BL SUMMIT CREEK NEAR GLENWOOD, WA",Stream,Washington,Klickitat County,039,170701060401,,900.0,10.0,NGVD29,National Geodetic Vertical Datum of 1929,759.0,,,,,core
+USGS-14113000,"KLICKITAT RIVER NEAR PITT, WA",Stream,Washington,Klickitat County,039,170701060409,,288.9,10.0,NGVD29,National Geodetic Vertical Datum of 1929,1297.0,,,,,core
