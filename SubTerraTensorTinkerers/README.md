@@ -55,6 +55,10 @@ https://ai-incubator-chat.pnnl.gov/s/52fd5443-0a19-4dd3-803e-36ffc784445f
 Claude Sonnet 4.6 and Gemini 2.5 Pro with added context of problem statement  
 https://ai-incubator-chat.pnnl.gov/s/c23a54ca-0943-4910-a3f3-57b200826871
 
+**Chat history link 3:**  
+Grok-4 with add context of problem statement and data description 
+https://ai-incubator-chat.pnnl.gov/s/781de085-871c-4d1f-8374-29b2879113ee
+
 **Data Discovery Paragraph:**
 
 There are two provided Fracture Thermal Energy Storage (FTES) datasets: a 1-second resolution dataset of water flow rate, electrical conductivity, pressure, and tempurature along several boreholes at multiple depths, and a lower resolution, 1-hour averaged version of the data. When considering the two resolutions of the provided data, there is a tradeoff between measurement frequency (granularity) and dataset size (indicative of training time) limitations.  
