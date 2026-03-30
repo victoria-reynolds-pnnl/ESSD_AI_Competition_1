@@ -47,10 +47,26 @@ Why
 
 <br>
 
-**Chat history link 1:** 
+**Chat history link 1:**  
+Claude Opus 4.6 (first half) and Gemini 2.5 Pro (second half)
+https://ai-incubator-chat.pnnl.gov/s/52fd5443-0a19-4dd3-803e-36ffc784445f
 
-**Chat history link 2:** 
+**Chat history link 2:**  
+Claude Sonnet 4.6 and Gemini 2.5 Pro with added context of problem statement  
+https://ai-incubator-chat.pnnl.gov/c/cb630a42-ea98-4cc9-a869-1a53a04dca7f
 
-**Data Discovery Paragraph:** 
+**Data Discovery Paragraph:**
+
+There are two provided Fracture Thermal Energy Storage (FTES) datasets: a 1-second resolution dataset of water flow rate, electrical conductivity, pressure, and tempurature along several boreholes at multiple depths, and a lower resolution, 1-hour averaged version of the data. When considering the two resolutions of the provided data, there is a tradeoff between measurement frequency (granularity) and dataset size (indicative of training time) limitations.  
+The ~3.5-month timeframe of the data ranges from December 2024 to March 2025, covering a hot water injection phase followed by an ambient temperature water injection phase, with periods of testing/maintenence in between. Data discovery in Link 1 chat history highlighted that there is no indication of the current operational phase in the data itself. If not split or labeled, measurements show drastically different values over time for seemingly no reason. The LLMs also noted inconsistent packer depths between time periods. Ideally, these depths  would be consistent to accurately monitor how conditions change over time at the same exact depth. To account for these differences, implemented models should include packer depth measurement as a feature.  
+Data discovery in Link 2 cautioned the potential for sensor-related anomalies, such as sharp spikes, flat-lining, and irregular time stamps. These anomalies can be accounted for by identifying valid ranges for each variable, implementing cutoff thresholds, and checking variance. Another bias to consider is the specific time window and operational conditions of  data collection, limiting the model's training to a particular context. This bias would only become more apparent when attempting to capture seasonality, long-term trends, or different operating conditions, and is a point to keep in mind if this work is expanded.  
 
 **LLM Reflection Paragraph:**
+
+Potential LLM errors in the chat history links:
+
+1. Almost all models cautioned for large time gaps or incorrectly ordered time stamps, and even provided examples of exact dates/times that should be flagged. However when manually observing the data, the time stamps seem to be correctly ordered without missing time steps.
+
+2. Impossible negative or zero values of electrical conductivity (EC), pressure, or packer depth were flagged by the LLMs. After discussion with the team, there exist certain scenarios where these values could be valid (e.g, negative EC indicating the direction of current flow). Values in these columns will be reevaluated during data cleaning. 
+
+When comparing the responses of the models, Claude took more time to think (Claude: ~1 minute, Gemini: a few seconds) and also provided a longer, more detailed response than Gemini (i.e., more output tokens). The two models aligned on many of the data biases/limitations presented, but differed between the two chat history links when prompted with the additional context of the problem statement. Although Claude provided more information overall, we found that the findings provided by Gemini were more useful. Claude tended to generate additional summarizations or observations that were not always needed for this particular use-case. 
