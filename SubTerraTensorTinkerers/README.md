@@ -48,7 +48,7 @@ Why
 <br>
 
 **Chat history link 1:**  
-Claude Opus 4.6 (first half) and Gemini 2.5 Pro (second half)
+Claude Opus 4.6 (first half) and Gemini 2.5 Pro (second half)  
 https://ai-incubator-chat.pnnl.gov/s/52fd5443-0a19-4dd3-803e-36ffc784445f
 
 **Chat history link 2:**  
