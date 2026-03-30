@@ -1,5 +1,8 @@
 # AI Delinquents Week 1
 
+## NOTE:
+After attending the Week 1 office hours, we realize we took on a much bigger question that was intended in this challenge. Moving forward, we've narrowed down our problem statement to predicting Washington state water supply based on snow and stream flow data. The goal would be to be able to understand current water supply and predict future water supply. However, we chose not to redo last week's work; the below problem and information is based on our initial plan. 
+
 ## Problem Statement:
 Multiple factors can influence the need to retain or remove current dams in Washington state. Using streamflow data and public resources, it is essential to evaluate which dams are likely to be removed due to social, political, engineering, and environmental factors. This system will assess risks, identify at-risk dams, and highlight gaps in data needed for reliable risk profiles, aiding decision-makers in mitigating risks and ensuring safety.
 
