@@ -56,7 +56,7 @@ Claude Sonnet 4.6 and Gemini 2.5 Pro with added context of problem statement
 https://ai-incubator-chat.pnnl.gov/s/c23a54ca-0943-4910-a3f3-57b200826871
 
 **Chat history link 3:**  
-Grok-4 with add context of problem statement and data description 
+Grok-4 with add context of problem statement and data description  
 https://ai-incubator-chat.pnnl.gov/s/781de085-871c-4d1f-8374-29b2879113ee
 
 **Data Discovery Paragraph:**
