@@ -83,6 +83,7 @@ Based on the data sets we have identified for use, the category for social impac
 
 
 ### @JanaSimo 
+Data sets were high level and incomplete coverage due to geographic boundaries, which exist on maps but not in natural systesm. Adding more datasets intentially could improve analysis.
 
 ## LLM Reflection Paragraph:
 **A single paragraph that: Details at least 2 LLM Errors or missing QC steps identified during data discovery
@@ -105,3 +106,4 @@ Claude misses field-level data provenance and quality flags during ingestion and
 The two LLMs, Claude and GPT, developed similar plans that employed comparable strategies. Both incorporated relevant and useful datasets not mentioned in the initial prompt, such as the National Inventory of Dams and the American Rivers Dam Removal Database. The latter dataset was used by both LLMs for test cases to determine whether dams that have already been removed would receive a high removal risk score under this project. Both plans also included processes to flag any critical missing data that could significantly impact the final outcomes for each dam. Additionally, both proposed starting with equal weighting for each category while keeping the weighting configurable. However, despite these broad similarities, the final products envisioned by the two LLMs diverged notably. GPT emphasized data quality and provenance, suggesting a deliverable in the form of a detailed report along with instructions for rerunning and reconfiguring the process to ensure reproducibility. Claude, on the other hand, prioritized usability by proposing a more interactive final product, including tiered dam mapping and an interactive dashboard to display rankings and other information for each dam.
 
 ### @JanaSimo 
+Similar plans were developed by the two LLMs. Inputs to develop these plans were similar, but execuction of the plan differed with different priorities emphasized.
