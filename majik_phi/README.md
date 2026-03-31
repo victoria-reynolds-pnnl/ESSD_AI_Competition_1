@@ -12,8 +12,7 @@ Provide information on relocation to a business that is sensitive to the costs a
 | Name | Role | Responsibilities |
 | :---: | :---: | :---: |
 | James Kershaw | Software Engineer | To be determined |
-| Philip Meyer | Data analysis | Data manipulation |
-| Zihao Li | Post Doctorate RA | To be determined |
+| Philip Meyer | Applied Research | Data analysis |
 | Mengqi Zhao | Earth Scientist | To be determined |
 | Kofi Poku | Generalist | Code & Compute/*TBD* |
 
