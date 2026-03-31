@@ -19,8 +19,10 @@ Provide information on relocation to a business that is sensitive to the costs a
 
 
 Chat history link 1:
+https://ai-incubator-chat.pnnl.gov/s/f62a6173-bbfa-4400-b4a1-49d2966ce2a8
 
 Chat history link 2:
+Prompted two LLMs using the same prompts (above link) using that capability in AI Incubator
 
 Data Discovery Paragraph:
 
