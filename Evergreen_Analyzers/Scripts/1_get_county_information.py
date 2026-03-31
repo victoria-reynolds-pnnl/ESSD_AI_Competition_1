@@ -1,5 +1,5 @@
 # Author: Amzi Jeffs
-# AI help: GPT 5.2, see 
+# AI help: GPT 5.2, see https://ai-incubator-chat.pnnl.gov/s/ebe83ad1-7b6b-4696-9e7f-996cd897938d
 
 import requests
 import pandas as pd
@@ -98,4 +98,4 @@ if __name__ == "__main__":
     df = df[df['county_significance'].notna()]
 
     # Optional: save results
-    df.to_csv("crbg_monitoring_location_info.csv", index=False)
+    df.to_csv("../crbg_monitoring_location_info.csv", index=False)
