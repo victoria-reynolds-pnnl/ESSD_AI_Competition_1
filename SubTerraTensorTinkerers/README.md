@@ -2,6 +2,7 @@
 # Sub‑Terra Tensor Tinkerers - Week 2 Submission
 
 **Project Title:** Signal‑to‑Storage: Early Warning Forecasts for FTES Charging Operations
+
 **Team:** Scott Unger, Julian Chesnutt, Theresa Pham, Xi Tan, Ashton Kirol, Mike Parker
 
 1. The original un-cleaned data source 
