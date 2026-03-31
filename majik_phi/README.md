@@ -1,20 +1,21 @@
 # Project Title: Behind the Curtain
 
 # Problem Statement: 
-Heat waves and cold snaps are not uniquely defined—published thresholds differ by temperature metric, percentile cutoff, and minimum duration. This definitional uncertainty complicates regional risk assessment. Using a multi-definition Extreme Thermal Event Library, develop models that learn relationships between event characteristics (intensity, duration, spatial coverage) and identify robust representations of events that generalize across definitions and regions. [From Mengqi; minor edits from Kofi]
+Cold snaps and heat waves in particular are on the rise globally. These events not uniquely defined—published thresholds differ by temperature metric, percentile cutoff, and minimum duration. This definitional uncertainty complicates regional risk assessment. Using a multi-definition Extreme Thermal Event Library, develop models that learn relationships between event characteristics (intensity, duration, spatial coverage) and identify robust representations of events that generalize across definitions and regions. 
 
 # Goal: 
-Provide information on relocation to a business that is sensitive to the costs associated with extreme heat wave and/or cold snap events. For example, identify regions with a low risk of severe events during the next ten years.
+Starting with historical data of the conterminous United States, develop a predictive model for these extreme weather events. Provide information on relocation to a business that is sensitive to the costs associated with extreme heat wave and/or cold snap events. For example, identify regions with a low risk of severe events during the next ten years.
 
-# Data source: https://data.pnnl.gov/group/nodes/dataset/34393
+# Data source: 
+[Heat wave and cold snap event library under various technical choices for NERC subregions in the conterminous U.S.](https://data.pnnl.gov/group/nodes/dataset/34393)
 
 # Team Structure:
 | Name | Role | Responsibilities |
 | :---: | :---: | :---: |
-| James Kershaw | Software Engineer | To be determined |
+| James Kershaw | Software Engineer | Technical support |
 | Philip Meyer | Applied Research | Data analysis |
-| Mengqi Zhao | Earth Scientist | To be determined |
-| Kofi Poku | Generalist | Code & Compute/*TBD* |
+| Mengqi Zhao | Earth Scientist | Data wrangling |
+| Kofi Poku | Generalist | Code & Compute |
 
 
 ## Chat history link 1:
