@@ -1,7 +1,7 @@
 # Idea - water supply forecasting
 
 ## Overall concept
-Using streamflow data and other public resources, develop a water supply forecast for the Columbia Eiver basin. Build a machine learning model that uses streamflow data and other sources of climate and show data adn vlidates the model using. 
+Using streamflow data and other public resources, develop a water supply forecast for the Columbia River basin. Build a machine learning model that uses streamflow data and other sources of climate daat and that validates the model using well established statitical methods.
 
 ## Resources
 
