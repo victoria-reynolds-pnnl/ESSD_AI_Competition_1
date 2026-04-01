@@ -1,0 +1,3 @@
+# Large data files - exceed GitHub's 100MB limit
+byteMe/processedData/FTES_cleaned_1sec_1min_resample.csv
+byteMe/rawData/FTES-Full_Test_1sec_system_processed.csv

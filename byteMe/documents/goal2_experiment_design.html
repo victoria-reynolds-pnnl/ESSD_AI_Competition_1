@@ -1,0 +1,632 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:1.5rem 0;font-family:var(--font-sans)}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:1.8rem 0}
+.sec-title{font-size:15px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.sec-sub{font-size:13px;color:var(--color-text-secondary);line-height:1.65;margin-bottom:1rem}
+code{font-family:var(--font-mono);font-size:11px;background:var(--color-background-tertiary);padding:1px 4px;border-radius:3px;color:var(--color-text-primary)}
+.bold{font-weight:500}
+
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.4rem;position:sticky;top:0;background:var(--color-background-primary);padding:8px 0;z-index:10;border-bottom:0.5px solid var(--color-border-tertiary)}
+.nav-btn{font-size:11px;padding:5px 11px;border-radius:6px;border:0.5px solid var(--color-border-secondary);background:transparent;color:var(--color-text-secondary);cursor:pointer;transition:all .15s;white-space:nowrap}
+.nav-btn:hover{background:var(--color-background-secondary)}
+.nav-btn.on{background:#FAEEDA;color:#854F0B;border-color:#EF9F27;font-weight:500}
+
+.section{display:none}
+.section.on{display:block}
+
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.card-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px}
+.card-body{font-size:12px;color:var(--color-text-secondary);line-height:1.65}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+@media(max-width:540px){.grid2,.grid3{grid-template-columns:1fr}}
+
+.phase-timeline{display:flex;gap:0;margin-bottom:1rem;border-radius:8px;overflow:hidden;height:36px}
+.pt-seg{display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500}
+.pt-pre{background:#E1F5EE;color:#085041;flex:0.08}
+.pt-ramp{background:#FAC775;color:#412402;flex:0.07}
+.pt-train{background:#B5D4F4;color:#0C447C;flex:0.48}
+.pt-test{background:#9FE1CB;color:#085041;flex:0.20}
+.pt-gap{background:#D3D1C7;color:#444441;flex:0.12}
+.pt-amb{background:#F1EFE8;color:#5F5E5A;flex:0.05}
+
+.split-detail{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:1rem}
+.sd-card{border-radius:8px;padding:10px 12px}
+.sd-pre{background:#E1F5EE;border:0.5px solid #5DCAA5}
+.sd-ramp{background:#FAEEDA;border:0.5px solid #EF9F27}
+.sd-train{background:#E6F1FB;border:0.5px solid #85B7EB}
+.sd-val{background:#EEEDFE;border:0.5px solid #AFA9EC}
+.sd-test{background:#E1F5EE;border:0.5px solid #1D9E75}
+.sd-gap{background:#F1EFE8;border:0.5px solid #B4B2A9}
+.sd-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.sd-pre .sd-label{color:#085041}
+.sd-ramp .sd-label{color:#854F0B}
+.sd-train .sd-label{color:#0C447C}
+.sd-val .sd-label{color:#534AB7}
+.sd-test .sd-label{color:#085041}
+.sd-gap .sd-label{color:#5F5E5A}
+.sd-val-main{font-size:16px;font-weight:500;margin-bottom:2px}
+.sd-pre .sd-val-main,.sd-train .sd-val-main,.sd-test .sd-val-main{color:#042C53}
+.sd-ramp .sd-val-main{color:#412402}
+.sd-val .sd-val-main{color:#26215C}
+.sd-gap .sd-val-main{color:#444441}
+.sd-desc{font-size:11px;line-height:1.45}
+.sd-pre .sd-desc,.sd-train .sd-desc,.sd-test .sd-desc{color:#0F6E56}
+.sd-ramp .sd-desc{color:#854F0B}
+.sd-val .sd-desc{color:#534AB7}
+.sd-gap .sd-desc{color:#5F5E5A}
+
+.feat-table{width:100%;border-collapse:collapse;font-size:12px}
+.feat-table th{font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;padding:7px 8px;border-bottom:0.5px solid var(--color-border-tertiary);text-align:left}
+.feat-table td{padding:8px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top;line-height:1.5}
+.feat-table tr:last-child td{border-bottom:none}
+.feat-table tr:hover td{background:var(--color-background-secondary)}
+.imp-badge{display:inline-block;font-size:10px;font-weight:500;padding:1px 6px;border-radius:8px}
+.imp-crit{background:#FCEBEB;color:#A32D2D}
+.imp-high{background:#FAEEDA;color:#854F0B}
+.imp-med{background:#EAF3DE;color:#3B6D11}
+.imp-low{background:var(--color-background-secondary);color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary)}
+
+.model-card{border-radius:12px;border:0.5px solid var(--color-border-tertiary);padding:14px 16px;margin-bottom:10px}
+.model-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.model-role{font-size:10px;font-weight:500;padding:2px 8px;border-radius:10px}
+.mr-baseline{background:#F1EFE8;color:#5F5E5A}
+.mr-main{background:#FAEEDA;color:#854F0B}
+.mr-advanced{background:#EEEDFE;color:#534AB7}
+.mr-physics{background:#E1F5EE;color:#0F6E56}
+.model-name{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.model-body{font-size:12px;color:var(--color-text-secondary);line-height:1.65}
+.param-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+@media(max-width:480px){.param-grid{grid-template-columns:1fr}}
+.param-item{background:var(--color-background-secondary);border-radius:6px;padding:8px 10px}
+.param-name{font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+.param-val{font-size:12px;color:var(--color-text-primary);line-height:1.5}
+
+.eval-block{margin-bottom:1.2rem}
+.eval-group-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;padding-bottom:4px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.metric-row{display:grid;grid-template-columns:2fr 3fr 2fr;gap:8px;padding:8px 0;border-bottom:0.5px solid var(--color-border-tertiary);align-items:start}
+.metric-row:last-child{border-bottom:none}
+.mr-name{font-size:12px;font-weight:500;color:var(--color-text-primary);line-height:1.4}
+.mr-how{font-size:11px;color:var(--color-text-secondary);margin-top:2px;line-height:1.5}
+.mr-thresh{font-size:11px;color:var(--color-text-secondary);line-height:1.5}
+@media(max-width:500px){.metric-row{grid-template-columns:1fr}}
+
+.step-row{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start}
+.step-num{width:22px;height:22px;border-radius:50%;background:#FAEEDA;color:#854F0B;font-size:11px;font-weight:500;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;flex-shrink:0}
+.step-content{flex:1}
+.step-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.step-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+
+.warn-box{background:var(--color-background-warning);border:0.5px solid var(--color-border-warning);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--color-text-warning);line-height:1.6;margin-bottom:8px}
+.info-box{background:var(--color-background-info);border:0.5px solid var(--color-border-info);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--color-text-info);line-height:1.6;margin-bottom:8px}
+.success-box{background:var(--color-background-success);border:0.5px solid var(--color-border-success);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--color-text-success);line-height:1.6;margin-bottom:8px}
+.danger-box{background:var(--color-background-danger);border:0.5px solid var(--color-border-danger);border-radius:8px;padding:10px 12px;font-size:12px;color:var(--color-text-danger);line-height:1.6;margin-bottom:8px}
+
+.ab-row{display:grid;grid-template-columns:160px 1fr 1fr;gap:10px;margin-bottom:8px;align-items:start}
+@media(max-width:520px){.ab-row{grid-template-columns:1fr;gap:4px}}
+.ab-label{font-size:12px;font-weight:500;color:var(--color-text-primary);padding-top:3px}
+.ab-cell{border-radius:8px;padding:9px 11px;font-size:12px;line-height:1.6}
+.ab-a{background:#FAEEDA;border:0.5px solid #EF9F27}
+.ab-b{background:#EEEDFE;border:0.5px solid #AFA9EC}
+.ab-a-label{font-size:10px;font-weight:500;color:#854F0B;margin-bottom:3px}
+.ab-b-label{font-size:10px;font-weight:500;color:#534AB7;margin-bottom:3px}
+.ab-text{color:var(--color-text-secondary)}
+
+.checklist{list-style:none;padding:0}
+.checklist li{display:flex;gap:8px;padding:6px 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:12px;color:var(--color-text-secondary);line-height:1.5;align-items:flex-start}
+.checklist li:last-child{border-bottom:none}
+.check-box{width:14px;height:14px;border-radius:3px;border:0.5px solid var(--color-border-secondary);flex-shrink:0;margin-top:1px}
+
+.output-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
+@media(max-width:480px){.output-grid{grid-template-columns:1fr}}
+.output-card{border-radius:10px;padding:12px 14px;border:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+.output-title{font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px}
+.output-desc{font-size:11px;color:var(--color-text-secondary);line-height:1.6}
+
+.horizon-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1rem}
+@media(max-width:480px){.horizon-strip{grid-template-columns:1fr 1fr}}
+.hz{border-radius:8px;padding:10px 12px;border:0.5px solid var(--color-border-tertiary)}
+.hz1{background:#FAEEDA;border-color:#FAC775}
+.hz2{background:#FAC775;border-color:#EF9F27}
+.hz3{background:#EF9F27;border-color:#BA7517}
+.hz4{background:#BA7517;border-color:#854F0B}
+.hz-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.hz1 .hz-label{color:#854F0B}
+.hz2 .hz-label,.hz3 .hz-label{color:#412402}
+.hz4 .hz-label{color:#FAEEDA}
+.hz-val{font-size:16px;font-weight:500}
+.hz1 .hz-val{color:#633806}
+.hz2 .hz-val,.hz3 .hz-val{color:#412402}
+.hz4 .hz-val{color:#FAEEDA}
+.hz-note{font-size:11px;margin-top:2px;line-height:1.4}
+.hz1 .hz-note{color:#854F0B}
+.hz2 .hz-note,.hz3 .hz-note{color:#412402}
+.hz4 .hz-note{color:#FAEEDA}
+
+.decision-table{width:100%;border-collapse:collapse;font-size:12px}
+.decision-table th{font-size:10px;font-weight:500;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:.05em;padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);text-align:left}
+.decision-table td{padding:9px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top;line-height:1.5}
+.decision-table tr:nth-child(even) td{background:var(--color-background-secondary)}
+.decision-table tr:last-child td{border-bottom:none}
+.go{background:#E1F5EE;color:#085041;font-size:10px;font-weight:500;padding:2px 7px;border-radius:8px}
+.stop{background:#FCEBEB;color:#A32D2D;font-size:10px;font-weight:500;padding:2px 7px;border-radius:8px}
+.revise{background:#FAEEDA;color:#854F0B;font-size:10px;font-weight:500;padding:2px 7px;border-radius:8px}
+</style>
+
+<div class="wrap">
+<div class="nav-bar">
+  <button class="nav-btn on" onclick="nav(this,'s0')">Overview</button>
+  <button class="nav-btn" onclick="nav(this,'s1')">Data splits</button>
+  <button class="nav-btn" onclick="nav(this,'s2')">Features</button>
+  <button class="nav-btn" onclick="nav(this,'s3')">Models</button>
+  <button class="nav-btn" onclick="nav(this,'s4')">Evaluation</button>
+  <button class="nav-btn" onclick="nav(this,'s5')">Ablations</button>
+  <button class="nav-btn" onclick="nav(this,'s6')">Run order</button>
+  <button class="nav-btn" onclick="nav(this,'s7')">Go / No-go</button>
+</div>
+
+<!-- OVERVIEW -->
+<div class="section on" id="s0">
+  <div class="sec-title">Experiment overview</div>
+  <div class="sec-sub">Predict temperature at production wells TL and TN up to 24 hours ahead, given the history of hot-water injection at TC. Four prediction horizons are treated as separate regression tasks. Success requires beating a strong persistence baseline on all horizons and passing six physical-validity checks.</div>
+
+  <div class="grid2" style="margin-bottom:1rem">
+    <div class="card">
+      <div class="card-title">Scientific question</div>
+      <div class="card-body">Can a data-driven model learn the thermal transport relationship between the injection well (TC) and the production wells (TL, TN) well enough to predict breakthrough timing, peak temperature attenuation, and the shape of the temperature rise curve — without access to rock thermal conductivity or fracture geometry?</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Null hypothesis to falsify</div>
+      <div class="card-body">A model that knows only the current temperature at each production well (persistence) produces forecasts that are as accurate as any model using injection history and flow rate features. Failing to reject this null at h ≥ 60 min means the model has learned nothing about transport physics.</div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:1rem">Prediction targets — 8 total (2 wells × 4 horizons)</div>
+  <div class="sec-sub" style="margin-bottom:10px">Each cell is a separate regression model. Difficulty increases right (longer horizon) and varies by well.</div>
+  <div class="horizon-strip">
+    <div class="hz hz1"><div class="hz-label">Horizon h1</div><div class="hz-val">+15 min</div><div class="hz-note">Sanity check. Persistence very strong. Establishes RMSE floor.</div></div>
+    <div class="hz hz2"><div class="hz-label">Horizon h2</div><div class="hz-val">+60 min</div><div class="hz-note">First operationally useful window. Pump adjustments visible.</div></div>
+    <div class="hz hz3"><div class="hz-label">Horizon h3</div><div class="hz-val">+240 min</div><div class="hz-note">Primary scientific target. Thermal front arrival detectable here.</div></div>
+    <div class="hz hz4"><div class="hz-label">Horizon h4</div><div class="hz-val">+1440 min</div><div class="hz-note">24-hr ahead. Captures slow conduction. Most challenging.</div></div>
+  </div>
+
+  <div class="sec-title">Key constraints</div>
+  <div class="grid3" style="margin-top:8px">
+    <div class="card"><div class="card-title">Temporal ordering</div><div class="card-body">No shuffling of any kind. All train/test splits are strictly chronological. Expanding-window CV only.</div></div>
+    <div class="card"><div class="card-title">No future leakage</div><div class="card-body">Features at time t may only use data from t and earlier. Lag-window rows that cross a phase boundary must be dropped.</div></div>
+    <div class="card"><div class="card-title">Physical bounds</div><div class="card-body">All predictions must lie within [T₀ − 0.5°C, T_injection_max + 0.5°C]. Apply post-hoc clipping and report the clip rate.</div></div>
+  </div>
+</div>
+
+<!-- DATA SPLITS -->
+<div class="section" id="s1">
+  <div class="sec-title">Data partitioning</div>
+  <div class="sec-sub">The full dataset spans ~104 days. Goal 2 uses only the hot injection phase. The timeline below shows how each segment is assigned.</div>
+
+  <div class="phase-timeline" style="margin-bottom:6px">
+    <div class="pt-seg pt-pre">pre</div>
+    <div class="pt-seg pt-ramp">ramp</div>
+    <div class="pt-seg pt-train">training set</div>
+    <div class="pt-seg pt-test">test set</div>
+    <div class="pt-seg pt-gap">maint. gap</div>
+    <div class="pt-seg pt-amb">amb.</div>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:11px;color:var(--color-text-secondary);margin-bottom:1rem">
+    <span>Dec 10 →</span><span>Dec 13 20:00 (injection start) →</span><span>Jan 14 ~20:00 (50-day train end) →</span><span>Feb 23 11:00 (phase 1 end) →</span><span>Mar 12 13:00 (phase 2 start) →</span><span>Mar 24</span>
+  </div>
+
+  <div class="split-detail">
+    <div class="sd-card sd-pre">
+      <div class="sd-label">Pre-injection</div>
+      <div class="sd-val-main">~3 days</div>
+      <div class="sd-desc">Dec 10–13. Used only to compute T₀ (ambient baseline) per well. Excluded from all model training and evaluation.</div>
+    </div>
+    <div class="sd-card sd-ramp">
+      <div class="sd-label">Ramp-up window</div>
+      <div class="sd-val-main">~6 hrs</div>
+      <div class="sd-desc">First 360 rows after injection start. Transient pump spin-up. Excluded from training — would distort steady-state patterns.</div>
+    </div>
+    <div class="sd-card sd-train">
+      <div class="sd-label">Training set</div>
+      <div class="sd-val-main">~50 days</div>
+      <div class="sd-desc">~72,000 rows (post ramp-up, minus lag-boundary exclusions). Covers early breakthrough through mid-sustained injection.</div>
+    </div>
+    <div class="sd-card sd-val">
+      <div class="sd-label">CV folds (within train)</div>
+      <div class="sd-val-main">5 folds</div>
+      <div class="sd-desc">Expanding-window folds of 10 days each. Used for hyperparameter tuning only. Never used to report final results.</div>
+    </div>
+    <div class="sd-card sd-test">
+      <div class="sd-label">Test set</div>
+      <div class="sd-val-main">~22 days</div>
+      <div class="sd-desc">~31,680 rows. Covers late-sustained injection and wind-down toward phase end. Touched once, after all model decisions are frozen.</div>
+    </div>
+    <div class="sd-card sd-gap">
+      <div class="sd-label">Excluded entirely</div>
+      <div class="sd-val-main">~31 days</div>
+      <div class="sd-desc">Maintenance gap (~17 days) + ambient injection phase (~12 days). Neither used for training nor evaluation in Goal 2.</div>
+    </div>
+  </div>
+
+  <div class="sec-title">Lag-boundary exclusion rule</div>
+  <div class="sec-sub">The first W rows of any segment cannot be used as prediction targets because their lookback window reaches into the excluded ramp-up or pre-injection period. The exclusion cost grows with lookback window length.</div>
+  <table class="feat-table">
+    <thead><tr><th>Lookback window W</th><th>Rows excluded at each boundary</th><th>Effective training rows lost</th><th>Recommended use</th></tr></thead>
+    <tbody>
+      <tr><td><code>W = 60 min</code></td><td>60 rows per boundary</td><td>~0.08% of training set</td><td>RF short-lag baseline</td></tr>
+      <tr><td><code>W = 240 min</code></td><td>240 rows per boundary</td><td>~0.33% of training set</td><td>RF primary model</td></tr>
+      <tr><td><code>W = 1440 min</code></td><td>1,440 rows per boundary</td><td>~2% of training set</td><td>LSTM / deep models</td></tr>
+      <tr><td><code>W = 2880 min</code></td><td>2,880 rows per boundary</td><td>~4% of training set</td><td>Max practical lookback</td></tr>
+    </tbody>
+  </table>
+  <div class="info-box" style="margin-top:10px"><span class="bold">Expanding-window CV detail:</span> Fold 1 — train days 1–20, validate days 21–30. Fold 2 — train days 1–30, validate days 31–40. Fold 3 — train days 1–40, validate days 41–50. Fold 4 — train days 1–50, validate days 51–60. Fold 5 — train days 1–60, validate days 61–70. Each fold applies the same lag-boundary exclusion at the split point. Report mean ± std of CV RMSE across folds; use this for hyperparameter selection only.</div>
+</div>
+
+<!-- FEATURES -->
+<div class="section" id="s2">
+  <div class="sec-title">Feature specification</div>
+  <div class="sec-sub">All features computed from the hot injection segment only. The full feature set is constructed once and stored; each model draws from the same feature store. Features are grouped into five families.</div>
+
+  <div class="sec-title" style="font-size:13px;margin-bottom:8px">Family A — Injection temperature history (primary causal signal)</div>
+  <table class="feat-table" style="margin-bottom:1rem">
+    <thead><tr><th>Feature</th><th>Construction</th><th>Lags included</th><th>Importance</th></tr></thead>
+    <tbody>
+      <tr><td><code>TC_INT_mean_lag_k</code></td><td>(TC-TEC-INT-U + TC-TEC-INT-L) / 2 at t−k</td><td>k = 1,5,10,20,30,60,90,120,180,240,360,480,720,1440 min (14 lags)</td><td><span class="imp-badge imp-crit">Critical</span></td></tr>
+      <tr><td><code>TC_INT_rolling_mean_W</code></td><td>Rolling mean of TC_INT over W-minute window ending at t</td><td>W = 30, 60, 120, 240, 480 min (5 features)</td><td><span class="imp-badge imp-crit">Critical</span></td></tr>
+      <tr><td><code>TC_INT_delta</code></td><td>TC_INT(t) − TC_INT(t−60)</td><td>Single feature — rate of change of injection temp</td><td><span class="imp-badge imp-high">High</span></td></tr>
+      <tr><td><code>TC_BOT_mean_lag_k</code></td><td>(TC-TEC-BOT-U + TC-TEC-BOT-L) / 2 at t−k</td><td>k = 60, 120, 240, 480 min (4 lags)</td><td><span class="imp-badge imp-med">Medium</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-title" style="font-size:13px;margin-bottom:8px">Family B — Flow rate history (controls advective transport speed)</div>
+  <table class="feat-table" style="margin-bottom:1rem">
+    <thead><tr><th>Feature</th><th>Construction</th><th>Lags included</th><th>Importance</th></tr></thead>
+    <tbody>
+      <tr><td><code>net_flow_lag_k</code></td><td>Net Flow (L/min) at t−k</td><td>k = 1,5,15,30,60,120,240 min (7 lags)</td><td><span class="imp-badge imp-crit">Critical</span></td></tr>
+      <tr><td><code>net_flow_rolling_mean_W</code></td><td>Rolling mean of Net Flow over W minutes</td><td>W = 30, 60, 120, 240 min (4 features)</td><td><span class="imp-badge imp-high">High</span></td></tr>
+      <tr><td><code>prod_flow_TL_lag_k</code></td><td>TL Interval Flow at t−k</td><td>k = 1, 30, 60, 120 min (4 lags)</td><td><span class="imp-badge imp-high">High</span></td></tr>
+      <tr><td><code>prod_flow_TN_lag_k</code></td><td>TN Interval Flow at t−k</td><td>k = 1, 30, 60, 120 min (4 lags — TN model only)</td><td><span class="imp-badge imp-high">High</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-title" style="font-size:13px;margin-bottom:8px">Family C — Autoregressive target history (captures current breakthrough phase)</div>
+  <table class="feat-table" style="margin-bottom:1rem">
+    <thead><tr><th>Feature</th><th>Construction</th><th>Lags included</th><th>Importance</th></tr></thead>
+    <tbody>
+      <tr><td><code>T_target_lag_k</code></td><td>Temperature at the target well (TL or TN) at t−k</td><td>k = 1,5,10,20,30,60,120,240,480,720,1440 min (11 lags)</td><td><span class="imp-badge imp-crit">Critical</span></td></tr>
+      <tr><td><code>dT_target_dt</code></td><td>[T_target(t) − T_target(t−60)] / 60 — rate of rise</td><td>Single feature</td><td><span class="imp-badge imp-high">High</span></td></tr>
+      <tr><td><code>T_target_rolling_mean_W</code></td><td>Rolling mean of target well temp</td><td>W = 30, 60, 120 min (3 features)</td><td><span class="imp-badge imp-med">Medium</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-title" style="font-size:13px;margin-bottom:8px">Family D — Engineered physics features (encode cumulative thermal state)</div>
+  <table class="feat-table" style="margin-bottom:1rem">
+    <thead><tr><th>Feature</th><th>Construction</th><th>Notes</th><th>Importance</th></tr></thead>
+    <tbody>
+      <tr><td><code>cumulative_heat_input</code></td><td>Σ [Net_Flow(τ) × TC_INT_mean(τ)] × Δτ from injection start to t</td><td>Running integral. Reset to 0 at injection start. Most powerful single engineered feature.</td><td><span class="imp-badge imp-crit">Critical</span></td></tr>
+      <tr><td><code>elapsed_injection_min</code></td><td>Minutes since injection start (t − t_injection_start)</td><td>Encodes experiment phase without using raw timestamp.</td><td><span class="imp-badge imp-high">High</span></td></tr>
+      <tr><td><code>delta_T_above_T0</code></td><td>T_target(t) − T₀_target</td><td>Temperature rise above pre-injection ambient. Removes well-to-well offset. Use this as the primary target variable, not raw T.</td><td><span class="imp-badge imp-high">High</span></td></tr>
+      <tr><td><code>T_gradient_INT</code></td><td>TEC-INT-U(t) − TEC-INT-L(t) for target well</td><td>Vertical thermal gradient within the 26-inch interval. Sharpens near the thermal front.</td><td><span class="imp-badge imp-med">Medium</span></td></tr>
+      <tr><td><code>injection_pressure_lag_k</code></td><td>TC Interval Pressure at t−k</td><td>k = 1, 60, 240 min. Weak but non-zero signal during pressure transients.</td><td><span class="imp-badge imp-low">Lower</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="sec-title" style="font-size:13px;margin-bottom:8px">Family E — Monitor well temperatures (TU, TS — contextual signal)</div>
+  <table class="feat-table" style="margin-bottom:1rem">
+    <thead><tr><th>Feature</th><th>Construction</th><th>Notes</th><th>Importance</th></tr></thead>
+    <tbody>
+      <tr><td><code>TU_INT_mean_lag_k</code></td><td>(TU-TEC-INT-U + TU-TEC-INT-L) / 2 at t−k</td><td>k = 60, 240 min. TU is a monitor well — minimal thermal response expected but any anomalous rise is informative.</td><td><span class="imp-badge imp-low">Lower</span></td></tr>
+      <tr><td><code>TS_INT_mean_lag_k</code></td><td>(TS-TEC-INT-U + TS-TEC-INT-L) / 2 at t−k</td><td>k = 60, 240 min. Same as TU. Include but expect Lasso to zero these out if they carry no signal.</td><td><span class="imp-badge imp-low">Lower</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="card">
+    <div class="card-title">Total feature count summary</div>
+    <div class="card-body">Family A: 24 features · Family B: 19 features (per well) · Family C: 15 features · Family D: 8 features · Family E: 4 features = <span class="bold">~70 features per target well</span>. This is a manageable size for Random Forest and Lasso. For LSTM, reduce to ~30 by using only the most physically motivated lags (marked Critical/High above).</div>
+  </div>
+  <div class="warn-box" style="margin-top:10px"><span class="bold">Cross-well contamination rule:</span> When predicting TL temperature, do not include TN temperature lags from the same time window — and vice versa. TL and TN respond to the same injection and are correlated; including contemporaneous TN lags when predicting TL allows the model to cheat via a proxy that contains future information about the shared thermal signal. Only include the other production well's temperature if it is lagged by at least h minutes (the prediction horizon).</div>
+</div>
+
+<!-- MODELS -->
+<div class="section" id="s3">
+  <div class="sec-title">Model specifications</div>
+  <div class="sec-sub">Five models are fitted per (well, horizon) pair. All share the same feature store and train/test boundaries. Models are fitted independently — no ensembling until the ablation study confirms it adds value.</div>
+
+  <div class="model-card">
+    <div class="model-header"><span class="model-role mr-baseline">Baseline 1</span><span class="model-name">Persistence model</span></div>
+    <div class="model-body">Predicts T(t+h) = T(t) for all h. No fitting required. Computed directly from the test set. This is the primary performance floor — every other model is measured against it via skill score. <span class="bold">Never omit this from any reported result.</span></div>
+    <div class="param-grid">
+      <div class="param-item"><div class="param-name">Hyperparameters</div><div class="param-val">None</div></div>
+      <div class="param-item"><div class="param-name">Training time</div><div class="param-val">Zero</div></div>
+      <div class="param-item"><div class="param-name">Inputs</div><div class="param-val">T_target(t) only</div></div>
+      <div class="param-item"><div class="param-name">Expected RMSE edge over RF</div><div class="param-val">Beats RF at h=15 min; loses at h≥60 min during breakthrough</div></div>
+    </div>
+  </div>
+
+  <div class="model-card">
+    <div class="model-header"><span class="model-role mr-baseline">Baseline 2</span><span class="model-name">Climatological curve (mean trajectory)</span></div>
+    <div class="model-body">Bin elapsed_injection_min into 60-minute buckets. Compute the mean delta_T_above_T0 per bin from the training set. Predict using this smooth mean curve, regardless of current sensor readings. This baseline captures the average thermal trend. If your trained model doesn't beat it, the model has learned nothing beyond "what temperatures look like on average at this point in the experiment."</div>
+    <div class="param-grid">
+      <div class="param-item"><div class="param-name">Bin width</div><div class="param-val">60 min (tunable)</div></div>
+      <div class="param-item"><div class="param-name">Smoothing</div><div class="param-val">5-bin rolling mean on the curve</div></div>
+      <div class="param-item"><div class="param-name">Separate curves for</div><div class="param-val">TL and TN independently</div></div>
+      <div class="param-item"><div class="param-name">Fitted on</div><div class="param-val">Training set only</div></div>
+    </div>
+  </div>
+
+  <div class="model-card">
+    <div class="model-header"><span class="model-role mr-physics">Physics-informed</span><span class="model-name">Exponential approach model (EAM)</span></div>
+    <div class="model-body">Fits a parametric thermal response curve to the training set: <code>ΔT(t) = A × (1 − exp(−t / τ)) × f(Flow)</code> where A = asymptotic temperature rise, τ = thermal time constant, and f(Flow) is a flow-rate scaling factor. Parameters A, τ, and the flow exponent are estimated by nonlinear least squares (scipy.optimize.curve_fit). The EAM residuals are then used as features in the RF model (hybrid variant). Also serves as a standalone baseline that embeds physically correct functional form.</div>
+    <div class="param-grid">
+      <div class="param-item"><div class="param-name">Parameters to fit</div><div class="param-val">A (°C), τ (min), flow exponent β</div></div>
+      <div class="param-item"><div class="param-name">Fitting method</div><div class="param-val">Nonlinear least squares (L-BFGS-B)</div></div>
+      <div class="param-item"><div class="param-name">Initial guesses</div><div class="param-val">A = 20°C, τ = 3000 min, β = 0.5</div></div>
+      <div class="param-item"><div class="param-name">Fitted separately for</div><div class="param-val">TL and TN; report A and τ per well — these are geological outputs</div></div>
+    </div>
+  </div>
+
+  <div class="model-card">
+    <div class="model-header"><span class="model-role mr-main">Primary</span><span class="model-name">Random forest with lag features (RF-Lag)</span></div>
+    <div class="model-body">One RF regressor per (well, horizon). Full feature set (~70 features). Direct multi-step strategy — predict t+h directly, not recursively. Hyperparameters tuned via expanding-window CV on the training set. Features ranked by permutation importance and SHAP values post-training. The SHAP-dominant lag for TC injection temperature is compared against the cross-correlation peak lag as a physical validity check.</div>
+    <div class="param-grid">
+      <div class="param-item"><div class="param-name">n_estimators</div><div class="param-val">500 (CV range: 200–1000)</div></div>
+      <div class="param-item"><div class="param-name">max_features</div><div class="param-val">CV over {sqrt, 0.3, 0.5, 0.7}</div></div>
+      <div class="param-item"><div class="param-name">min_samples_leaf</div><div class="param-val">CV over {5, 10, 20, 50}</div></div>
+      <div class="param-item"><div class="param-name">max_depth</div><div class="param-val">None (fully grown, rely on min_samples_leaf)</div></div>
+      <div class="param-item"><div class="param-name">CV strategy</div><div class="param-val">Expanding-window, 5 folds, metric = RMSE</div></div>
+      <div class="param-item"><div class="param-name">Hybrid variant</div><div class="param-val">Add EAM residuals as 3 extra features (A_hat, τ_hat, residual_t)</div></div>
+    </div>
+  </div>
+
+  <div class="model-card">
+    <div class="model-header"><span class="model-role mr-advanced">Advanced</span><span class="model-name">LSTM encoder-decoder</span></div>
+    <div class="model-body">Sequence-to-sequence model. Encoder reads the past W=1440-minute window; decoder outputs all four horizons simultaneously (multi-task). Input features: reduced set of ~30 (Critical + High importance only) to limit overfitting. Trained with early stopping on fold-5 validation loss. Provides a performance ceiling and attention weight analysis for physical interpretation.</div>
+    <div class="param-grid">
+      <div class="param-item"><div class="param-name">Lookback W</div><div class="param-val">1440 min (24 hr)</div></div>
+      <div class="param-item"><div class="param-name">Hidden units</div><div class="param-val">CV over {32, 64, 128}</div></div>
+      <div class="param-item"><div class="param-name">Layers</div><div class="param-val">2 stacked LSTM layers</div></div>
+      <div class="param-item"><div class="param-name">Dropout</div><div class="param-val">0.2 (input + recurrent)</div></div>
+      <div class="param-item"><div class="param-name">Optimizer</div><div class="param-val">Adam, lr=1e-3, reduce on plateau</div></div>
+      <div class="param-item"><div class="param-name">Early stopping</div><div class="param-val">patience=15 epochs on val RMSE</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EVALUATION -->
+<div class="section" id="s4">
+  <div class="sec-title">Evaluation protocol</div>
+  <div class="sec-sub">All metrics computed on the held-out test set (last 22 days of hot injection phase). The test set is touched exactly once per model, after all hyperparameter decisions are frozen. Results are reported across three stratifications: full test period, breakthrough window, and steady-state window.</div>
+
+  <div class="eval-block">
+    <div class="eval-group-title">Layer 1 — Predictive accuracy metrics (all models, all horizons)</div>
+    <div class="metric-row">
+      <div><div class="mr-name">RMSE per (well, horizon)</div><div class="mr-how">√[ mean( (ΔT_pred − ΔT_true)² ) ] on full test set</div></div>
+      <div class="mr-how">Report as 2×4 matrix (wells × horizons). Primary numerical output.</div>
+      <div class="mr-thresh">Report absolute value in °C. Compare across models.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">Skill score SS(h)</div><div class="mr-how">1 − RMSE_model / RMSE_persistence, per horizon</div></div>
+      <div class="mr-how">Positive = beats persistence. Negative = worse than doing nothing.</div>
+      <div class="mr-thresh">Target: SS &gt; 0.10 at h=60 min; &gt; 0.20 at h=240 min</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">Stratified MAE</div><div class="mr-how">MAE computed separately on breakthrough window (dΔT/dt &gt; 0.01°C/min sustained &gt; 30 min) and steady-state window</div></div>
+      <div class="mr-how">Detects models that perform well overall by excelling on easy steady-state while failing during the critical breakthrough event.</div>
+      <div class="mr-thresh">MAE_breakthrough must be ≤ 2× MAE_steady_state. Larger ratio = model fails when it matters.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">Physical bounds violation rate</div><div class="mr-how">Fraction of predictions outside [T₀ − 0.5, T_inject_max + 0.5]</div></div>
+      <div class="mr-how">Count rows violating bounds; report as % of test set per model.</div>
+      <div class="mr-thresh">Must be 0%. Apply post-hoc clipping; report clip rate separately.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">MAE vs climatological baseline</div><div class="mr-how">Compute separately: does the model beat the mean-curve baseline?</div></div>
+      <div class="mr-how">A model that doesn't beat the climatological curve has learned only the average trend, not current-state-sensitive transport.</div>
+      <div class="mr-thresh">Must beat climatological baseline at h=240 min by &gt; 10%.</div>
+    </div>
+  </div>
+
+  <div class="eval-block">
+    <div class="eval-group-title">Layer 2 — Physical validity checks (primary model RF-Lag + LSTM)</div>
+    <div class="metric-row">
+      <div><div class="mr-name">Breakthrough onset timing error</div><div class="mr-how">Define onset: first ΔT &gt; 2°C sustained &gt; 30 min. Compare true onset time to earliest time the h=240 min model first predicts ΔT &gt; 2°C.</div></div>
+      <div class="mr-how">Measures whether the model can anticipate the thermal front arrival, not just react to it after the fact.</div>
+      <div class="mr-thresh">Target: |error| &lt; 3 hrs at h=240 min horizon.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">Peak attenuation factor error</div><div class="mr-how">α_true = ΔT_prod_peak / ΔT_inject_peak. α_pred = predicted_peak / ΔT_inject_peak. Report (α_pred − α_true) / α_true.</div></div>
+      <div class="mr-how">Tests whether the model has learned correct heat loss to the rock matrix en route.</div>
+      <div class="mr-thresh">Target: fractional error &lt; 15%.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">SHAP lag vs cross-corr lag</div><div class="mr-how">Extract lag of highest mean |SHAP| for TC_INT_mean_lag_k features. Compute cross-correlation peak lag τ* between TC injection temp and TL/TN response. Compare.</div></div>
+      <div class="mr-how">If the model relies on a 5-min lag but τ* = 4 hours, it has found spurious correlation, not the thermal signal.</div>
+      <div class="mr-thresh">|SHAP-dominant lag − τ*| &lt; 20% of τ*.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">Flow-rate sensitivity ratio</div><div class="mr-how">Segment test period: top 25% Net Flow rows vs bottom 25%. Compute mean predicted dΔT/dt (°C/min) in each segment.</div></div>
+      <div class="mr-how">Physical expectation: higher flow → faster thermal transport → steeper predicted temperature rise.</div>
+      <div class="mr-thresh">Ratio (high-flow dΔT/dt) / (low-flow dΔT/dt) &gt; 1.3.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">TL vs TN forecast differentiation</div><div class="mr-how">Pearson correlation between predicted TL series and predicted TN series on test set at h=240 min.</div></div>
+      <div class="mr-how">Spatially distinct wells should show distinct predictions. Near-identical forecasts indicate the model learned a shared signal, not well-specific transport.</div>
+      <div class="mr-thresh">Correlation &lt; 0.90 at h=240 min.</div>
+    </div>
+    <div class="metric-row">
+      <div><div class="mr-name">Cumulative heat monotonicity</div><div class="mr-how">Plot cumulative_heat_input (x) vs predicted ΔT at h=240 min (y) for test set. Fit isotonic regression. Count monotonicity violations.</div></div>
+      <div class="mr-how">More injected heat should not produce lower predicted temperatures under steady injection.</div>
+      <div class="mr-thresh">&lt; 5% of test-set rows violate monotonicity during non-shutdown periods.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABLATIONS -->
+<div class="section" id="s5">
+  <div class="sec-title">Ablation studies</div>
+  <div class="sec-sub">Controlled experiments that isolate the contribution of individual design decisions. Each ablation changes exactly one thing relative to the primary RF-Lag model. Run on the full train/test split — not just CV — and report skill score delta vs the full model.</div>
+
+  <div class="ab-row">
+    <div class="ab-label">A1 — Remove cumulative heat feature</div>
+    <div class="ab-cell ab-a"><div class="ab-a-label">Full model</div><div class="ab-text">Includes <code>cumulative_heat_input</code> as a feature</div></div>
+    <div class="ab-cell ab-b"><div class="ab-b-label">Ablated model</div><div class="ab-text">Drop <code>cumulative_heat_input</code> only; all other features unchanged</div></div>
+  </div>
+  <div class="ab-row">
+    <div class="ab-label">A2 — Remove flow rate features</div>
+    <div class="ab-cell ab-a"><div class="ab-a-label">Full model</div><div class="ab-text">Family B (Net Flow lags, production flow lags) included</div></div>
+    <div class="ab-cell ab-b"><div class="ab-b-label">Ablated model</div><div class="ab-text">Drop all Family B features. Tests whether the model has learned to use advective transport speed.</div></div>
+  </div>
+  <div class="ab-row">
+    <div class="ab-label">A3 — Temperature-only model</div>
+    <div class="ab-cell ab-a"><div class="ab-a-label">Full model</div><div class="ab-text">All five feature families</div></div>
+    <div class="ab-cell ab-b"><div class="ab-b-label">Ablated model</div><div class="ab-text">Families A + C only (injection temp + autoregressive target). Measures the combined value of flow, engineered, and monitor features.</div></div>
+  </div>
+  <div class="ab-row">
+    <div class="ab-label">A4 — Remove elapsed time feature</div>
+    <div class="ab-cell ab-a"><div class="ab-a-label">Full model</div><div class="ab-text">Includes <code>elapsed_injection_min</code></div></div>
+    <div class="ab-cell ab-b"><div class="ab-b-label">Ablated model</div><div class="ab-text">Drop elapsed time. Tests whether the model is using clock-time trend vs physical transport features. If dropping this hurts more than dropping flow rate, the model is mainly a trend learner.</div></div>
+  </div>
+  <div class="ab-row">
+    <div class="ab-label">A5 — Short vs long lookback</div>
+    <div class="ab-cell ab-a"><div class="ab-a-label">Long lookback</div><div class="ab-text">Lags up to 1440 min included (primary model)</div></div>
+    <div class="ab-cell ab-b"><div class="ab-b-label">Short lookback</div><div class="ab-text">Lags truncated to 120 min maximum. If short-lookback model performs nearly as well, the long thermal memory encoded in the extended lags is not actually being used.</div></div>
+  </div>
+  <div class="ab-row">
+    <div class="ab-label">A6 — RF vs RF+EAM hybrid</div>
+    <div class="ab-cell ab-a"><div class="ab-a-label">Pure RF</div><div class="ab-text">No physics model features</div></div>
+    <div class="ab-cell ab-b"><div class="ab-b-label">RF + EAM residual</div><div class="ab-text">Adds EAM-predicted ΔT and residual as extra features. Measures whether the physics prior improves accuracy, especially on the physical validity checks.</div></div>
+  </div>
+  <div class="ab-row" style="margin-bottom:1rem">
+    <div class="ab-label">A7 — ΔT target vs raw T target</div>
+    <div class="ab-cell ab-a"><div class="ab-a-label">Primary model</div><div class="ab-text">Predicts <code>delta_T_above_T0</code> (temperature rise above ambient baseline)</div></div>
+    <div class="ab-cell ab-b"><div class="ab-b-label">Raw T model</div><div class="ab-text">Predicts absolute temperature. Tests whether removing the well-offset via T₀ subtraction materially improves model generalisation.</div></div>
+  </div>
+
+  <div class="info-box"><span class="bold">Interpretation key:</span> If A2 (removing flow) causes a large skill score drop at h=240 min, the model is correctly using advective transport speed. If A4 (removing elapsed time) causes a larger drop than A2, the model is primarily a trend learner. If A5 shows that short lookback performs nearly as well as long lookback, the thermal memory in the extended lags is not adding signal — this is a data limitation finding worth reporting.</div>
+</div>
+
+<!-- RUN ORDER -->
+<div class="section" id="s6">
+  <div class="sec-title">Step-by-step run order</div>
+  <div class="sec-sub">All steps in sequence. Steps 1–6 are data and feature preparation. Steps 7–11 are model fitting and evaluation. Steps 12–15 are analysis and reporting. Only Step 13 (test set evaluation) is irreversible — everything before it can be iterated.</div>
+
+  <div class="step-row"><div class="step-num">1</div><div class="step-content"><div class="step-title">Compute T₀ per well</div><div class="step-desc">Load the pre-injection segment (Dec 10–13). For each well, compute T₀ = median of (TEC-INT-U + TEC-INT-L)/2 over this window. Store as a constant per well. This is never recomputed — it anchors all ΔT calculations.</div></div></div>
+  <div class="step-row"><div class="step-num">2</div><div class="step-content"><div class="step-title">Isolate hot injection segment and identify ramp-up</div><div class="step-desc">Slice from injection start timestamp to phase 1 end. Identify the ramp-up window: first row where Net Flow &gt; 0.5 L/min to first row where Net Flow has been &gt; 80% of its 6-hr rolling max for 60 consecutive minutes. Exclude the ramp-up rows, log their count.</div></div></div>
+  <div class="step-row"><div class="step-num">3</div><div class="step-content"><div class="step-title">Check for sensor drift in monitor wells</div><div class="step-desc">Plot TU-TEC-INT-U and TS-TEC-INT-U over the full hot phase. Fit a linear trend. If slope &gt; 0.002°C/min (0.12°C/hr) in a monitor well far from TC, apply linear detrend to that well's temperature columns before feature construction.</div></div></div>
+  <div class="step-row"><div class="step-num">4</div><div class="step-content"><div class="step-title">Construct all features and targets</div><div class="step-desc">Apply lag construction, rolling windows, cumulative heat integral, elapsed time, and ΔT gradient. Compute delta_T_above_T0 for all wells. Apply the lag-boundary exclusion rule (drop first W rows post-ramp-up). Produce a single flat feature matrix — one row per minute — with 70 features and 8 target columns (2 wells × 4 horizons). Save this as the canonical feature store.</div></div></div>
+  <div class="step-row"><div class="step-num">5</div><div class="step-content"><div class="step-title">Apply train/test split and compute cross-corr lag τ*</div><div class="step-desc">Split at day-50 boundary. Apply lag-boundary exclusion at the split point. Compute the cross-correlation between TC_INT_mean and each production well's delta_T on the training set only. Record the peak lag τ* for TL and TN — this is used later as ground truth for the SHAP lag validity check.</div></div></div>
+  <div class="step-row"><div class="step-num">6</div><div class="step-content"><div class="step-title">Fit persistence and climatological baselines</div><div class="step-desc">Compute persistence RMSE for all 8 targets on the test set. Fit the climatological mean curve (60-min bins, 5-bin smoothed) from the training set. Evaluate on test set. Record baseline RMSE values — these are the denominators for all skill scores computed later.</div></div></div>
+  <div class="step-row"><div class="step-num">7</div><div class="step-content"><div class="step-title">Fit EAM (exponential approach model)</div><div class="step-desc">Run nonlinear least squares on training set for TL and TN. Record A, τ, and flow exponent β. These are scientific outputs independent of the ML performance. Add EAM residuals as features to the feature store (for the hybrid variant). Plot the EAM fit overlaid on the actual training temperature curve to visually confirm fit quality.</div></div></div>
+  <div class="step-row"><div class="step-num">8</div><div class="step-content"><div class="step-title">Hyperparameter search for RF-Lag via expanding-window CV</div><div class="step-desc">Grid search over {max_features, min_samples_leaf} using 5 expanding-window folds. Optimise for mean RMSE at h=240 min (primary horizon). Apply the same hyperparameters for all horizons and both wells to prevent per-target overfitting. Log best parameters and CV score.</div></div></div>
+  <div class="step-row"><div class="step-num">9</div><div class="step-content"><div class="step-title">Fit all ablation variants (A1–A7)</div><div class="step-desc">Using the CV-selected hyperparameters, retrain the RF with each ablated feature set on the full training set. Record training-set RMSE for each variant (sanity check: should match CV results approximately). Do not evaluate on the test set yet.</div></div></div>
+  <div class="step-row"><div class="step-num">10</div><div class="step-content"><div class="step-title">Train LSTM</div><div class="step-desc">Train with early stopping using fold-5 as the validation window. Log training curves. If validation loss diverges after epoch 20 without improvement, reduce hidden units or increase dropout. Save the best checkpoint (lowest validation RMSE).</div></div></div>
+  <div class="step-row"><div class="step-num">11</div><div class="step-content"><div class="step-title">Freeze all models — compute SHAP on training set</div><div class="step-desc">Run SHAP TreeExplainer on the RF-Lag model using the training set. Record the mean |SHAP| per feature. Identify the lag value k of the TC_INT_mean_lag_k feature with highest mean |SHAP|. Compare to τ* from Step 5. Log the discrepancy. This is done before test-set evaluation so the physical validity check is not influenced by test outcomes.</div></div></div>
+  <div class="step-row"><div class="step-num">12</div><div class="step-content"><div class="step-title">Test set evaluation — run once, record everything</div><div class="step-desc">Apply all frozen models to the test set. Compute all Layer 1 and Layer 2 metrics. Check physical bounds violations and apply clipping. Record stratified MAE for breakthrough vs steady-state windows. Do not re-train any model based on test results — this step is final.</div></div></div>
+  <div class="step-row"><div class="step-num">13</div><div class="step-content"><div class="step-title">Ablation delta analysis</div><div class="step-desc">Compute skill score delta = SS(full model) − SS(ablated model) for each of A1–A7 at h=240 min. Rank ablations by impact. The ranking answers: which feature family carries the most predictive value? Which design choice (ΔT vs raw T, long vs short lookback) had the largest effect?</div></div></div>
+  <div class="step-row"><div class="step-num">14</div><div class="step-content"><div class="step-title">Sensitivity analysis on T₀ and breakthrough onset criterion</div><div class="step-desc">Recompute breakthrough onset timing error using three alternative T₀ definitions (mean, 10th percentile, first-hour median) and two onset thresholds (ΔT &gt; 1°C, ΔT &gt; 3°C). Report the range of timing error values. This quantifies how much the physical validity conclusions depend on definitional choices.</div></div></div>
+  <div class="step-row"><div class="step-num">15</div><div class="step-content"><div class="step-title">Compile final outputs</div><div class="step-desc">Produce the 8-cell RMSE matrix, skill score matrix, physical validity scorecard, ablation ranking, EAM-fitted parameters (A, τ per well), SHAP lag plot vs τ*, and flow-rate sensitivity ratio. These together constitute the full experiment result.</div></div></div>
+</div>
+
+<!-- GO / NO-GO -->
+<div class="section" id="s7">
+  <div class="sec-title">Go / no-go decision table</div>
+  <div class="sec-sub">Each check is applied after Step 12. Results below the threshold trigger a specific diagnosis and remediation path — not re-running the test set with a modified model.</div>
+
+  <table class="decision-table">
+    <thead><tr><th>Check</th><th>Threshold</th><th>If failed — diagnosis</th><th>Remediation (pre-test only)</th><th>Decision</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="bold">Skill score h=60 min (TL)</td>
+        <td>&gt; 0.10</td>
+        <td>Model no better than persistence at operationally relevant horizon. Likely: autoregressive features dominate, transport not learned.</td>
+        <td>Re-run ablation A2 to confirm; add cumulative heat integral if not already included; revisit feature family B.</td>
+        <td><span class="revise">Revise</span></td>
+      </tr>
+      <tr>
+        <td class="bold">Skill score h=240 min</td>
+        <td>&gt; 0.20</td>
+        <td>Model not learning 4-hr ahead thermal transport. Most important single metric.</td>
+        <td>Diagnosis via ablations: if A4 hurts more than A2, model is a trend learner → add flow-rate interaction terms; extend lookback window.</td>
+        <td><span class="stop">Investigate</span></td>
+      </tr>
+      <tr>
+        <td class="bold">Beats climatological baseline at h=240</td>
+        <td>&gt; 10% MAE improvement</td>
+        <td>Model has learned average trajectory only — no current-state sensitivity.</td>
+        <td>Confirm autoregressive lags of the target well are included; check for feature scaling issues masking current-state signal.</td>
+        <td><span class="stop">Investigate</span></td>
+      </tr>
+      <tr>
+        <td class="bold">Physical bounds violations</td>
+        <td>= 0% (after clipping)</td>
+        <td>Model predicting physically impossible temperatures.</td>
+        <td>Apply post-hoc clipping at [T₀ − 0.5, T_inject_max + 0.5]. Report clip rate. Not a model failure — an output hygiene step.</td>
+        <td><span class="go">Clip and proceed</span></td>
+      </tr>
+      <tr>
+        <td class="bold">MAE ratio (breakthrough / steady-state)</td>
+        <td>≤ 2.0</td>
+        <td>Model performs poorly exactly during the breakthrough event — highest scientific and operational value period.</td>
+        <td>Upsample breakthrough-window rows in training (replicate or weight by dΔT/dt); add rolling variance of target temperature as a feature to flag rapid-change periods.</td>
+        <td><span class="revise">Revise</span></td>
+      </tr>
+      <tr>
+        <td class="bold">Breakthrough timing error</td>
+        <td>&lt; 3 hrs at h=240 min</td>
+        <td>Model anticipates breakthrough at the wrong time. Possible lag misspecification.</td>
+        <td>Check SHAP-dominant lag vs τ* discrepancy first. If discrepancy &gt; 20% τ*, extend lag grid to cover τ*. Review ramp-up exclusion boundary.</td>
+        <td><span class="revise">Revise</span></td>
+      </tr>
+      <tr>
+        <td class="bold">SHAP lag vs τ* discrepancy</td>
+        <td>&lt; 20% of τ*</td>
+        <td>Model using wrong temporal lag — learned a spurious correlation. High risk it will fail at different flow rates.</td>
+        <td>This is a diagnostic warning, not a hard stop. Report it. Add explicit features at lag = τ* if not already present.</td>
+        <td><span class="revise">Report &amp; note</span></td>
+      </tr>
+      <tr>
+        <td class="bold">Flow-rate sensitivity ratio</td>
+        <td>&gt; 1.3</td>
+        <td>Model insensitive to flow rate. Most important physical validity check. Means model is a time-trend learner that will fail under flow-rate changes.</td>
+        <td>Confirm Family B features present. Run A2 ablation — if flow removal makes no difference, model has not learned advection. Revisit feature interactions (cumulative_heat requires both flow and temperature).</td>
+        <td><span class="stop">Investigate</span></td>
+      </tr>
+      <tr>
+        <td class="bold">TL vs TN forecast correlation</td>
+        <td>&lt; 0.90 at h=240 min</td>
+        <td>Model producing near-identical predictions for spatially distinct wells. Learned shared injection signal only.</td>
+        <td>Confirm well-specific autoregressive features are included. Check that TN features are not contaminating TL model and vice versa.</td>
+        <td><span class="revise">Revise</span></td>
+      </tr>
+      <tr>
+        <td class="bold">EAM fit quality (R² on training set)</td>
+        <td>&gt; 0.80</td>
+        <td>Exponential model is a poor fit to the thermal response shape — functional form may be wrong.</td>
+        <td>Try a sigmoid form or two-component exponential (fast advective + slow conductive). EAM residuals as RF features will be noisy if the EAM itself fits poorly.</td>
+        <td><span class="revise">Revise EAM only</span></td>
+      </tr>
+      <tr>
+        <td class="bold">All Layer 1 + Layer 2 checks pass</td>
+        <td>All thresholds met</td>
+        <td>—</td>
+        <td>—</td>
+        <td><span class="go">Full go</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="success-box" style="margin-top:1rem"><span class="bold">Recommended reporting standard:</span> Report every check in the table, whether passed or failed. A paper or report that shows skill score without the flow-rate sensitivity check, or RMSE without the breakthrough-window stratification, is presenting an incomplete and potentially misleading picture of model quality. The physical validity checks are not optional extras — they are the primary scientific contribution of this experiment.</div>
+</div>
+
+</div>
+
+<script>
+function nav(btn, id) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('on'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById(id).classList.add('on');
+}
+</script>
