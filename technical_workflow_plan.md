@@ -2,6 +2,31 @@
 
 ## 1. Data Acquisition
 
+### Model structure
+
+#### In general 
+
+y ~ f(X) 
+
+y = dependendt variable (vector)
+f = function relating X and y 
+X = matrix where x_i is a feature X = [x_1, x_2, ...., x_n]
+n = number of features
+
+feature engineering is the process of taking raw data (observations) and creating x_i features (variables
+
+#### In specefic for this problem
+
+water_volume ~ f(snow, climate, etc.)
+
+f is a complex nonliner function
+water_vol = is the dependent variable
+snow, climate, etc. = features 
+
+eg. snow_1, snow_2, could be features but they might not be independet
+eg. snow_agg is an average of snow_1, snow_2, etc 
+
+
 ### Target Variable
 - **April–September naturalized streamflow volume at The Dalles** (acre-feet or kcfs-days)
 - Source natural flow data from BPA historical streamflow records or the referenced UW/nature.com datasets
