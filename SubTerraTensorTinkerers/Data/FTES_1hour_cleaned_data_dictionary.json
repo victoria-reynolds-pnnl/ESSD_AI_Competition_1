@@ -1,0 +1,1429 @@
+{
+  "dataset_name": "df_cleaned",
+  "generated_utc": "2026-04-01T16:59:58.405597+00:00",
+  "row_count": 1702,
+  "column_count": 80,
+  "index": {
+    "name": "Time",
+    "dtype": "datetime64[ns]",
+    "is_datetime_index": true,
+    "min": "2024-12-13T20:00:00",
+    "max": "2025-02-22T17:00:00"
+  },
+  "fields": [
+    {
+      "name": "Injection EC",
+      "description": "Electrical conductivity of injection stream.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 362.3995165808043,
+        "mean": 369.8885220137473,
+        "max": 377.3726741311426
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "Net Flow",
+      "description": "Net flow rate (system-level).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.5251028318136435,
+        "mean": 1.972133880841349,
+        "max": 2.5064570357142855
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Interval Flow",
+      "description": "Flow rate measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.004872955392861738,
+        "mean": 0.00677333831108191,
+        "max": 0.00867660125646637
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Bottom Flow",
+      "description": "Flow rate measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.0015431464419427576,
+        "max": 0.003310399593034996
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Collar Flow",
+      "description": "Flow rate measured at collar.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 7.153638888888889e-05,
+        "mean": 0.26231463959816337,
+        "max": 0.5599447112479016
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Interval EC",
+      "description": "Electrical conductivity measured at interval sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 316.82310714777776,
+        "mean": 1868.8962054412104,
+        "max": 2193.9815507466665
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Bottom EC",
+      "description": "Electrical conductivity measured at bottom sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 442.6931957,
+        "mean": 1106.6506588449986,
+        "max": 2238.2231
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Interval Pressure",
+      "description": "Pressure measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 14.182391366950581,
+        "max": 842.907813717505
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Bottom Pressure",
+      "description": "Pressure measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 16.596741732756215,
+        "mean": 27.235936232113634,
+        "max": 127.11649212218384
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Packer Pressure",
+      "description": "Pressure measured at packer.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 662.6399786961111,
+        "mean": 1018.8990840575441,
+        "max": 1615.122182880231
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL-TEC-INT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.707678269477796,
+        "mean": 26.266458995701676,
+        "max": 26.935487629166666
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL-TEC-INT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.81291220161966,
+        "mean": 26.160932676344103,
+        "max": 26.550199824166665
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL-TEC-BOT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.765433591175647,
+        "mean": 26.193038118992895,
+        "max": 26.711477503888887
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL-TEC-BOT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.916476622451828,
+        "mean": 26.13998611586756,
+        "max": 26.390656671111113
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Interval Flow",
+      "description": "Flow rate measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.33953331424354444,
+        "max": 1.3790312126836364
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Bottom Flow",
+      "description": "Flow rate measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0011417933333333,
+        "mean": 0.14540859306210446,
+        "max": 0.5284535941666667
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Collar Flow",
+      "description": "Flow rate measured at collar.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.20654891100752007,
+        "max": 0.8584777446305231
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Interval EC",
+      "description": "Electrical conductivity measured at interval sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 821.7202996842105,
+        "mean": 942.720520181943,
+        "max": 1175.787873731842
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Bottom EC",
+      "description": "Electrical conductivity measured at bottom sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 779.5665171847222,
+        "mean": 1068.2278575349683,
+        "max": 1701.8318433127197
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Interval Pressure",
+      "description": "Pressure measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 3.956736905982641,
+        "max": 596.7760314588961
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Bottom Pressure",
+      "description": "Pressure measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.9478820717021199,
+        "max": 195.8481421000407
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Packer Pressure",
+      "description": "Pressure measured at packer.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 11.050287348044693,
+        "mean": 422.9823290082654,
+        "max": 1987.8462802138624
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN-TEC-INT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.206293759651032,
+        "mean": 28.973652560453736,
+        "max": 30.37030427472222
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN-TEC-INT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 27.22753836263613,
+        "mean": 29.919008118110344,
+        "max": 30.88465166768547
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN-TEC-BOT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 27.59541430318651,
+        "mean": 29.881413912343657,
+        "max": 30.691433204444447
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN-TEC-BOT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 27.069124228919748,
+        "mean": 30.015233164888322,
+        "max": 30.78788727527778
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Interval Flow",
+      "description": "Flow rate measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 2.0447538731823718e-05,
+        "max": 0.016868201091343512
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Bottom Flow",
+      "description": "Flow rate measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.022924966474370288,
+        "max": 0.04804603260665932
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Collar Flow",
+      "description": "Flow rate measured at collar.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.06206446930640711,
+        "mean": 0.06705639334712676,
+        "max": 0.07214753146219587
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Interval EC",
+      "description": "Electrical conductivity measured at interval sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 194.8077596111111,
+        "mean": 233.50671246233708,
+        "max": 285.11904262471137
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Bottom EC",
+      "description": "Electrical conductivity measured at bottom sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 1958.1406869465118,
+        "mean": 2078.2760834129285,
+        "max": 2108.730657269797
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Interval Pressure",
+      "description": "Pressure measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 3660.045949210167,
+        "mean": 4832.62213225725,
+        "max": 5142.932380059036
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Bottom Pressure",
+      "description": "Pressure measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 51.08350988552376,
+        "mean": 67.65341694452935,
+        "max": 768.8069669062037
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "Injection Pressure",
+      "description": "Injection line pressure.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 3662.3289895948965,
+        "mean": 4824.15948497458,
+        "max": 5133.407944566868
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Packer Pressure",
+      "description": "Pressure measured at packer.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 4191.482971154225,
+        "mean": 5299.923495011317,
+        "max": 5611.733713863855
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC-TEC-INT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 35.09679870723508,
+        "mean": 40.22547753822571,
+        "max": 42.93811099638889
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC-TEC-INT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 36.744688277619375,
+        "mean": 47.535239365224726,
+        "max": 52.118942325
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC-TEC-BOT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 36.27277151184785,
+        "mean": 48.0810573823478,
+        "max": 52.77743898444445
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC-TEC-BOT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 28.997371122364555,
+        "mean": 37.32708912727382,
+        "max": 42.18972963833333
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Interval Flow",
+      "description": "Flow rate measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Bottom Flow",
+      "description": "Flow rate measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.01147554941483696,
+        "mean": 0.01550140939394788,
+        "max": 0.019563681252673396
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Collar Flow",
+      "description": "Flow rate measured at collar.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.002291646693368359,
+        "mean": 0.004169874293997016,
+        "max": 0.006061032520841048
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Interval EC",
+      "description": "Electrical conductivity measured at interval sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 2090.250841553602,
+        "mean": 2093.9424516056697,
+        "max": 2096.3084179894445
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Bottom EC",
+      "description": "Electrical conductivity measured at bottom sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 798.709059818219,
+        "mean": 2140.083986257061,
+        "max": 2249.999672
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Interval Pressure",
+      "description": "Pressure measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 1876.339271655983,
+        "mean": 2365.2499370176765,
+        "max": 2569.277302421945
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Bottom Pressure",
+      "description": "Pressure measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -3.4059160505445405,
+        "mean": 424.8863069949382,
+        "max": 2444.8298635461133
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "PT 403",
+      "description": "Column from cleaned dataset.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "—",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 1908.290429445199,
+        "mean": 2398.240031829882,
+        "max": 2602.773515095238
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Packer Pressure",
+      "description": "Pressure measured at packer.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 2344.5452537016986,
+        "mean": 2836.046142548975,
+        "max": 3043.520870523611
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU-TEC-INT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.148472529087044,
+        "mean": 25.221407061670593,
+        "max": 25.293624899377363
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU-TEC-INT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.215041607205663,
+        "mean": 25.281049864325855,
+        "max": 25.346397052488264
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU-TEC-BOT-U",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.229123031762587,
+        "mean": 25.296331549681884,
+        "max": 25.362968691173666
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU-TEC-BOT-L",
+      "description": "Temperature sensor (TEC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "°C",
+      "transformations": [
+        "may be clipped to plausible range (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 25.205662152249666,
+        "mean": 25.27642895462098,
+        "max": 25.3154213902439
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Interval Flow",
+      "description": "Flow rate measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Bottom Flow",
+      "description": "Flow rate measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 8.549644983794857e-06,
+        "max": 0.00018658660220738406
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Collar Flow",
+      "description": "Flow rate measured at collar.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.025469776873735233,
+        "mean": 0.028337175821133938,
+        "max": 0.03120813344860687
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Interval EC",
+      "description": "Electrical conductivity measured at interval sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 427.8675345490199,
+        "mean": 436.7069366553153,
+        "max": 445.4868318943914
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Bottom EC",
+      "description": "Electrical conductivity measured at bottom sensor.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "µS/cm",
+      "transformations": [
+        "may have negatives flagged (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 645.7868084482759,
+        "mean": 671.936639407385,
+        "max": 690.1717385
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Interval Pressure",
+      "description": "Pressure measured at interval.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Bottom Pressure",
+      "description": "Pressure measured at bottom.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "PT 503",
+      "description": "Column from cleaned dataset.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "—",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -45.3447564416409,
+        "mean": -41.85597207387553,
+        "max": -38.36227907325032
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "PT 504",
+      "description": "Column from cleaned dataset.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "—",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 128.4443136384697,
+        "mean": 133.08509115457224,
+        "max": 137.7259360115843
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Packer Pressure",
+      "description": "Pressure measured at packer.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 3.604412339643652,
+        "mean": 37.02155911206272,
+        "max": 255.23590087128358
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Packer Center Depth",
+      "description": "Depth measurement/setting.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "ft",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 170.19999999999996,
+        "mean": 170.20000000000005,
+        "max": 170.2
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Packer Center Depth",
+      "description": "Depth measurement/setting.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "ft",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 133.6,
+        "mean": 133.59999999999997,
+        "max": 133.6
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC Packer Center Depth",
+      "description": "Depth measurement/setting.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "ft",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 142.0,
+        "mean": 142.0,
+        "max": 142.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Packer Center Depth",
+      "description": "Depth measurement/setting.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "ft",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 177.8,
+        "mean": 177.8,
+        "max": 177.8
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Packer Center Depth",
+      "description": "Depth measurement/setting.",
+      "dtype": "float64",
+      "format": "float",
+      "units": "ft",
+      "transformations": [],
+      "non_null_count": 0,
+      "null_count": 1702,
+      "stats": {
+        "min": null,
+        "mean": null,
+        "max": null
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "Phase",
+      "description": "Operational phase label (categorical).",
+      "dtype": "object",
+      "format": "string/categorical",
+      "units": "categorical",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": null,
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "Total_Production_Flow",
+      "description": "Engineered: sum of available producer interval flows (excludes TC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "L/min",
+      "transformations": [
+        "may be clipped negative→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0069194108333332,
+        "mean": 0.34630665255462634,
+        "max": 1.3853225362947474
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "Pressure_Differential",
+      "description": "Engineered: Injection Pressure minus mean of producer interval pressures (excludes TC).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi",
+      "transformations": [
+        "may be clipped below threshold→0 (if applied during cleaning)"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 2706.1734523554114,
+        "mean": 4228.312218651928,
+        "max": 4494.740843482831
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "Depth_Consistency_Flag",
+      "description": "Depth measurement/setting.",
+      "dtype": "int64",
+      "format": "integer",
+      "units": "binary",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TC_Impedance_Proxy",
+      "description": "Engineered impedance-like proxy: Pressure/(Net Flow + ε) (higher implies higher resistance for given flow).",
+      "dtype": "float64",
+      "format": "float",
+      "units": "psi/(L/min)",
+      "transformations": [],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": 1463.8527735318462,
+        "mean": 2628.4897324102726,
+        "max": 6956.902202166118
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Interval EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TL Interval EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.04574847047796569,
+        "max": 1.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TL Bottom EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TL Bottom EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.05083260969442388,
+        "max": 0.217340707124983
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Interval EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TN Interval EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.16631789864415386,
+        "max": 0.33770930950481415
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TN Bottom EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TN Bottom EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.35652256822928835,
+        "max": 0.6194336450681346
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Interval EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TU Interval EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.0010374448361989562,
+        "max": 0.0031660279980841102
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TU Bottom EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TU Bottom EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.0,
+        "max": 0.0
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Interval EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TS Interval EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.0018658392242694522,
+        "max": 0.055201970830434925
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    },
+    {
+      "name": "TS Bottom EC__MixFrac",
+      "description": "Estimated fraction of injection-like water at 'TS Bottom EC' using two-endmember EC mixing: (EC_prod - EC_baseline)/(Injection EC - EC_baseline), clipped to [0,1].",
+      "dtype": "float64",
+      "format": "float",
+      "units": "fraction (0–1)",
+      "transformations": [
+        "engineered from Injection EC + baseline window; clipped [0,1]"
+      ],
+      "non_null_count": 1702,
+      "null_count": 0,
+      "stats": {
+        "min": -0.0,
+        "mean": 0.0023822710043096156,
+        "max": 0.042522326011325676
+      },
+      "source_context": "cleaned dataset column; sensor channels typically prefixed by well (TL/TN/TU/TS/TC). Engineered fields noted in 'transformations'."
+    }
+  ]
+}

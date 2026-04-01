@@ -1,0 +1,81 @@
+Column,dtype,Units,Transformations,Non-null count
+Injection EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+Net Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TL Interval Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TL Bottom Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TL Collar Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TL Interval EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TL Bottom EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TL Interval Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TL Bottom Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TL Packer Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TL-TEC-INT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TL-TEC-INT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TL-TEC-BOT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TL-TEC-BOT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TN Interval Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TN Bottom Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TN Collar Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TN Interval EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TN Bottom EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TN Interval Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TN Bottom Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TN Packer Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TN-TEC-INT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TN-TEC-INT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TN-TEC-BOT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TN-TEC-BOT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TC Interval Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TC Bottom Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TC Collar Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TC Interval EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TC Bottom EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TC Interval Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TC Bottom Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+Injection Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TC Packer Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TC-TEC-INT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TC-TEC-INT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TC-TEC-BOT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TC-TEC-BOT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TU Interval Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TU Bottom Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TU Collar Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TU Interval EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TU Bottom EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TU Interval Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TU Bottom Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+PT 403,float64,—,None,1702
+TU Packer Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TU-TEC-INT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TU-TEC-INT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TU-TEC-BOT-U,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TU-TEC-BOT-L,float64,°C,clipped 0–100°C; MinMaxScaled (fit on train),1702
+TS Interval Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TS Bottom Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TS Collar Flow,float64,L/min,clipped negative→0; MinMaxScaled (fit on train),1702
+TS Interval EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TS Bottom EC,float64,µS/cm,negatives flagged (HITL); MinMaxScaled (fit on train),1702
+TS Interval Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TS Bottom Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+PT 503,float64,—,None,1702
+PT 504,float64,—,None,1702
+TS Packer Pressure,float64,psi,clipped <-5psi→0; MinMaxScaled (fit on train),1702
+TL Packer Center Depth,float64,ft,zeros→median; z-score cap; MinMaxScaled (fit on train),1702
+TN Packer Center Depth,float64,ft,zeros→median; z-score cap; MinMaxScaled (fit on train),1702
+TC Packer Center Depth,float64,ft,zeros→median; z-score cap; MinMaxScaled (fit on train),1702
+TU Packer Center Depth,float64,ft,zeros→median; z-score cap; MinMaxScaled (fit on train),1702
+TS Packer Center Depth,float64,ft,zeros→median; z-score cap; MinMaxScaled (fit on train),0
+Phase,object,categorical,one-hot encoded (see Phase_*),1702
+Total_Production_Flow,float64,L/min,engineered: sum(producer interval flows); MinMaxScaled (fit on train),1702
+Pressure_Differential,float64,psi,engineered: Injection Pressure − mean(producer interval pressures); MinMaxScaled (fit on train),1702
+Depth_Consistency_Flag,int64,binary,None,1702
+TC_Impedance_Proxy,float64,psi / (L/min),engineered: Pressure/(Net Flow+ε); MinMaxScaled (fit on train),1702
+TL Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+TL Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+TN Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+TN Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+TU Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+TU Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+TS Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+TS Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
