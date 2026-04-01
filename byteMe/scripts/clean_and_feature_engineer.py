@@ -67,7 +67,7 @@ Each change is keyed to the design's Run Order steps where relevant.
     ORIGINAL : No drift correction. TU and TS are monitor wells far from the
                injection well TC; a linear temperature rise in those wells over
                the 72-day Phase 1 period is instrument drift, not real thermal
-               response. Including drifted values corrupts Family E features.
+               response. Including drifted values corrupts Family C features.
     UPDATED  : check_monitor_drift() fits a linear trend to TEC-INT-U for TU
                and TS over the full hot-phase window. If |slope| > 0.12 °C/hr
                (= 0.002 °C/min, the design's threshold), a linear detrend is
@@ -81,10 +81,10 @@ Each change is keyed to the design's Run Order steps where relevant.
     UPDATED  : compute_interval_means() averages each well's upper/lower pair
                into XX_INT_mean and XX_BOT_mean before feature construction.
                These averaged columns are used as the primary temperature signal
-               throughout feature families A, C, and D.
+               throughout feature families A, B, and C.
 
-[7] cumulative_heat_input replaces cumulative_injected_volume as primary D-family
-    feature  (Design: Family D — Engineered physics features)
+[7] cumulative_heat_input replaces cumulative_injected_volume as primary C-family
+    feature  (Design: Family C — Engineered physics features)
     ORIGINAL : cumulative_injected_volume accumulated Net Flow × Δt only.
                This ignores that hotter injected water carries more thermal energy
                per unit volume, which is the physical mechanism driving production
@@ -95,13 +95,13 @@ Each change is keyed to the design's Run Order steps where relevant.
                feature. cumulative_injected_volume is retained for backward
                compatibility but is superseded by this column for modeling.
 
-[8] New engineered features added  (Design: Feature Families A, C, D)
+[8] New engineered features added  (Design: Feature Families A, B, C)
     The following features were added to match the design specification:
       TC_INT_delta          (A) — rate of change of injection temp (°C/hr);
                                   captures acceleration/deceleration of hot-water
                                   delivery, a High-importance Family A feature.
-      dT_TL_dt / dT_TN_dt  (C) — rate of temperature rise at each production
-                                  well; Family C autoregressive feature tracking
+      dT_TL_dt / dT_TN_dt  (B) — rate of temperature rise at each production
+                                  well; Family B autoregressive feature tracking
                                   how fast the thermal front is currently moving.
       elapsed_injection_min (D1) — minutes since injection start; supersedes
                                   days_since_injection as the design specifies
@@ -436,20 +436,20 @@ def engineer_features(df, T0, freq='1h'):
       A1: TC_INT_delta        — rate of change of TC_INT_mean (°C/hr)
       A2: net_flow_rolling_6h — 6-hr trailing mean of Net Flow (L/min)
 
-    Family C — Autoregressive target history
-      C1: dT_TL_dt / dT_TN_dt — rate of temperature rise at each producer (°C/hr)
+    Family B — Autoregressive target history
+      B1: dT_TL_dt / dT_TN_dt — rate of temperature rise at each producer (°C/hr)
 
-    Family D — Engineered physics features (encode cumulative thermal state)
-      D1: elapsed_injection_min    — minutes since INJECTION_START
-      D2: delta_T_above_T0_{well}  — T_well_INT_mean - T0[well] (primary target)
-      D3: cumulative_heat_input    — Σ[Net_Flow × TC_INT_mean] × Δt (°C·L·s)
-      D4: T_gradient_INT_{well}    — TEC-INT-U minus TEC-INT-L (vertical gradient)
+    Family C — Engineered physics features (encode cumulative thermal state)
+      C1: elapsed_injection_min    — minutes since INJECTION_START
+      C2: delta_T_above_T0_{well}  — T_well_INT_mean - T0[well] (primary target)
+      C3: cumulative_heat_input    — Σ[Net_Flow × TC_INT_mean] × Δt (°C·L·s)
+      C4: T_gradient_INT_{well}    — TEC-INT-U minus TEC-INT-L (vertical gradient)
 
     Legacy features (retained for backward compatibility)
       L1: days_since_injection      — derived from elapsed_injection_min
       L2: hour_sin / hour_cos       — cyclic hour-of-day encoding
       L3: delta_T_inj_prod          — instantaneous injection vs. production ΔT
-      L4: cumulative_injected_volume — flow-only cumsum (superseded by D3)
+      L4: cumulative_injected_volume — flow-only cumsum (superseded by C3)
     """
     dt_seconds = 3600 if freq == '1h' else 60
 
@@ -464,26 +464,26 @@ def engineer_features(df, T0, freq='1h'):
             df['Net Flow'].rolling(window=window, min_periods=1).mean()
         )
 
-    # ---- C1: Rate of temperature rise at each production well ----
+    # ---- B1: Rate of temperature rise at each production well ----
     for well in PRODUCTION_WELLS:
         col = f'{well}_INT_mean'
         if col in df.columns:
             df[f'dT_{well}_dt'] = df[col].diff() / (dt_seconds / 3600.0)
 
-    # ---- D1: Elapsed time since injection start (minutes) ----
+    # ---- C1: Elapsed time since injection start (minutes) ----
     df['elapsed_injection_min'] = (
         pd.Series((df.index - INJECTION_START).total_seconds(), index=df.index)
         / 60.0
     ).clip(lower=0)
 
-    # ---- D2: Temperature rise above pre-injection ambient per production well ----
+    # ---- C2: Temperature rise above pre-injection ambient per production well ----
     for well in PRODUCTION_WELLS:
         col = f'{well}_INT_mean'
         t0_val = T0.get(well, np.nan)
         if col in df.columns and not np.isnan(t0_val):
             df[f'delta_T_above_T0_{well}'] = df[col] - t0_val
 
-    # ---- D3: Cumulative heat input (flow × injection temperature × Δt) ----
+    # ---- C3: Cumulative heat input (flow × injection temperature × Δt) ----
     # More physically correct than flow-only: accounts for both volume and
     # temperature of injected fluid. Rated Critical importance in the design.
     if 'Net Flow' in df.columns and 'TC_INT_mean' in df.columns:
@@ -491,7 +491,7 @@ def engineer_features(df, T0, freq='1h'):
         inj_temp = df['TC_INT_mean'].ffill()
         df['cumulative_heat_input'] = (positive_flow * inj_temp).cumsum() * dt_seconds
 
-    # ---- D4: Vertical thermal gradient within the packer interval ----
+    # ---- C4: Vertical thermal gradient within the packer interval ----
     for well in WELLS:
         u, l = f'{well}-TEC-INT-U', f'{well}-TEC-INT-L'
         if u in df.columns and l in df.columns:

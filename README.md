@@ -157,4 +157,38 @@ The raw FTES dataset was cleaned and transformed using the Python script `byteMe
 
 **Interval means and ramp-up exclusion (AI-assisted):** Upper and lower packer sensors for each well are averaged into interval-mean and bottom-mean columns to reduce per-sensor noise. GitHub Copilot recommended this averaging step to reduce noise propagation into downstream rolling statistics and cumulative features, and wrote the `compute_interval_means()` function. GitHub Copilot also designed the dynamic ramp-up detection logic in `detect_ramp_up_end()` — identifying the first period where Net Flow sustains ≥ 80% of its 6-hour rolling maximum for 60 consecutive minutes — and wrote `add_split_labels()` to encode the `ramp_up` / `train` / `test` partition directly in the output CSV so that all downstream model training respects the strictly chronological split required by the experimental design.
 
-**Feature engineering (AI-assisted):** GitHub Copilot designed a set of physics-motivated features grouped into families. Family A captures injection-well signal: the hourly rate of change of injection temperature (`TC_INT_delta`). Family B captures flow rate history: a 6-hour trailing mean of Net Flow (`net_flow_rolling_6h`), which smooths pump transients and gives the model memory of recent injection activity — the primary driver of advective heat transport. Family C captures autoregressive target history: the hourly rate of temperature rise at each production well (`dT_TL_dt`, `dT_TN_dt`). Family D encodes the cumulative thermal state of the fracture system: elapsed injection time in minutes (`elapsed_injection_min`), temperature rise above T0 per production well (`delta_T_above_T0_TL`, `delta_T_above_T0_TN`) as the primary prediction targets, cumulative heat input as the running integral of flow multiplied by injection temperature and time-step length (`cumulative_heat_input` — rated Critical importance in the experimental design), and vertical thermal gradient within each packer interval (`T_gradient_INT_{well}`). GitHub Copilot proposed all feature families, wrote the `engineer_features()` function, and recommended replacing the original flow-only `cumulative_injected_volume` with `cumulative_heat_input` on the basis that hotter injected water carries more thermal energy per unit volume — the physical mechanism driving production-well breakthrough. Additional cyclic hour-of-day encodings (sine and cosine) are included to handle any diurnal sensor or operational patterns without ordinal artifacts. All features are computed using only past or present information to prevent data leakage into future target values.
+**Feature engineering (AI-assisted):** GitHub Copilot designed a set of physics-motivated features grouped into families. Family A captures injection-well signal: the hourly rate of change of injection temperature (`TC_INT_delta`) and a 6-hour trailing mean of Net Flow (`net_flow_rolling_6h`), which smooths pump transients and gives the model memory of recent injection activity — the primary driver of advective heat transport. Family B captures autoregressive target history: the hourly rate of temperature rise at each production well (`dT_TL_dt`, `dT_TN_dt`). Family C encodes the cumulative thermal state of the fracture system: elapsed injection time in minutes (`elapsed_injection_min`), temperature rise above T0 per production well (`delta_T_above_T0_TL`, `delta_T_above_T0_TN`) as the primary prediction targets, cumulative heat input as the running integral of flow multiplied by injection temperature and time-step length (`cumulative_heat_input` — rated Critical importance in the experimental design), and vertical thermal gradient within each packer interval (`T_gradient_INT_{well}`). GitHub Copilot proposed all feature families, wrote the `engineer_features()` function, and recommended replacing the original flow-only `cumulative_injected_volume` with `cumulative_heat_input` on the basis that hotter injected water carries more thermal energy per unit volume — the physical mechanism driving production-well breakthrough. Additional cyclic hour-of-day encodings (sine and cosine) are included to handle any diurnal sensor or operational patterns without ordinal artifacts. All features are computed using only past or present information to prevent data leakage into future target values.
+
+---
+
+## 4. Data Files
+
+Two data files exceed GitHub's 100 MB file size limit and are not stored in this repository. They are available on the team SharePoint folder:
+
+**[Team 10 Byte Me — SharePoint Data Folder](https://pnnl.sharepoint.com/:f:/r/teams/ESSDAICompetition/Shared%20Documents/General/Team%2010%20Byte%20Me?csf=1&web=1&e=ESzaKy)**
+
+| File | Size | Description |
+|------|------|-------------|
+| `rawData/FTES-Full_Test_1sec_system_processed.csv` | ~2.4 GB | Raw 1-second system data from the FTES experiment |
+| `processedData/FTES_cleaned_1sec_1min_resample.csv` | ~150 MB | 1-second data cleaned and resampled to 1-minute means |
+
+The following files **are** included in this repository (under 100 MB):
+
+| File | Description |
+|------|-------------|
+| `rawData/FTES-Full_Test_1hour_avg.csv` | Raw 1-hour averaged data |
+| `processedData/FTES_cleaned_1hour.csv` | Cleaned and feature-engineered hourly dataset (primary ML input) |
+
+### Regenerating the large files locally
+
+Both large files can be reproduced by running the preparation script against the raw inputs. Download the raw files from SharePoint into the `byteMe/rawData/` directory, then run:
+
+```bash
+# Install dependencies
+pip install -r byteMe/scripts/requirements.txt
+
+# Run the pipeline (generates both output files)
+python byteMe/scripts/clean_and_feature_engineer.py
+```
+
+The script reads `FTES-Full_Test_1hour_avg.csv` and `FTES-Full_Test_1sec_system_processed.csv` from `byteMe/rawData/` and writes the cleaned outputs to `byteMe/processedData/`. The 1-second file is processed in 200,000-row chunks to avoid loading the full ~2.4 GB into memory at once; expect a runtime of several minutes on a standard laptop.
