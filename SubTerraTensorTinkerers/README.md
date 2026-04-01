@@ -10,13 +10,13 @@
 	- Example of original data:
 
 2. The cleaned dataset with at least 3 new engineered features in csv and json format 
-	- Example of cleaned data: **[add link]**
+	- Example of cleaned data: https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_2/SubTerraTensorTinkerers/Data/FTES_1hour_cleaned.csv
 	
 3. A data dictionary that explains each feature, format, and context for each data source 
-	- **[add link]**
+	- https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_2/SubTerraTensorTinkerers/Data/FTES_1hour_cleaned_data_dictionary.json
 
 4. Any cleaning scripts used with citations in comments for sections generated with AI 
-	- **[add link]**
+	- https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_2/SubTerraTensorTinkerers/Scripts/ftes_data_cleaning.py
 
 5. Your selected ML Algorithms with 1-2 sentences justifying your choices 
 
@@ -37,7 +37,7 @@
 	*<This justification was generated with the assistance of Claude Sonnet 4.5 (Anthropic).>*
 
 6. A requirements.txt containing python environment dependencies 
-	- **[add link]**
+	- https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_2/SubTerraTensorTinkerers/requirements.txt
 
 8. A brief paragraph describing data preparation approach, including: 
 	- A description of data cleaning, normalization, and feature engineering steps 
