@@ -55,4 +55,6 @@ wd_filtered = wd_filtered.drop(columns=['parameter_code',
                                         'approval_status', 
                                         'last_modified'])
 
+wd_filtered = wd_filtered.rename(columns={'value':'flow_rate'})
+
 wd_filtered.to_csv('../Data/data_cleaned.csv')
