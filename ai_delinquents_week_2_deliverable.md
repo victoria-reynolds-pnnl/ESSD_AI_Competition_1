@@ -4,8 +4,11 @@
 
 **Team Name**: AI Delinquents
 
+## Week 2 deliverable
 
-## Week 2 deliverables
+TBD
+
+## Week 2 deliverables requirements
 
 ### README Requirements
 1. **ML Model Selection**: 1-2 sentences justifying the choice of ML algorithm for the dataset & problem outlined in Week 1

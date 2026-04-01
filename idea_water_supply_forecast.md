@@ -8,7 +8,6 @@ Using streamflow data and other public resources, develop a water supply forecas
 ### Contest materials
 - README.md
 - week_2_deliverables.md
-- 
 
 ### Potential training data
 
@@ -26,7 +25,7 @@ Using streamflow data and other public resources, develop a water supply forecas
 | --- | --- | --- | --- |
 | NRCS Forecasts | Web portal (various data types) | Varies (site dependent) | [NRCS](https://www.nrcs.usda.gov/resources/data-and-reports/water-supply-forecast-predefined-reports) |
 | NWRFC Forecasts | Web portal (various data types) | Varies (site dependent) | [NWRFC](https://www.nwrfc.noaa.gov/ws/) |
-| BPA Forecasts | Web portal (various data types) | Varies (site dependent) | [NWRFC](https://www.nwrfc.noaa.gov/ws/) |
+| BPA Forecasts | Web portal (various data types) | Varies (site dependent) | [BPA](https://www.nwrfc.noaa.gov/ws/) |
 
 
 ## Implementation
@@ -39,6 +38,8 @@ Process data, develop features and dependent variables, train model and validate
   - The Dalles is the most important location and would be a good plance to start.
   - Are there other key streamflow locations to produce forecasts for?
 - Which snow gages to use?
-- Where to get natural flow data?
-
-\\
+- The forecast should be made on naturalized streamflow data, not regualted stremflow data which is what is observed
+  - Where to get natural flow data?
+    - https://www.nature.com/articles/s41597-026-06865-5
+    - https://www.bpa.gov/energy-and-services/power/historical-streamflow-data
+    - https://digital.lib.washington.edu/server/api/core/bitstreams/82048a9b-9bdd-4069-97d1-9c071b6ffaf1/content
