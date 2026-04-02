@@ -7,7 +7,7 @@
 
 1. The original un-cleaned data source 
 	- Full dataset link: https://gdr.openei.org/submissions/1730
-	- Example of original data:
+	- Example of original data: https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_2/SubTerraTensorTinkerers/Data/FTES-Full_Test_1hour_avg.csv
 
 2. The cleaned dataset with at least 3 new engineered features in csv and json format 
 	- Example of cleaned data: https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_2/SubTerraTensorTinkerers/Data/FTES_1hour_cleaned.csv
