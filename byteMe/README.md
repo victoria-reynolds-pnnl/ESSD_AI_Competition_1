@@ -5,13 +5,13 @@
 
 ## 1. ML Model Selection
 
-We selected a **Random Forest regressor with engineered lag features (RF-Lag)** as our primary model because it handles the nonlinear, time-delayed relationship between injection conditions (rate, temperature) and production-well thermal response without requiring assumptions about the functional form of heat transport through a fracture network. Random Forest is also robust to the moderate dataset size (~1,700 hourly training rows), naturally ranks feature importance for physical validation, and allows direct multi-step forecasting across the four prediction horizons (+15 min, +60 min, +240 min, +1440 min) by training one independent regressor per well–horizon pair.
+We selected a **Random Forest regressor with engineered lag features (RF-Lag)** as our primary model because it handles the nonlinear, time-delayed relationship between injection conditions (rate, temperature) and production-well thermal response without requiring assumptions about the functional form of heat transport through a fracture network. Random Forest is also robust to the dataset size and the higher temporal resolution of the minute-resampled training data, naturally ranks feature importance for physical validation, and allows direct multi-step forecasting across the four prediction horizons (+15 min, +60 min, +240 min, +1440 min) by training one independent regressor per well–horizon pair.
 
 ---
 
 ## 2. Data Dictionary
 
-The processed output file (`processedData/FTES_cleaned_1hour.csv`) contains the columns described below. All rows cover the hot-water injection phase of FTES Test 1 at the Sanford Underground Research Facility (SURF): **December 13, 2024 20:00 – February 23, 2025**.
+The processed output file (`processedData/FTES_cleaned_1sec_1min_resample.csv`) contains the columns described below. All rows cover the hot-water injection phase of FTES Test 1 at the Sanford Underground Research Facility (SURF): **December 13, 2024 20:00 – February 23, 2025**.
 
 Wells: **TC** = injection well | **TL, TN** = production wells | **TU, TS** = monitor wells
 
@@ -21,15 +21,15 @@ Sensor naming convention: `XX-TEC-INT-U` = well XX, thermoelectric chain (TEC), 
 
 | Field | Description | Type | Example |
 |-------|-------------|------|---------|
-| `timestamp` | UTC datetime of the hourly average record | datetime | `2024-12-14 08:00:00` |
+| `timestamp` | UTC datetime of the 1-minute average record | datetime | `2024-12-14 08:00:00` |
 | `split` | ML pipeline role for this row (`ramp_up` / `train` / `test`) | string | `train` |
 
 ### 2b. System-Level Measurements
 
 | Field | Description | Units | Type | Example |
 |-------|-------------|-------|------|---------|
-| `Injection EC` | Electrical conductivity of injected water at surface | µS/cm | float | `371.997` |
 | `Net Flow` | Net volumetric flow rate of the injection system | L/min | float | `1.770` |
+| `Triplex On/Off` | Triplex pump operational state (1 = on, 0 = off) | binary | int | `1` |
 
 ### 2c. Well TL — Production Well (Borehole TL)
 
@@ -46,9 +46,10 @@ Sensor naming convention: `XX-TEC-INT-U` = well XX, thermoelectric chain (TEC), 
 | `TL-TEC-INT-L` | Temperature at TL interval zone — lower sensor | °C | float | `25.930` |
 | `TL-TEC-BOT-U` | Temperature at TL bottom zone — upper sensor | °C | float | `25.880` |
 | `TL-TEC-BOT-L` | Temperature at TL bottom zone — lower sensor | °C | float | `26.043` |
-| `TL Packer Center Depth` | Fixed depth of TL packer midpoint | m | float | `170.2` |
 | `TL_INT_mean` | Average of TL-TEC-INT-U and TL-TEC-INT-L | °C | float | `25.872` |
 | `TL_BOT_mean` | Average of TL-TEC-BOT-U and TL-TEC-BOT-L | °C | float | `25.961` |
+| `TL producing interval (True/False)` | Interval zone actively producing (1 = true, 0 = false) | binary | int | `1` |
+| `TL producing bottom (True/False)` | Bottom zone actively producing (1 = true, 0 = false) | binary | int | `1` |
 
 ### 2d. Well TN — Production Well (Borehole TN)
 
@@ -68,6 +69,9 @@ Sensor naming convention: `XX-TEC-INT-U` = well XX, thermoelectric chain (TEC), 
 | `TN-TEC-BOT-L` | Temperature at TN bottom zone — lower sensor | °C | float | `24.407` |
 | `TN_INT_mean` | Average of TN-TEC-INT-U and TN-TEC-INT-L | °C | float | `23.641` |
 | `TN_BOT_mean` | Average of TN-TEC-BOT-U and TN-TEC-BOT-L | °C | float | `23.650` |
+| `TN injecting triplex interval (True/False)` | Interval zone injecting via triplex (1 = true, 0 = false) | binary | int | `1` |
+| `TN producing interval (True/False)` | Interval zone actively producing (1 = true, 0 = false) | binary | int | `0` |
+| `TN producing bottom (True/False)` | Bottom zone actively producing (1 = true, 0 = false) | binary | int | `0` |
 
 ### 2e. Well TC — Injection Well (Borehole TC)
 
@@ -85,6 +89,9 @@ Sensor naming convention: `XX-TEC-INT-U` = well XX, thermoelectric chain (TEC), 
 | `TC-TEC-BOT-L` | Temperature at TC bottom zone — lower sensor | °C | float | `25.214` |
 | `TC_INT_mean` | Average of TC-TEC-INT-U and TC-TEC-INT-L | °C | float | `26.067` |
 | `TC_BOT_mean` | Average of TC-TEC-BOT-U and TC-TEC-BOT-L | °C | float | `25.671` |
+| `TC injecting triplex interval (True/False)` | Interval zone injecting via triplex (1 = true, 0 = false) | binary | int | `0` |
+| `TC producing interval (True/False)` | Interval zone actively producing (1 = true, 0 = false) | binary | int | `1` |
+| `TC producing bottom (True/False)` | Bottom zone actively producing (1 = true, 0 = false) | binary | int | `1` |
 
 ### 2f. Well TU — Monitor Well (Borehole TU)
 
@@ -100,9 +107,11 @@ Sensor naming convention: `XX-TEC-INT-U` = well XX, thermoelectric chain (TEC), 
 | `TU-TEC-INT-L` | Temperature at TU interval zone — lower sensor | °C | float | `25.396` |
 | `TU-TEC-BOT-U` | Temperature at TU bottom zone — upper sensor | °C | float | `25.462` |
 | `TU-TEC-BOT-L` | Temperature at TU bottom zone — lower sensor | °C | float | `25.288` |
-| `TU Packer Center Depth` | Fixed depth of TU packer midpoint | m | float | `177.8` |
 | `TU_INT_mean` | Average of TU-TEC-INT-U and TU-TEC-INT-L | °C | float | `25.347` |
 | `TU_BOT_mean` | Average of TU-TEC-BOT-U and TU-TEC-BOT-L | °C | float | `25.375` |
+| `TU injecting triplex interval (True/False)` | Interval zone injecting via triplex (1 = true, 0 = false) | binary | int | `0` |
+| `TU producing interval (True/False)` | Interval zone actively producing (1 = true, 0 = false) | binary | int | `0` |
+| `TU producing bottom (True/False)` | Bottom zone actively producing (1 = true, 0 = false) | binary | int | `1` |
 
 ### 2g. Well TS — Monitor Well (Borehole TS)
 
@@ -116,30 +125,35 @@ Sensor naming convention: `XX-TEC-INT-U` = well XX, thermoelectric chain (TEC), 
 | `TS Interval Pressure` | Fluid pressure in TS interval zone | psi | float | `-13.437` |
 | `TS Bottom Pressure` | Fluid pressure in TS bottom zone | psi | float | `-9.160` |
 | `TS Packer Pressure` | Pressure reading at TS packer | psi | float | `-39.649` |
-| `PT 503` | Pressure transducer 503 reading | psi | float | `132.538` |
-| `PT 504` | Pressure transducer 504 reading | psi | float | `115.441` |
+| `TS-TEC-INT-U` | Temperature at TS interval zone — upper sensor | °C | float | `21.887` |
+| `TS-TEC-INT-L` | Temperature at TS interval zone — lower sensor | °C | float | `21.872` |
+| `TS-TEC-BOT-U` | Temperature at TS bottom zone — upper sensor | °C | float | `21.923` |
+| `TS-TEC-BOT-L` | Temperature at TS bottom zone — lower sensor | °C | float | `21.916` |
+| `TS_INT_mean` | Average of TS-TEC-INT-U and TS-TEC-INT-L | °C | float | `21.880` |
+| `TS_BOT_mean` | Average of TS-TEC-BOT-U and TS-TEC-BOT-L | °C | float | `21.919` |
 
 ### 2h. Engineered Features
 
-| Field | Description | Units | Type | Example | Feature Family |
-|-------|-------------|-------|------|---------|----------------|
-| `TC_INT_delta` | Hourly rate of change of TC_INT_mean (injection temperature acceleration) | °C/hr | float | `-0.121` | A |
-| `net_flow_rolling_6h` | 6-hour trailing mean of Net Flow; smooths pump transients | L/min | float | `1.770` | B |
-| `dT_TL_dt` | Hourly rate of temperature rise at production well TL | °C/hr | float | `0.031` | C |
-| `dT_TN_dt` | Hourly rate of temperature rise at production well TN | °C/hr | float | `0.018` | C |
-| `elapsed_injection_min` | Minutes elapsed since injection start (2024-12-13 20:00); clips to 0 before injection | min | float | `1440.0` | D |
-| `delta_T_above_T0_TL` | TL_INT_mean minus pre-injection ambient T0 for TL; **primary prediction target** | °C | float | `2.143` | D |
-| `delta_T_above_T0_TN` | TN_INT_mean minus pre-injection ambient T0 for TN; **primary prediction target** | °C | float | `1.076` | D |
-| `cumulative_heat_input` | Running sum of (Net Flow × TC_INT_mean × Δt); encodes total thermal energy delivered to the fracture system | °C·L·s | float | `4,218,032.5` | D |
-| `T_gradient_INT_TL` | TL-TEC-INT-U minus TL-TEC-INT-L; vertical temperature gradient within TL packer interval | °C | float | `-0.116` | D |
-| `T_gradient_INT_TN` | TN-TEC-INT-U minus TN-TEC-INT-L; vertical temperature gradient within TN packer interval | °C | float | `1.429` | D |
-| `T_gradient_INT_TC` | TC-TEC-INT-U minus TC-TEC-INT-L; vertical temperature gradient within TC packer interval | °C | float | `-0.984` | D |
-| `T_gradient_INT_TU` | TU-TEC-INT-U minus TU-TEC-INT-L; vertical temperature gradient within TU packer interval | °C | float | `-0.098` | D |
-| `days_since_injection` | Decimal days since injection start; derived from elapsed_injection_min | days | float | `1.0` | D (legacy) |
-| `hour_sin` | Sine of fractional hour-of-day mapped to [0, 2π]; cyclic time encoding | dimensionless | float | `-0.866` | — |
-| `hour_cos` | Cosine of fractional hour-of-day mapped to [0, 2π]; cyclic time encoding | dimensionless | float | `0.500` | — |
-| `delta_T_inj_prod` | TC-TEC-INT-U minus mean of TL/TN TEC-INT-U; instantaneous injection-to-production thermal contrast | °C | float | `0.491` | — |
-| `cumulative_injected_volume` | Running sum of positive Net Flow × Δt; flow-volume proxy (superseded by cumulative_heat_input) | L·s | float | `6371.061` | D (legacy) |
+| Field | Description | Units | Type | Example |
+|-------|-------------|-------|------|---------|
+| `TC_INT_delta` | Rate of change of TC_INT_mean (injection temperature acceleration) | °C/hr | float | `-0.121` |
+| `net_flow_rolling_6h` | 6-hour trailing mean of Net Flow; smooths pump transients | L/min | float | `1.770` |
+| `dT_TL_dt` | Rate of temperature rise at production well TL | °C/hr | float | `0.031` |
+| `dT_TN_dt` | Rate of temperature rise at production well TN | °C/hr | float | `0.018` |
+| `elapsed_injection_min` | Minutes elapsed since injection start (2024-12-13 20:00); clips to 0 before injection | min | float | `1440.0` |
+| `delta_T_above_T0_TL` | TL_INT_mean minus pre-injection ambient T0 for TL; **primary prediction target** | °C | float | `2.143` |
+| `delta_T_above_T0_TN` | TN_INT_mean minus pre-injection ambient T0 for TN; **primary prediction target** | °C | float | `1.076` |
+| `cumulative_heat_input` | Running sum of (Net Flow × TC_INT_mean × Δt); encodes total thermal energy delivered to the fracture system | °C·L·s | float | `4,218,032.5` |
+| `T_gradient_INT_TL` | TL-TEC-INT-U minus TL-TEC-INT-L; vertical temperature gradient within TL packer interval | °C | float | `-0.116` |
+| `T_gradient_INT_TN` | TN-TEC-INT-U minus TN-TEC-INT-L; vertical temperature gradient within TN packer interval | °C | float | `1.429` |
+| `T_gradient_INT_TC` | TC-TEC-INT-U minus TC-TEC-INT-L; vertical temperature gradient within TC packer interval | °C | float | `-0.984` |
+| `T_gradient_INT_TU` | TU-TEC-INT-U minus TU-TEC-INT-L; vertical temperature gradient within TU packer interval | °C | float | `-0.098` |
+| `days_since_injection` | Decimal days since injection start; derived from elapsed_injection_min | days | float | `1.0` |
+| `hour_sin` | Sine of fractional hour-of-day mapped to [0, 2π]; cyclic time encoding | dimensionless | float | `-0.866` |
+| `hour_cos` | Cosine of fractional hour-of-day mapped to [0, 2π]; cyclic time encoding | dimensionless | float | `0.500` |
+| `delta_T_inj_prod` | TC-TEC-INT-U minus mean of TL/TN TEC-INT-U; instantaneous injection-to-production thermal contrast | °C | float | `0.491` |
+| `T_gradient_INT_TS` | TS-TEC-INT-U minus TS-TEC-INT-L; vertical temperature gradient within TS packer interval | °C | float | `0.015` |
+| `cumulative_injected_volume` | Running sum of positive Net Flow × Δt; flow-volume proxy (superseded by cumulative_heat_input) | L·s | float | `6371.061` |
 
 ---
 
@@ -151,13 +165,13 @@ The raw FTES dataset was cleaned and transformed using the Python script `byteMe
 
 **Phase 1 filtering (AI-assisted):** Only the hot-water injection phase (December 13, 2024 20:00 – February 23, 2025) is retained. Phase 2 ambient circulation data is excluded entirely, as it represents a physically distinct flow regime that would cause the model to learn a mixture of incompatible behaviors. GitHub Copilot recommended tightening the start boundary from midnight to 20:00 on December 13 to match the actual pump-on timestamp, and advised excluding Phase 2 specifically to prevent cross-regime data leakage.
 
-**Cleaning (AI-assisted):** Duplicate timestamps (116 found in the hourly file) are removed, keeping the first occurrence. Columns with a single constant value across Phase 1 (e.g., fixed packer depths) are dropped as they carry zero information. Physically implausible sensor readings are clamped to NaN using domain-knowledge thresholds: temperatures outside –5 °C to 150 °C, pressures above 500 psi, and electrical conductivity values outside 0–5,000 µS/cm. Columns that are still entirely NaN after clamping are dropped. Short gaps of one to two consecutive missing readings are recovered by time-based linear interpolation. Columns remaining more than 50% missing after interpolation (primarily injection-side pressure sensors operating outside their rated range) are dropped entirely. GitHub Copilot structured the full cleaning pipeline, selected the physical plausibility thresholds using domain reasoning, and recommended the 50% NaN threshold as the cut-off for unrecoverable columns rather than raising the pressure ceiling globally.
+**Cleaning (AI-assisted):** Duplicate timestamps are removed, keeping the first occurrence. Columns with a single constant value across Phase 1 (e.g., fixed packer depths such as `TL Packer Center Depth` and `TU Packer Center Depth`) are dropped as they carry zero information. Physically implausible sensor readings are clamped to NaN using domain-knowledge thresholds: temperatures outside –5 °C to 150 °C, pressures above 500 psi, and electrical conductivity values outside 0–5,000 µS/cm. Columns that are still entirely NaN after clamping are dropped. Short gaps of one to two consecutive missing readings are recovered by time-based linear interpolation. Columns remaining more than 50% missing after interpolation (including `Injection EC`, `PT 503`, and `PT 504` in the 1-minute file) are dropped entirely. GitHub Copilot structured the full cleaning pipeline, selected the physical plausibility thresholds using domain reasoning, and recommended the 50% NaN threshold as the cut-off for unrecoverable columns rather than raising the pressure ceiling globally.
 
 **Sensor drift detrending (AI-assisted):** GitHub Copilot flagged that the monitor wells TU and TS — located far from the injection well — should not show sustained temperature trends during Phase 1; any linear rise is instrument drift rather than real thermal signal. GitHub Copilot wrote the `check_monitor_drift()` function, which fits a linear regression to each monitor well's upper interval sensor over the full Phase 1 window and subtracts the trend from all temperature columns of that well if the slope exceeds 0.12 °C/hr (0.002 °C/min, the threshold specified in the experimental design).
 
 **Interval means and ramp-up exclusion (AI-assisted):** Upper and lower packer sensors for each well are averaged into interval-mean and bottom-mean columns to reduce per-sensor noise. GitHub Copilot recommended this averaging step to reduce noise propagation into downstream rolling statistics and cumulative features, and wrote the `compute_interval_means()` function. GitHub Copilot also designed the dynamic ramp-up detection logic in `detect_ramp_up_end()` — identifying the first period where Net Flow sustains ≥ 80% of its 6-hour rolling maximum for 60 consecutive minutes — and wrote `add_split_labels()` to encode the `ramp_up` / `train` / `test` partition directly in the output CSV so that all downstream model training respects the strictly chronological split required by the experimental design.
 
-**Feature engineering (AI-assisted):** GitHub Copilot designed a set of physics-motivated features grouped into families. Family A captures injection-well signal: the hourly rate of change of injection temperature (`TC_INT_delta`) and a 6-hour trailing mean of Net Flow (`net_flow_rolling_6h`), which smooths pump transients and gives the model memory of recent injection activity — the primary driver of advective heat transport. Family B captures autoregressive target history: the hourly rate of temperature rise at each production well (`dT_TL_dt`, `dT_TN_dt`). Family C encodes the cumulative thermal state of the fracture system: elapsed injection time in minutes (`elapsed_injection_min`), temperature rise above T0 per production well (`delta_T_above_T0_TL`, `delta_T_above_T0_TN`) as the primary prediction targets, cumulative heat input as the running integral of flow multiplied by injection temperature and time-step length (`cumulative_heat_input` — rated Critical importance in the experimental design), and vertical thermal gradient within each packer interval (`T_gradient_INT_{well}`). GitHub Copilot proposed all feature families, wrote the `engineer_features()` function, and recommended replacing the original flow-only `cumulative_injected_volume` with `cumulative_heat_input` on the basis that hotter injected water carries more thermal energy per unit volume — the physical mechanism driving production-well breakthrough. Additional cyclic hour-of-day encodings (sine and cosine) are included to handle any diurnal sensor or operational patterns without ordinal artifacts. All features are computed using only past or present information to prevent data leakage into future target values.
+**Feature engineering (AI-assisted):** GitHub Copilot designed a set of physics-motivated features grouped into families. Family A captures injection-well signal: the rate of change of injection temperature (`TC_INT_delta`) and a 6-hour trailing mean of Net Flow (`net_flow_rolling_6h`), which smooths pump transients and gives the model memory of recent injection activity — the primary driver of advective heat transport. Family B captures autoregressive target history: the rate of temperature rise at each production well (`dT_TL_dt`, `dT_TN_dt`). Family C encodes the cumulative thermal state of the fracture system: elapsed injection time in minutes (`elapsed_injection_min`), temperature rise above T0 per production well (`delta_T_above_T0_TL`, `delta_T_above_T0_TN`) as the primary prediction targets, cumulative heat input as the running integral of flow multiplied by injection temperature and time-step length (`cumulative_heat_input` — rated Critical importance in the experimental design), and vertical thermal gradient within each packer interval (`T_gradient_INT_{well}`). GitHub Copilot proposed all feature families, wrote the `engineer_features()` function, and recommended replacing the original flow-only `cumulative_injected_volume` with `cumulative_heat_input` on the basis that hotter injected water carries more thermal energy per unit volume — the physical mechanism driving production-well breakthrough. Additional cyclic hour-of-day encodings (sine and cosine) are included to handle any diurnal sensor or operational patterns without ordinal artifacts. All features are computed using only past or present information to prevent data leakage into future target values.
 
 ---
 
@@ -169,15 +183,15 @@ Two data files exceed GitHub's 100 MB file size limit and are not stored in this
 
 | File | Size | Description |
 |------|------|-------------|
-| `rawData/FTES-Full_Test_1sec_system_processed.csv` | ~2.4 GB | Raw 1-second system data from the FTES experiment |
-| `processedData/FTES_cleaned_1sec_1min_resample.csv` | ~150 MB | 1-second data cleaned and resampled to 1-minute means |
+| `rawData/FTES-Full_Test_1sec_system_processed.csv` | ~6.33 GB | Raw 1-second system data from the FTES experiment |
+| `processedData/FTES_cleaned_1sec_1min_resample.csv` | ~150 MB | 1-second data cleaned and resampled to 1-minute means (**primary ML input**) |
 
 The following files **are** included in this repository (under 100 MB):
 
 | File | Description |
 |------|-------------|
 | `rawData/FTES-Full_Test_1hour_avg.csv` | Raw 1-hour averaged data |
-| `processedData/FTES_cleaned_1hour.csv` | Cleaned and feature-engineered hourly dataset (primary ML input) |
+| `processedData/FTES_cleaned_1hour.csv` | Cleaned and feature-engineered hourly dataset |
 
 ### Regenerating the large files locally
 
@@ -191,4 +205,4 @@ pip install -r byteMe/scripts/requirements.txt
 python byteMe/scripts/clean_and_feature_engineer.py
 ```
 
-The script reads `FTES-Full_Test_1hour_avg.csv` and `FTES-Full_Test_1sec_system_processed.csv` from `byteMe/rawData/` and writes the cleaned outputs to `byteMe/processedData/`. The 1-second file is processed in 200,000-row chunks to avoid loading the full ~2.4 GB into memory at once; expect a runtime of several minutes on a standard laptop.
+The script reads `FTES-Full_Test_1hour_avg.csv` and `FTES-Full_Test_1sec_system_processed.csv` from `byteMe/rawData/` and writes the cleaned outputs to `byteMe/processedData/`. The 1-second file is processed in 200,000-row chunks to avoid loading the full ~6.33 GB into memory at once; expect a runtime of several minutes on a standard laptop.

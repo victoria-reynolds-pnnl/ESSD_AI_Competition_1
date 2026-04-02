@@ -5,8 +5,8 @@ clean_and_feature_engineer.py
 Data cleaning and feature engineering for the FTES dataset.
 
 Inputs  (rawData/):
-  - FTES-Full_Test_1hour_avg.csv          (~2 609 rows, primary ML dataset)
-  - FTES-Full_Test_1sec_system_processed.csv  (~6.5 GB, processed in chunks)
+  - FTES-Full_Test_1hour_avg.csv          (~2 609 rows)
+  - FTES-Full_Test_1sec_system_processed.csv  (~6.33 GB, processed in chunks)
 
 Outputs (processedData/):
   - FTES_cleaned_1hour.csv
@@ -157,7 +157,7 @@ INJECTION_WELL   = 'TC'
 PRODUCTION_WELLS = ['TL', 'TN']
 MONITOR_WELLS    = ['TU', 'TS']
 
-# 1-second processing: set to False to skip (the file is ~6.5 GB)
+# 1-second processing: set to False to skip (the file is ~6.33 GB)
 PROCESS_1SEC  = True
 SEC_CHUNKSIZE = 200_000  # rows per chunk
 
