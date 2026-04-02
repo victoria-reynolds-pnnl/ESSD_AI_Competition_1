@@ -1,0 +1,434 @@
+[
+    {
+        "description": "Daily timestamp for the grid cell observation.",
+        "dtype": "datetime64[ns]",
+        "example": "2001-05-01T00:00:00",
+        "name": "date",
+        "role": "key",
+        "source_or_formula": "Normalized from the NetCDF `time` coordinate.",
+        "stage": "both"
+    },
+    {
+        "description": "Latitude of the CONUS grid cell center.",
+        "dtype": "float32",
+        "example": "34.7500",
+        "name": "lat",
+        "role": "key",
+        "source_or_formula": "NetCDF `lat` coordinate.",
+        "stage": "both"
+    },
+    {
+        "description": "Longitude of the CONUS grid cell center.",
+        "dtype": "float32",
+        "example": "-118.2500",
+        "name": "lon",
+        "role": "key",
+        "source_or_formula": "NetCDF `lon` coordinate.",
+        "stage": "both"
+    },
+    {
+        "description": "Highest-confidence fire hotspot count used to derive the binary target.",
+        "dtype": "float32",
+        "example": "2",
+        "name": "FHS_c9",
+        "role": "target_source",
+        "source_or_formula": "Fire product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Combined confidence fire hotspot count retained only in the raw merged table.",
+        "dtype": "float32",
+        "example": "3",
+        "name": "FHS_c8c9",
+        "role": "excluded_predictor",
+        "source_or_formula": "Fire product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Same-day fire radiative power proxy retained only in the raw merged table.",
+        "dtype": "float32",
+        "example": "8.7",
+        "name": "maxFRP_c9",
+        "role": "excluded_predictor",
+        "source_or_formula": "Fire product raw field, normalized from `maxFRP_max_c9` if needed.",
+        "stage": "raw"
+    },
+    {
+        "description": "Same-day fire radiative power proxy retained only in the raw merged table.",
+        "dtype": "float32",
+        "example": "9.4",
+        "name": "maxFRP_c8c9",
+        "role": "excluded_predictor",
+        "source_or_formula": "Fire product raw field, normalized from `maxFRP_max_c8c9` if needed.",
+        "stage": "raw"
+    },
+    {
+        "description": "Same-day burned area retained only in the raw merged table.",
+        "dtype": "float32",
+        "example": "0.6",
+        "name": "BA_km2",
+        "role": "excluded_predictor",
+        "source_or_formula": "Fire product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Daily maximum near-surface air temperature.",
+        "dtype": "float32",
+        "example": "33.2",
+        "name": "tmax",
+        "role": "predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Daily minimum near-surface air temperature.",
+        "dtype": "float32",
+        "example": "17.9",
+        "name": "tmin",
+        "role": "predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Heatwave indicator from the source benchmark, kept only in the raw merged table.",
+        "dtype": "float32",
+        "example": "0",
+        "name": "HI02",
+        "role": "excluded_predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Heatwave indicator from the source benchmark, kept only in the raw merged table.",
+        "dtype": "float32",
+        "example": "0",
+        "name": "HI04",
+        "role": "excluded_predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Heatwave indicator from the source benchmark, kept only in the raw merged table.",
+        "dtype": "float32",
+        "example": "0",
+        "name": "HI05",
+        "role": "excluded_predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Heatwave indicator from the source benchmark, kept only in the raw merged table.",
+        "dtype": "float32",
+        "example": "0",
+        "name": "HI06",
+        "role": "excluded_predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Heatwave indicator from the source benchmark, kept only in the raw merged table.",
+        "dtype": "float32",
+        "example": "0",
+        "name": "HI09",
+        "role": "excluded_predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Heatwave indicator from the source benchmark, kept only in the raw merged table.",
+        "dtype": "float32",
+        "example": "0",
+        "name": "HI10",
+        "role": "excluded_predictor",
+        "source_or_formula": "Heatwave product raw field.",
+        "stage": "raw"
+    },
+    {
+        "description": "Palmer Drought Severity Index at the grid cell-day.",
+        "dtype": "float32",
+        "example": "-3.1",
+        "name": "pdsi",
+        "role": "predictor",
+        "source_or_formula": "Drought product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "14-day Standardized Precipitation Index.",
+        "dtype": "float32",
+        "example": "-0.8",
+        "name": "spi14d",
+        "role": "predictor",
+        "source_or_formula": "Drought product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "30-day Standardized Precipitation Index.",
+        "dtype": "float32",
+        "example": "-1.2",
+        "name": "spi30d",
+        "role": "predictor",
+        "source_or_formula": "Drought product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "90-day Standardized Precipitation Index.",
+        "dtype": "float32",
+        "example": "-1.9",
+        "name": "spi90d",
+        "role": "predictor",
+        "source_or_formula": "Drought product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "14-day Standardized Precipitation Evapotranspiration Index.",
+        "dtype": "float32",
+        "example": "-0.7",
+        "name": "spei14d",
+        "role": "predictor",
+        "source_or_formula": "Drought product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "30-day Standardized Precipitation Evapotranspiration Index.",
+        "dtype": "float32",
+        "example": "-1.0",
+        "name": "spei30d",
+        "role": "predictor",
+        "source_or_formula": "Drought product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "90-day Standardized Precipitation Evapotranspiration Index.",
+        "dtype": "float32",
+        "example": "-1.5",
+        "name": "spei90d",
+        "role": "predictor",
+        "source_or_formula": "Drought product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Daily near-surface air temperature from the meteorology product.",
+        "dtype": "float32",
+        "example": "297.4",
+        "name": "air_sfc",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Daily accumulated precipitation.",
+        "dtype": "float32",
+        "example": "1.7",
+        "name": "air_apcp",
+        "role": "predictor",
+        "source_or_formula": "Meteorology raw field `apcp`, normalized to canonical name `air_apcp`.",
+        "stage": "both"
+    },
+    {
+        "description": "Daily soil moisture proxy from the meteorology product.",
+        "dtype": "float32",
+        "example": "0.27",
+        "name": "soilm",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Daily relative humidity at 2 meters.",
+        "dtype": "float32",
+        "example": "42.5",
+        "name": "rhum_2m",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Daily zonal wind component.",
+        "dtype": "float32",
+        "example": "3.2",
+        "name": "uwnd",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Daily meridional wind component.",
+        "dtype": "float32",
+        "example": "-1.1",
+        "name": "vwnd",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Leaf Area Index for the grid cell-day.",
+        "dtype": "float32",
+        "example": "2.8",
+        "name": "LAI",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Normalized Difference Vegetation Index for the grid cell-day.",
+        "dtype": "float32",
+        "example": "0.41",
+        "name": "NDVI",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Fire Weather Index for the grid cell-day.",
+        "dtype": "float32",
+        "example": "17.3",
+        "name": "FWI",
+        "role": "predictor",
+        "source_or_formula": "Meteorology product raw field.",
+        "stage": "both"
+    },
+    {
+        "description": "Deterministic spatial identifier derived from latitude and longitude.",
+        "dtype": "string",
+        "example": "lat=34.7500|lon=-118.2500",
+        "name": "cell_id",
+        "role": "identifier",
+        "source_or_formula": "Formatted as `lat={lat:.4f}|lon={lon:.4f}`.",
+        "stage": "both"
+    },
+    {
+        "description": "Deterministic row identifier for a unique cell-day.",
+        "dtype": "string",
+        "example": "2001-05-01|lat=34.7500|lon=-118.2500",
+        "name": "row_id",
+        "role": "identifier",
+        "source_or_formula": "Concatenation of ISO date and `cell_id`.",
+        "stage": "both"
+    },
+    {
+        "description": "Calendar year derived from the normalized date.",
+        "dtype": "int16",
+        "example": "2001",
+        "name": "year",
+        "role": "partition",
+        "source_or_formula": "Derived from `date`.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Calendar month derived from the normalized date.",
+        "dtype": "int8",
+        "example": "5",
+        "name": "month",
+        "role": "partition",
+        "source_or_formula": "Derived from `date`.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Fixed benchmark split assignment for the row year.",
+        "dtype": "string",
+        "example": "train",
+        "name": "split_bucket",
+        "role": "split",
+        "source_or_formula": "2001-2016=train, 2017-2018=validation, 2019-2020=test.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Binary target equal to 1 when `FHS_c9 > 0`, else 0.",
+        "dtype": "int8",
+        "example": "1",
+        "name": "fire_occurrence",
+        "role": "target",
+        "source_or_formula": "Derived from source field `FHS_c9`.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Wind speed magnitude derived from zonal and meridional wind components.",
+        "dtype": "float32",
+        "example": "3.38",
+        "name": "wind_speed",
+        "role": "engineered_feature",
+        "source_or_formula": "sqrt(uwnd^2 + vwnd^2).",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Daily temperature range.",
+        "dtype": "float32",
+        "example": "15.3",
+        "name": "temp_range",
+        "role": "engineered_feature",
+        "source_or_formula": "tmax - tmin.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Flag for severe drought conditions.",
+        "dtype": "int8",
+        "example": "1",
+        "name": "pdsi_severe_flag",
+        "role": "engineered_feature",
+        "source_or_formula": "1 when pdsi <= -4, else 0.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Trailing 7-day precipitation sum using only prior days for the same cell.",
+        "dtype": "float32",
+        "example": "6.9",
+        "name": "apcp_7d_sum",
+        "role": "engineered_feature",
+        "source_or_formula": "Rolling 7-day sum of `air_apcp`, shifted by one day.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Trailing 7-day Fire Weather Index mean using only prior days for the same cell.",
+        "dtype": "float32",
+        "example": "14.2",
+        "name": "fwi_7d_mean",
+        "role": "engineered_feature",
+        "source_or_formula": "Rolling 7-day mean of `FWI`, shifted by one day.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Previous-day highest-confidence fire hotspot count for the same cell.",
+        "dtype": "float32",
+        "example": "0.0",
+        "name": "fhs_c9_lag1",
+        "role": "engineered_feature",
+        "source_or_formula": "Lag-1 of source field `FHS_c9` by `cell_id`.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Trailing 7-day sum of fire hotspot counts using only prior days for the same cell.",
+        "dtype": "float32",
+        "example": "2.0",
+        "name": "fhs_c9_lag7_sum",
+        "role": "engineered_feature",
+        "source_or_formula": "Rolling 7-day sum of `FHS_c9`, shifted by one day.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Calendar days since the last prior day with `FHS_c9 > 0` for the same cell.",
+        "dtype": "float32",
+        "example": "12.0",
+        "name": "days_since_fire",
+        "role": "engineered_feature",
+        "source_or_formula": "Difference between `date` and the most recent prior fire date by `cell_id`.",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Sine encoding of day-of-year seasonality.",
+        "dtype": "float32",
+        "example": "0.8660",
+        "name": "doy_sin",
+        "role": "engineered_feature",
+        "source_or_formula": "sin(2 * pi * day_of_year / 366).",
+        "stage": "cleaned"
+    },
+    {
+        "description": "Cosine encoding of day-of-year seasonality.",
+        "dtype": "float32",
+        "example": "-0.5000",
+        "name": "doy_cos",
+        "role": "engineered_feature",
+        "source_or_formula": "cos(2 * pi * day_of_year / 366).",
+        "stage": "cleaned"
+    }
+]
