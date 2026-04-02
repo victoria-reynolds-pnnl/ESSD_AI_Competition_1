@@ -18,104 +18,34 @@ The selection of these models is based on the specific characteristics of the da
 - **Advanced Clustering:** HDBSCAN is preferred over simpler methods like k-means for the initial tiering because the NERC subregions form clusters of varying shapes and densities, which HDBSCAN is designed to handle effectively.
 - **Geospatial Significance:** Moran's I is the standard statistical method to directly address the project's requirement to identify statistically significant geographic clustering of events, rather than just observing visual patterns.
 
+## Data Dictionary Table
+
+| Field Name | Description | Data Type(s) | Example(s) |
+|---|---|---|---|
+| `start_date` | Event start date in ISO format (YYYY-MM-DD). | `string` | `1980-01-06` |
+| `end_date` | Event end date in ISO format (YYYY-MM-DD). | `string` | `1980-01-12` |
+| `centroid_date` | Representative midpoint date for the event in ISO format (YYYY-MM-DD). | `string` | `1980-01-11` |
+| `duration_days` | Event duration measured in whole days. | `integer` | `7` |
+| `nerc_id` | NERC region identifier associated with the event. | `string` | `NERC` |
+| `spatial_coverage` | Spatial extent metric for the event (coverage in dataset-defined units). | `number` | `48.0` |
+| `highest_temperature_k` | Peak heat-wave temperature value in Kelvin. | `number` | `311.7061073825` |
+| `lowest_temperature_k` | Minimum cold-snap temperature value in Kelvin. | `number` | `258.5427111111` |
+| `inter_event_recovery_interval_days` | Gap in days between the current event end date and the next event start date within the same region. | `number`, `null` | `6.0`, `null` |
+| `cumulative_heat_stress_index` | Running cumulative stress index within each region-year, based on event temperature multiplied by duration. | `number` | `1809.7989777778` |
+| `yearly_max_heat_wave_intensity` | Maximum event temperature observed for the region in that calendar year. | `number` | `272.7129824561` |
+| `yearly_max_heat_wave_duration` | Maximum event duration observed for the region in that calendar year. | `integer` | `17` |
+| `yearly_max_heat_wave_intensity_trend` | Year-over-year change in yearly maximum intensity within each region. | `number`, `null` | `0.6321052632`, `null` |
+| `yearly_max_heat_wave_duration_trend` | Year-over-year change in yearly maximum duration within each region. | `number`, `null` | `6.0`, `null` |
+
 ## Data Cleaning Script
+- `clean_data.py` cleans and standardizes all `.zip` archives in `Data/original/` into consistent CSVs.
+- Handles mixed input formats (concatenated fixed-width vs. standard CSV), removes junk/non-data rows, converts columns to appropriate data types, drops duplicates, and filters miscategorized/contaminated events (e.g., heat events in cold-snap files and vice versa).
+- Outputs cleaned files to `Data/cleaned/`, organized into subfolders that mirror each source archive.
 
-### Overview
+## Data Features Added Notes
 
-This project includes a Python script (`clean_data.py`) designed to clean and standardize a set of weather event data. The script automates the cleaning process for all `.zip` archives located in the `data/original/` directory.
+- The feature-adding script was produced in VS Code using a GitHub Copilot agent.
 
-The cleaning logic specifically addresses several data quality issues discovered in the source files:
+## Feature Engineering Notes
 
-- **Inconsistent Formatting**: The source data contains a mix of concatenated fixed-width lines and standard comma-separated (CSV) lines, which require parsing [1, 3, 5].
-- **Data Contamination**: The files contain miscategorized events. For example, cold snap archives include summer heat events [1, 2], and heat wave archives include winter cold snaps [3, 4, 5].
-- **Junk Rows**: Some files contain non-data rows, such as headers or filenames, that must be removed [1].
-
-The script parses each format, converts columns to appropriate data types, removes duplicates, and filters out the contaminated records to produce clean, usable CSV files.
-
-### Prerequisites
-
-- Python 3.7 or newer
-- The `pandas` library
-
-### Directory Structure
-
-Before running the script, ensure your project is organized with the following directory structure:
-
-project_folder/
-├── Data/
-│ ├── original/
-│ ├── cleaned/
-│ └── cleaned_with_features/
-│ ├── csv/
-│ └── json/
-└── Scripts/
-
-- **`Data/original/`**: This folder must contain all the original data `.zip` files (e.g., `cold_snap_library_NERC_average.zip` [1], `heat_wave_library_NERC_average_pop.zip` [5]).
-- **`Data/cleaned/`**: This folder will be created by the cleaning script if it doesn't exist. It stores cleaned CSV output files.
-- **`Data/cleaned_with_features/`**: This folder is produced by the feature script and contains mirrored outputs in both CSV and JSON formats.
-- **`Scripts/`**: This folder must contain the `clean_data.py` script, the `add_features.py` script, and the `requirements.txt` file.
-
-### Setup and Execution
-
-1.  **Place Files**:
-    - Move all the provided `.zip` data archives into the `Data/original/` directory.
-    - Ensure `clean_data.py`, `add_features.py`, and `requirements.txt` are located in the `Scripts/` directory.
-
-2.  **Navigate to the Scripts Directory**:
-    Open your terminal or command prompt and change your current directory to the `Scripts` folder.
-
-    ```sh
-    cd path/to/project_folder/Scripts
-    ```
-
-3.  **Install Dependencies**:
-    Run the following command to install the required `pandas` library.
-
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-4.  **Execute the Cleaning Script**:
-    Run the cleaning script from within the `/Scripts` directory. The script will log its progress in the terminal.
-
-    ```sh
-    python clean_data.py
-    ```
-
-5.  **Execute the Feature Engineering Script**:
-    After cleaning completes, run the feature script from within the same `/Scripts` directory.
-    ```sh
-    python add_features.py
-    ```
-
-### Output
-
-After `clean_data.py` finishes, the cleaned data will be located in the `Data/cleaned/` directory. The output is organized into subdirectories named after the original `.zip` archives.
-
-For example, after processing `cold_snap_library_NERC_average.zip` [1], the output structure will be:
-
-Data/
-└── cleaned/
-└── cold_snap_library_NERC_average/
-├── \_def1_cleaned.csv
-├── \_def2_cleaned.csv
-└── ... and so on for each internal CSV
-
-After `add_features.py` finishes, engineered outputs are written under `Data/cleaned_with_features/` in two mirrored folder trees:
-
-- **CSV output** in `Data/cleaned_with_features/csv/`
-- **JSON output** in `Data/cleaned_with_features/json/`
-
-For each cleaned input CSV, the script writes a matching CSV and JSON file while preserving the same relative folder structure.
-
-For example, a cleaned input file at:
-
-`Data/cleaned/cold_snap_library_NERC_average/cold_snap_library_NERC_average_def1_cleaned.csv`
-
-produces:
-
-`Data/cleaned_with_features/csv/cold_snap_library_NERC_average/cold_snap_library_NERC_average_def1_cleaned.csv`
-
-and
-
-`Data/cleaned_with_features/json/cold_snap_library_NERC_average/cold_snap_library_NERC_average_def1_cleaned.json`
+- Gemini 2.5 Pro, GPT 5.2, and Claude Sonnet 4.6 were used to generate ideas for feature engineering, and the team selected three of these features to move forward with.
