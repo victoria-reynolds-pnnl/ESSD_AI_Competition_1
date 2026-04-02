@@ -6,26 +6,30 @@
 # **Measurements:** Flow rate (L/min), Pressure (psi), Temperature (°C via TEC thermocouples), Electrical Conductivity (EC), Packer depths (ft)
 
 # ### Cleaning steps
+# FTES Data Cleaning and Preprocessing Pipeline
+
+### Cleaning steps
 # 1. Load and inspect data  
 # 2. Handle missing / invalid values  
-# 3. Detect and correct anomalies  
-# 4. Feature engineering and phase labeling  
-# 5. Normalize and scale features  
-# 6. Train/test split and final validation
+# 3. Filter to operational phase
+# 4. Detect and correct anomalies  
+# 5. Feature engineering and phase labeling  
+# 6. Train/test split data chronologically
+# 7. Normalize and scale features 
 
 import pandas as pd
 import numpy as np
 import warnings
 from pathlib import Path
-from scipy import stats
 from sklearn.preprocessing import MinMaxScaler
 import json
+import os
 
 warnings.filterwarnings("ignore")
 print("Libraries loaded.")
 
 ################# Configuration and Paths #################
-DATA_DIR = Path(r"../data")
+DATA_DIR = Path(r"../Data")
 CSV_FILE = DATA_DIR / "FTES-Full_Test_1hour_avg.csv"
 OUTPUT_DIR = DATA_DIR
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -34,6 +38,8 @@ filter_to_hot_injection = True  # Set to True to filter dataset to hot injection
 ###########################################################
 
 # ── load ──────────────────────────────────────────────────────────────────────
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
 df_raw = pd.read_csv(CSV_FILE, parse_dates=["Time"], index_col="Time")
 df = df_raw.copy()
 
@@ -320,6 +326,78 @@ print(created)
 
 # OpenAI GPT‑5.2
 
+# Time series features
+
+# Configurable windows for time-series features
+lag_windows = [1, 3, 6, 12, 24]          # past snapshots
+rolling_windows = [3, 6, 12, 24]         # averaged past context
+jump_z_threshold = 3.0
+
+# Use key system signals plus all temperature/EC channels
+base_ts_cols = [
+    "Net Flow",
+    "Injection Pressure",
+    "Injection EC",
+    "TC Interval Pressure",
+    "Total_Production_Flow",
+    "Pressure_Differential",
+    "TC_Impedance_Proxy",
+]
+
+ts_feature_cols = []
+for c in base_ts_cols + temp_cols + ec_cols:
+    if c in df.columns and c not in ts_feature_cols:
+        ts_feature_cols.append(c)
+
+print(f"\nGenerating time-series features from {len(ts_feature_cols)} signals...")
+
+# 1) Lagged values (past data)
+for col in ts_feature_cols:
+    for lag in lag_windows:
+        df[f"{col}__lag_{lag}h"] = df[col].shift(lag)
+
+# 2) Rolling-window stats on past-only values (avoid current-row leakage)
+for col in ts_feature_cols:
+    shifted = df[col].shift(1)
+    for w in rolling_windows:
+        roll = shifted.rolling(window=w, min_periods=max(2, w // 3))
+        df[f"{col}__roll_mean_{w}h"] = roll.mean()
+        df[f"{col}__roll_std_{w}h"] = roll.std()
+        df[f"{col}__roll_min_{w}h"] = roll.min()
+        df[f"{col}__roll_max_{w}h"] = roll.max()
+
+# 3) Slope/rate-of-change and acceleration features
+for col in ts_feature_cols:
+    df[f"{col}__roc_1h"] = df[col].diff(1)
+    df[f"{col}__roc_3h_per_h"] = df[col].diff(3) / 3.0
+    df[f"{col}__accel_1h"] = df[f"{col}__roc_1h"].diff(1)
+
+# 4) Temp/EC jump context vs trailing 24h baseline
+for col in temp_cols + ec_cols:
+    if col not in df.columns:
+        continue
+    hist_mean = df[col].shift(1).rolling(window=24, min_periods=6).mean()
+    hist_std = df[col].shift(1).rolling(window=24, min_periods=6).std()
+
+    df[f"{col}__mean_24h"] = hist_mean
+    df[f"{col}__delta_vs_24hmean"] = df[col] - hist_mean
+    df[f"{col}__z_24h"] = (df[col] - hist_mean) / (hist_std + 1e-6)
+    df[f"{col}__jump_flag_24h"] = (df[f"{col}__z_24h"].abs() > jump_z_threshold).astype(int)
+
+ts_created = [
+    c for c in df.columns
+    if "__lag_" in c
+    or "__roll_" in c
+    or "__roc_" in c
+    or "__accel_" in c
+    or "__mean_24h" in c
+    or "__delta_vs_24hmean" in c
+    or "__z_24h" in c
+    or "__jump_flag_24h" in c
+]
+print(f"Time-series features created: {len(ts_created)}")
+# OpenAI GPT‑5.3-Codex
+
 # ── Temporal split by % (chronological, no shuffle) ────
 # Split data into train/val/test by chronological order to prevent data leakage across time. 
 
@@ -358,6 +436,14 @@ test_df = test_df.reindex(columns=train_df.columns, fill_value=0)
 phase_cols = [c for c in train_df.columns if c.startswith("Phase_")]
 print("One-hot Phase columns (train):", phase_cols)
 
+# Fill NaNs from lag/rolling/diff using train medians (no future leakage)
+num_cols_all = train_df.select_dtypes(include="number").columns
+train_medians = train_df[num_cols_all].median()
+train_df[num_cols_all] = train_df[num_cols_all].fillna(train_medians)
+val_df[num_cols_all] = val_df[num_cols_all].fillna(train_medians)
+test_df[num_cols_all] = test_df[num_cols_all].fillna(train_medians)
+# OpenAI GPT‑5.3-Codex
+
 # ── Choose columns to scale (include engineered numeric columns if present) ───
 base_scale_cols = (
     flow_cols + pres_cols + temp_cols + ec_cols
@@ -373,8 +459,23 @@ base_scale_cols = (
 # Include any mixing proxy engineered columns like "*__MixFrac", "*__NormDist_to_InjEC", etc.
 mix_proxy_cols = [c for c in train_df.columns if "__MixFrac" in c or "__NormDist_to_InjEC" in c or "__Delta_to_InjEC" in c]
 
-scale_cols = [c for c in (base_scale_cols + mix_proxy_cols)
+# Include generated time-series features, excluding binary jump flags
+ts_scale_cols = [
+    c for c in train_df.columns
+    if (
+        "__lag_" in c
+        or "__roll_" in c
+        or "__roc_" in c
+        or "__accel_" in c
+        or "__mean_24h" in c
+        or "__delta_vs_24hmean" in c
+        or "__z_24h" in c
+    ) and not c.endswith("__jump_flag_24h")
+]
+
+scale_cols = [c for c in (base_scale_cols + mix_proxy_cols + ts_scale_cols)
               if c in train_df.columns and not c.startswith("Phase_")]
+# OpenAI GPT‑5.3-Codex
 
 # ── Fit scaler on train only, transform val/test ──────────────────────────────
 scaler = MinMaxScaler()

@@ -79,3 +79,903 @@ TU Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)
 TU Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
 TS Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
 TS Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1; MinMaxScaled (fit on train),1702
+Net Flow__lag_1h,float64,L/min,MinMaxScaled (fit on train),1701
+Net Flow__lag_3h,float64,L/min,MinMaxScaled (fit on train),1699
+Net Flow__lag_6h,float64,L/min,MinMaxScaled (fit on train),1696
+Net Flow__lag_12h,float64,L/min,MinMaxScaled (fit on train),1690
+Net Flow__lag_24h,float64,L/min,MinMaxScaled (fit on train),1678
+Injection Pressure__lag_1h,float64,psi,MinMaxScaled (fit on train),1701
+Injection Pressure__lag_3h,float64,psi,MinMaxScaled (fit on train),1699
+Injection Pressure__lag_6h,float64,psi,MinMaxScaled (fit on train),1696
+Injection Pressure__lag_12h,float64,psi,MinMaxScaled (fit on train),1690
+Injection Pressure__lag_24h,float64,psi,MinMaxScaled (fit on train),1678
+Injection EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+Injection EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+Injection EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+Injection EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+Injection EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TC Interval Pressure__lag_1h,float64,psi,MinMaxScaled (fit on train),1701
+TC Interval Pressure__lag_3h,float64,psi,MinMaxScaled (fit on train),1699
+TC Interval Pressure__lag_6h,float64,psi,MinMaxScaled (fit on train),1696
+TC Interval Pressure__lag_12h,float64,psi,MinMaxScaled (fit on train),1690
+TC Interval Pressure__lag_24h,float64,psi,MinMaxScaled (fit on train),1678
+Total_Production_Flow__lag_1h,float64,L/min,MinMaxScaled (fit on train),1701
+Total_Production_Flow__lag_3h,float64,L/min,MinMaxScaled (fit on train),1699
+Total_Production_Flow__lag_6h,float64,L/min,MinMaxScaled (fit on train),1696
+Total_Production_Flow__lag_12h,float64,L/min,MinMaxScaled (fit on train),1690
+Total_Production_Flow__lag_24h,float64,L/min,MinMaxScaled (fit on train),1678
+Pressure_Differential__lag_1h,float64,psi,MinMaxScaled (fit on train),1701
+Pressure_Differential__lag_3h,float64,psi,MinMaxScaled (fit on train),1699
+Pressure_Differential__lag_6h,float64,psi,MinMaxScaled (fit on train),1696
+Pressure_Differential__lag_12h,float64,psi,MinMaxScaled (fit on train),1690
+Pressure_Differential__lag_24h,float64,psi,MinMaxScaled (fit on train),1678
+TC_Impedance_Proxy__lag_1h,float64,psi / (L/min),MinMaxScaled (fit on train),1701
+TC_Impedance_Proxy__lag_3h,float64,psi / (L/min),MinMaxScaled (fit on train),1699
+TC_Impedance_Proxy__lag_6h,float64,psi / (L/min),MinMaxScaled (fit on train),1696
+TC_Impedance_Proxy__lag_12h,float64,psi / (L/min),MinMaxScaled (fit on train),1690
+TC_Impedance_Proxy__lag_24h,float64,psi / (L/min),MinMaxScaled (fit on train),1678
+TL-TEC-INT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-INT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-INT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TL-TEC-INT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TL-TEC-INT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-INT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-INT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TL-TEC-INT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TL-TEC-BOT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-BOT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-BOT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TL-TEC-BOT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TL-TEC-BOT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-BOT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-BOT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TL-TEC-BOT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TN-TEC-INT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-INT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-INT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TN-TEC-INT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TN-TEC-INT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-INT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-INT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TN-TEC-INT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TN-TEC-BOT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-BOT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-BOT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TN-TEC-BOT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TN-TEC-BOT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-BOT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-BOT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TN-TEC-BOT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TC-TEC-INT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-INT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-INT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TC-TEC-INT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TC-TEC-INT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-INT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-INT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TC-TEC-INT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TC-TEC-BOT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-BOT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-BOT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TC-TEC-BOT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TC-TEC-BOT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-BOT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-BOT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TC-TEC-BOT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TU-TEC-INT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-INT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-INT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TU-TEC-INT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TU-TEC-INT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-INT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-INT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TU-TEC-INT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TU-TEC-BOT-U__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-BOT-U__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-BOT-U__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-U__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TU-TEC-BOT-U__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TU-TEC-BOT-L__lag_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-BOT-L__lag_3h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-BOT-L__lag_6h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-L__lag_12h,float64,°C,MinMaxScaled (fit on train),1690
+TU-TEC-BOT-L__lag_24h,float64,°C,MinMaxScaled (fit on train),1678
+TL Interval EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TL Interval EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TL Interval EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Interval EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TL Interval EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TL Bottom EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TL Bottom EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TL Bottom EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Bottom EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TL Bottom EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TN Interval EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TN Interval EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TN Interval EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Interval EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TN Interval EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TN Bottom EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TN Bottom EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TN Bottom EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Bottom EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TN Bottom EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TC Interval EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TC Interval EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TC Interval EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Interval EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TC Interval EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TC Bottom EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TC Bottom EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TC Bottom EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Bottom EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TC Bottom EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TU Interval EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TU Interval EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TU Interval EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Interval EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TU Interval EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TU Bottom EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TU Bottom EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TU Bottom EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Bottom EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TU Bottom EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TS Interval EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TS Interval EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TS Interval EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Interval EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TS Interval EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+TS Bottom EC__lag_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TS Bottom EC__lag_3h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TS Bottom EC__lag_6h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Bottom EC__lag_12h,float64,µS/cm,MinMaxScaled (fit on train),1690
+TS Bottom EC__lag_24h,float64,µS/cm,MinMaxScaled (fit on train),1678
+Net Flow__roll_mean_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_std_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_min_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_max_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_mean_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_std_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_min_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_max_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Net Flow__roll_mean_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Net Flow__roll_std_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Net Flow__roll_min_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Net Flow__roll_max_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Net Flow__roll_mean_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Net Flow__roll_std_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Net Flow__roll_min_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Net Flow__roll_max_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Injection Pressure__roll_mean_3h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_std_3h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_min_3h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_max_3h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_mean_6h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_std_6h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_min_6h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_max_6h,float64,psi,MinMaxScaled (fit on train),1700
+Injection Pressure__roll_mean_12h,float64,psi,MinMaxScaled (fit on train),1698
+Injection Pressure__roll_std_12h,float64,psi,MinMaxScaled (fit on train),1698
+Injection Pressure__roll_min_12h,float64,psi,MinMaxScaled (fit on train),1698
+Injection Pressure__roll_max_12h,float64,psi,MinMaxScaled (fit on train),1698
+Injection Pressure__roll_mean_24h,float64,psi,MinMaxScaled (fit on train),1694
+Injection Pressure__roll_std_24h,float64,psi,MinMaxScaled (fit on train),1694
+Injection Pressure__roll_min_24h,float64,psi,MinMaxScaled (fit on train),1694
+Injection Pressure__roll_max_24h,float64,psi,MinMaxScaled (fit on train),1694
+Injection EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+Injection EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+Injection EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+Injection EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+Injection EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+Injection EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+Injection EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+Injection EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+Injection EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Interval Pressure__roll_mean_3h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_std_3h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_min_3h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_max_3h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_mean_6h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_std_6h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_min_6h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_max_6h,float64,psi,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roll_mean_12h,float64,psi,MinMaxScaled (fit on train),1698
+TC Interval Pressure__roll_std_12h,float64,psi,MinMaxScaled (fit on train),1698
+TC Interval Pressure__roll_min_12h,float64,psi,MinMaxScaled (fit on train),1698
+TC Interval Pressure__roll_max_12h,float64,psi,MinMaxScaled (fit on train),1698
+TC Interval Pressure__roll_mean_24h,float64,psi,MinMaxScaled (fit on train),1694
+TC Interval Pressure__roll_std_24h,float64,psi,MinMaxScaled (fit on train),1694
+TC Interval Pressure__roll_min_24h,float64,psi,MinMaxScaled (fit on train),1694
+TC Interval Pressure__roll_max_24h,float64,psi,MinMaxScaled (fit on train),1694
+Total_Production_Flow__roll_mean_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_std_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_min_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_max_3h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_mean_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_std_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_min_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_max_6h,float64,L/min,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roll_mean_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Total_Production_Flow__roll_std_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Total_Production_Flow__roll_min_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Total_Production_Flow__roll_max_12h,float64,L/min,MinMaxScaled (fit on train),1698
+Total_Production_Flow__roll_mean_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Total_Production_Flow__roll_std_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Total_Production_Flow__roll_min_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Total_Production_Flow__roll_max_24h,float64,L/min,MinMaxScaled (fit on train),1694
+Pressure_Differential__roll_mean_3h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_std_3h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_min_3h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_max_3h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_mean_6h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_std_6h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_min_6h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_max_6h,float64,psi,MinMaxScaled (fit on train),1700
+Pressure_Differential__roll_mean_12h,float64,psi,MinMaxScaled (fit on train),1698
+Pressure_Differential__roll_std_12h,float64,psi,MinMaxScaled (fit on train),1698
+Pressure_Differential__roll_min_12h,float64,psi,MinMaxScaled (fit on train),1698
+Pressure_Differential__roll_max_12h,float64,psi,MinMaxScaled (fit on train),1698
+Pressure_Differential__roll_mean_24h,float64,psi,MinMaxScaled (fit on train),1694
+Pressure_Differential__roll_std_24h,float64,psi,MinMaxScaled (fit on train),1694
+Pressure_Differential__roll_min_24h,float64,psi,MinMaxScaled (fit on train),1694
+Pressure_Differential__roll_max_24h,float64,psi,MinMaxScaled (fit on train),1694
+TC_Impedance_Proxy__roll_mean_3h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_std_3h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_min_3h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_max_3h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_mean_6h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_std_6h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_min_6h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_max_6h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roll_mean_12h,float64,psi / (L/min),MinMaxScaled (fit on train),1698
+TC_Impedance_Proxy__roll_std_12h,float64,psi / (L/min),MinMaxScaled (fit on train),1698
+TC_Impedance_Proxy__roll_min_12h,float64,psi / (L/min),MinMaxScaled (fit on train),1698
+TC_Impedance_Proxy__roll_max_12h,float64,psi / (L/min),MinMaxScaled (fit on train),1698
+TC_Impedance_Proxy__roll_mean_24h,float64,psi / (L/min),MinMaxScaled (fit on train),1694
+TC_Impedance_Proxy__roll_std_24h,float64,psi / (L/min),MinMaxScaled (fit on train),1694
+TC_Impedance_Proxy__roll_min_24h,float64,psi / (L/min),MinMaxScaled (fit on train),1694
+TC_Impedance_Proxy__roll_max_24h,float64,psi / (L/min),MinMaxScaled (fit on train),1694
+TL-TEC-INT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-INT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-INT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-INT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-INT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-INT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-INT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-INT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-INT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TL-TEC-BOT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL-TEC-BOT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-INT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-INT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TN-TEC-BOT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TN-TEC-BOT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-INT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-INT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TC-TEC-BOT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TC-TEC-BOT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-INT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-INT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-U__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-U__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-U__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-U__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-U__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-U__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-U__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-U__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-L__roll_mean_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_std_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_min_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_max_3h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_mean_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_std_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_min_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_max_6h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roll_mean_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-L__roll_std_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-L__roll_min_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-L__roll_max_12h,float64,°C,MinMaxScaled (fit on train),1698
+TU-TEC-BOT-L__roll_mean_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-L__roll_std_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-L__roll_min_24h,float64,°C,MinMaxScaled (fit on train),1694
+TU-TEC-BOT-L__roll_max_24h,float64,°C,MinMaxScaled (fit on train),1694
+TL Interval EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Interval EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Interval EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Interval EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Interval EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Interval EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TL Interval EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TL Interval EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TL Interval EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TL Bottom EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Bottom EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Bottom EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Bottom EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TL Bottom EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TL Bottom EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TL Bottom EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TL Bottom EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Interval EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Interval EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Interval EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Interval EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Interval EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Interval EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Interval EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Interval EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Bottom EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Bottom EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Bottom EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Bottom EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TN Bottom EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Bottom EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Bottom EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TN Bottom EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Interval EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Interval EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Interval EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Interval EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Interval EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Interval EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Interval EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Interval EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Bottom EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Bottom EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Bottom EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Bottom EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TC Bottom EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Bottom EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Bottom EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TC Bottom EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Interval EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Interval EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Interval EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Interval EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Interval EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Interval EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Interval EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Interval EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Bottom EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Bottom EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Bottom EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Bottom EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TU Bottom EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Bottom EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Bottom EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TU Bottom EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Interval EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Interval EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Interval EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Interval EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Interval EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Interval EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Interval EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Interval EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Bottom EC__roll_mean_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_std_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_min_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_max_3h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_mean_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_std_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_min_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_max_6h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roll_mean_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Bottom EC__roll_std_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Bottom EC__roll_min_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Bottom EC__roll_max_12h,float64,µS/cm,MinMaxScaled (fit on train),1698
+TS Bottom EC__roll_mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Bottom EC__roll_std_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Bottom EC__roll_min_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+TS Bottom EC__roll_max_24h,float64,µS/cm,MinMaxScaled (fit on train),1694
+Net Flow__roc_1h,float64,L/min,MinMaxScaled (fit on train),1701
+Net Flow__roc_3h_per_h,float64,L/min,MinMaxScaled (fit on train),1699
+Net Flow__accel_1h,float64,L/min,MinMaxScaled (fit on train),1700
+Injection Pressure__roc_1h,float64,psi,MinMaxScaled (fit on train),1701
+Injection Pressure__roc_3h_per_h,float64,psi,MinMaxScaled (fit on train),1699
+Injection Pressure__accel_1h,float64,psi,MinMaxScaled (fit on train),1700
+Injection EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+Injection EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+Injection EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval Pressure__roc_1h,float64,psi,MinMaxScaled (fit on train),1701
+TC Interval Pressure__roc_3h_per_h,float64,psi,MinMaxScaled (fit on train),1699
+TC Interval Pressure__accel_1h,float64,psi,MinMaxScaled (fit on train),1700
+Total_Production_Flow__roc_1h,float64,L/min,MinMaxScaled (fit on train),1701
+Total_Production_Flow__roc_3h_per_h,float64,L/min,MinMaxScaled (fit on train),1699
+Total_Production_Flow__accel_1h,float64,L/min,MinMaxScaled (fit on train),1700
+Pressure_Differential__roc_1h,float64,psi,MinMaxScaled (fit on train),1701
+Pressure_Differential__roc_3h_per_h,float64,psi,MinMaxScaled (fit on train),1699
+Pressure_Differential__accel_1h,float64,psi,MinMaxScaled (fit on train),1700
+TC_Impedance_Proxy__roc_1h,float64,psi / (L/min),MinMaxScaled (fit on train),1701
+TC_Impedance_Proxy__roc_3h_per_h,float64,psi / (L/min),MinMaxScaled (fit on train),1699
+TC_Impedance_Proxy__accel_1h,float64,psi / (L/min),MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-INT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-INT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-INT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-INT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-INT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-BOT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-BOT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TL-TEC-BOT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TL-TEC-BOT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TL-TEC-BOT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-INT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-INT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-INT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-INT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-INT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-BOT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-BOT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TN-TEC-BOT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TN-TEC-BOT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TN-TEC-BOT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-INT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-INT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-INT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-INT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-INT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-BOT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-BOT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TC-TEC-BOT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TC-TEC-BOT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TC-TEC-BOT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-INT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-INT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-INT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-INT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-INT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-U__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-BOT-U__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-BOT-U__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TU-TEC-BOT-L__roc_1h,float64,°C,MinMaxScaled (fit on train),1701
+TU-TEC-BOT-L__roc_3h_per_h,float64,°C,MinMaxScaled (fit on train),1699
+TU-TEC-BOT-L__accel_1h,float64,°C,MinMaxScaled (fit on train),1700
+TL Interval EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TL Interval EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TL Interval EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL Bottom EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TL Bottom EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TL Bottom EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Interval EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TN Interval EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TN Interval EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TN Bottom EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TN Bottom EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TN Bottom EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Interval EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TC Interval EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TC Interval EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TC Bottom EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TC Bottom EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TC Bottom EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Interval EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TU Interval EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TU Interval EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TU Bottom EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TU Bottom EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TU Bottom EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Interval EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TS Interval EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TS Interval EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TS Bottom EC__roc_1h,float64,µS/cm,MinMaxScaled (fit on train),1701
+TS Bottom EC__roc_3h_per_h,float64,µS/cm,MinMaxScaled (fit on train),1699
+TS Bottom EC__accel_1h,float64,µS/cm,MinMaxScaled (fit on train),1700
+TL-TEC-INT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-U__jump_flag_24h,int64,°C,None,1702
+TL-TEC-INT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-INT-L__jump_flag_24h,int64,°C,None,1702
+TL-TEC-BOT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-U__jump_flag_24h,int64,°C,None,1702
+TL-TEC-BOT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TL-TEC-BOT-L__jump_flag_24h,int64,°C,None,1702
+TN-TEC-INT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-U__jump_flag_24h,int64,°C,None,1702
+TN-TEC-INT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-INT-L__jump_flag_24h,int64,°C,None,1702
+TN-TEC-BOT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-U__jump_flag_24h,int64,°C,None,1702
+TN-TEC-BOT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TN-TEC-BOT-L__jump_flag_24h,int64,°C,None,1702
+TC-TEC-INT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-U__jump_flag_24h,int64,°C,None,1702
+TC-TEC-INT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-INT-L__jump_flag_24h,int64,°C,None,1702
+TC-TEC-BOT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-U__jump_flag_24h,int64,°C,None,1702
+TC-TEC-BOT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TC-TEC-BOT-L__jump_flag_24h,int64,°C,None,1702
+TU-TEC-INT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-U__jump_flag_24h,int64,°C,None,1702
+TU-TEC-INT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-INT-L__jump_flag_24h,int64,°C,None,1702
+TU-TEC-BOT-U__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-U__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-U__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-U__jump_flag_24h,int64,°C,None,1702
+TU-TEC-BOT-L__mean_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-L__delta_vs_24hmean,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-L__z_24h,float64,°C,MinMaxScaled (fit on train),1696
+TU-TEC-BOT-L__jump_flag_24h,int64,°C,None,1702
+Injection EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+Injection EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+Injection EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+Injection EC__jump_flag_24h,int64,µS/cm,None,1702
+TL Interval EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Interval EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Interval EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Interval EC__jump_flag_24h,int64,µS/cm,None,1702
+TL Bottom EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Bottom EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Bottom EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TL Bottom EC__jump_flag_24h,int64,µS/cm,None,1702
+TN Interval EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Interval EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Interval EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Interval EC__jump_flag_24h,int64,µS/cm,None,1702
+TN Bottom EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Bottom EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Bottom EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TN Bottom EC__jump_flag_24h,int64,µS/cm,None,1702
+TC Interval EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Interval EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Interval EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Interval EC__jump_flag_24h,int64,µS/cm,None,1702
+TC Bottom EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Bottom EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Bottom EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TC Bottom EC__jump_flag_24h,int64,µS/cm,None,1702
+TU Interval EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Interval EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Interval EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Interval EC__jump_flag_24h,int64,µS/cm,None,1702
+TU Bottom EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Bottom EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Bottom EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TU Bottom EC__jump_flag_24h,int64,µS/cm,None,1702
+TS Interval EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Interval EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Interval EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Interval EC__jump_flag_24h,int64,µS/cm,None,1702
+TS Bottom EC__mean_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Bottom EC__delta_vs_24hmean,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Bottom EC__z_24h,float64,µS/cm,MinMaxScaled (fit on train),1696
+TS Bottom EC__jump_flag_24h,int64,µS/cm,None,1702
