@@ -1,0 +1,1 @@
+We used AI to help prepare the data by reviewing the cleaned files, identifying useful new features for our problem, and then creating a Python script to add those features consistently across the dataset. The feature-adding script was produced in VS Code with this GitHub Copilot agent.
