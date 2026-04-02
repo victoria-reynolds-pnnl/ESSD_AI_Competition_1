@@ -25,4 +25,6 @@ in the data are as follows:
 
 # Data preparation paragraph
 
+Our data gathering and preparation scripts are located in the `Scripts` folder. To run the first two scripts, you will need a USGS water data API key, which can be obtained at https://api.waterdata.usgs.gov/signup/. This will need to be set as an environment variable, for example by running `export API_USGS_PAT=[your key]` in terminal. The third and fourth script (exploration and cleaning) should run out of the box, using the data that is present in the `Data` folder.
+
 4-6 sentences on approach, what we are thinking while prompting AI, what we wanted to accomplish, why we chose certain feature engineering variables. Include role of AI in each step (how it performs, how we assess its performance)
