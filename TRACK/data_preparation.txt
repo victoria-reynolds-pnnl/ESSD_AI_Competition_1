@@ -1,1 +1,13 @@
-The feature-adding script was produced in VS Code using a GitHub Copilot agent.
+The data-cleaning process was created using Gemini 2.5 pro, and automates a Python (pandas) script (clean_data.py) that
+iterates through every .zip archive in Data/original/, extracts the contained files, and
+standardizes them into consistent, analysis-ready CSVs. The script handles mixed source formats
+(concatenated fixed-width records vs. normal CSV rows), removes junk/non-data rows (e.g.,
+embedded headers or filenames), coerces columns into appropriate data types, drops duplicates,
+and filters out miscategorized/contaminated records (e.g., heat-wave events appearing in
+cold-snap archives and vice versa). Cleaned outputs are written to Data/cleaned/ in subfolders
+that mirror each original archive.
+
+The feature-adding script was produced in VS Code using a GitHub Copilot agent. 
+
+Gemini 2.5 Pro, GPT 5.2, and Claude Sonnet 4.6 were used to generate ideas for feature engineering, and the
+team selected three of these features to move forward with.
