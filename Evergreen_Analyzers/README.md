@@ -13,8 +13,7 @@ in the data are as follows:
 | monitoring_location_id | The USGS id for the monitoring location. | string | USGS-12422500 |
 | time | The date that the measurement was taken. | Pandas timestamp | 2000-12-25 00:00:00+00:00 |
 | flow_rate | The average flow rate at the location on the given date. | float | 2230.0 |
-| qualifier | Qualifiers regarding data quality. See data preparation paragraph for details on qualifiers and which were omitted. | string | 
-\['ESTIMATED', 'REVISED'\] |
+| qualifier | Qualifiers regarding data quality. See data preparation paragraph for details on qualifiers and which were omitted. | string | \['ESTIMATED', 'REVISED'\] |
 | latitude | Latitude of the monitoring location. | float | 47.6593354474072 |
 | longitude | Longitude of the monitoring location. | float | -117.449102931018 |
 | seasonal_sin | Sine embedding of day of the year, to capture seasonality while avoiding discontinuities at calendar year boundaries. | float | -0.11988093 |
