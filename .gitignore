@@ -1,1 +1,10 @@
-~$ Competition Week 2 Resources.docx
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# data
+*.csv
+*.zip
+
+# MS Junk
+~$*
