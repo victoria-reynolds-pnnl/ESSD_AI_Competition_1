@@ -5,6 +5,8 @@
 # data
 *.csv
 *.zip
+*.envrc
 
 # MS Junk
 ~$*
+.envrc
