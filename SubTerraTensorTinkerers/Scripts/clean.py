@@ -339,9 +339,8 @@ print(created)
 # Time series features
 
 # Configurable windows for time-series features
-lag_windows = [1, 3, 6, 12, 24]          # past snapshots
-rolling_windows = [3, 6, 12, 24]         # averaged past context
-jump_z_threshold = 3.0
+lag_windows = [1, 3, 12, 24]          # past snapshots
+rolling_windows = [3, 12, 24]         # averaged past context
 
 # Use key system signals plus all temperature/EC channels
 base_ts_cols = [
@@ -373,26 +372,11 @@ for col in ts_feature_cols:
         roll = shifted.rolling(window=w, min_periods=max(2, w // 3))
         df[f"{col}__roll_mean_{w}h"] = roll.mean()
         df[f"{col}__roll_std_{w}h"] = roll.std()
-        df[f"{col}__roll_min_{w}h"] = roll.min()
-        df[f"{col}__roll_max_{w}h"] = roll.max()
 
 # 3) Slope/rate-of-change and acceleration features
 for col in ts_feature_cols:
     df[f"{col}__roc_1h"] = df[col].diff(1)
-    df[f"{col}__roc_3h_per_h"] = df[col].diff(3) / 3.0
     df[f"{col}__accel_1h"] = df[f"{col}__roc_1h"].diff(1)
-
-# 4) Temp/EC jump context vs trailing 24h baseline
-for col in temp_cols + ec_cols:
-    if col not in df.columns:
-        continue
-    hist_mean = df[col].shift(1).rolling(window=24, min_periods=6).mean()
-    hist_std = df[col].shift(1).rolling(window=24, min_periods=6).std()
-
-    df[f"{col}__mean_24h"] = hist_mean
-    df[f"{col}__delta_vs_24hmean"] = df[col] - hist_mean
-    df[f"{col}__z_24h"] = (df[col] - hist_mean) / (hist_std + 1e-6)
-    df[f"{col}__jump_flag_24h"] = (df[f"{col}__z_24h"].abs() > jump_z_threshold).astype(int)
 
 ts_created = [
     c for c in df.columns
@@ -400,10 +384,6 @@ ts_created = [
     or "__roll_" in c
     or "__roc_" in c
     or "__accel_" in c
-    or "__mean_24h" in c
-    or "__delta_vs_24hmean" in c
-    or "__z_24h" in c
-    or "__jump_flag_24h" in c
 ]
 print(f"Time-series features created: {len(ts_created)}")
 # OpenAI GPT‑5.3-Codex
