@@ -1,0 +1,685 @@
+{
+  "dataset_name": "raw_data",
+  "generated_utc": "2026-04-06T02:48:51.648676+00:00",
+  "row_count": 2609,
+  "column_count": 67,
+  "index": {
+    "name": "Time",
+    "dtype": "datetime64[ns]",
+    "is_datetime_index": true,
+    "min": "2024-12-10T21:00:00",
+    "max": "2025-03-29T00:00:00"
+  },
+  "fields": [
+    {
+      "Column": "Injection EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -30.402724762354246,
+      "max": 384.27648690909086,
+      "mean": 368.342990924481
+    },
+    {
+      "Column": "Net Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 0.0066120483064963,
+      "max": 7.39826513479711,
+      "mean": 1.8196554809801087
+    },
+    {
+      "Column": "TL Interval Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6451506707384786,
+      "max": 0.0777317369299221,
+      "mean": 0.00629801686442322
+    },
+    {
+      "Column": "TL Bottom Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6481795391449194,
+      "max": 0.0466385688839409,
+      "mean": 0.0010423857493513681
+    },
+    {
+      "Column": "TL Collar Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -0.0604288095502498,
+      "max": 0.5641188,
+      "mean": 0.19634356066597455
+    },
+    {
+      "Column": "TL Interval EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 316.82310714777776,
+      "max": 2193.9815507466665,
+      "mean": 1682.4954017058608
+    },
+    {
+      "Column": "TL Bottom EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 14.7727192,
+      "max": 2238.535792118611,
+      "mean": 1217.5115725372966
+    },
+    {
+      "Column": "TL Interval Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1095.9751189600222,
+      "max": 2807.3597579894445,
+      "mean": 237.57610861194985
+    },
+    {
+      "Column": "TL Bottom Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -904.6482923481398,
+      "max": 566.0428147407924,
+      "mean": 28.923778064420496
+    },
+    {
+      "Column": "TL Packer Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1128.174808593559,
+      "max": 3047.764028116944,
+      "mean": 973.5819707802053
+    },
+    {
+      "Column": "TL-TEC-INT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 25.7076782694778,
+      "max": 28.584886762777774,
+      "mean": 26.615749862572343
+    },
+    {
+      "Column": "TL-TEC-INT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 25.81291220161966,
+      "max": 30.908871435,
+      "mean": 26.797061863328857
+    },
+    {
+      "Column": "TL-TEC-BOT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 25.765433591175647,
+      "max": 28.697462695,
+      "mean": 26.59643702021693
+    },
+    {
+      "Column": "TL-TEC-BOT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 25.662401982787337,
+      "max": 29.11780972916667,
+      "mean": 26.562198048594
+    },
+    {
+      "Column": "TN Interval Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.644631111604664,
+      "max": 2.0077642831083544,
+      "mean": 0.23321643359452846
+    },
+    {
+      "Column": "TN Bottom Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6459790993892285,
+      "max": 0.5669904641148326,
+      "mean": 0.10015971560568629
+    },
+    {
+      "Column": "TN Collar Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -0.0004518409090909,
+      "max": 1.00011,
+      "mean": 0.15199475097510287
+    },
+    {
+      "Column": "TN Interval EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -221.4489260188784,
+      "max": 2135.951431264722,
+      "mean": 798.7404690010209
+    },
+    {
+      "Column": "TN Bottom EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -8.973707299278194,
+      "max": 2234.1866732958333,
+      "mean": 1180.0745146928753
+    },
+    {
+      "Column": "TN Interval Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1083.2395231721266,
+      "max": 3505.529142828611,
+      "mean": 488.64349827286196
+    },
+    {
+      "Column": "TN Bottom Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1132.25563061799,
+      "max": 1226.477921692778,
+      "mean": -12.064537500201649
+    },
+    {
+      "Column": "TN Packer Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1092.826367591338,
+      "max": 4055.907012778361,
+      "mean": 863.3786580073792
+    },
+    {
+      "Column": "TN-TEC-INT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 18.615267890833334,
+      "max": 30.37031342805556,
+      "mean": 27.737065793361285
+    },
+    {
+      "Column": "TN-TEC-INT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 19.15422725555556,
+      "max": 30.88465166768547,
+      "mean": 28.277445853170345
+    },
+    {
+      "Column": "TN-TEC-BOT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 17.8508483893534,
+      "max": 30.691433204444447,
+      "mean": 28.202395234906515
+    },
+    {
+      "Column": "TN-TEC-BOT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 20.679051779722226,
+      "max": 30.78788727527778,
+      "mean": 28.759935405657277
+    },
+    {
+      "Column": "TC Interval Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6560214530816213,
+      "max": 0.2523545891364903,
+      "mean": 0.020144472982040675
+    },
+    {
+      "Column": "TC Bottom Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.655732078289839,
+      "max": 0.0841618899748673,
+      "mean": 0.01650086930097139
+    },
+    {
+      "Column": "TC Collar Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 0.0056520161021654,
+      "max": 0.1195786169281284,
+      "mean": 0.06687299825480467
+    },
+    {
+      "Column": "TC Interval EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -96.24290974958356,
+      "max": 518.7816823322222,
+      "mean": 222.88135945946624
+    },
+    {
+      "Column": "TC Bottom EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -500.0144245,
+      "max": 2151.595183707276,
+      "mean": 1544.6850341870418
+    },
+    {
+      "Column": "TC Interval Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1093.104250168795,
+      "max": 5142.932380059036,
+      "mean": 3517.7384266424247
+    },
+    {
+      "Column": "TC Bottom Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1111.3551745546918,
+      "max": 2464.42695868352,
+      "mean": 75.98835552799163
+    },
+    {
+      "Column": "Injection Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -0.3532463999999995,
+      "max": 5133.407944566868,
+      "mean": 3515.1351138458995
+    },
+    {
+      "Column": "TC Packer Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1069.8866114536368,
+      "max": 5611.733713863855,
+      "mean": 4026.492142480874
+    },
+    {
+      "Column": "TC-TEC-INT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 23.60005294333333,
+      "max": 42.93811099638889,
+      "mean": 36.83427011575006
+    },
+    {
+      "Column": "TC-TEC-INT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 23.11073078833333,
+      "max": 52.118942325,
+      "mean": 43.01264744068281
+    },
+    {
+      "Column": "TC-TEC-BOT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 23.014926790555556,
+      "max": 52.77743898444445,
+      "mean": 42.48851779338271
+    },
+    {
+      "Column": "TC-TEC-BOT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 25.213865186480188,
+      "max": 42.18972963833333,
+      "mean": 35.8934354399383
+    },
+    {
+      "Column": "TU Interval Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6644335530260963,
+      "max": 0.8793996191666666,
+      "mean": -0.002704620530997372
+    },
+    {
+      "Column": "TU Bottom Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6501733270405332,
+      "max": 0.0620257402195327,
+      "mean": 0.014850099830236687
+    },
+    {
+      "Column": "TU Collar Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -0.0507947901166018,
+      "max": 0.0192125,
+      "mean": 0.005135274629112242
+    },
+    {
+      "Column": "TU Interval EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 336.7400235408333,
+      "max": 2120.056844901001,
+      "mean": 2062.7697887954364
+    },
+    {
+      "Column": "TU Bottom EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 504.30914768181816,
+      "max": 2249.999672,
+      "mean": 2101.610698862552
+    },
+    {
+      "Column": "TU Interval Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1107.7968737473625,
+      "max": 4726.52448292,
+      "mean": 2232.756269363273
+    },
+    {
+      "Column": "TU Bottom Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1098.5011930577457,
+      "max": 2444.8298635461133,
+      "mean": 291.9807213763304
+    },
+    {
+      "Column": "PT 403",
+      "dtype": "float64",
+      "Units": "—",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 40.39170848888889,
+      "max": 4764.944009790834,
+      "mean": 2265.2825188053557
+    },
+    {
+      "Column": "TU Packer Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1087.958473065519,
+      "max": 5219.690574113333,
+      "mean": 2747.5962614822315
+    },
+    {
+      "Column": "TU-TEC-INT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 23.382138772992494,
+      "max": 29.967648918367345,
+      "mean": 25.24855938067553
+    },
+    {
+      "Column": "TU-TEC-INT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 23.246304665462628,
+      "max": 32.99819904081633,
+      "mean": 25.304173027286453
+    },
+    {
+      "Column": "TU-TEC-BOT-U",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 23.128813097804947,
+      "max": 35.560442775510204,
+      "mean": 25.322076715288503
+    },
+    {
+      "Column": "TU-TEC-BOT-L",
+      "dtype": "float64",
+      "Units": "°C",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 24.560092298167685,
+      "max": 27.231529428571427,
+      "mean": 25.291706252639838
+    },
+    {
+      "Column": "TS Interval Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6730060372015547,
+      "max": 0.1117515406006674,
+      "mean": -0.005520399926440452
+    },
+    {
+      "Column": "TS Bottom Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1.6703071338145474,
+      "max": 0.0196285472222222,
+      "mean": -0.0014326544159446793
+    },
+    {
+      "Column": "TS Collar Flow",
+      "dtype": "float64",
+      "Units": "L/min",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -0.0324810955024986,
+      "max": 0.0809670319444444,
+      "mean": 0.03397637811488578
+    },
+    {
+      "Column": "TS Interval EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 5.798486405885626,
+      "max": 1426.4166534582869,
+      "mean": 562.8515620287379
+    },
+    {
+      "Column": "TS Bottom EC",
+      "dtype": "float64",
+      "Units": "µS/cm",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 154.03454208995,
+      "max": 2045.0611003911115,
+      "mean": 747.0285340858914
+    },
+    {
+      "Column": "TS Interval Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1141.462444577457,
+      "max": 3985.452844053056,
+      "mean": 523.0392139644499
+    },
+    {
+      "Column": "TS Bottom Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1096.289812716824,
+      "max": 118.521963,
+      "mean": 9.91730813271434
+    },
+    {
+      "Column": "PT 503",
+      "dtype": "float64",
+      "Units": "—",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -52.3390235,
+      "max": 3960.0935480638886,
+      "mean": 496.18803231134586
+    },
+    {
+      "Column": "PT 504",
+      "dtype": "float64",
+      "Units": "—",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 123.55987,
+      "max": 145.601368,
+      "mean": 134.46675075115786
+    },
+    {
+      "Column": "TS Packer Pressure",
+      "dtype": "float64",
+      "Units": "psi",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": -1114.7498716079956,
+      "max": 4445.10749386,
+      "mean": 633.06768673541
+    },
+    {
+      "Column": "TL Packer Center Depth",
+      "dtype": "float64",
+      "Units": "ft",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 148.85972222222222,
+      "max": 170.2,
+      "mean": 167.29450789449896
+    },
+    {
+      "Column": "TN Packer Center Depth",
+      "dtype": "float64",
+      "Units": "ft",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 30.033407572383076,
+      "max": 145.9,
+      "mean": 133.78055628955954
+    },
+    {
+      "Column": "TC Packer Center Depth",
+      "dtype": "float64",
+      "Units": "ft",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 140.83286985539488,
+      "max": 165.7,
+      "mean": 142.4271452714678
+    },
+    {
+      "Column": "TU Packer Center Depth",
+      "dtype": "float64",
+      "Units": "ft",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 177.8,
+      "max": 177.80000000000004,
+      "mean": 177.79999999999998
+    },
+    {
+      "Column": "TS Packer Center Depth",
+      "dtype": "float64",
+      "Units": "ft",
+      "Transformations": "None (raw)",
+      "Non-null count": 2609,
+      "min": 0.0,
+      "max": 174.3694320712695,
+      "mean": 30.062498109638035
+    }
+  ]
+}

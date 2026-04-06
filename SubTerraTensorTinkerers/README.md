@@ -6,10 +6,19 @@
 
 ## Test/Training Split Strategy
 - **Dataset(s):**
-- **Split method:** (e.g., random, stratified, time-based, group-based)
-- **Split ratios:** (train/val/test = )
-- **Leakage prevention:** (how you ensured no overlap / leakage)
-- **Rationale:** (why this split is appropriate for the domain/use case)
+  - Split-indexed: https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_3/SubTerraTensorTinkerers/Data/FTES_1hour_split_indexed.csv
+  - Train only: https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_3/SubTerraTensorTinkerers/Data/FTES_1hour_train.csv
+  - Validation only: https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_3/SubTerraTensorTinkerers/Data/FTES_1hour_val.csv
+  - Test only: https://github.com/victoria-reynolds-pnnl/ESSD_AI_Competition_1/blob/SubTerraTensorTinkerers_week_3/SubTerraTensorTinkerers/Data/FTES_1hour_test.csv
+- **Split method:** Time-based, chronological 
+- **Split ratios:** 
+  - 70% Train (1191 rows, 2024-12-13 20:00:00 -> 2025-02-01 10:00:00)
+  - 15% Validation (255 rows, 2025-02-01 11:00:00 -> 2025-02-12 01:00:00)
+  - 15% Test (256 rows, 2025-02-12 02:00:00 -> 2025-02-22 17:00:00)
+- **Leakage prevention:** 
+  - Aligned validation and test sets to the training feature schema
+  - Missing values in the training set were imputed with medians calculated from the training set only (cleaning script from Week 2 was modified as well)
+- **Rationale:** Since we are working with time-series data, randomization during the split could lead to data leakage from future timestamps. We simply kept the dataset in its original, chronological order and split into train/validation/test sequentially. 
 
 ## Model Performance Summary
 - **Model/version:**
