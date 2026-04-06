@@ -75,6 +75,34 @@ Six features were engineered from the cleaned data, all representing conditions 
 
 All data download, cleaning, and feature engineering scripts (`scripts/01_download_data.py`, `scripts/02_clean_data.py`, `scripts/03_feature_engineering.py`) were generated with assistance from Claude (Anthropic). The human role focused on selecting data sources, curating SNOTEL station locations, choosing feature definitions based on domain knowledge of Columbia Basin hydroclimatology, and validating outputs. AI-generated code sections are marked in script headers.
 
+## Week 3: Model Training & Evaluation
+
+### Train/Validation/Test Split Methodology
+
+We use a **temporal hold-out split** to prevent data leakage, consistent with how operational seasonal forecasts are issued. The dataset is divided chronologically: water years 1985–2012 (28 years) form the training set, and water years 2013–2018 (6 years, ~18% of data) are held out as the test set. The test set was not used in any way during model development. For hyperparameter tuning, we apply **Leave-One-Year-Out (LOYO) cross-validation** within the training set — in each fold, one year is withheld and the model is trained on all remaining years. This preserves the time structure of the data, avoids look-ahead bias, and reflects the real-world constraint that future conditions are always unknown. LOYO is preferred over k-fold for this dataset because the small sample size (28 training years) makes standard k-fold folds too small to be meaningful, and LOYO directly mirrors the sequential nature of seasonal forecasting.
+
+### Model Performance Summary
+
+*Run `pixi run python scripts/evaluate.py` to populate this section with computed metrics. Results are saved to `outputs/metrics_summary.csv` and `outputs/model_performance_summary.txt`.*
+
+We compare three models: a **climatology baseline** (training-set median, constant prediction), **Multiple Linear Regression (MLR)** with StandardScaler-normalized features, and **XGBoost** with optuna-tuned hyperparameters and quantile regression (q10/q50/q90) for probabilistic prediction intervals. Primary deterministic metrics are **NSE** (Nash-Sutcliffe Efficiency; 1=perfect, 0=mean baseline) and **KGE** (Kling-Gupta Efficiency; penalizes bias, variance, and correlation errors simultaneously). These are the standard metrics in operational hydrology and allow direct comparison against published forecast skill from NRCS and NWRFC. Probabilistic performance is assessed using **CRPS** (Continuous Ranked Probability Score; lower is better) and prediction interval coverage (target: ~80% of observations fall within q10–q90).
+
+### Human-in-the-Loop Domain Review
+
+*To be completed by a team member with Columbia Basin hydrology expertise (Cameron or Jana). Respond to each point below:*
+
+- **Does the model behavior make sense given domain expectations?** *(e.g., does SWE dominate feature importance? Do wet/dry years forecast correctly? Are the years XGBoost struggles with physically explainable — e.g., rain-on-snow events, anomalous mid-season runoff?)*
+
+- **Any concerning spurious correlations?** *(e.g., does any climate index feature appear important despite no physical mechanism? Check the feature importance plot and partial dependence for PNA and PDO — these are secondary drivers and their sign/direction should match known PNW teleconnection patterns.)*
+
+- **Any high-risk failure modes?** *(e.g., performance in extreme years like 2011 [high] or 2015 [low]; behavior during strong El Niño/La Niña; sensitivity to missing SNOTEL data; risk of overconfident prediction intervals in unprecedented snowpack years.)*
+
+### Failure and Limitations Review
+
+*To be completed after reviewing `outputs/model_performance_summary.txt`. Address: observed failure conditions, years with large errors, potential biases (e.g., wet/dry bias by decade), edge cases (record-high or record-low SWE years), and next steps to address them (e.g., additional features, longer training period with pre-1985 BPA data, spatial disaggregation of forecasts to sub-basin level).*
+
+---
+
 ## Running the Pipeline
 
 ```bash
@@ -82,8 +110,14 @@ All data download, cleaning, and feature engineering scripts (`scripts/01_downlo
 pixi install
 # Or: pip install -r requirements.txt
 
-# Run pipeline
-pixi run python scripts/01_download_data.py   # Download raw data
-pixi run python scripts/02_clean_data.py       # Clean and QA/QC
-pixi run python scripts/03_feature_engineering.py  # Build feature matrix
+# Week 2: Data pipeline
+pixi run python scripts/01_download_data.py        # Download raw data
+pixi run python scripts/02_clean_data.py            # Clean and QA/QC
+pixi run python scripts/03_feature_engineering.py   # Build feature matrix
+
+# Week 3: EDA, training, evaluation, interpretability
+pixi run python scripts/04_eda_plots.py             # EDA visualizations → plots/
+pixi run python scripts/train.py                    # Train models → outputs/ + models/
+pixi run python scripts/evaluate.py                 # Metrics → outputs/
+pixi run python scripts/interpretability.py         # Model figures → visualizations/
 ```
