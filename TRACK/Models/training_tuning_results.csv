@@ -1,0 +1,9 @@
+model,params,val_f1,val_auc_roc
+logistic_regression,{'C': 0.01},0.6066139628103775,0.8636854840865946
+logistic_regression,{'C': 0.1},0.6035291489836945,0.860272230143956
+logistic_regression,{'C': 1.0},0.6030397854269111,0.8599173418611001
+logistic_regression,{'C': 10.0},0.6030397854269111,0.8598528383401819
+xgboost,"{'n_estimators': 100, 'max_depth': 3, 'learning_rate': 0.05}",0.5963210702341137,0.9155272505031851
+xgboost,"{'n_estimators': 200, 'max_depth': 4, 'learning_rate': 0.05}",0.5226114125966124,0.9108019200894383
+xgboost,"{'n_estimators': 200, 'max_depth': 6, 'learning_rate': 0.1}",0.5114961679440186,0.9068958019160837
+xgboost,"{'n_estimators': 300, 'max_depth': 4, 'learning_rate': 0.1}",0.4857660029619878,0.9078097165410112
