@@ -20,6 +20,15 @@
   - Missing values in the training set were imputed with medians calculated from the training set only (cleaning script from Week 2 was modified as well)
 - **Rationale:** Since we are working with time-series data, randomization during the split could lead to data leakage from future timestamps. We simply kept the dataset in its original, chronological order and split into train/validation/test sequentially. 
 
+## Training Strategy
+- **Model**: XGBoost - Gradient boosted decision trees. Supports high-dimensional data
+- **Tuning Strategy**: Walk-forward validation tuning to minimize RMSE
+- **Feature Count**: 202
+  - TC, TN, TL, and overall well measurements at the current timestep
+- **Target Count**: 18
+  - Next hour Injection pressure, TC pressure, and TN/TL flow and temperature at varying depths
+
+
 ## Model Performance Summary
 - **Model/version:**
 - **Evaluation dataset:**
