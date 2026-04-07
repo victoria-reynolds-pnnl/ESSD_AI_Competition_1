@@ -1,0 +1,109 @@
+[
+  {
+    "case": "high_risk_case",
+    "row_index": 22358,
+    "actual": 1,
+    "predicted": 1,
+    "predicted_probability": 0.8447892665863037,
+    "pushed_up": [
+      {
+        "feature": "num__yearly_max_heat_wave_duration",
+        "shap_value": 2.594461441040039
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_intensity",
+        "shap_value": 0.7964092493057251
+      },
+      {
+        "feature": "num__duration_days",
+        "shap_value": 0.4774278998374939
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_duration_trend",
+        "shap_value": 0.16113002598285675
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_intensity_trend",
+        "shap_value": 0.13195565342903137
+      }
+    ],
+    "pushed_down": [],
+    "physical_sense_note": "The explanation is physically plausible because weather severity variables dominate the local prediction."
+  },
+  {
+    "case": "low_risk_case",
+    "row_index": 9106,
+    "actual": 0,
+    "predicted": 0,
+    "predicted_probability": 0.00051344238454476,
+    "pushed_up": [
+      {
+        "feature": "num__duration_days",
+        "shap_value": 0.13411910831928253
+      },
+      {
+        "feature": "num__spatial_coverage",
+        "shap_value": 0.04037559777498245
+      },
+      {
+        "feature": "num__lowest_temperature_k",
+        "shap_value": 0.0005172276287339628
+      }
+    ],
+    "pushed_down": [
+      {
+        "feature": "num__yearly_max_heat_wave_duration",
+        "shap_value": -2.7720751762390137
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_intensity",
+        "shap_value": -2.0469467639923096
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_duration_trend",
+        "shap_value": -0.28261473774909973
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_intensity_trend",
+        "shap_value": -0.05019252002239227
+      }
+    ],
+    "physical_sense_note": "The explanation is physically plausible because weather severity variables dominate the local prediction."
+  },
+  {
+    "case": "incorrect_case",
+    "row_index": 9589,
+    "actual": 1,
+    "predicted": 0,
+    "predicted_probability": 0.0015676887705922127,
+    "pushed_up": [
+      {
+        "feature": "num__yearly_max_heat_wave_duration",
+        "shap_value": 0.8145644664764404
+      }
+    ],
+    "pushed_down": [
+      {
+        "feature": "num__yearly_max_heat_wave_intensity",
+        "shap_value": -2.714728832244873
+      },
+      {
+        "feature": "num__duration_days",
+        "shap_value": -1.021332025527954
+      },
+      {
+        "feature": "num__spatial_coverage",
+        "shap_value": -0.7095630168914795
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_duration_trend",
+        "shap_value": -0.1492186188697815
+      },
+      {
+        "feature": "num__yearly_max_heat_wave_intensity_trend",
+        "shap_value": -0.0774964764714241
+      }
+    ],
+    "physical_sense_note": "The explanation is physically plausible because weather severity variables dominate the local prediction."
+  }
+]
