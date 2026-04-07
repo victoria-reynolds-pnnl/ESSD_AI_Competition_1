@@ -1,3 +1,5 @@
+# AI incubator chat: https://ai-incubator-chat.pnnl.gov/s/9feb50bb-b740-40b6-a6d4-d3b68c7767f2
+
 # arima_vs_arimax_daily.py
 # Compare ARIMA vs ARIMAX per monitoring_location_id with daily data.
 #
