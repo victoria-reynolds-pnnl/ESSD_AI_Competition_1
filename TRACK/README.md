@@ -23,7 +23,9 @@ Mostly yes. Both models correctly prioritize physically meaningful variables —
 ### Any concerning spurious correlations?
 
 Two concerns stand out:
+
 •	nerc_id is meaningless. The dataset contains only one region category, so the variable provides zero discriminatory power feature_importance_notes.md, xgboost_feature_importance.csv. Any regional pattern the model appears to learn is an artifact, not real signal.
+
 •	Annual background intensity may be inflating false positives. Many wrongly flagged events occur in high-intensity climate years, suggesting the models may be conflating "this was a bad year overall" with "this specific event is dangerous" — a subtle but operationally important distinction error_analysis_notes.md, error_by_region_summary.csv.
 
 ### Any high-risk failure modes?
