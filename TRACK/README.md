@@ -42,12 +42,15 @@ Yes — XGBoost's false negative rate is the most serious concern. It misses 2,5
 ## Additional Analysis (Extra)
 
 1. Are the drivers reasonable?
+   
 Yes. Both models correctly prioritize yearly_max_heat_wave_intensity, yearly_max_heat_wave_duration, duration_days, and spatial_coverage feature_importance_notes.md, xgboost_feature_importance.csv. SHAP confirms this at the individual level — high-risk predictions are pushed up by strong intensity and duration signals, low-risk ones are suppressed by weak signals xgboost_shap_notes.md. The one oddity is duration_days carrying a negative coefficient in Logistic Regression feature_importance_notes.md, but this is a conditional statistical effect, not a physical contradiction.
 
 2. Could region variables act as proxies?
+   
 No meaningful risk here — but for the wrong reason. nerc_id has effectively zero importance in both models feature_importance_notes.md +1 because the dataset contains only one region category. It cannot act as a proxy for anything. The real concern is the opposite: if deployed across multiple regions, the models have no learned regional signal whatsoever and could fail unpredictably.
 
 3. Are the false negatives a serious concern?
+   
 Yes — significantly so. XGBoost misses 2,566 true high-risk events (37.5% miss rate) vs. Logistic Regression's 1,007 (14.7%) error_by_region_summary.csv. Missed cases cluster around borderline intensity values (308.15 vs. 314.61 for correctly identified cases) error_analysis_notes.md, meaning both models fail most on moderate but still dangerous events. Cold snap false negatives are also notably present in XGBoost's predictions xgboost_test_predictions.csv, suggesting reliability drops further outside heat-wave scenarios.
 
 ## Reproducibility Steps
