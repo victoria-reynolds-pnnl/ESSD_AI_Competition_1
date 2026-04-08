@@ -33,10 +33,15 @@ Yes — XGBoost's false negative rate is the most serious concern. It misses 2,5
 ## High-Level Observations (Extra)
 
 •	Logistic Regression is the safer model for catching real danger. It misses 1,007 high-risk cases vs. XGBoost's 2,566 — a 37.5% miss rate that is operationally unacceptable in a safety context error_by_region_summary.csv.
+
 •	XGBoost is precise but dangerously conservative. Its 93.8% precision means it rarely cries wolf, but it misses too many real events to be trusted as a standalone early-warning tool error_analysis_notes.md.
+
 •	Both models are physically credible. yearly_max_heat_wave_intensity, yearly_max_heat_wave_duration, and duration_days dominate predictions in both models — exactly the variables that should matter feature_importance_notes.md.
+
 •	Borderline events are the blind spot. Missed cases average lower intensity (308.15 vs. 314.61 for XGBoost correct predictions) — meaning both models are reliable for obvious extremes but unreliable precisely when early warning matters most error_analysis_notes.md.
+
 •	nerc_id is dead weight. It contributes zero discriminatory power because only one region exists in the data, making any regional generalization untested feature_importance_notes.md, xgboost_feature_importance.csv.
+
 •	Annual background conditions are likely inflating false positives. Events embedded in high-intensity years get over-flagged, suggesting the models conflate a bad climate year with a bad individual event error_analysis_notes.md, error_by_region_summary.csv.
 
 ## Additional Analysis (Extra)
