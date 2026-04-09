@@ -111,3 +111,5 @@ If you want to claim **generalization** (e.g., “predicts future pressures accu
 1. **Install dependencies**
 ```bash
 pip install -r requirements.txt
+---
+AI was used in several steps in this weeks deliverables including creation of the STGNN and compiling this README.md 
