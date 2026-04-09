@@ -1,0 +1,57 @@
+{
+  "test_set": {
+    "years": "2019-2020",
+    "total_samples": 2049024,
+    "positive_samples": 6355,
+    "negative_samples": 2042669,
+    "positive_rate": 0.0031014766054472762
+  },
+  "models": [
+    {
+      "model_name": "logistic_regression",
+      "threshold": 0.9159826040267944,
+      "test_metrics": {
+        "pr_auc": 0.20308761272384093,
+        "roc_auc": 0.8548942087943725,
+        "f1": 0.29078287697647515,
+        "precision": 0.37540453074433655,
+        "recall": 0.23729346970889065
+      },
+      "confusion_matrix": {
+        "true_negative": 2040160,
+        "false_positive": 2509,
+        "false_negative": 4847,
+        "true_positive": 1508
+      },
+      "test_samples": 2049024,
+      "positive_samples": 6355,
+      "negative_samples": 2042669,
+      "data_prep": {
+        "nan_fill_value": 0
+      }
+    },
+    {
+      "model_name": "hist_gradient_boosting",
+      "threshold": 0.8154773875308413,
+      "test_metrics": {
+        "pr_auc": 0.2772068836664631,
+        "roc_auc": 0.9381354133981521,
+        "f1": 0.33028679483138984,
+        "precision": 0.4968394437420986,
+        "recall": 0.24736428009441386
+      },
+      "confusion_matrix": {
+        "true_negative": 2041077,
+        "false_positive": 1592,
+        "false_negative": 4783,
+        "true_positive": 1572
+      },
+      "test_samples": 2049024,
+      "positive_samples": 6355,
+      "negative_samples": 2042669,
+      "data_prep": {
+        "nan_fill_value": 0
+      }
+    }
+  ]
+}

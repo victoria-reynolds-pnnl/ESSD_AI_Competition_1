@@ -1,0 +1,9 @@
+numpy
+pandas
+xarray
+netCDF4
+pyarrow
+scikit-learn
+joblib
+matplotlib
+seaborn

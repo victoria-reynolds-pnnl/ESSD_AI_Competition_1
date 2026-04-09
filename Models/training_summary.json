@@ -1,0 +1,89 @@
+{
+  "dataset": {
+    "source": "/workspace/week_2/Data/cleaned_dataset.csv.gz",
+    "n_features": 28,
+    "feature_columns": [
+      "pdsi",
+      "spi14d",
+      "spi30d",
+      "spi90d",
+      "spei14d",
+      "spei30d",
+      "spei90d",
+      "air_sfc",
+      "air_apcp",
+      "soilm",
+      "rhum_2m",
+      "uwnd",
+      "vwnd",
+      "LAI",
+      "NDVI",
+      "FWI",
+      "tmax",
+      "tmin",
+      "wind_speed",
+      "temp_range",
+      "pdsi_severe_flag",
+      "apcp_7d_sum",
+      "fwi_7d_mean",
+      "fhs_c9_lag1",
+      "fhs_c9_lag7_sum",
+      "days_since_fire",
+      "doy_sin",
+      "doy_cos"
+    ]
+  },
+  "splits": {
+    "train": {
+      "years": "2001-2016",
+      "rows": 574101
+    },
+    "validation": {
+      "years": "2017-2018",
+      "rows": 2049024
+    },
+    "test": {
+      "years": "2019-2020",
+      "note": "held out for evaluation"
+    }
+  },
+  "sampling": {
+    "method": "negative_downsampling",
+    "ratio": "10:1",
+    "applied_to": "train_only"
+  },
+  "models": [
+    {
+      "model_name": "logistic_regression",
+      "model_type": "LogisticRegression",
+      "model_path": "/workspace/week_3/Models/logistic_regression.pkl",
+      "optimal_threshold": 0.9159826040267944,
+      "validation_metrics": {
+        "pr_auc": 0.23889697602960586,
+        "roc_auc": 0.876370349498545,
+        "f1": 0.3497966298663568,
+        "precision": 0.40053226879574183,
+        "recall": 0.3104693140794224
+      },
+      "training_samples": 574101,
+      "validation_samples": 2049024,
+      "n_features": 28
+    },
+    {
+      "model_name": "hist_gradient_boosting",
+      "model_type": "HistGradientBoostingClassifier",
+      "model_path": "/workspace/week_3/Models/hist_gradient_boosting.pkl",
+      "optimal_threshold": 0.8154773875308413,
+      "validation_metrics": {
+        "pr_auc": 0.33410782058220095,
+        "roc_auc": 0.9414924483407917,
+        "f1": 0.3952807160292921,
+        "precision": 0.5357300397000441,
+        "recall": 0.3131768953068592
+      },
+      "training_samples": 574101,
+      "validation_samples": 2049024,
+      "n_features": 28
+    }
+  ]
+}
