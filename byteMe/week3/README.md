@@ -120,7 +120,7 @@ Further review of the cleaned dataset revealed that temperature values equal to 
 
 Follow these steps to reconstruct our consolidated metrics:
 
-1. Download data from SharePoint, located here: https://pnnl.sharepoint.com/:f:/r/teams/ESSDAICompetition/Shared%20Documents/General/Team%2010%20Byte%20Me/processedData?csf=1&web=1&e=LcbazL
+1. Download data from the [processed data](https://pnnl.sharepoint.com/:f:/r/teams/ESSDAICompetition/Shared%20Documents/General/Team%2010%20Byte%20Me/processedData?csf=1&web=1&e=LcbazL) folder on SharePoint.
 2. Execute the setup sequence:
 
 ```bash
