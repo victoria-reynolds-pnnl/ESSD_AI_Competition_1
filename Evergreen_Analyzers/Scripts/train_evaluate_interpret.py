@@ -1,13 +1,16 @@
-# AI incubator chat: https://ai-incubator-chat.pnnl.gov/s/9feb50bb-b740-40b6-a6d4-d3b68c7767f2
-
-# arima_vs_arimax_daily.py
-# Compare ARIMA vs ARIMAX per monitoring_location_id with daily data.
+# train_evaluate_interpret.py
+# End-to-end pipeline: preprocess, split, grid-search, evaluate, and visualize
+# ARIMA vs ARIMAX per monitoring location.
 #
 # Outputs:
-# - Data/data_cleaned_split.csv (daily reindexed + imputed flow_rate + split column)
-# - Models/ARIMA_{id}_p1_d1_q1.pkl and Models/ARIMAX_{id}_p1_d1_q1.pkl (best per val RMSE)
-# - Data/arima_arimax_results.csv (metrics on val and test for both models)
-# - Visualizations/arima_arimax_{id}.png (plot per location)
+#   - Data/data_cleaned_split.csv   (daily reindexed + imputed flow_rate + split column)
+#   - Models/ARIMA_{id}_p*_d*_q*.pkl / ARIMAX_{id}_p*_d*_q*.pkl  (best per val RMSE)
+#   - Data/arima_arimax_results.csv (metrics on val and test for both models)
+#   - Visualizations/arima_arimax_{id}.png  (one plot per location)
+#
+# AI tools used:
+#   - PNNL AI Incubator chat: https://ai-incubator-chat.pnnl.gov/s/9feb50bb-b740-40b6-a6d4-d3b68c7767f2
+#   - GitHub Copilot
 #
 # Requirements:
 #   pip install pandas numpy statsmodels scikit-learn tqdm matplotlib

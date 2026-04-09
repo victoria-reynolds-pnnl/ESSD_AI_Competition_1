@@ -1,3 +1,15 @@
+# train.py
+# Preprocess, sequential split, grid-search (p,q) per location, and save best models.
+#
+# Outputs:
+#   - Data/data_cleaned_split.csv  (daily reindexed + imputed + split column)
+#   - Data/model_orders.csv        (best (p,d,q) per location)
+#   - Models/ARIMA_{id}_p*_d*_q*.pkl / ARIMAX_{id}_p*_d*_q*.pkl
+#
+# AI tools used:
+#   - PNNL AI Incubator chat: https://ai-incubator-chat.pnnl.gov/s/9feb50bb-b740-40b6-a6d4-d3b68c7767f2
+#   - GitHub Copilot
+
 import os
 import warnings
 from itertools import product

@@ -1,3 +1,13 @@
+# interpretability.py
+# Generate per-location forecast visualizations (ARIMA vs ARIMAX).
+#
+# Outputs:
+#   - Visualizations/arima_arimax_{id}.png  (one plot per monitoring location)
+#
+# AI tools used:
+#   - PNNL AI Incubator chat: https://ai-incubator-chat.pnnl.gov/s/9feb50bb-b740-40b6-a6d4-d3b68c7767f2
+#   - GitHub Copilot
+
 import os
 import ast
 import warnings

@@ -1,3 +1,14 @@
+# evaluate.py
+# Load saved models, compute val/test metrics per location, and print aggregate summary.
+#
+# Outputs:
+#   - Data/arima_arimax_results.csv  (per-station RMSE, MAE, R2, MRE for val and test)
+#   - Console: aggregate performance summary across all stations
+#
+# AI tools used:
+#   - PNNL AI Incubator chat: https://ai-incubator-chat.pnnl.gov/s/9feb50bb-b740-40b6-a6d4-d3b68c7767f2
+#   - GitHub Copilot
+
 import os
 import ast
 import warnings
@@ -158,6 +169,57 @@ def main():
     results_df.to_csv(RESULTS_OUT_PATH, index=False)
 
     print(f"Saved results: {RESULTS_OUT_PATH}")
+    print_aggregate_summary(results_df)
+
+
+def print_aggregate_summary(df):
+    """Print aggregate model performance statistics across all stations."""
+    # Filter to stations that were successfully evaluated
+    ok = df[df.get("arima_status", pd.Series()) == "ok"].copy()
+    if ok.empty:
+        # Fallback: try rows that have numeric metrics
+        ok = df.dropna(subset=["arima_val_rmse", "arimax_val_rmse"])
+    if ok.empty:
+        print("No successfully evaluated stations to summarize.")
+        return
+
+    n = len(ok)
+    print(f"\n{'='*60}")
+    print(f"AGGREGATE MODEL PERFORMANCE SUMMARY ({n} stations)")
+    print(f"{'='*60}")
+
+    for model in ["arima", "arimax"]:
+        print(f"\n--- {model.upper()} ---")
+        for split in ["val", "test"]:
+            rmse_col = f"{model}_{split}_rmse"
+            mae_col = f"{model}_{split}_mae"
+            r2_col = f"{model}_{split}_r2"
+
+            rmse_vals = pd.to_numeric(ok[rmse_col], errors="coerce").dropna()
+            mae_vals = pd.to_numeric(ok[mae_col], errors="coerce").dropna()
+            r2_vals = pd.to_numeric(ok[r2_col], errors="coerce").dropna()
+
+            print(f"  {split.upper()} (n={len(r2_vals)}):")
+            print(f"    RMSE  median={rmse_vals.median():.2f}  mean={rmse_vals.mean():.2f}")
+            print(f"    MAE   median={mae_vals.median():.2f}  mean={mae_vals.mean():.2f}")
+            print(f"    R2    median={r2_vals.median():.4f}  mean={r2_vals.mean():.4f}")
+            print(f"    R2>0  {(r2_vals > 0).sum()}/{len(r2_vals)} stations")
+
+    # Head-to-head comparison
+    both_ok = ok.dropna(subset=["arima_test_r2", "arimax_test_r2"])
+    if not both_ok.empty:
+        arima_r2 = pd.to_numeric(both_ok["arima_test_r2"])
+        arimax_r2 = pd.to_numeric(both_ok["arimax_test_r2"])
+        arimax_wins = (arimax_r2 > arima_r2).sum()
+        print(f"\n--- HEAD-TO-HEAD (test R2) ---")
+        print(f"  ARIMAX beats ARIMA: {arimax_wins}/{len(both_ok)} stations")
+
+        best_idx = arimax_r2.idxmax()
+        best_id = both_ok.loc[best_idx, ID_COL]
+        best_r2 = arimax_r2.loc[best_idx]
+        print(f"  Best ARIMAX test R2: {best_id} = {best_r2:.4f}")
+
+    print(f"{'='*60}\n")
 
 
 if __name__ == "__main__":
