@@ -120,11 +120,10 @@ Further review of the cleaned dataset revealed that temperature values equal to 
 
 Follow these steps to reconstruct our consolidated metrics:
 
-1. Ensure the raw `processedData` is extracted to `ByteMe\_wk3/Data/processedData/`.
+1. Download data from SharePoint, located here: https://pnnl.sharepoint.com/:f:/r/teams/ESSDAICompetition/Shared%20Documents/General/Team%2010%20Byte%20Me/processedData?csf=1&web=1&e=LcbazL
 2. Execute the setup sequence:
 
 ```bash
-   cd ByteMe\_wk3
    pip install -r requirements.txt
    ```
 
