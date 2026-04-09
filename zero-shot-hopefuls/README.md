@@ -1,104 +1,35 @@
-# Zero Shot Hopefuls - Week 2: Data Preparation and Documentation
+# Zero Shot Hopefuls - Compound Hazard Forecasting
 
-## ML Algorithms
+## Week 3: ML Model Training and Assessment
 
-**Primary: LightGBM (Gradient Boosted Decision Trees)**
+### Train/Test Split Strategy
 
-LightGBM excels on tabular data with mixed feature types and class imbalance—compound heatwave+drought events occur in only ~4% of weekly observations. Its leaf-wise tree growth provides strong predictive performance while built-in feature importance and SHAP compatibility support the interpretability requirements of Week 3.
+We use a strictly chronological split to respect the temporal structure of the data and prevent data leakage from future climate conditions into training. **Train (2001-2015):** 1,593,527 rows (75%) spanning 15 years that capture a wide range of compound event frequencies (1.25% to 12.02% annual positive rate). **Validation (2016-2017):** 216,192 rows (10%) used exclusively for hyperparameter tuning and classification threshold selection; these years include both a moderate-event year (2016, 1.68%) and a low-event year (2017, 1.15%), testing model robustness under varying conditions. **Test (2018-2020):** 314,154 rows (15%) held out entirely until final evaluation. Data was never shuffled, and each row is assigned to exactly one split based on its year. We excluded `compound_hw_drought` and `fire_during_compound` from the feature set because they are definitionally linked to the target variable (`target_compound_1wk` is the 1-week forward shift of `compound_hw_drought`); including them would inflate metrics through autocorrelation rather than learning from the underlying physical drivers. All 26 retained features (temperature, drought indices, meteorological variables, and engineered temporal features) represent information observable at or before the prediction week. The test set was evaluated exactly once; those numbers are final.
 
-**Baseline: Logistic Regression (L2 Regularization)**
+### Model Performance Summary
 
-Logistic Regression establishes a performance floor and provides a fully interpretable linear reference point against which to measure gains from the gradient-boosted model, enabling a meaningful comparison of model complexity versus performance.
+| Model               | Split      | F1     | AUC-ROC | Precision | Recall | Brier Score | Threshold |
+| ------------------- | ---------- | ------ | ------- | --------- | ------ | ----------- | --------- |
+| Logistic Regression | Validation | 0.4736 | 0.9792  | 0.4384    | 0.5149 | 0.0350      | 0.86      |
+| Logistic Regression | Test       | 0.5790 | 0.9813  | 0.5184    | 0.6557 | 0.0422      | 0.86      |
+| LightGBM            | Validation | 0.5435 | 0.9892  | 0.4374    | 0.7177 | 0.0151      | 0.65      |
+| LightGBM            | Test       | 0.6432 | 0.9886  | 0.5385    | 0.7984 | 0.0196      | 0.65      |
 
-## Data Dictionary for Data Source 1: ComExDBM Compound Hazard Weekly Dataset
+LightGBM outperforms Logistic Regression across all metrics on both validation and test sets. On the held-out test set, LightGBM achieves an F1 of 0.6432 versus 0.5790 for LR, with notably higher recall (0.80 vs 0.66), meaning it catches 80% of compound events while maintaining 54% precision. Both models show excellent discriminative ability (AUC > 0.98), indicating they rank compound-event weeks much higher than non-event weeks. LightGBM's lower Brier score (0.020 vs 0.042) indicates better-calibrated probability estimates. Classification thresholds were optimized on the validation set to maximize F1 — the default 0.5 threshold would predict nearly all weeks as non-events given the 4% positive rate. The LR threshold (0.86) is notably higher than LightGBM's (0.65) because `class_weight="balanced"` shifts the LR probability distribution upward. We chose F1 as the primary metric because accuracy alone would be 96% by always predicting negative; AUC-ROC for threshold-independent discrimination relevant to operational decision-making; and Brier score because downstream users need well-calibrated probabilities for risk assessment under uncertainty.
 
-### Identifiers
+### HITL Review
 
-| Field Name | Description                                                        | Data Type | Example |
-| ---------- | ------------------------------------------------------------------ | --------- | ------- |
-| lat        | Latitude of grid cell center (WGS84, 0.5-degree resolution)        | float64   | 37.25   |
-| lon        | Longitude of grid cell center (WGS84, 0.5-degree resolution)       | float64   | -105.75 |
-| year       | ISO calendar year of the observation week                          | int       | 2015    |
-| week       | ISO calendar week number (1-53), filtered to fire season (Apr-Oct) | int       | 28      |
+**Does the model behavior make sense given domain expectations?** Yes. SHAP analysis shows PDSI (Palmer Drought Severity Index) as the top feature driving LightGBM predictions, with a clear threshold effect: PDSI values below approximately -1 (drought conditions) produce strongly positive SHAP values, while normal or wet conditions (PDSI > 0) push predictions toward non-events. Seasonal features rank highly, which is physically expected since compound heatwave+drought events are concentrated in summer months. The heatwave indicator HI02 has strong positive SHAP impact when active (value=1). The Logistic Regression coefficients tell a consistent story: seasonal_cos (most negative, capturing summer peak), pdsi (negative — lower PDSI means more drought means higher risk), and tmax (positive — higher temperatures increase risk) are the top three. Both models agree that drought indices and temperature/heatwave variables are the primary drivers, which aligns with the physical definition of compound heatwave+drought events.
 
-### Heatwave Variables (Source: CPC Global Unified Temperature via ComExDBM)
+**Any concerning spurious correlations?** BCOC (black carbon + organic carbon aerosol concentration) ranks 6th in LightGBM feature importance, which warrants scrutiny. BCOC is an indicator of biomass burning aerosols — it could be detecting co-occurring wildfire smoke during hot, dry conditions rather than causally driving compound events. This is likely a correlational signal (fires happen when it's hot and dry) rather than a causal one. In a deployment scenario, BCOC might not be available as a real-time predictor 1-2 weeks ahead, so this dependency should be monitored. Fire variables (FHS_c9, BA_km2, maxFRP_c9) rank at the bottom, suggesting the model is not using concurrent fire activity as a shortcut — the BCOC signal appears to capture a different, more diffuse aerosol pattern.
 
-| Field Name | Description                                                                                  | Data Type | Example |
-| ---------- | -------------------------------------------------------------------------------------------- | --------- | ------- |
-| tmax       | Weekly mean of daily maximum temperature (deg C)                                             | float64   | 35.2    |
-| tmin       | Weekly mean of daily minimum temperature (deg C)                                             | float64   | 18.7    |
-| tmean      | Weekly mean of daily mean temperature (deg C)                                                | float64   | 27.0    |
-| HI02       | Heatwave indicator: 1 if any day in week had tmean > 95th percentile for 3+ consecutive days | int       | 1       |
-| HI05       | Heatwave indicator: 1 if any day in week had tmax > 95th percentile for 3+ consecutive days  | int       | 0       |
+**Any high-risk failure modes?** The most concerning failure mode is performance during low-event years. The validation set (2016-2017) has only a 1.41% positive rate compared to the training set's 4.72%, and the test set sits at 2.65%. While the model handles this variation well (test F1 actually exceeds validation F1, likely because 2018 and 2020 have more typical event rates), 2019 specifically had only 0.36% compound events — the lowest in the entire 20-year record. The model likely over-predicts in such anomalous years, generating false alarms. Additionally, the model treats each grid cell independently without explicit spatial modeling, so it cannot learn that adjacent cells tend to experience compound events simultaneously. Clustered false negatives in specific regions (e.g., transition zones between climate regimes) may indicate spatial blind spots.
 
-### Fire Variables (Source: MODIS MOD14A1/MCD64A1 via ComExDBM)
+### Failures and Limitations
 
-| Field Name | Description                                                                   | Data Type | Example |
-| ---------- | ----------------------------------------------------------------------------- | --------- | ------- |
-| FHS_c9     | Weekly total count of highest-confidence fire hotspot pixels within grid cell | float64   | 5.0     |
-| maxFRP_c9  | Weekly mean of daily max fire radiative power (MW) at highest confidence      | float64   | 42.3    |
-| BA_km2     | Weekly total fire burned area (km2) within grid cell                          | float64   | 1.2     |
+The 4% class imbalance means even with class-weight balancing and threshold optimization, the model produces a non-trivial false alarm rate — on the test set, LightGBM generated 5,702 false positives alongside 6,654 true positives (precision 54%). For operational use, this 1:1 TP/FP ratio may require further threshold adjustment depending on the cost asymmetry between missed events and false alarms. Extreme low-event years like 2019 (0.36% positive rate) are poorly represented in training and may exhibit degraded precision. Spatial autocorrelation is not explicitly modeled: adjacent 0.5-degree grid cells share atmospheric conditions but are treated as independent observations, which inflates the effective sample size and may cause overly optimistic uncertainty estimates. The compound event definition uses a fixed PDSI category threshold (<=3, mild drought or worse) that may not be universally appropriate across all climate zones — arid regions in the Southwest may have structurally different drought dynamics than the humid Southeast. Our temporal features look back at most 14 days (drought_trend_14d), but drought builds over months to years; incorporating longer-horizon antecedent conditions (e.g., 90-day or seasonal PDSI trend) could improve lead-time prediction. Finally, the 20-year record (2001-2020) may be insufficient to capture decadal oscillation patterns (e.g., PDO, AMO) that modulate compound event frequency.
 
-### Drought Variables (Source: gridMET via ComExDBM)
-
-| Field Name    | Description                                                                                | Data Type | Example |
-| ------------- | ------------------------------------------------------------------------------------------ | --------- | ------- |
-| pdsi          | Weekly mean Palmer Drought Severity Index (-5 extreme drought to +5 extreme wet)           | float64   | -2.5    |
-| pdsi_category | Most frequent PDSI category during week (0=extreme drought, 5=near normal, 10=extreme wet) | int       | 3       |
-| spi90d        | Weekly mean Standardized Precipitation Index at 90-day timescale                           | float64   | -1.2    |
-| spei90d       | Weekly mean Standardized Precipitation-Evapotranspiration Index at 90-day timescale        | float64   | -0.8    |
-
-### Meteorological Variables (Sources: NARR, MERRA-2, NOAA CDR, GFWED)
-
-| Field Name | Description                                                     | Data Type | Example |
-| ---------- | --------------------------------------------------------------- | --------- | ------- |
-| air_sfc    | Weekly mean surface air temperature (K)                         | float64   | 300.5   |
-| apcp       | Weekly mean daily accumulated precipitation (kg/m2)             | float64   | 2.1     |
-| soilm      | Weekly mean soil moisture (kg/m2)                               | float64   | 320.0   |
-| lhtfl      | Weekly mean latent heat flux (W/m2)                             | float64   | 85.3    |
-| shtfl      | Weekly mean sensible heat flux (W/m2)                           | float64   | 45.6    |
-| rhum_2m    | Weekly mean relative humidity at 2m (%)                         | float64   | 42.5    |
-| BCOC       | Weekly mean black carbon + organic carbon aerosol concentration | float64   | 0.0025  |
-| LAI        | Weekly mean Leaf Area Index (m2/m2)                             | float64   | 2.1     |
-| NDVI       | Weekly mean Normalized Difference Vegetation Index (-1 to 1)    | float64   | 0.45    |
-| FWI        | Weekly mean Fire Weather Index                                  | float64   | 18.5    |
-
-### Engineered Features
-
-| Field Name           | Description                                                                      | Data Type | Example |
-| -------------------- | -------------------------------------------------------------------------------- | --------- | ------- |
-| compound_hw_drought  | Binary: heatwave (HI02=1) AND drought (pdsi_category<=3) co-occurred during week | int       | 1       |
-| fire_during_compound | Binary: fire activity during compound heatwave+drought conditions                | int       | 0       |
-| wind_speed           | Weekly mean surface wind speed (m/s), derived: sqrt(uwnd^2 + vwnd^2)             | float64   | 4.2     |
-| seasonal_sin         | Sine of cyclical day-of-year encoding: sin(2*pi*DOY/365)                         | float64   | 0.97    |
-| seasonal_cos         | Cosine of cyclical day-of-year encoding: cos(2*pi*DOY/365)                       | float64   | -0.25   |
-| tmean_7d_avg         | 7-day rolling average of daily mean temperature at end of week (deg C)           | float64   | 28.3    |
-| drought_trend_14d    | 14-day change in PDSI; negative = worsening drought                              | float64   | -0.15   |
-| fwi_7d_max           | Maximum Fire Weather Index over preceding 7 days at end of week                  | float64   | 25.8    |
-
-### Target Variables
-
-| Field Name          | Description                                                            | Data Type | Example |
-| ------------------- | ---------------------------------------------------------------------- | --------- | ------- |
-| target_compound_1wk | Forecast target: compound_hw_drought value for NEXT week (1-week lead) | int       | 0       |
-| target_compound_2wk | Forecast target: compound_hw_drought value 2 weeks ahead               | int       | 0       |
-
-## Data Preparation Steps
-
-Data preparation began by loading 20 years (2001-2020) of daily gridded observations from the ComExDBM NetCDF files across four data categories—heatwave labels and temperature, fire hotspots and burned area, drought indices, and meteorological variables—and merging them on the shared 0.5-degree spatial grid and daily time dimension using xarray. Cleaning steps included: dropping ocean/non-CONUS grid cells (identified by NaN temperature), zero-filling fire variables where NaN represents absence of fire activity, forward- and back-filling satellite-derived variables (LAI, NDVI, FWI) that have intermittent coverage gaps due to cloud cover and sensor availability, forward-filling meteorological variables with small gap fractions (<1%), flagging physically impossible values (negative precipitation, temperatures outside [-60, 60] C, negative fire radiative power), enforcing correct data types for binary heatwave indicators and integer drought categories, and checking for duplicate entries. Feature engineering produced seven new variables: a binary compound heatwave+drought indicator (HI02=1 AND pdsi_category<=3), a triple-compound fire-during-drought flag, surface wind speed derived from U/V wind components, cyclical seasonal encoding (sin/cos of day-of-year), a 7-day rolling mean temperature capturing recent warming trends, a 14-day PDSI change capturing drought trajectory, and a 7-day rolling maximum FWI capturing persistent fire-weather conditions. Rolling features were computed on full-year daily data before filtering to the April-October fire season to ensure rolling windows at the start of April have prior months' data. Daily data was then aggregated to weekly resolution—binary indicators via weekly max, continuous variables via weekly mean, fire counts via weekly sum—aligning with the 1-2 week forecast horizon. Finally, target variables were created by forward-shifting the weekly compound event indicator by 1 and 2 weeks within each grid cell's time series.
-
-**Role of AI:** Claude (Anthropic) was used to generate the data loading, cleaning, feature engineering, and export scripts, with each AI-generated section cited in code comments. Claude also assisted with feature engineering design (compound event definitions, rolling window strategies, seasonal encoding approach) and data dictionary generation. All AI-generated code was reviewed by the team.
-
-## Dataset Summary
-
-- **Full dataset:** 2,123,873 weekly observations, 36 columns, 2001-2020
-- **Grid cells:** 3,378 land cells across CONUS at 0.5-degree resolution
-- **Fire season:** April-October (~30 weeks/year)
-- **Class distribution:** compound_hw_drought=1 in 4.08% of observations
-- **CSV deliverable:** 2019-2020 subset (206,058 rows, 81.9 MB); full dataset reproducible from scripts
-- **JSON deliverable:** 10,000-row representative sample
-
-## Reproducibility
+### Reproducibility Steps
 
 First create a directory named "dataset" at root, within it have the "ComExDBM_CONUS" dataset.
 
@@ -106,12 +37,15 @@ First create a directory named "dataset" at root, within it have the "ComExDBM_C
 # From the repository root:
 source .venv/Scripts/activate
 uv pip install -r zero-shot-hopefuls/requirements.txt
+         # ~5 min: exports CSV, JSON, data dictionary
 
-# Run the pipeline (requires dataset/ directory with ComExDBM NetCDF files):
-python zero-shot-hopefuls/Scripts/01_load_and_merge.py    # ~3 min: loads NetCDF, merges, saves daily parquet
-python zero-shot-hopefuls/Scripts/02_clean_and_engineer.py # ~10 min: cleans, engineers features, aggregates weekly
-python zero-shot-hopefuls/Scripts/03_export.py             # ~5 min: exports CSV, JSON, data dictionary
+# Week 3 pipeline (requires Week 2 outputs):
+python zero-shot-hopefuls/Scripts/train.py                 # ~5 min: splits data, trains LR + LightGBM, saves models
+python zero-shot-hopefuls/Scripts/evaluate.py              # ~1 min: optimizes thresholds, evaluates on test set
+python zero-shot-hopefuls/Scripts/interpretability.py      # ~2 min: SHAP analysis, feature importance, visualizations
 ```
+
+**Role of AI:** Claude (Anthropic) was used to generate the training, evaluation, and interpretability scripts, with each AI-generated section cited in code comments. Claude also assisted with split strategy design, feature selection rationale (leakage analysis), metric selection justification, and HITL review framing. All AI-generated code was reviewed by the team.
 
 ## File Structure
 
@@ -121,14 +55,25 @@ zero-shot-hopefuls/
     original_sample.csv                        # 1,000-row raw daily data sample
     cleaned_compound_hazard_weekly.csv         # Cleaned dataset (2019-2020 subset, CSV format)
     cleaned_compound_hazard_weekly.json        # Cleaned dataset (10K-row sample, JSON format)
-    cleaned_compound_hazard_weekly.csv.gz      # Full 20-year dataset (gzipped, local use)
-    cleaned_compound_hazard_weekly.parquet     # Full 20-year dataset (parquet, local use)
     data_dictionary.json                       # Feature dictionary with descriptions and sources
-    intermediate/                              # Per-year daily parquet files (generated by scripts)
+    splits_indexed.csv                         # Train/val/test split assignments for every row
+  Models/
+    logistic_regression.pkl                    # Trained LR model + StandardScaler
+    lightgbm.pkl                               # Trained LightGBM model (best hyperparameters)
   Scripts/
     01_load_and_merge.py                       # Load 4 NetCDF sources, merge, save daily data
     02_clean_and_engineer.py                   # Clean, engineer 7 features, aggregate weekly
     03_export.py                               # Export to CSV, JSON, data dictionary
+    train.py                                   # Chronological split, train LR + LightGBM, tune hyperparameters
+    evaluate.py                                # Threshold optimization, test-set evaluation, results CSV
+    interpretability.py                        # SHAP analysis, feature importance, visualization generation
+  Visualizations/
+    lr_coefficients.png                        # Logistic Regression standardized coefficients
+    lgb_feature_importance.png                 # LightGBM gain-based feature importance
+    lgb_shap_summary.png                       # SHAP beeswarm plot for LightGBM
+    lgb_shap_dependence_top.png                # SHAP dependence plot for top feature (pdsi)
+  Outputs/
+    ml_results.csv                             # Model performance metrics (F1, AUC, precision, recall, Brier)
   requirements.txt                             # Python environment dependencies
   README.md                                    # This file
 ```
