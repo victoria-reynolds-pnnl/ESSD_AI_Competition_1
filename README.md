@@ -1,4 +1,4 @@
-# ESSD AI Competetion - Week 2
+# ESSD AI Competetion - Week 3
 
 **Project Title**: Water supply forecasts for the Columbia River Basin
 
@@ -14,7 +14,7 @@
 | @amanda-lawter |Resarch Analyst, data processing  | Roz | Geochemistry, Subsurface, Contaminant Monitoring and Remediation | data analysis |
 | @JanaSimo |Subsurface Science | Roz | Subsurface, fluid flow, reservoir geoscience | data analysis, application |
 
-## Week 2
+## Week 3
 
 - [Idea](idea_water_supply_forecast.md)
 - [Deliverable requirements](ai_delinquents_week_2_deliverable.md)
@@ -89,17 +89,15 @@ We compare three models: a **climatology baseline** (training-set median, consta
 
 ### Human-in-the-Loop Domain Review
 
-*To be completed by a team member with Columbia Basin hydrology expertise (Cameron or Jana). Respond to each point below:*
+- **Does the model behavior make sense given domain expectations?** No, not at all. We see the XGboost, a sophisticated ML model is not doing as well as the less sophisticated Multi-linear regression (MLR) model based on the validation metrics provided by the model. This could be due to the AI setting up the model incorrectly. We expect the problem to be ML model to be as good or better than the MLR, because we expect the data to be non-linear. 
 
-- **Does the model behavior make sense given domain expectations?** *(e.g., does SWE dominate feature importance? Do wet/dry years forecast correctly? Are the years XGBoost struggles with physically explainable — e.g., rain-on-snow events, anomalous mid-season runoff?)*
+- **Any concerning spurious correlations?** No, correlations between volume and flow for the same months are highly correlated. SWE is highly correlated with spring flow as expected as most flow at that time of year is related to the snow pack. No concerns when looking at the feature importance maps - this matches our expert expectations. 
 
-- **Any concerning spurious correlations?** *(e.g., does any climate index feature appear important despite no physical mechanism? Check the feature importance plot and partial dependence for PNA and PDO — these are secondary drivers and their sign/direction should match known PNW teleconnection patterns.)*
-
-- **Any high-risk failure modes?** *(e.g., performance in extreme years like 2011 [high] or 2015 [low]; behavior during strong El Niño/La Niña; sensitivity to missing SNOTEL data; risk of overconfident prediction intervals in unprecedented snowpack years.)*
+- **Any high-risk failure modes?** There were high points in 1997 and 2011. Neither model (MLR or XGBoost) predicted the 2011 peak but MLR closely predicted the 1997 peak. There was also a low in 2001 that MLR predicted well while XGBoost did not. 
 
 ### Failure and Limitations Review
 
-*To be completed after reviewing `outputs/model_performance_summary.txt`. Address: observed failure conditions, years with large errors, potential biases (e.g., wet/dry bias by decade), edge cases (record-high or record-low SWE years), and next steps to address them (e.g., additional features, longer training period with pre-1985 BPA data, spatial disaggregation of forecasts to sub-basin level).*
+To summarize, MLR unexpectedly outperformed the XGBoost model. This is unexpected because we do not expect linear results, and therefore there may be an issue with our model set up. Our next step will be to evaluate the model to see what went wrong with the XGBoost. 
 
 ---
 
