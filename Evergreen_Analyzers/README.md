@@ -25,7 +25,7 @@ The most prominent failure condition is systematic val-to-test degradation: R² 
 1. **Prerequisites**: Python 3.10+ installed.
 2. **Install dependencies** from the `Evergreen_Analyzers/` directory:
    ```
-   pip install -r Requirements.txt
+   pip install -r requirements.txt
    ```
 3. **Run the full pipeline** from the `Scripts/` directory:
    ```
