@@ -1,0 +1,10 @@
+# Week 2 dependencies (data cleaning + ML preparation notebooks)
+
+numpy
+pandas
+matplotlib
+seaborn
+scipy
+scikit-learn
+joblib
+jupyter

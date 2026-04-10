@@ -1,4 +1,4 @@
-# Heat Wave & Cold Snap - Week 2 Pipeline (Validated)
+# Heat Wave & Cold Snap - Week 2 Pipeline
 
 ## Overview
 Week 2 covers two executable notebooks:
