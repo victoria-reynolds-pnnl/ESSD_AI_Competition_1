@@ -1,0 +1,16 @@
+"model","df","AIC","BIC","fit","AIC_pref","BIC_pref","notes"
+"m1",19,14644.6888077122,14778.4808228252,"n_extreme ~ c_year + code + (1 | NERC_ID)","","",NA
+"m1.1",34,14488.1650376311,14727.5823278333,"n_extreme ~ c_year * code + (1 | NERC_ID)","","",NA
+"m2",33,14640.4241936388,14872.7997988351,"n_extreme ~ c_year + code + as.factor(NERC_ID)","","",NA
+"m2.1",48,14483.9946418421,14821.9955221276,"n_extreme ~ c_year * code + as.factor(NERC_ID)","","",NA
+"m3",36,14491.0776672652,14744.5783274793,"n_extreme ~ c_year * code + (1 + c_year | NERC_ID)","","","failed to converge"
+"m3.1",21,14647.684820373,14795.5602054979,"n_extreme ~ c_year + code + (1 + c_year | NERC_ID)","","","failed to converge"
+"m4",20,14644.7773653081,14785.611065427,"n_extreme ~ c_year + I(c_year^2) + code + (1 | NERC_ID)","","",NA
+"m4.1",50,14468.6026140063,14820.6868643036,"n_extreme ~ (c_year + I(c_year^2)) * code + (1 | NERC_ID)","","","failed to converge"
+"m4.2",34,14640.5243424331,14879.9416326353,"n_extreme ~ c_year + I(c_year^2) + code + as.factor(NERC_ID)","","",NA
+"m4.3",64,14548.053976427,14998.7218168075,"n_extreme ~ (c_year + I(c_year^2)) * code + as.factor(NERC_ID)","","",NA
+"m5",35,14490.1650386343,14736.6240138424,"n_extreme ~ c_year * code + (1 | NERC_ID) + (1 | NERC_ID:start_yr)","","",NA
+"m5.1",20,14646.6888090855,14787.5225092044,"n_extreme ~ c_year + code + (1 | NERC_ID) + (1 | NERC_ID:start_yr)","","",NA
+"m5.2",35,14448.9296961909,14695.3886713991,"n_extreme ~ c_year * code + (1 | NERC_ID) + (1 | start_yr)","","best model",NA
+"m5.3",20,14606.4087415723,14747.2424416912,"n_extreme ~ c_year + code + (1 | NERC_ID) + (1 | start_yr)","","",NA
+"m5.4",49,14445.0903055717,14790.1328708631,"n_extreme ~ c_year * code + as.factor(NERC_ID) + (1 | start_yr)","best model","",NA
