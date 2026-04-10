@@ -18,7 +18,6 @@ import pandas as pd
 import numpy as np
 import warnings
 from pathlib import Path
-from sklearn.preprocessing import MinMaxScaler
 import json
 import os
 
@@ -27,8 +26,8 @@ print("Libraries loaded.")
 
 ################# Configuration and Paths #################
 DATA_DIR = Path(r"../Data")
-CSV_FILE = DATA_DIR / "1_raw" / "FTES-Full_Test_1hour_avg.csv"
-OUTPUT_DIR = DATA_DIR / "2_cleaned"
+CSV_FILE = DATA_DIR / "01_raw" / "FTES-Full_Test_1hour_avg.csv"
+OUTPUT_DIR = DATA_DIR / "02_cleaned"
 OUTPUT_DIR.mkdir(exist_ok=True)
 
 filter_to_hot_injection = True  # Set to True to filter dataset to hot injection phase only (2024-12-13 20:00 to 2025-02-22 17:26:06)
@@ -373,17 +372,15 @@ for col in ts_feature_cols:
         df[f"{col}__roll_mean_{w}h"] = roll.mean()
         df[f"{col}__roll_std_{w}h"] = roll.std()
 
-# 3) Slope/rate-of-change and acceleration features
+# 3) Slope/rate-of-change features
 for col in ts_feature_cols:
     df[f"{col}__roc_1h"] = df[col].diff(1)
-    df[f"{col}__accel_1h"] = df[f"{col}__roc_1h"].diff(1)
 
 ts_created = [
     c for c in df.columns
     if "__lag_" in c
     or "__roll_" in c
     or "__roc_" in c
-    or "__accel_" in c
 ]
 print(f"Time-series features created: {len(ts_created)}")
 # OpenAI GPT‑5.3-Codex

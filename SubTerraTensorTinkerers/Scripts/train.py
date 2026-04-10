@@ -8,7 +8,7 @@
 
 ### Training Steps
 # 1. Train/test split
-# 2. Train and tune the XGBoost regressor model
+# 2. Train and tune the model
 # 3. Fit on best parameter set for final model
 
 import pandas as pd
@@ -16,7 +16,7 @@ import numpy as np
 import warnings
 from pathlib import Path
 from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.base import RegressorMixin
 import json
 import pickle
@@ -27,37 +27,53 @@ from typing import List, Tuple
 warnings.filterwarnings("ignore")
 print("Libraries loaded.")
 
-EXCLUDED_FEATURE_TERMS = ("Phase", "Flag", "TS", "TU", "12h", "24h")
+
+################# Configuration #################
+
 MODEL = "xgb"
-FORECAST_HORIZON_H = 1
+PREDICT_DELTA = False  # Train on y(t+1)-y(t) instead of y(t+1) to anchor predictions to persistence
+if PREDICT_DELTA:
+    loss_func = "reg:pseudohubererror"  # Huber loss, robust to outliers when predicting deltas
+else:
+    loss_func = "reg:squarederror"  # Standard regression loss for absolute predictions
 
-try:
-    XGBRegressor = importlib.import_module("xgboost").XGBRegressor
-except ModuleNotFoundError as exc:
-    raise ModuleNotFoundError(
-        "xgboost is required for model training."
-    ) from exc
+FORECAST_HORIZON_H = 1  # 1-hour
+EXCLUDED_FEATURE_TERMS = ("Phase", "Flag", "TS", "TU", "12h", "24h")
 
+if MODEL == "xgb":
+    try:
+        XGBRegressor = importlib.import_module("xgboost").XGBRegressor
+    except ModuleNotFoundError as exc:
+        raise ModuleNotFoundError(
+            "xgboost is required for model training."
+        ) from exc
 
-class CompatibleXGBRegressor(XGBRegressor, RegressorMixin):
-    # Explicit estimator type for strict sklearn compatibility checks.
-    _estimator_type = "regressor"
+    class XGBRegressorClass(XGBRegressor, RegressorMixin):
+        # Explicit estimator type for strict sklearn compatibility checks.
+        _estimator_type = "regressor"
 
-################# Configuration and Paths #################
+################# Paths #################
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
+
 DATA_DIR = Path(r"../Data")
-CLEAN_DATA_DIR = DATA_DIR / "2_cleaned"
+CLEAN_DATA_DIR = DATA_DIR / "02_cleaned"
 CLEAN_FILE = CLEAN_DATA_DIR / "FTES_1hour_cleaned.csv"
-SPLIT_DATA_DIR = DATA_DIR / "3_split"
+SPLIT_DATA_DIR = DATA_DIR / "03_split"
 SPLIT_DATA_DIR.mkdir(exist_ok=True)
 
-MODEL_DIR = Path(r"../Models")
-MODEL_DIR.mkdir(exist_ok=True)
+if PREDICT_DELTA:
+    SAVE_DIR = Path(r"../Models") / f"{MODEL}_delta"
+else:
+    SAVE_DIR = Path(r"../Models") / f"{MODEL}_original"
+
+TRAIN_META = SAVE_DIR / "train_output"
+TRAIN_META.mkdir(parents=True, exist_ok=True)
 
 ###########################################################
 
 # ── load ──────────────────────────────────────────────────────────────────────
-script_dir = os.path.dirname(os.path.abspath(__file__))
-os.chdir(script_dir)
 df_raw = pd.read_csv(CLEAN_FILE, parse_dates=["Time"], index_col="Time")
 df = df_raw.copy()
 
@@ -112,7 +128,7 @@ test_out = test_df.copy()
 # OpenAI GPT‑5.3-Codex
 
 # ── Fit scaler on train only, transform val/test ──────────────────────────────
-# NOTE: excluded for XGBoost (tree-based models do not require feature scaling; skews RMSE units)
+# NOTE: excluded for XGBoost (tree-based models do not require feature scaling)
 if MODEL != "xgb":
 
 # ── Choose columns to scale (include engineered numeric columns if present) ───
@@ -137,7 +153,6 @@ if MODEL != "xgb":
             "__lag_" in c
             or "__roll_" in c
             or "__roc_" in c
-            or "__accel_" in c
             or "__mean_24h" in c
         ) and not c.endswith("__jump_flag_24h")
     ]
@@ -193,7 +208,7 @@ print(
 )
 print(f"Final split-indexed shape: {split_df.shape}")
 
-# ── XGBoost forecasting (1-hour ahead) ──────────────────────────────────────
+# ── Forecasting ──────────────────────────────────────
 forecast_horizon_h = FORECAST_HORIZON_H
 
 # Target set aligned with problem statement:
@@ -216,71 +231,83 @@ requested_targets = [  # (including only hot injection phase producer wells)
 target_cols = [c for c in requested_targets if c in df.columns]
 
 if not target_cols:
-    raise ValueError("No valid target columns found for XGBoost training.")
+    raise ValueError("No valid target columns found for training.")
 
 missing_targets = [c for c in requested_targets if c not in target_cols]
 if missing_targets:
     print(f"Skipped missing targets: {missing_targets}")
 
-def make_supervised_xy(split_df_in, targets, horizon_h):
+def make_supervised_xy(split_df_in, targets, horizon_h, predict_delta=False):
     x_num = split_df_in.select_dtypes(include="number").copy()
     kept_cols = [
         c for c in x_num.columns
         if not any(term in c for term in EXCLUDED_FEATURE_TERMS)
     ]
     x_num = x_num[kept_cols]
-    y = split_df_in[targets].shift(-horizon_h)
+
+    if predict_delta:
+        # Target is the CHANGE from current to next step: y(t+h) - y(t)
+        # Model learns small corrections on top of persistence baseline.
+        y = split_df_in[targets].shift(-horizon_h) - split_df_in[targets]
+    else:
+        y = split_df_in[targets].shift(-horizon_h)
 
     valid_mask = ~y.isnull().any(axis=1)
     x_num = x_num.loc[valid_mask]
     y = y.loc[valid_mask]
     return x_num, y
 
-X_train, y_train = make_supervised_xy(train_out, target_cols, forecast_horizon_h)
-X_val, y_val = make_supervised_xy(val_out, target_cols, forecast_horizon_h)
+X_train, y_train = make_supervised_xy(train_out, target_cols, forecast_horizon_h, predict_delta=PREDICT_DELTA)
+X_val, y_val = make_supervised_xy(val_out, target_cols, forecast_horizon_h, predict_delta=PREDICT_DELTA)
 
-print(f"\nSupervised matrices ({forecast_horizon_h}h ahead):")
+print(f"\nSupervised matrices (after shifting {forecast_horizon_h}h ahead):")
 print("  X_train:", X_train.shape, "y_train:", y_train.shape)
 print("  X_val  :", X_val.shape, "y_val  :", y_val.shape)
 
-# Capacity-aware manual search for 1-hour forecasting.
-# Includes conservative, regularized, and moderate-capacity options.
 param_grid = [
-    # Conservative baseline: robust when targets are locally flat.
+    # Conservative: shallow trees, heavy regularization.
     {
-        "n_estimators": 200,
+        "n_estimators": 300,
         "max_depth": 3,
-        "learning_rate": 0.05,
-        "colsample_bytree": 0.6,
-        "min_child_weight": 5,
-        "reg_lambda": 3.0
+        "learning_rate": 0.03,
+        "colsample_bytree": 0.5,
+        "subsample": 0.7,
+        "min_child_weight": 10,
+        "reg_lambda": 5.0,
+        "reg_alpha": 1.0,
     },
-    # More regularized version of the same family to reduce overfit.
+    # Moderate: balanced capacity.
     {
         "n_estimators": 500,
         "max_depth": 3,
-        "learning_rate": 0.03,
-        "colsample_bytree": 0.8,
-        "min_child_weight": 5,
-        "reg_lambda": 3.0
+        "learning_rate": 0.02,
+        "colsample_bytree": 0.6,
+        "subsample": 0.7,
+        "min_child_weight": 15,
+        "reg_lambda": 5.0,
+        "reg_alpha": 2.0,
     },
-    # Medium baseline candidate with balanced regularization.
+    # Deeper with little regularization.
     {
         "n_estimators": 800,
         "max_depth": 4,
         "learning_rate": 0.02,
         "colsample_bytree": 0.9,
+        "subsample": 1.0,
         "min_child_weight": 10,
-        "reg_lambda": 5.0
+        "reg_lambda": 5.0,
+        "reg_alpha": 0.0,
     },
-    # Moderate-capacity guardrail for dynamic targets.
+    # High capacity with strong guards.
     {
         "n_estimators": 1000,
         "max_depth": 4,
         "learning_rate": 0.01,
-        "colsample_bytree": 1.0,
-        "min_child_weight": 10,
-        "reg_lambda": 5.0
+        "colsample_bytree": 0.6,
+        "subsample": 0.8,
+        "min_child_weight": 20,
+        "reg_lambda": 10.0,
+        "reg_alpha": 5.0,
     },
 ]
 
@@ -315,10 +342,8 @@ def build_walk_forward_folds(
         raise ValueError("Could not construct enough walk-forward folds.")
     return folds
 
-model_out_dir = MODEL_DIR / "xgboost"
-model_out_dir.mkdir(exist_ok=True)
-
 walk_forward_folds = build_walk_forward_folds(len(X_train), n_folds=3, min_train_frac=0.5)
+all_best_params = {}  # accumulate per-target best params
 for target in target_cols:
     target_feature_cols = X_train.columns.tolist()
     X_train_target = X_train[target_feature_cols]
@@ -326,14 +351,15 @@ for target in target_cols:
     X_trainval_target = pd.concat([X_train_target, X_val_target], axis=0)
     y_trainval_target = pd.concat([y_train[target], y_val[target]], axis=0)
 
-    best_rmse_gain = -np.inf
-    best_r2 = -np.inf
+    best_mae = np.inf
     best_params = None
     best_n_estimators = None
+    best_cv_metrics = {}
 
     for params in param_grid:
-        fold_rmse_gains = []
-        fold_r2s = []
+        fold_maes = []
+        fold_rmses = []
+        fold_baseline_maes = []
         fold_best_iters = []
 
         for fold_train_idx, fold_val_idx in walk_forward_folds:
@@ -342,8 +368,8 @@ for target in target_cols:
             X_fold_val = X_train_target.iloc[fold_val_idx]
             y_fold_val = y_train[target].iloc[fold_val_idx]
 
-            model = CompatibleXGBRegressor(
-                objective="reg:squarederror",
+            model = XGBRegressorClass(
+                objective=loss_func,
                 random_state=42,
                 n_jobs=-1,
                 early_stopping_rounds=20,
@@ -356,31 +382,42 @@ for target in target_cols:
                 verbose=False,
             )
             val_pred = model.predict(X_fold_val)
-            baseline_pred = X_fold_val[target]  # Baseline prediction is the target itself at the current timestamp (persistence model)
 
-            model_rmse = float(np.sqrt(mean_squared_error(y_fold_val, val_pred)))
-            baseline_rmse = float(np.sqrt(mean_squared_error(y_fold_val, baseline_pred)))
-            fold_rmse_gains.append(baseline_rmse - model_rmse)
+            # Persistence baseline: in delta mode predicting "no change" (0)
+            # is the correct baseline; in absolute mode use current value.
+            if PREDICT_DELTA:
+                # Persistence baseline on DELTA: predict 0 change between time steps
+                baseline_pred = np.zeros(len(y_fold_val))  
+            else:
+                # Persistence baseline on TARGET: predict current value at next time step
+                baseline_pred = X_fold_val[target].values
 
-            val_r2 = float(r2_score(y_fold_val, val_pred))
-            fold_r2s.append(val_r2)
+            fold_maes.append(float(mean_absolute_error(y_fold_val, val_pred)))
+            fold_rmses.append(float(np.sqrt(mean_squared_error(y_fold_val, val_pred))))
+            fold_baseline_maes.append(float(mean_absolute_error(y_fold_val, baseline_pred)))
 
             best_iter = getattr(model, "best_iteration", None)
             if best_iter is not None:
                 fold_best_iters.append(int(best_iter) + 1)
 
-        cv_rmse_gain = float(np.mean(fold_rmse_gains))
-        cv_r2 = float(np.mean(fold_r2s))
+        cv_mae = float(np.mean(fold_maes))
+        cv_rmse = float(np.mean(fold_rmses))
+        cv_baseline_mae = float(np.mean(fold_baseline_maes))
         cv_best_n_estimators = int(np.median(fold_best_iters)) if fold_best_iters else int(params["n_estimators"])
 
-        if (
-            cv_rmse_gain > best_rmse_gain
-            or (np.isclose(cv_rmse_gain, best_rmse_gain) and cv_r2 > best_r2)
-        ):
-            best_rmse_gain = cv_rmse_gain
-            best_r2 = cv_r2
+        # Select by lowest MAE (aligned with Huber objective).
+        if cv_mae < best_mae:
+            best_mae = cv_mae
             best_params = params
             best_n_estimators = cv_best_n_estimators
+            best_cv_metrics = {
+                "walk_forward_mae": cv_mae,
+                "walk_forward_rmse": cv_rmse,
+                "walk_forward_baseline_mae": cv_baseline_mae,
+                "walk_forward_mae_improvement_pct": float(
+                    100.0 * (cv_baseline_mae - cv_mae) / cv_baseline_mae
+                ) if cv_baseline_mae > 0 else 0.0,
+            }
 
     if best_params is None:
         raise RuntimeError(f"No valid hyperparameter set selected for target: {target}")
@@ -388,15 +425,14 @@ for target in target_cols:
     param_dump = {
         "final_n_estimators": best_n_estimators,
         **best_params,
-        "walk_forward_rmse_gain": best_rmse_gain,
-        "walk_forward_r2": best_r2,
+        **best_cv_metrics,
         "walk_forward_folds": len(walk_forward_folds),
-        "selected_feature_count": len(target_feature_cols),
-        "feature_cols": target_feature_cols,
+        "feature_count": len(target_feature_cols)
     }
+    all_best_params[target] = param_dump
     final_params = {**best_params, "n_estimators": best_n_estimators}
-    final_model = CompatibleXGBRegressor(
-        objective="reg:squarederror",
+    final_model = XGBRegressorClass(
+        objective=loss_func,
         random_state=42,
         n_jobs=-1,
         **final_params,
@@ -408,19 +444,20 @@ for target in target_cols:
     )
 
     safe_name = target.replace(" ", "_").replace("/", "_")
-    with open(model_out_dir / f"xgb_{safe_name}.pkl", "wb") as f:
+    with open(SAVE_DIR / f"{MODEL}_{safe_name}.pkl", "wb") as f:
         pickle.dump(final_model, f)
-    final_model.save_model(model_out_dir / f"xgb_{safe_name}.json")
+    final_model.save_model(SAVE_DIR / f"{MODEL}_{safe_name}.json")
 
-params_path = model_out_dir / "xgb_best_params.json"
-config_path = model_out_dir / "xgb_training_config.json"
+params_path = TRAIN_META / f"{MODEL}_best_params.json"
+config_path = TRAIN_META / f"{MODEL}_training_config.json"
 
 with open(params_path, "w", encoding="utf-8") as f:
-    json.dump(param_dump, f, indent=2, ensure_ascii=False)
+    json.dump(all_best_params, f, indent=2, ensure_ascii=False)
 with open(config_path, "w", encoding="utf-8") as f:
     json.dump(
         {
             "forecast_horizon_h": forecast_horizon_h,
+            "predict_delta": PREDICT_DELTA,
             "target_cols": target_cols,
             "feature_cols": target_feature_cols
         },
@@ -429,9 +466,9 @@ with open(config_path, "w", encoding="utf-8") as f:
         ensure_ascii=False,
     )
 
-print("\nXGBoost training complete.")
-print(f"Pickle models saved -> {model_out_dir}")
+print("\nTraining complete.")
+print(f"Pickle models saved -> {SAVE_DIR}")
 print(f"Best params saved -> {params_path}")
 print(f"Training config saved -> {config_path}")
 
-# OpenAI GPT‑5.3-Codex
+# OpenAI GPT‑5.3-Codex and Claude Opus 4.6

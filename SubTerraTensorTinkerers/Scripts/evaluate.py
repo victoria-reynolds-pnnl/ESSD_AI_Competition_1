@@ -3,79 +3,68 @@ import os
 import pickle
 from pathlib import Path
 import importlib
-
 import numpy as np
 import pandas as pd
-from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.base import RegressorMixin
 
-try:
-    XGBRegressor = importlib.import_module("xgboost").XGBRegressor
-except ModuleNotFoundError as exc:
-    raise ModuleNotFoundError(
-        "xgboost is required for model training."
-    ) from exc
 
+################# Configuration #################
 
-class CompatibleXGBRegressor(XGBRegressor, RegressorMixin):
-    # Explicit estimator type for strict sklearn compatibility checks.
-    _estimator_type = "regressor"
+MODEL = "xgb"
+PREDICT_DELTA = False  # Train on y(t+1)-y(t) instead of y(t+1) to anchor predictions to persistence
 
+if MODEL == "xgb":
+    try:
+        XGBRegressor = importlib.import_module("xgboost").XGBRegressor
+    except ModuleNotFoundError as exc:
+        raise ModuleNotFoundError(
+            "xgboost is required for model training."
+        ) from exc
 
-EXCLUDED_FEATURE_TERMS = ("Phase", "Flag", "TS", "TU")  # Features focus on hot injection phase measurements (TC -> TL, TN)
+    class XGBRegressorClass(XGBRegressor, RegressorMixin):
+        # Explicit estimator type for strict sklearn compatibility checks.
+        _estimator_type = "regressor"
 
+################# Paths #################
 
-################# Configuration and Paths #################
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
+
 DATA_DIR = Path(r"../Data")
-SPLIT_DATA_DIR = DATA_DIR / "3_split"
-
-MODEL_DIR = Path(r"../Models")
-MODEL_OUT_DIR = MODEL_DIR / "xgboost"
+SPLIT_DATA_DIR = DATA_DIR / "03_split"
 
 TEST_FILE = SPLIT_DATA_DIR / "FTES_1hour_test.csv"
-PARAMS_FILE = MODEL_OUT_DIR / "xgb_best_params.json"
-CONFIG_FILE = MODEL_OUT_DIR / "xgb_training_config.json"
 
-METRICS_OUT = MODEL_OUT_DIR / "xgb_test_metrics.csv"
-PRED_OUT = MODEL_OUT_DIR / "xgb_test_predictions.csv"
+if PREDICT_DELTA:
+    SAVE_DIR = Path(r"../Models") / f"{MODEL}_delta"
+else:
+    SAVE_DIR = Path(r"../Models") / f"{MODEL}_original"
 
+TRAIN_META = SAVE_DIR / "train_output"
+PARAMS_FILE = TRAIN_META / f"{MODEL}_best_params.json"
+CONFIG_FILE = TRAIN_META / f"{MODEL}_training_config.json"
 
-try:
-    XGBRegressor = importlib.import_module("xgboost").XGBRegressor
-except ModuleNotFoundError as exc:
-    raise ModuleNotFoundError(
-        "xgboost is required for evaluation."
-    ) from exc
+EVAL_META = SAVE_DIR / "eval_output"
+EVAL_META.mkdir(exist_ok=True)
+METRICS_OUT = EVAL_META / f"{MODEL}_test_metrics.csv"
+PRED_OUT = EVAL_META / f"{MODEL}_test_predictions.csv"
 
+###########################################################
 
-def make_supervised_xy(split_df_in, targets, horizon_h):
-    x_num = split_df_in.select_dtypes(include="number").copy()
-    kept_cols = [
-        c for c in x_num.columns
-        if not any(term in c for term in EXCLUDED_FEATURE_TERMS)
-    ]
-    x_num = x_num[kept_cols]
-    y = split_df_in[targets].shift(-horizon_h)
-
-    valid_mask = ~y.isnull().any(axis=1)
-    x_num = x_num.loc[valid_mask]
-    y = y.loc[valid_mask]
-    return x_num, y
-
-
-def safe_pct_improvement(baseline_value, model_value):
-    if baseline_value == 0:
+def safe_pct_improvement(baseline_err, model_err):
+    if baseline_err == 0:
         return np.nan
-    return 100.0 * (baseline_value - model_value) / abs(baseline_value)
+    return 100.0 * (baseline_err - model_err) / abs(baseline_err)
 
 
 def load_trained_model(model_out_dir, safe_name):
     """Load model with JSON-first strategy to avoid pickle class-resolution issues."""
-    json_path = model_out_dir / f"xgb_{safe_name}.json"
-    pkl_path = model_out_dir / f"xgb_{safe_name}.pkl"
+    json_path = model_out_dir / f"{MODEL}_{safe_name}.json"
+    pkl_path = model_out_dir / f"{MODEL}_{safe_name}.pkl"
 
     if json_path.exists():
-        model = CompatibleXGBRegressor()
+        model = XGBRegressorClass()
         model.load_model(json_path)
         return model
 
@@ -84,9 +73,6 @@ def load_trained_model(model_out_dir, safe_name):
             return pickle.load(f)
     return None
 
-
-script_dir = os.path.dirname(os.path.abspath(__file__))
-os.chdir(script_dir)
 
 if not TEST_FILE.exists():
     raise FileNotFoundError(f"Missing test split file: {TEST_FILE}")
@@ -103,83 +89,90 @@ with open(CONFIG_FILE, "r", encoding="utf-8") as f:
     train_cfg = json.load(f)
 
 target_cols = train_cfg.get("target_cols", list(params_by_target.keys()))
-forecast_horizon_h = int(train_cfg.get("forecast_horizon_h", 1))  
+forecast_horizon_h = int(train_cfg.get("forecast_horizon_h", 1))
+predict_delta = train_cfg.get("predict_delta", False)
+assert predict_delta == PREDICT_DELTA, "Predict delta setting mismatch between training config and evaluation script."
 feature_cols = train_cfg.get("feature_cols")
-feature_cols_by_target = train_cfg.get("feature_cols_by_target", {})
 target_cols = [t for t in target_cols if t in test_df.columns]
 
 if not target_cols:
     raise ValueError("No valid target columns found in test data for evaluation.")
 
-X_test, y_test = make_supervised_xy(test_df, target_cols, forecast_horizon_h)
+# ── Build X/y directly from saved test CSV ────────────────────────────────────
+# X at time t, actual y from time t+horizon (read straight from the CSV).
+# No target reconstruction needed — actuals are the raw saved values.
+n_test = len(test_df)
+x_rows = test_df.iloc[: n_test - forecast_horizon_h]        # features at time t
+y_rows = test_df.iloc[forecast_horizon_h:]                   # actuals at time t+h
 
-if feature_cols:
-    missing_feature_cols = [c for c in feature_cols if c not in X_test.columns]
-    if missing_feature_cols:
-        raise ValueError(f"Missing expected feature columns in test set: {missing_feature_cols[:10]}")
-    X_test = X_test[feature_cols]
+# Align indices: X keeps time-t index, y values are the future absolute readings.
+x_num = x_rows.select_dtypes(include="number").copy()
+X_test = x_num[feature_cols]
 
-print("Supervised test matrices:")
-print("  X_test:", X_test.shape, "y_test:", y_test.shape)
+# Actual future values (absolute) pulled directly from the saved CSV.
+y_actual = y_rows[target_cols].values                        # shape (n-h, n_targets)
+# Persistence baseline: current value at time t for each target.
+baseline_vals = x_rows[target_cols].values                   # shape (n-h, n_targets)
+
+print("Supervised test matrices (from saved CSV):")
+print("  X_test:", X_test.shape, f"y_actual: ({y_actual.shape[0]}, {y_actual.shape[1]})")
 
 test_metrics = []
-pred_df = pd.DataFrame(index=y_test.index)
+pred_df = pd.DataFrame(index=X_test.index)
 
-for target in target_cols:
+for i, target in enumerate(target_cols):
     safe_name = target.replace(" ", "_").replace("/", "_")
-    model = load_trained_model(MODEL_OUT_DIR, safe_name)
+    model = load_trained_model(SAVE_DIR, safe_name)
 
     if model is None:
-        print(f"Skipping {target}: missing model files xgb_{safe_name}.json/.pkl")
+        print(f"Skipping {target}: missing model files {MODEL}_{safe_name}.json/.pkl")
         continue
 
-    target_feature_cols = feature_cols_by_target.get(target, feature_cols)
-    if not target_feature_cols:
-        raise ValueError(f"No feature columns configured for target: {target}")
-    missing_target_feature_cols = [c for c in target_feature_cols if c not in X_test.columns]
-    if missing_target_feature_cols:
-        raise ValueError(f"Missing expected feature columns for {target}: {missing_target_feature_cols[:10]}")
+    X_test_target = X_test[feature_cols]
+    raw_pred = model.predict(X_test_target)
 
-    X_test_target = X_test[target_feature_cols]
-    test_pred = model.predict(X_test_target)
-    baseline_pred = test_df[target].loc[y_test.index].values
+    actual_vals = y_actual[:, i]
+    baseline_pred = baseline_vals[:, i]
 
-    pred_df[f"{target}__actual"] = y_test[target]
+    if predict_delta:
+        # Model predicted delta,  reconstruct absolute: y_hat(t+1) = y(t) + delta
+        test_pred = baseline_pred + raw_pred
+    else:
+        test_pred = raw_pred
+
+    pred_df[f"{target}__actual"] = actual_vals
     pred_df[f"{target}__pred"] = test_pred
     pred_df[f"{target}__baseline_pred"] = baseline_pred
 
-    model_rmse = float(np.sqrt(mean_squared_error(y_test[target], test_pred)))
-    model_mae = float(mean_absolute_error(y_test[target], test_pred))
-    model_r2 = float(r2_score(y_test[target], test_pred))
+    model_rmse = float(np.sqrt(mean_squared_error(actual_vals, test_pred)))
+    model_mae = float(mean_absolute_error(actual_vals, test_pred))
 
-    baseline_rmse = float(np.sqrt(mean_squared_error(y_test[target], baseline_pred)))
-    baseline_mae = float(mean_absolute_error(y_test[target], baseline_pred))
-    baseline_r2 = float(r2_score(y_test[target], baseline_pred))
+    baseline_rmse = float(np.sqrt(mean_squared_error(actual_vals, baseline_pred)))
+    baseline_mae = float(mean_absolute_error(actual_vals, baseline_pred))
 
     test_metrics.append(
         {
             "target": target,
-            "rmse": model_rmse,
-            "mae": model_mae,
-            "r2": model_r2,
-            "baseline_rmse": baseline_rmse,
             "baseline_mae": baseline_mae,
-            "baseline_r2": baseline_r2,
-            "rmse_improvement_pct": safe_pct_improvement(baseline_rmse, model_rmse),
+            "baseline_rmse": baseline_rmse,
+            "mae": model_mae,
+            "rmse": model_rmse,
             "mae_improvement_pct": safe_pct_improvement(baseline_mae, model_mae),
+            "rmse_improvement_pct": safe_pct_improvement(baseline_rmse, model_rmse),
         }
     )
 
 if not test_metrics:
     raise RuntimeError("No models were evaluated. Ensure .pkl or .json model files exist.")
 
-metrics_df = pd.DataFrame(test_metrics).sort_values("rmse")
+metrics_df = pd.DataFrame(test_metrics).sort_values("mae_improvement_pct", ascending=False)
 metrics_df.to_csv(METRICS_OUT, index=False)
+pred_df = pred_df.shift(1)  # Align predictions with the correct time step (predicting t+1)
 pred_df.to_csv(PRED_OUT, index=True)
 
-print("\nXGBoost test evaluation complete.")
+print(f"\n{MODEL} test evaluation complete.")
 print(f"Metrics saved -> {METRICS_OUT}")
 print(f"Predictions saved -> {PRED_OUT}")
 print("\nTest metrics summary:")
-print(metrics_df[["target", "rmse", "baseline_rmse", "rmse_improvement_pct", "r2", "baseline_r2"]].to_string(index=False))
+print(metrics_df.to_string(index=False))
 
