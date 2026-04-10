@@ -1,4 +1,4 @@
-ML Algorithms: Random forest
+ML Algorithms: Random forest <br>
 Justification: We choose to use random forest as our Machine Learning model, because it can deal with complex non-linear relationships between predictors and the response variable and it does not need any data distribution assumptions. Also, random forest is faster to train compared to other Machine Learning models such as deep learning.  
 
 
