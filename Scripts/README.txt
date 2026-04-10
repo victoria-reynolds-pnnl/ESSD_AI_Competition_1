@@ -1,0 +1,2 @@
+1. "Cleaning Scripts.py" is used to clean the original datasets; 
+2. "Final Merge Script.py" is used to merge the cleaned datasets from multiple gauge stations, while "Data Dictionary.py" is used for this merging process. 

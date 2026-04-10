@@ -1,10 +1,15 @@
-# Dataset links
+ML Algorithms: Random forest
+Justification: We choose to use random forest as our Machine Learning model, because it can deal with complex non-linear relationships between predictors and the response variable and it does not need any data distribution assumptions. Also, random forest is faster to train compared to other Machine Learning models such as deep learning.  
 
-| Name | Format | Time range (Years) | Link |
+
+# Data Dictionary for Data Source 1: 
+
+| Field | Description | Data Type | Example |
 | --- | --- | --- | --- |
-| DEMO-FTES Test 1: Water Flow, Pressure, Temperature, and Electrical Conductivity Data | CSV (plus DOCX metadata) | 2024-2025 | https://gdr.openei.org/submissions/1730 |
-| USGS Water Data for Washington (water conditions and monitoring locations) | Web portal (various data types) | Varies (site dependent) | https://waterdata.usgs.gov/state/Washington/ |
-| Combined wildfire datasets for the United States and certain territories, 1800s-Present (combined wildland fire polygons) | Geospatial polygons | 1835-2020 | https://data.usgs.gov/datacatalog/data/USGS:61aa537dd34eb622f699df81 |
-| Heat wave and cold snap event library under various technical choices for NERC subregions in the conterminous U.S. | CSV | 44 | https://data.pnnl.gov/group/nodes/dataset/34393 |
-| An Inventory of AI-ready Benchmark Data for US Fires, Heatwaves, and Droughts | CSV | 20 | https://data.pnnl.gov/group/nodes/dataset/33650 |
-| Simulated wildfire burned area over the CONUS | CSV | 20 | https://data.pnnl.gov/group/nodes/dataset/34052 |
+| Gauge height | Water level at the gauge station (ft) from 2025 | Numerical | 15 ft |
+
+# Data Dictionary for Data Source 2: 
+
+| Field | Description | Data Type | Example |
+| --- | --- | --- | --- |
+| Upstream discharge | The total  volume of water from upstream (cubic ft/s) from 2025 | Numerical | 3,000 cubic ft/s  |
