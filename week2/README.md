@@ -1,115 +1,148 @@
-# Heat Wave & Cold Snap — ML Pipeline
+# Heat Wave & Cold Snap - Week 2 Pipeline (Validated)
 
 ## Overview
-End-to-end data cleaning, feature engineering, and ML training pipeline
-for predicting **regional probabilities of heat waves and cold snaps**
-by NERC region and date.
+Week 2 covers two executable notebooks:
+1. `week2_data_cleaning.ipynb`
+2. `week2_data_preparation_ml.ipynb`
+
+They transform the combined event library into cleaned data, then into panel-based ML features and artifacts.
+
+> Note: large generated outputs are not fully committed to AI Competition GitHub repository. Please re-run notebooks to reproduce files.
 
 ---
 
-## Quickstart
+## What Is In `scripts/`
+
+| File | Actual role |
+|---|---|
+| `combine_data.py` | Consolidates 6 raw ZIP libraries into one CSV. Current script writes to `week1/outputs/combined_extreme_thermal_event_library.csv`. |
+| `week2_data_cleaning.ipynb` | Cleans + validates event data and converts temperature from Kelvin to Celsius. |
+| `week2_data_preparation_ml.ipynb` | Engineers definition-aware features, builds daily panel target, splits/encodes/scales, saves artifacts. |
+
+---
+
+## Input Data Assumptions
+
+- Raw ZIP source (per script comments): PNNL event libraries.
+- Week 2 notebooks read from `week2/data/combined_extreme_thermal_event_library.csv` and write to `week2/data/processed/`.
+
+If you use `combine_data.py`, copy or move its output CSV into `week2/data/` before running notebooks.
+
+---
+
+## How To Run
+
+Run from `week2/scripts/` in this order:
 
 ```bash
-# 1. Install dependencies
-pip install -r requirements.txt
+# 1) Data cleaning
+jupyter notebook week2_data_cleaning.ipynb
 
-# 2. Place your data file
-cp your_data.csv data/raw/data.csv
+# 2) ML preparation
+jupyter notebook week2_data_preparation_ml.ipynb
+```
 
-# 3. Run the pipeline
-python pipeline.py --input data/raw/data.csv \
-                   --output_dir outputs/ \
-                   --query_date 2024-07-15
+Optional non-interactive execution:
+
+```bash
+jupyter nbconvert --to notebook --execute --inplace week2_data_cleaning.ipynb
+jupyter nbconvert --to notebook --execute --inplace week2_data_preparation_ml.ipynb
 ```
 
 ---
 
-## Output Files
+## Cleaning Notebook (`week2_data_cleaning.ipynb`)
 
-| File | Description |
+### Implemented cleaning logic
+1. Schema/type validation and coercion.
+2. Missing-value handling (grouped median for numeric, categorical fill where needed).
+3. Duplicate handling using logical key:
+   - `(hazard_type, definition_id, start_date, NERC_ID)`
+4. Duration consistency checks.
+5. **Temperature conversion (Step 5.7):**
+   - `extreme_temperature_K` -> `extreme_temperature_C`
+   - Formula: `C = K - 273.15`
+   - Column renamed and downstream numeric schema updated to Celsius.
+6. Outlier handling via physical bounds + IQR capping stats.
+
+### Saved outputs
+| Path | Description |
 |---|---|
-| `data/processed/original.csv` | Unmodified copy of input data |
-| `data/processed/cleaned.csv` | After missing values, duplicates, coercion, outlier handling |
-| `data/processed/ml_ready.csv` | After feature engineering; ready for model input |
-| `outputs/split_summary.txt` | Train / val / test date ranges and class distributions |
-| `outputs/feature_importance.png` | Top-20 feature importances from trained model |
-| `outputs/calibration_curve.png` | Probability calibration curve vs. perfect calibration |
-| `outputs/pipeline_model.joblib` | Saved model + label encoder + feature metadata |
+| `data/processed/data_raw.csv` | Raw copy used in notebook |
+| `data/processed/data_cleaned.csv` | Cleaned dataset (temperature in **Celsius**) |
+| `data/processed/cleaning_log.csv` | Audit log of cleaning steps |
+| `data/processed/outlier_cap_stats.csv` | Outlier cap thresholds and affected counts |
+| `figures/data_cleaning/` | EDA/cleaning diagnostics |
 
 ---
 
-## Data Preparation Approach
+## ML Prep Notebook (`week2_data_preparation_ml.ipynb`)
 
-Raw data passes through a sequential, reproducible pipeline:
+### Important feature engineering (including definition handling)
 
-1. **Missing values** — Anchor dates (start_date, centroid_date) are
-   required; rows missing them are dropped. Numeric columns receive
-   grouped median imputation (NERC region × hazard_type) with a global
-   median fallback. Categorical gaps are filled with `'UNKNOWN'` to
-   preserve rows while allowing the model to learn this as a level.
+The feature engineering design evolved through four iterative cycles of testing and debugging. 
+- Iteration 1: The original design treated the problem as a binary classification of event type (heat wave vs. cold snap) using all 12 event definitions mixed together, with extreme_temperature_C as a feature and definition_id dropped entirely. The first issue discovered was that ignoring definition_id caused massive pseudo-duplication (the same physical event appeared up to 12 times) and inflated the engineered trailing-rate and days-since-last-event features. 
+- Iteration 2: Filtering to a single definition (Def 2) as a quick fix collapsed the dataset to ~1/12th its size, causing temperature to achieve perfect feature importance of 1.0 while all other features dropped to zero, because temperature is the definition threshold. Reverting to all definitions and engineering interpretable features from the definition metadata (def_percentile, def_temp_metric, def_min_duration) resolved the data volume problem, but the query function still produced identical risk levels across all regions because 9 of 11 input features were static all-time medians that never changed with the query date. 
+- Iteration 3: Making those features seasonal (±30-day window around the query day-of-year) introduced date sensitivity but still failed to differentiate regions, because the underlying model had learned that temperature alone separates heat waves from cold snaps — a trivially correct but operationally useless insight. 
+- Iteration 4: The final resolution was to reframe the ML task entirely: instead of classifying what type of event occurred (which temperature answers perfectly), the model now predicts whether an event occurs on a given (region, date) combination using a daily panel structure, with temperature excluded from features since it is unknown at query time, forcing the model to learn genuine regional and seasonal occurrence patterns.
 
-2. **Duplicates** — Full row duplicates are removed first. Logical key
-   duplicates (same event anchor recorded multiple times) keep the
-   most spatially representative observation (highest spatial_coverage_pct).
+1. **Definition metadata mapping from `definition_id`**
+   - `Def1`..`Def12` are mapped to:
+     - `def_temp_metric` (daily_mean / daily_max / daily_min)
+     - `def_percentile` (e.g. 90, 95, 97.5, 99)
+     - `def_min_duration` (2 or 3)
+   - `definition_id` is then treated as metadata source, not a direct model feature.
+   - Unmapped definitions are filled with defaults (`unknown`, `95.0`, `2.0`).
 
-3. **Type coercion** — Dates are parsed with `errors='coerce'`; numeric
-   columns cast to float64. `duration_days` is recomputed from
-   `end_date − start_date + 1` as the authoritative source of truth.
-   Categorical strings are whitespace-stripped and lowercased.
+2. **Seasonality features**
+   - `doy_sin`, `doy_cos`
 
-4. **Outlier treatment** — Values outside physical bounds (e.g., Kelvin
-   temperature range) are hard-clipped first, then IQR Winsorisation
-   (×1.5) is applied. Removal is avoided — extreme events are the signal.
+3. **Historical recurrence features**
+   - `region_hazard_rate_30d`
+   - `days_since_last_event`
+   - Computed using grouped history that includes `definition_id` in grouping to reduce cross-definition inflation.
 
-5. **Feature engineering** — Three leakage-safe features are added:
-   cyclical day-of-year encoding (sin/cos), 30-day trailing regional
-   event rate, and days-since-last-same-type-event.
+4. **Daily panel conversion (critical change)**
+   - Converts event rows into daily rows with binary target `event_occurred`.
+   - Includes non-event days (negative sampling) so model learns occurrence probability, not just event class.
 
-6. **Train/val/test split** — Chronological 70/15/15 split on
-   centroid_date. No shuffling; future data never enters training.
-   Rolling features use only observations strictly before the event date.
+5. **Panel modeling feature set actually used for encoding/scaling**
+   - Numeric: `def_percentile`, `def_min_duration`, `doy_sin`, `doy_cos`
+   - Categorical: `NERC_ID`, `aggregation_method`, `def_temp_metric`, `hazard_query`
+   - Explicitly excluded at inference-time feature stage: `extreme_temperature_C`, `duration_days`, `spatial_coverage_pct`, and history-derived fields.
 
----
+### Split/encoding/scaling behavior
+- Chronological split: train/val/test (70/15/15)
+- One-hot fit on train, aligned for val/test
+- StandardScaler fit on train numeric columns only
 
-## Model Selection
+### Saved outputs
 
-| Model | Role | Why |
-|---|---|---|
-| **Gradient Boosting (GBM)** | Primary model | Best accuracy on tabular data with mixed feature types; handles non-linear region × season interactions; native feature importance |
-| **Random Forest** | Alternative | Robust to outliers; fast; good baseline comparison |
-| **Logistic Regression** | Interpretable baseline | Useful for coefficient inspection; probability output with reliable calibration |
-| **Isotonic Calibration** | Post-processing (all models) | Ensures predicted probabilities are reliable for travel queries ("P=0.3" truly means ~30% chance) |
-
-### Why Calibrated Probabilities Matter
-The objective is not just classification but **reliable probability
-estimation** for queries like "lowest heat-wave probability region on
-date X". Without calibration, a model might output 0.9 for events that
-only occur 60% of the time. Isotonic calibration (fit on held-out
-validation data) corrects this systematic bias.
-
-### Recommended Evaluation Metrics
-
-| Metric | Purpose |
+#### Data
+| Path | Description |
 |---|---|
-| **Brier Score** | Measures probability accuracy (0 = perfect, 0.25 = random) |
-| **ROC-AUC** | Discrimination ability across all probability thresholds |
-| **Average Precision** | Useful when class imbalance exists |
-| **Calibration Curve** | Visual check that probabilities are reliable |
+| `data/processed/ml_ready.csv` | Feature-engineered dataset before final matrix export |
+| `data/processed/train.csv` / `val.csv` / `test.csv` | Human-readable chronological splits |
+| `data/processed/X_train.csv` / `X_val.csv` / `X_test.csv` | Encoded + scaled feature matrices |
+| `data/processed/y_train.csv` / `y_val.csv` / `y_test.csv` | Binary target (`event_occurred`) |
+
+#### Artifacts
+| Path | Description |
+|---|---|
+| `data/processed/ml_artifacts/scaler.joblib` | Fitted scaler |
+| `data/processed/ml_artifacts/label_encoder.joblib` | Label encoder |
+| `data/processed/ml_artifacts/feature_names.json` | Ordered feature names |
+| `data/processed/ml_artifacts/onehot_columns.json` | One-hot metadata for alignment |
+| `data/processed/ml_artifacts/split_summary.txt` | Split report |
+| `data/processed/ml_artifacts/feature_summary.csv` | Feature summary table |
+| `figures/ml_preparation/` | ML prep visuals |
 
 ---
 
-## Feature Engineering Summary
+## References / Domain Notes
 
-| Feature | Description | Why It Helps |
-|---|---|---|
-| `doy_sin` / `doy_cos` | Cyclical encoding of day-of-year | Heat waves peak in summer, cold snaps in winter; cyclic encoding keeps Dec 31 ≈ Jan 1 |
-| `region_hazard_rate_30d` | 30-day trailing event rate per NERC region | Captures regional climatological base rate and event clustering |
-| `days_since_last_event` | Days since prior same-type event in same region | Extreme events cluster; recent event predicts next |
-
----
-
-## Data Dictionary
-
-See [`data_dictionary.md`](data_dictionary.md) for full column
-descriptions, valid ranges, engineered feature definitions, and
-cleaning decision log.
+- Hazard types: `heat_wave`, `cold_snap`
+- Aggregation methods: `SM`, `MWA`, `MWP`
+- Definition IDs: `Def1`..`Def12` (mapped to physically meaningful definition features)
+- Temperature unit in cleaned and ML-prep stages: **degree Celsius (C)**
+- Kelvin appears only in raw input and pre-conversion cleaning steps.

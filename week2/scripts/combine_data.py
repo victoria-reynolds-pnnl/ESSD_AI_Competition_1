@@ -120,7 +120,7 @@ def load_all(root: Path) -> pd.DataFrame:
 
 def main():
 
-    DATA_ROOT = Path("C:/WorkSpace/Tools/AI-ML/ESSD_AI_Competition/heat_wave_cold_snap_nerc")  # folder containing the 6 zip files
+    DATA_ROOT = Path("ESSD_AI_Competition_1/heat_wave_cold_snap_nerc")  # folder containing the 6 zip files
     df = load_all(DATA_ROOT)
     os.makedirs("week1/outputs", exist_ok=True)
 
