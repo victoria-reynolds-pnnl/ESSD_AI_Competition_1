@@ -7,7 +7,7 @@ import pandas as pd
 ################# Configuration #################
 
 MODEL = "xgb"
-PREDICT_DELTA = False  # Train on y(t+1)-y(t) instead of y(t+1) to anchor predictions to persistence
+PREDICT_DELTA = True  # Train on y(t+1)-y(t) instead of y(t+1) to anchor predictions to persistence
 # Narrow down to a few key targets for interpretability. Valid interval metrics were selected
 VIZ_TARGETS = ["Injection Pressure", "TC Interval Pressure", "TL Interval Flow", "TN Interval Flow", "TN-TEC-INT-L", "TN-TEC-INT-U"]
 

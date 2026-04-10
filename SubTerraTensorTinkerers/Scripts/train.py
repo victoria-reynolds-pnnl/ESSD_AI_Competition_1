@@ -31,7 +31,7 @@ print("Libraries loaded.")
 ################# Configuration #################
 
 MODEL = "xgb"
-PREDICT_DELTA = False  # Train on y(t+1)-y(t) instead of y(t+1) to anchor predictions to persistence
+PREDICT_DELTA = True  # Train on y(t+1)-y(t) instead of y(t+1) to anchor predictions to persistence
 if PREDICT_DELTA:
     loss_func = "reg:pseudohubererror"  # Huber loss, robust to outliers when predicting deltas
 else:
