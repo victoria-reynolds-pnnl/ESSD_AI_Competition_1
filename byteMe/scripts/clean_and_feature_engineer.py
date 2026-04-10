@@ -147,7 +147,7 @@ RAMP_UP_CONSEC_HRS = 1     # consecutive hours at steady-state to declare ramp-u
 DRIFT_THRESHOLD_C_PER_HR = 0.12  # 0.002 °C/min × 60 min/hr
 
 # Physical plausibility bounds (domain knowledge)
-TEMP_MIN,  TEMP_MAX  = -5.0, 150.0   # °C
+TEMP_MIN,  TEMP_MAX  = 0, 150.0   # °C
 PRESS_MAX            = 500.0          # bar/psi
 EC_MIN,    EC_MAX    =  0.0, 5_000.0  # µS/cm
 
@@ -266,7 +266,7 @@ def clean(df, label=''):
 
     # 2d. Clamp physically implausible sensor values to NaN
     for col in _temp_cols(df):
-        mask = (df[col] < TEMP_MIN) | (df[col] > TEMP_MAX)
+        mask = (df[col] <= TEMP_MIN) | (df[col] > TEMP_MAX)
         n = mask.sum()
         if n:
             print(f"  {col}: clamping {n} temperature outliers to NaN")
