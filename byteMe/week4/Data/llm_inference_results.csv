@@ -1,0 +1,719 @@
+timestamp,model_label,model_name,endpoint_port,version,parse_ok,parse_error,confidence,raw_response,gt_target_240,gt_target_1440,ml_Multi-XGB_+240m,ml_Multi-XGB_+1440m,pred_target_240,err2_target_240,pred_target_1440,err2_target_1440
+2025-02-01 20:01:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_zeroshot,True,,0.95,"{
+  ""target_240"": 5.5844,
+  ""target_1440"": 5.5844,
+  ""confidence"": 0.95
+}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.5844,0.00048769546158720434,5.5844,5.819434705687163e-05
+2025-02-05 00:30:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_zeroshot,True,,0.95,"{
+  ""target_240"": 5.6007,
+  ""target_1440"": 5.5997,
+  ""confidence"": 0.95
+}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.6007,7.757269724155466e-05,5.5997,0.0011247713776718839
+2025-02-10 05:58:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_zeroshot,True,,0.95,"{
+  ""target_240"": 5.8186,
+  ""target_1440"": 5.8186,
+  ""confidence"": 0.95
+}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.8186,0.0002448251232085488,5.8186,4.490257826992563e-05
+2025-02-13 10:27:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_zeroshot,True,,0.95,"{
+  ""target_240"": 5.8592,
+  ""target_1440"": 5.8592,
+  ""confidence"": 0.95
+}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.8592,6.659870651153588e-05,5.8592,1.1588655180206956e-05
+2025-02-18 15:55:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_zeroshot,True,,0.95,"Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 0.95}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.8963,1.8213289370383202e-05,5.8963,0.00026960008059142215
+2025-02-01 20:01:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_zeroshot,True,,0.85,"```json
+{
+  ""target_240"": 5.65,
+  ""target_1440"": 5.75,
+  ""confidence"": 0.85
+}
+```",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.65,0.0018936572206987932,5.75,0.030008120815057042
+2025-02-05 00:30:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_zeroshot,True,,0.85,"```json
+{
+  ""target_240"": 5.61,
+  ""target_1440"": 5.65,
+  ""confidence"": 0.85
+}
+```",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.61,2.425204082717605e-07,5.65,0.00028097767195003074
+2025-02-10 05:58:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_zeroshot,True,,0.95,"```json
+{
+  ""target_240"": 5.7887,
+  ""target_1440"": 5.7887,
+  ""confidence"": 0.95
+}
+```",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.7887,0.00020315118426403507,5.7887,0.0005381964493252575
+2025-02-13 10:27:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_zeroshot,True,,0.95,"```json
+{
+  ""target_240"": 5.86,
+  ""target_1440"": 5.86,
+  ""confidence"": 0.95
+}
+```",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.86,5.4181421622651135e-05,5.86,6.78191695799315e-06
+2025-02-18 15:55:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_zeroshot,True,,0.85,"```json
+{
+  ""target_240"": 5.90,
+  ""target_1440"": 6.00,
+  ""confidence"": 0.85
+}
+```",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.9,3.2228675928482203e-07,6.0,0.007617885146869032
+2025-02-01 20:01:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_zeroshot,True,,0.95,"{
+  ""target_240"": 2.3,
+  ""target_1440"": 4.5,
+  ""confidence"": 0.95
+}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,2.3,10.9328353051929,4.5,1.1594368159539448
+2025-02-05 00:30:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_zeroshot,True,,0.85,"{
+  ""target_240"": 2.3,
+  ""target_1440"": 4.5,
+  ""confidence"": 0.85
+}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,2.3,10.952840133414835,4.5,1.2842274838663867
+2025-02-10 05:58:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_zeroshot,True,,0.95,"{
+  ""target_240"": 2.0,
+  ""target_1440"": 4.0,
+  ""confidence"": 0.95
+}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,2.0,14.462452367422424,4.0,3.282978208661924
+2025-02-13 10:27:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_zeroshot,True,,0.85,"{
+  ""target_240"": 2.9,
+  ""target_1440"": 5.8,
+  ""confidence"": 0.85
+}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,2.9,8.805230135510504,5.8,0.003919287283624136
+2025-02-18 15:55:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_zeroshot,True,,0.0,"{
+  ""target_240"": 0.0,
+  ""target_1440"": 0.0,
+  ""confidence"": 0.0
+}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,0.0,34.81669921834229,0.0,34.960251921813544
+2025-02-01 20:01:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_5,False,invalid_json,,"Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,,,,
+2025-02-05 00:30:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_5,False,invalid_json,,"Q: Given features: cumulative_heat_input=369610.7014, elapsed_injection_min=77.0000, net_flow_rolling_6h=2.2727, TC_INT_delta=1.9085, T_gradient_INT_TC=-13.9163, days_since_injection=0.0535, hour_sin=-0.6528, hour_cos=0.7576, delta_T_above_T0_TN=1.6635, target_lag_15=1.5464, flow_lag_15=2.2189, target_lag_30=1.3290, flow_lag_30=2.1309, target_lag_60=0.2832, flow_lag_60=1.5200
+Predict temperature delta and confidence.
+A: {""target_240"": 1.9063, ""target_1440"": 2.4649, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=123779748.2090, elapsed_injection_min=18003.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.7363, T_gradient_INT_TC=-9.7367, days_since_injection=12.5021, hour_sin=0.8594, hour_cos=-0.5113, delta_T_above_T0_TN=3.3744, target_lag_15=3.3766, flow_lag_15=2.5000, target_lag_30=3.3725, flow_lag_30=2.5000, target_lag_60=3.3738, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 3.4, ""target_1440"": 3.4902, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=250477684.8553, elapsed_injection_min=35930.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.4551, T_gradient_INT_TC=-9.2120, days_since_injection=24.9514, hour_sin=-0.9763, hour_cos=0.2164, delta_T_above_T0_TN=4.5844, target_lag_15=4.5735, flow_lag_15=2.5000, target_lag_30=4.5808, flow_lag_30=2.5000, target_lag_60=4.5727, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 4.6166, ""target_1440"": 4.7189, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=343037202.3221, elapsed_injection_min=53857.0000, net_flow_rolling_6h=2.0000, TC_INT_delta=-0.0993, T_gradient_INT_TC=-7.3491, days_since_injection=37.4007, hour_sin=0.9950, hour_cos=0.1002, delta_T_above_T0_TN=5.1367, target_lag_15=5.1452, flow_lag_15=2.0000, target_lag_30=5.1404, flow_lag_30=2.0000, target_lag_60=5.1297, flow_lag_60=2.0000
+Predict temperature delta and confidence.
+A: {""target_240"": 5.1794, ""target_1440"": 5.3914, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423821644.6022, elapsed_injection_min=72000.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=-0.5563, T_gradient_INT_TC=-5.3635, days_since_injection=50.0000, hour_sin=-0.8660, hour_cos=0.5000, delta_T_above_T0_TN=5.5721, target_lag_15=5.6062, flow_lag_15=1.4859, target_lag_30=5.5980, flow_lag_30=1.4859, target_lag_60=5.6147, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=440875925.9646, elapsed_injection_min=76590.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=53.1875, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=440875925.9646, elapsed_injection_min=76590.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=53.1875, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=440875925.9646, elapsed_injection_min=76590.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=53.1875, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features:",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,,,,
+2025-02-10 05:58:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_5,False,invalid_json,,"Q: Given features: cumulative_heat_input=369610.7014, elapsed_injection_min=77.0000, net_flow_rolling_6h=2.2727, TC_INT_delta=1.9085, T_gradient_INT_TC=-13.9163, days_since_injection=0.0535, hour_sin=-0.6528, hour_cos=0.7576, delta_T_above_T0_TN=1.6635, target_lag_15=1.5464, flow_lag_15=2.2189, target_lag_30=1.3290, flow_lag_30=2.1309, target_lag_60=0.2832, flow_lag_60=1.5200
+Predict temperature delta and confidence.
+A: {""target_240"": 1.9063, ""target_1440"": 2.4649, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=123779748.2090, elapsed_injection_min=18003.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.7363, T_gradient_INT_TC=-9.7367, days_since_injection=12.5021, hour_sin=0.8594, hour_cos=-0.5113, delta_T_above_T0_TN=3.3744, target_lag_15=3.3766, flow_lag_15=2.5000, target_lag_30=3.3725, flow_lag_30=2.5000, target_lag_60=3.3738, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 3.4, ""target_1440"": 3.4902, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=250477684.8553, elapsed_injection_min=35930.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.4551, T_gradient_INT_TC=-9.2120, days_since_injection=24.9514, hour_sin=-0.9763, hour_cos=0.2164, delta_T_above_T0_TN=4.5844, target_lag_15=4.5735, flow_lag_15=2.5000, target_lag_30=4.5808, flow_lag_30=2.5000, target_lag_60=4.5727, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 4.6166, ""target_1440"": 4.7189, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=343037202.3221, elapsed_injection_min=53857.0000, net_flow_rolling_6h=2.0000, TC_INT_delta=-0.0993, T_gradient_INT_TC=-7.3491, days_since_injection=37.4007, hour_sin=0.9950, hour_cos=0.1002, delta_T_above_T0_TN=5.1367, target_lag_15=5.1452, flow_lag_15=2.0000, target_lag_30=5.1404, flow_lag_30=2.0000, target_lag_60=5.1297, flow_lag_60=2.0000
+Predict temperature delta and confidence.
+A: {""target_240"": 5.1794, ""target_1440"": 5.3914, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423821644.6022, elapsed_injection_min=72000.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=-0.5563, T_gradient_INT_TC=-5.3635, days_since_injection=50.0000, hour_sin=-0.8660, hour_cos=0.5000, delta_T_above_T0_TN=5.5721, target_lag_15=5.6062, flow_lag_15=1.4859, target_lag_30=5.5980, flow_lag_30=1.4859, target_lag_60=5.6147, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=463186917.6296, elapsed_injection_min=84118.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=58.4153, hour_sin=1.0000, hour_cos=0.0087, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=369610.7014, elapsed_injection_min=77.0000, net_flow_rolling_6h=2.2727, TC_INT_delta=1.9085, T_gradient_INT_TC=-13.9163, days_since_injection=0.0535, hour_sin=-0.6528, hour_cos=0.7576, delta_T_above_T0_TN=1.6635, target_lag_15=1.5464, flow_lag_15=2.2189, target_lag_30=1.3290, flow_lag_30=2.1309, target_lag_60=0.2832, flow_lag_60=1.5200
+Predict temperature delta and confidence.
+A: {""target_240"": 1.9063, ""target_1440"": 2.4649, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=123779748.2090, elapsed_injection_min=18003.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.7363, T_gradient_INT_TC=-9.7367, days_since_injection=12.5021, hour_sin=0.8594, hour_cos=-0.5113, delta_T_above_T0_TN=3.3744, target_lag_15=3.3766, flow_lag_15=2.5000, target_lag_30=3.3725, flow_lag_30=2.5000, target_lag_60=3.3738, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 3.4, ""target_1440"": 3.4902, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=250",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,,,,
+2025-02-13 10:27:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_5,False,invalid_json,,"Q: Given features: cumulative_heat_input=369610.7014, elapsed_injection_min=77.0000, net_flow_rolling_6h=2.2727, TC_INT_delta=1.9085, T_gradient_INT_TC=-13.9163, days_since_injection=0.0535, hour_sin=-0.6528, hour_cos=0.7576, delta_T_above_T0_TN=1.6635, target_lag_15=1.5464, flow_lag_15=2.2189, target_lag_30=1.3290, flow_lag_30=2.1309, target_lag_60=0.2832, flow_lag_60=1.5200
+Predict temperature delta and confidence.
+A: {""target_240"": 1.9063, ""target_1440"": 2.4649, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=123779748.2090, elapsed_injection_min=18003.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.7363, T_gradient_INT_TC=-9.7367, days_since_injection=12.5021, hour_sin=0.8594, hour_cos=-0.5113, delta_T_above_T0_TN=3.3744, target_lag_15=3.3766, flow_lag_15=2.5000, target_lag_30=3.3725, flow_lag_30=2.5000, target_lag_60=3.3738, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 3.4, ""target_1440"": 3.4902, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=250477684.8553, elapsed_injection_min=35930.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.4551, T_gradient_INT_TC=-9.2120, days_since_injection=24.9514, hour_sin=-0.9763, hour_cos=0.2164, delta_T_above_T0_TN=4.5844, target_lag_15=4.5735, flow_lag_15=2.5000, target_lag_30=4.5808, flow_lag_30=2.5000, target_lag_60=4.5727, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 4.6166, ""target_1440"": 4.7189, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=343037202.3221, elapsed_injection_min=53857.0000, net_flow_rolling_6h=2.0000, TC_INT_delta=-0.0993, T_gradient_INT_TC=-7.3491, days_since_injection=37.4007, hour_sin=0.9950, hour_cos=0.1002, delta_T_above_T0_TN=5.1367, target_lag_15=5.1452, flow_lag_15=2.0000, target_lag_30=5.1404, flow_lag_30=2.0000, target_lag_60=5.1297, flow_lag_60=2.0000
+Predict temperature delta and confidence.
+A: {""target_240"": 5.1794, ""target_1440"": 5.3914, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423821644.6022, elapsed_injection_min=72000.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=-0.5563, T_gradient_INT_TC=-5.3635, days_since_injection=50.0000, hour_sin=-0.8660, hour_cos=0.5000, delta_T_above_T0_TN=5.5721, target_lag_15=5.6062, flow_lag_15=1.4859, target_lag_30=5.5980, flow_lag_30=1.4859, target_lag_60=5.6147, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=479998217.5701, elapsed_injection_min=88707.0000, net_flow_rolling_6h=1.4922, TC_INT_delta=-0.5806, T_gradient_INT_TC=-4.7399, days_since_injection=61.6021, hour_sin=0.3947, hour_cos=-0.9188, delta_T_above_T0_TN=5.8592, target_lag_15=5.8616, flow_lag_15=1.4923, target_lag_30=5.8584, flow_lag_30=1.4922, target_lag_60=5.8600, flow_lag_60=1.4922
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=369610.7014, elapsed_injection_min=77.0000, net_flow_rolling_6h=2.2727, TC_INT_delta=1.9085, T_gradient_INT_TC=-13.9163, days_since_injection=0.0535, hour_sin=-0.6528, hour_cos=0.7576, delta_T_above_T0_TN=1.6635, target_lag_15=1.5464, flow_lag_15=2.2189, target_lag_30=1.3290, flow_lag_30=2.1309, target_lag_60=0.2832, flow_lag_60=1.5200
+Predict temperature delta and confidence.
+A: {""target_240"": 1.9063, ""target_1440"": 2.4649, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=123779748.2090, elapsed_injection_min=18003.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=1.7363, T_gradient_INT_TC=-9.7367, days_since_injection=12.5021, hour_sin=0.8594, hour_cos=-0.5113, delta_T_above_T0_TN=3.3744, target_lag_15=3.3766, flow_lag_15=2.5000, target_lag_30=3.3725, flow_lag_30=2.5000, target_lag_60=3.3738, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 3.4, ""target_1440"": 3.4902, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=250",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,,,,
+2025-02-18 15:55:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_5,False,invalid_json,,"Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=580616967.9285, elapsed_injection_min=120000.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=83.6599, hour_sin=-0.9999, hour_cos=0.0000, delta_T_above_T0_TN=6.2000, target_lag_15=6.2000, flow_lag_15=1.4881, target_lag_30=6.2000, flow_lag_30=1.4881, target_lag_60=6.2000, flow_lag_60=1.4881
+Predict temperature delta and confidence.
+A: {""target_240"": 6.2000, ""target_1440"": 6.2000, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=658959609.1906, elapsed_injection_min=144000.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=100.4899, hour_sin=-0.9999, hour_cos=0.0000, delta_T_above_T0_TN=6.5000, target_lag_15=6.5000, flow_lag_15=1.4881, target_lag_30=6.5000, flow_lag_30=1.4881, target_lag_60=6.5000, flow_lag_60=1.4881
+Predict temperature delta and confidence.
+A: {""target_240"": 6.5000, ""target_1440"": 6.5000, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=737292250.4527, elapsed_injection_min=167999.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=117.3199, hour_sin=-0.9999, hour_cos=0.0000, delta_T_above_T0_TN=6.8000, target_lag_15=6.8000, flow_lag_15=1.4881, target_lag_30=6.8000, flow_lag_30=1.4881, target_lag_60=6.8000, flow_lag_60=1.4881
+Predict temperature delta and confidence.
+A: {""target_240"": 6.8000, ""target_1440"": 6.8000, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=815624891.7148, elapsed_injection_min=191998.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=134.1499, hour_sin=-0.9999, hour_cos=0.0000, delta_T_above_T0_TN=7.1000, target_lag_15=7.1000, flow_lag_15=1.4881, target_lag_30=7.1000, flow_lag_30=1.4881, target_lag_60=7.1000, flow_lag_60=1.4881
+Predict temperature delta and confidence.
+A: {""target_240"": 7.1000, ""target_1440"": 7.1000, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=893957532.9769, elapsed_injection_min=215997.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=150.9799, hour_sin=-0.9999, hour_cos=0.0000, delta_T_above_T0_TN=7.4000, target_lag_15=7.4000, flow_lag_15=1.4881, target_lag_30=7.4000, flow_lag_30=1.4881, target_lag_60=7.4000, flow_lag_60=1.4881
+Predict temperature delta and confidence.
+A: {""target_240"": 7.4000, ""target_1440"": 7.4000, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=972290174.2390, elapsed_injection_min=239996.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=167.8099, hour_sin=-0.9999, hour_cos=0.0000, delta_T_above_T0_TN=7.7000, target_lag_15=7.7000, flow_lag_15=1.4881, target_lag_30=7.7000, flow_lag_30=1.4881, target_lag_60=7.7000, flow_lag_60=1.4881
+Predict temperature delta and confidence.
+A: {""target_240"": 7.7000, ""target_1440"": 7.7000, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=1050622815.5011, elapsed_injection_min=263995.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=184.6399, hour_sin=-0.9999, hour_cos=0.0000, delta_T_above_T0_TN=8.0000, target_lag_15=8.0000, flow_lag_15=1.4881, target_lag_30=8.0000, flow_lag_30=1.4881, target_lag_60=8.0000, flow_lag_60=1.4881
+Predict temperature delta and confidence.
+A: {""target_240"": 8.0000, ""target",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,,,,
+2025-02-01 20:01:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_5,True,,1.0,"{""target_240"": 5.6289, ""target_1440"": 5.5951, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.6289,0.0005024847646430479,5.5951,0.00033593471666801446
+2025-02-05 00:30:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_5,True,,1.0,"{""target_240"": 5.5951, ""target_1440"": 5.5845, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.5951,0.0002075771047970624,5.5845,0.0023753547638940046
+2025-02-10 05:58:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_5,True,,1.0,"{""target_240"": 5.8341, ""target_1440"": 5.8532, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.8341,0.0009701286701530412,5.8532,0.001705767530159067
+2025-02-13 10:27:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_5,True,,1.0,"{""target_240"": 5.8432, ""target_1440"": 5.7891, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.8432,0.0005837444042892574,5.7891,0.005402869091901739
+2025-02-18 15:55:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_5,True,,1.0,"{""target_240"": 5.9021, ""target_1440"": 5.8814, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.9021,2.3479339259585784e-06,5.8814,0.000980911271646994
+2025-02-01 20:01:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_5,True,,1.0,"{""target_240"": 5.5789, ""target_1440"": 5.5551, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.5789,0.0007608675701982598,5.5551,0.00046965296111238866
+2025-02-05 00:30:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_5,True,,1.0,"{""target_240"": 5.5712, ""target_1440"": 5.5474, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.5712,0.001467467344185813,5.5474,0.007368095528949395
+2025-02-10 05:58:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_5,True,,1.0,"{""target_240"": 5.7904, ""target_1440"": 5.7621, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.7904,0.0001575806055418278,5.7621,0.0024799465152139603
+2025-02-13 10:27:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_5,True,,1.0,"{""target_240"": 5.8414, ""target_1440"": 5.8202, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.8414,0.0006739632952892639,5.8202,0.0017981171435132023
+2025-02-18 15:55:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_5,True,,1.0,"{""target_240"": 5.8954, ""target_1440"": 5.8926, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.8954,2.6705154870376715e-05,5.8926,0.000404794403202549
+2025-02-01 20:01:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_10,False,invalid_json,,"Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": 1.0}
+
+",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,,,,
+2025-02-05 00:30:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_10,False,invalid_json,,"Q: Given features: cumulative_heat_input=440875925.9646, elapsed_injection_min=76590.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=53.1875, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.5997, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=457820257.0000, elapsed_injection_min=81150.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=56.7500, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.5997, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=474764588.0354, elapsed_injection_min=85710.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=60.3125, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.5997, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=491708919.0708, elapsed_injection_min=90270.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=63.8750, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.5997, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=508653250.1062, elapsed_injection_min=94830.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=67.4375, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.5997, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=525597581.1416, elapsed_injection_min=99390.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=71.0000, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.5997, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=542541912.1770, elapsed_injection_min=103950.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=74.5625, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.5997, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=559486243.2124, elapsed_injection_min=108510.0000, net_flow_rolling_6h=1.4921, TC_INT_delta=-0.0398, T_gradient_INT_TC=-4.7329, days_since_injection=78.1250, hour_sin=0.1305, hour_cos=0.9914, delta_T_above_T0_TN=5.6007, target_lag_15=5.5997, flow_lag_15=1.4920, target_lag_30=5.5997, flow_lag_30=1.4921, target_lag_60=5.6054, flow_lag_60=1.4921
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5997, ""target_1440"": 5.599",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,,,,
+2025-02-10 05:58:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_10,False,invalid_json,,"Q: Given features: cumulative_heat_input=502552190.6570, elapsed_injection_min=92076.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=64.8489, hour_sin=0.9848, hour_cos=0.1736, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440"": 5.8113, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=541917463.6844, elapsed_injection_min=100034.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=71.2825, hour_sin=0.7071, hour_cos=0.7071, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440"": 5.8113, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=581282736.7118, elapsed_injection_min=108000.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=77.7161, hour_sin=0.0000, hour_cos=1.0000, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440"": 5.8113, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=620648009.7392, elapsed_injection_min=116058.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=84.1497, hour_sin=-0.7071, hour_cos=0.7071, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440"": 5.8113, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=659913282.7666, elapsed_injection_min=124016.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=90.5833, hour_sin=-0.9848, hour_cos=-0.1736, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440"": 5.8113, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=699178555.7940, elapsed_injection_min=132074.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=97.0169, hour_sin=-0.9848, hour_cos=-0.1736, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440"": 5.8113, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=738443828.8214, elapsed_injection_min=140132.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=103.4505, hour_sin=-0.7071, hour_cos=0.7071, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440"": 5.8113, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=777709101.8488, elapsed_injection_min=148190.0000, net_flow_rolling_6h=1.4935, TC_INT_delta=0.1727, T_gradient_INT_TC=-4.6830, days_since_injection=109.8841, hour_sin=0.0000, hour_cos=1.0000, delta_T_above_T0_TN=5.8186, target_lag_15=5.8162, flow_lag_15=1.4935, target_lag_30=5.8113, flow_lag_30=1.4935, target_lag_60=5.7887, flow_lag_60=1.4935
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8162, ""target_1440",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,,,,
+2025-02-13 10:27:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_10,False,invalid_json,,"Q: Given features: cumulative_heat_input=54504555.2688, elapsed_injection_min=8044.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=-0.4685, T_gradient_INT_TC=-10.4828, days_since_injection=5.5861, hour_sin=0.4848, hour_cos=-0.8746, delta_T_above_T0_TN=3.0272, target_lag_15=2.9886, flow_lag_15=2.5000, target_lag_30=2.9919, flow_lag_30=2.5000, target_lag_60=3.0165, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 2.9986, ""target_1440"": 3.3425, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=109820207.7415, elapsed_injection_min=16011.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=-1.2916, T_gradient_INT_TC=-9.8666, days_since_injection=11.1188, hour_sin=-0.2965, hour_cos=0.9550, delta_T_above_T0_TN=3.3319, target_lag_15=3.3523, flow_lag_15=2.5000, target_lag_30=3.3312, flow_lag_30=2.5000, target_lag_60=3.3677, flow_lag_60=2.4256
+Predict temperature delta and confidence.
+A: {""target_240"": 3.3125, ""target_1440"": 3.3505, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=165813017.6931, elapsed_injection_min=23979.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=-0.2860, T_gradient_INT_TC=-9.4060, days_since_injection=16.6521, hour_sin=0.0915, hour_cos=0.9958, delta_T_above_T0_TN=3.8870, target_lag_15=3.8738, flow_lag_15=2.5000, target_lag_30=3.8713, flow_lag_30=2.5000, target_lag_60=3.8792, flow_lag_60=2.5000
+Predict temperature delta and confidence.
+A: {""target_240"": 3.9112, ""target_1440"": 4.0532, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=222147431.5066, elapsed_injection_min=31946.0000, net_flow_rolling_6h=2.0000, TC_INT_delta=-0.9373, T_gradient_INT_TC=-9.3468, days_since_injection=22.1847, hour_sin=-0.3173, hour_cos=-0.9483, delta_T_above_T0_TN=4.4075, target_lag_15=4.3971, flow_lag_15=2.0000, target_lag_30=4.3978, flow_lag_30=2.0001, target_lag_60=4.3897, flow_lag_60=2.0000
+Predict temperature delta and confidence.
+A: {""target_240"": 4.3827, ""target_1440"": 4.4747, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=274423496.5480, elapsed_injection_min=39914.0000, net_flow_rolling_6h=2.0000, TC_INT_delta=-0.9115, T_gradient_INT_TC=-7.2357, days_since_injection=27.7181, hour_sin=0.5038, hour_cos=0.8638, delta_T_above_T0_TN=4.5331, target_lag_15=4.5319, flow_lag_15=2.0000, target_lag_30=4.5281, flow_lag_30=2.0000, target_lag_60=4.5225, flow_lag_60=2.0000
+Predict temperature delta and confidence.
+A: {""target_240"": 4.5491, ""target_1440"": 4.6719, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=311089770.4509, elapsed_injection_min=47881.0000, net_flow_rolling_6h=2.0000, TC_INT_delta=0.5698, T_gradient_INT_TC=-7.4024, days_since_injection=33.2507, hour_sin=-0.6724, hour_cos=-0.7402, delta_T_above_T0_TN=5.1444, target_lag_15=5.1502, flow_lag_15=2.0000, target_lag_30=5.1479, flow_lag_30=2.0000, target_lag_60=5.1321, flow_lag_60=2.0000
+Predict temperature delta and confidence.
+A: {""target_240"": 5.1153, ""target_1440"": 5.2479, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=353698931.1226, elapsed_injection_min=55849.0000, net_flow_rolling_6h=1.5499, TC_INT_delta=0.3546, T_gradient_INT_TC=-5.0070, days_since_injection=38.7840, hour_sin=0.8090, hour_cos=0.5878, delta_T_above_T0_TN=5.5235, target_lag_15=5.5107, flow_lag_15=1.5500, target_lag_30=5.5173, flow_lag_30=1.5500, target_lag_60=5.5173, flow_lag_60=1.5500
+Predict temperature delta and confidence.
+A: {""target_240"": 5.474, ""target_1440"": 5.5367, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=393190010.8002, elapsed_injection_min=63816.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=-0.5563, T_gradient_INT_TC=-5.3635, days_since_injection=50.0000, hour_sin=-0.8660, hour_cos=0.5000, delta_T_above_T0_TN=5.5721, target_lag_15=5.6062, flow_lag_15=1.4859, target_lag_30=5.5980, flow_lag_30=1.4859, target_lag_60=5.6147, flow_lag_60=1.4859
+Predict temperature delta and confidence.
+A: {""target_240"": 5.5868, ""target_1440"": 5.553, ""confidence"": ",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,,,,
+2025-02-18 15:55:00,qwen2.5-7b,Qwen2.5-7B,8000,verbose_10,False,invalid_json,,"Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963, ""confidence"": 1.0}
+
+Q: Given features: cumulative_heat_input=502274325.6664, elapsed_injection_min=96235.0000, net_flow_rolling_6h=1.4881, TC_INT_delta=-0.0029, T_gradient_INT_TC=-4.6685, days_since_injection=66.8299, hour_sin=-0.8549, hour_cos=-0.5188, delta_T_above_T0_TN=5.8963, target_lag_15=5.8970, flow_lag_15=1.4882, target_lag_30=5.8971, flow_lag_30=1.4882, target_lag_60=5.8982, flow_lag_60=1.4882
+Predict temperature delta and confidence.
+A: {""target_240"": 5.8963, ""target_1440"": 5.8963,",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,,,,
+2025-02-01 20:01:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_10,True,,1.0,"{""target_240"": 5.5981, ""target_1440"": 5.5645, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.5981,7.028857286506717e-05,5.5645,0.00015058917366797493
+2025-02-05 00:30:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_10,True,,1.0,"{""target_240"": 5.5976, ""target_1440"": 5.5945, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.5976,0.0001417894228526463,5.5945,0.0015006025361163147
+2025-02-10 05:58:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_10,True,,1.0,"{""target_240"": 5.8029, ""target_1440"": 5.8244, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.8029,2.8208196295858046e-09,5.8244,0.00015627346615884938
+2025-02-13 10:27:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_10,True,,1.0,"{""target_240"": 5.8552, ""target_1440"": 5.8478, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.8552,0.000147885130955977,5.8478,0.0002191646748467625
+2025-02-18 15:55:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,verbose_10,True,,1.0,"{""target_240"": 5.8951, ""target_1440"": 5.8844, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.8951,2.9895776703710866e-05,5.8844,0.0008019942533136503
+2025-02-01 20:01:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_10,True,,1.0,"{""target_240"": 5.574, ""target_1440"": 5.5625, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.574,0.001055199085142678,5.5625,0.00020367508589018977
+2025-02-05 00:30:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_10,True,,1.0,"{""target_240"": 5.594, ""target_1440"": 5.5825, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.594,0.00024048368485261382,5.5825,0.0025743052094496137
+2025-02-10 05:58:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_10,True,,1.0,"{""target_240"": 5.7987, ""target_1440"": 5.8165, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.7987,1.8088956486286527e-05,5.8165,2.1168636103240568e-05
+2025-02-13 10:27:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_10,True,,1.0,"{""target_240"": 5.8488, ""target_1440"": 5.8712, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.8488,0.00034450341006707786,5.8712,7.388758184698553e-05
+2025-02-18 15:55:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,verbose_10,True,,1.0,"{""target_240"": 5.8951, ""target_1440"": 5.8983, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.8951,2.9895776703710866e-05,5.8983,0.00020792206836920334
+2025-02-01 20:01:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_zeroshot,False,invalid_json,,"Q: [423825390.0, 72001.0, 1.49, 0.77, -5.35, 50.0, -0.86, 0.5, 5.61, 5.57, 1.49, 5.61, 1.49, 5.58, 1.49]
+A: {""target_240"": 5.58, ""target_1440"": 5.58, ""confidence"": 0.95}
+You are a geothermal temperature forecasting model.
+Respond ONLY with valid JSON matching this schema:
+{""target_240"": <float>, ""target_1440"": <float>, ""confidence"": <0-1>}
+target_240 = predicted delta_T at 4 h, target_1440 = at 24 h.
+confidence = your estimated probability that the prediction is within 10% of the true value (0-1).
+Feature order: ['cumulative_heat_input', 'elapsed_injection_min', 'net_flow_rolling_6h', 'TC_INT_delta', 'T_gradient_INT_TC', 'days_since_injection', 'hour_sin', 'hour_cos', 'delta_T_above_T0_TN', 'target_lag_15', 'flow_lag_15', 'target_lag_30', 'flow_lag_30', 'target_lag_60', 'flow_lag_60']
+Output order: ['target_240', 'target_1440', 'confidence']",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,,,,
+2025-02-05 00:30:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_zeroshot,False,out_of_range,1.49,"Q: [440875925.96, 76590.0, 1.49, -0.04, -4.73, 53.19, 0.13, 0.99, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.6, ""target_1440"": 5.6, ""confidence"": 0.99}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,440875925.96,1.9437157714489373e+17,76590.0,5865165232.396054
+2025-02-10 05:58:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_zeroshot,False,invalid_json,,"Q: [463186917.63, 84118.0, 1.49, 0.17, -4.68, 58.42, 1.0, 0.01, 5.82, 5.82, 1.49, 5.81, 1.49, 5.79, 1.49]
+A: {""target_240"": 5.82, ""target_1440"": 5.82, ""confidence"": 0.95}
+You are a geothermal temperature forecasting model.
+Respond ONLY with valid JSON matching this schema:
+{""target_240"": <float>, ""target_1440"": <float>, ""confidence"": <0-1>}
+target_240 = predicted delta_T at 4 h, target_1440 = at 24 h.
+confidence = your estimated probability that the prediction is within 10% of the true value (0-1).
+Feature order: ['cumulative_heat_input', 'elapsed_injection_min', 'net_flow_rolling_6h', 'TC_INT_delta', 'T_gradient_INT_TC', 'days_since_injection', 'hour_sin', 'hour_cos', 'delta_T_above_T0_TN', 'target_lag_15', 'flow_lag_15', 'target_lag_30', 'flow_lag_30', 'target_lag_60', 'flow_lag_60']
+Output order: ['target_240', 'target_1440', 'confidence']",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,,,,
+2025-02-13 10:27:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_zeroshot,False,out_of_range,1.49,"Q: [479998217.57, 88707.0, 1.49, -0.58, -4.74, 61.6, 0.39, -0.92, 5.86, 5.86, 1.49, 5.86, 1.49, 5.86, 1.49]
+A: {""target_240"": 5.86, ""target_1440"": 5.86, ""confidence"": 0.95}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,479998217.57,2.3039828323773162e+17,88707.0,7867891775.306568
+2025-02-18 15:55:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_zeroshot,False,invalid_json,,"Q: [502274325.67, 96235.0, 1.49, -0.0, -4.67, 66.83, -0.85, -0.52, 5.9, 5.9, 1.49, 5.9, 1.49, 5.9, 1.49]
+A: {""target_240"": 5.9, ""target_1440"": 5.9, ""confidence"": 0.85}
+You are a geothermal temperature forecasting model.
+Respond ONLY with valid JSON matching this schema:
+{""target_240"": <float>, ""target_1440"": <float>, ""confidence"": <0-1>}
+target_240 = predicted delta_T at 4 h, target_1440 = at 24 h.
+confidence = your estimated probability that the prediction is within 10% of the true value (0-1).
+Feature order: ['cumulative_heat_input', 'elapsed_injection_min', 'net_flow_rolling_6h', 'TC_INT_delta', 'T_gradient_INT_TC', 'days_since_injection', 'hour_sin', 'hour_cos', 'delta_T_above_T0_TN', 'target_lag_15', 'flow_lag_15', 'target_lag_30', 'flow_lag_30', 'target_lag_60', 'flow_lag_60']
+Output order: ['target_240', 'target_1440', 'confidence']",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,,,,
+2025-02-01 20:01:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_zeroshot,True,,0.9,"{""target_240"": 5.61, ""target_1440"": 5.61, ""confidence"": 0.9}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.61,1.2363465142925407e-05,5.61,0.00110413467061248
+2025-02-05 00:30:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_zeroshot,True,,0.8,"{""target_240"": 5.6, ""target_1440"": 1.49, ""confidence"": 0.8}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.6,9.03932481859981e-05,1.49,17.166417904427476
+2025-02-10 05:58:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_zeroshot,True,,0.8,"{""target_240"": 5.82, ""target_1440"": 1.49, ""confidence"": 0.8}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.82,0.00029059641131967245,1.49,18.67881149683413
+2025-02-13 10:27:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_zeroshot,True,,0.8,"{""target_240"": 5.86, ""target_1440"": 5.86, ""confidence"": 0.8}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.86,5.4181421622651135e-05,5.86,6.78191695799315e-06
+2025-02-18 15:55:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_zeroshot,True,,0.8,"{""target_240"": 5.5, ""target_1440"": 1.2, ""confidence"": 0.8}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.5,0.1604544847312024,1.2,22.209725114480207
+2025-02-01 20:01:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_zeroshot,True,,0.85,"{
+  ""target_240"": 2.3,
+  ""target_1440"": 4.5,
+  ""confidence"": 0.85
+}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,2.3,10.9328353051929,4.5,1.1594368159539448
+2025-02-05 00:30:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_zeroshot,True,,0.85,"```json
+{
+  ""target_240"": 2.3,
+  ""target_1440"": 4.5,
+  ""confidence"": 0.85
+}
+```",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,2.3,10.952840133414835,4.5,1.2842274838663867
+2025-02-10 05:58:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_zeroshot,True,,0.85,"```json
+{
+  ""target_240"": 2.3,
+  ""target_1440"": 4.5,
+  ""confidence"": 0.85
+}
+```",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,2.3,12.270680500589092,4.5,1.7210791472730387
+2025-02-13 10:27:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_zeroshot,True,,0.85,"{
+  ""target_240"": 2.3,
+  ""target_1440"": 4.5,
+  ""confidence"": 0.85
+}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,2.3,12.72606309917717,4.5,1.8566902368947233
+2025-02-18 15:55:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_zeroshot,True,,0.85,"```json
+{
+  ""target_240"": 2.3,
+  ""target_1440"": 4.5,
+  ""confidence"": 0.85
+}
+```",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,2.3,12.964087784286749,4.5,1.9957763943135383
+2025-02-01 20:01:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_5,False,out_of_range,1.49,"Q: [423825390.0, 72001.0, 1.49, 0.77, -5.35, 50.0, -0.86, 0.5, 5.61, 5.57, 1.49, 5.61, 1.49, 5.58, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,423825390.0,1.7962795645631174e+17,72001.0,5183340965.853997
+2025-02-05 00:30:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_5,False,invalid_json,,"Q: [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52]
+A: {""target_240"": 1.91, ""target_1440"": 2.46, ""confidence"": 1.0}
+
+Q: [123779748.21, 18003.0, 2.5, 1.74, -9.74, 12.5, 0.86, -0.51, 3.37, 3.38, 2.5, 3.37, 2.5, 3.37, 2.5]
+A: {""target_240"": 3.4, ""target_1440"": 3.49, ""confidence"": 1.0}
+
+Q: [250477684.86, 35930.0, 2.5, 1.46, -9.21, 24.95, -0.98, 0.22, 4.58, 4.57, 2.5, 4.58, 2.5, 4.57, 2.5]
+A: {""target_240"": 4.62, ""target_1440"": 4.72, ""confidence"": 1.0}
+
+Q: [343037202.32, 53857.0, 2.0, -0.1, -7.35, 37.4, 0.99, 0.1, 5.14, 5.15, 2.0, 5.14, 2.0, 5.13, 2.0]
+A: {""target_240"": 5.18, ""target_1440"": 5.39, ""confidence"": 1.0}
+
+Q: [423821644.6, 72000.0, 1.49, -0.56, -5.36, 50.0, -0.87, 0.5, 5.57, 5.61, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [440875925.96, 76590.0, 1.49, -0.04, -4.73, 53.19, 0.13, 0.99, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,,,,
+2025-02-10 05:58:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_5,False,out_of_range,1.49,"Q: [463186917.63, 84118.0, 1.49, 0.17, -4.68, 58.42, 1.0, 0.01, 5.82, 5.82, 1.49, 5.81, 1.49, 5.79, 1.49]
+A: {""target_240"": 5.81, ""target_1440"": 5.81, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,463186917.63,2.1454211528787648e+17,84118.0,7074860187.127679
+2025-02-13 10:27:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_5,False,out_of_range,1.49,"Q: [479998217.57, 88707.0, 1.49, -0.58, -4.74, 61.6, 0.39, -0.92, 5.86, 5.86, 1.49, 5.86, 1.49, 5.86, 1.49]
+A: {""target_240"": 5.86, ""target_1440"": 5.86, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,479998217.57,2.3039828323773162e+17,88707.0,7867891775.306568
+2025-02-18 15:55:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_5,False,invalid_json,,"Q: [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52]
+A: {""target_240"": 1.91, ""target_1440"": 2.46, ""confidence"": 1.0}
+
+Q: [123779748.21, 18003.0, 2.5, 1.74, -9.74, 12.5, 0.86, -0.51, 3.37, 3.38, 2.5, 3.37, 2.5, 3.37, 2.5]
+A: {""target_240"": 3.4, ""target_1440"": 3.49, ""confidence"": 1.0}
+
+Q: [250477684.86, 35930.0, 2.5, 1.46, -9.21, 24.95, -0.98, 0.22, 4.58, 4.57, 2.5, 4.58, 2.5, 4.57, 2.5]
+A: {""target_240"": 4.62, ""target_1440"": 4.72, ""confidence"": 1.0}
+
+Q: [343037202.32, 53857.0, 2.0, -0.1, -7.35, 37.4, 0.99, 0.1, 5.14, 5.15, 2.0, 5.14, 2.0, 5.13, 2.0]
+A: {""target_240"": 5.18, ""target_1440"": 5.39, ""confidence"": 1.0}
+
+Q: [423821644.6, 72000.0, 1.49, -0.56, -5.36, 50.0, -0.87, 0.5, 5.57, 5.61, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [502274325.67, 96235.0, 1.49, -0.0, -4.67, 66.83, -0.85, -0.52, 5.9, 5.9, 1.49, 5.9, 1.49, 5.9, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,,,,
+2025-02-01 20:01:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_5,True,,1.0,"{""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.59,0.0002717165873650082,5.55,0.0007167120372790759
+2025-02-05 00:30:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_5,True,,1.0,"{""target_240"": 5.6, ""target_1440"": 5.56, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.6,9.03932481859981e-05,5.56,0.005363747721949478
+2025-02-10 05:58:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_5,True,,1.0,"{""target_240"": 5.83, ""target_1440"": 5.85, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.83,0.0007315341835419083,5.85,0.001451681523047892
+2025-02-13 10:27:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_5,True,,1.0,"{""target_240"": 5.88, ""target_1440"": 5.82, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.88,0.0001597492994004857,5.82,0.0018151188280687164
+2025-02-18 15:55:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_5,True,,1.0,"{""target_240"": 5.91, ""target_1440"": 5.89, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.91,8.896822564821007e-05,5.89,0.0005161758190914503
+2025-02-01 20:01:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_5,True,,1.0,"{""target_240"": 5.63, ""target_1440"": 5.67, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.63,0.0005530103429208377,5.67,0.008691557303945838
+2025-02-05 00:30:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_5,True,,1.0,"{""target_240"": 5.62, ""target_1440"": 5.63, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.62,0.00011009179263055378,5.63,1.048212750544223e-05
+2025-02-10 05:58:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_5,True,,1.0,"{""target_240"": 5.84, ""target_1440"": 5.8, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.84,0.0013724719557641355,5.8,0.00014158766193646892
+2025-02-13 10:27:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_5,True,,1.0,"{""target_240"": 5.88, ""target_1440"": 5.84, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.88,0.0001597492994004857,5.84,0.0005109503725133741
+2025-02-18 15:55:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_5,True,,1.0,"{""target_240"": 5.92, ""target_1440"": 5.88, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.92,0.0003776141645371268,5.88,0.0010705658802025702
+2025-02-01 20:01:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_10,False,out_of_range,1.49,"Q: [423825390.0, 72001.0, 1.49, 0.77, -5.35, 50.0, -0.86, 0.5, 5.61, 5.57, 1.49, 5.61, 1.49, 5.58, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,423825390.0,1.7962795645631174e+17,72001.0,5183340965.853997
+2025-02-05 00:30:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_10,False,invalid_json,,"Q: [440875925.96, 76590.0, 1.49, -0.04, -4.73, 53.19, 0.13, 0.99, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [457500000.0, 81000.0, 1.49, 0.0, -4.73, 56.36, 0.49, 0.76, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [474124074.08, 85470.0, 1.49, 0.0, -4.73, 60.53, 0.85, 0.59, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [490748148.16, 89940.0, 1.49, 0.0, -4.73, 64.7, 1.21, 0.43, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [507372222.24, 94410.0, 1.49, 0.0, -4.73, 68.87, 1.57, 0.28, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [523996296.32, 98880.0, 1.49, 0.0, -4.73, 73.04, 1.93, 0.14, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [540620370.4, 103350.0, 1.49, 0.0, -4.73, 77.21, 2.29, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [557244444.48, 107820.0, 1.49, 0.0, -4.73, 81.38, 2.65, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [573868518.56, 112290.0, 1.49, 0.0, -4.73, 85.55, 3.01, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [590492592.64, 116760.0, 1.49, 0.0, -4.73, 89.72, 3.37, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [607116666.72, 121230.0, 1.49, 0.0, -4.73, 93.89, 3.73, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [623740740.8, 125700.0, 1.49, 0.0, -4.73, 98.06, 4.09, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [640364814.88, 130170.0, 1.49, 0.0, -4.73, 102.23, 4.45, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [656988888.96, 134640.0, 1.49, 0.0, -4.73, 106.4, 4.81, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [673612963.04, 139110.0, 1.49, 0.0, -4.73, 110.57, 5.17, 0.0, 5.6, 5.6, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,,,,
+2025-02-10 05:58:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_10,False,invalid_json,,"Q: [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52]
+A: {""target_240"": 1.91, ""target_1440"": 2.46, ""confidence"": 1.0}
+
+Q: [54504555.27, 8044.0, 2.5, -0.47, -10.48, 5.59, 0.48, -0.87, 3.03, 2.99, 2.5, 2.99, 2.5, 3.02, 2.5]
+A: {""target_240"": 3.0, ""target_1440"": 3.34, ""confidence"": 1.0}
+
+Q: [109820207.74, 16011.0, 2.5, -1.29, -9.87, 11.12, -0.3, 0.96, 3.33, 3.35, 2.5, 3.33, 2.5, 3.37, 2.43]
+A: {""target_240"": 3.31, ""target_1440"": 3.35, ""confidence"": 1.0}
+
+Q: [165813017.69, 23979.0, 2.5, -0.29, -9.41, 16.65, 0.09, -1.0, 3.89, 3.87, 2.5, 3.87, 2.5, 3.88, 2.5]
+A: {""target_240"": 3.91, ""target_1440"": 4.05, ""confidence"": 1.0}
+
+Q: [222147431.51, 31946.0, 2.5, -0.94, -9.35, 22.18, 0.11, 0.99, 4.41, 4.4, 2.5, 4.4, 2.5, 4.39, 2.5]
+A: {""target_240"": 4.38, ""target_1440"": 4.47, ""confidence"": 1.0}
+
+Q: [274423496.55, 39914.0, 2.0, -0.91, -7.24, 27.72, -0.32, -0.95, 4.53, 4.53, 2.0, 4.53, 2.0, 4.52, 2.0]
+A: {""target_240"": 4.55, ""target_1440"": 3.04, ""confidence"": 1.0}
+
+Q: [311089770.45, 47881.0, 2.0, 0.57, -7.4, 33.25, 0.5, 0.86, 5.14, 5.15, 2.0, 4.66, 2.0, 5.13, 2.0]
+A: {""target_240"": 5.04, ""target_1440"": 5.16, ""confidence"": 1.0}
+
+Q: [353698931.12, 55849.0, 2.0, 0.05, -7.35, 38.78, -0.67, -0.74, 5.48, 5.48, 2.0, 5.47, 2.0, 5.48, 2.0]
+A: {""target_240"": 5.48, ""target_1440"": 5.54, ""confidence"": 1.0}
+
+Q: [393190010.8, 63816.0, 1.55, 0.35, -5.01, 44.32, 0.81, 0.59, 5.52, 5.51, 1.55, 5.52, 1.55, 5.52, 1.55]
+A: {""target_240"": 5.47, ""target_1440"": 5.54, ""confidence"": 1.0}
+
+Q: [423821644.6, 72000.0, 1.49, -0.56, -5.36, 50.0, -0.87, 0.5, 5.57, 5.61, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [463186917.63, 84118.0, 1.49, 0.17, -4.68, 58.42, 1.0, 0.01, 5.82, 5.82, 1.49, 5.81, 1.49, 5.79, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [503522190.6, 92085.0, 1.49, 0.78, -4.02, 66.75, 1.19, 0.24, 6.06, 6.06, 1.49, 6.05, 1.49, 6.05, 1.49]
+A: {""target_240"": 6.05, ""target_1440"": 6.05, ""confidence"": 1.0}
+
+Q: [543857463.57, 100052.0, 1.49, 1.39, -3.37, 75.08, 1.38, 0.48, 6.39, 6.39, 1.49, 6.38, 1.49, 6.38, 1.49]
+A: {""target_240"": 6.38, ""target_1440"": 6.38, ""confidence"": 1.0}
+
+Q: [584192736.54, 108019.0, 1.49, 2.0, -2.73, 83.41, 1.57, 0.72, 6.72, 6.72, 1.49, 6.71, 1.49, 6.71, 1.49]
+A: {""target_240"": 6.71, ""target_1440"": 6.71, ""confidence"": 1.0}
+
+Q: [624528009.51, 115986.0, 1.49, 2.61, -2.09, 91.04, 1.76, 1.0, 7.06, 7.06, 1.49, 7.05, 1.49, 7.05, 1.49]
+A: {""target_240"": 7.05, ""target_1",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,,,,
+2025-02-13 10:27:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_10,False,invalid_json,,"Q: [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52]
+A: {""target_240"": 1.91, ""target_1440"": 2.46, ""confidence"": 1.0}
+
+Q: [54504555.27, 8044.0, 2.5, -0.47, -10.48, 5.59, 0.48, -0.87, 3.03, 2.99, 2.5, 2.99, 2.5, 3.02, 2.5]
+A: {""target_240"": 3.0, ""target_1440"": 3.34, ""confidence"": 1.0}
+
+Q: [109820207.74, 16011.0, 2.5, -1.29, -9.87, 11.12, -0.3, 0.96, 3.33, 3.35, 2.5, 3.33, 2.5, 3.37, 2.43]
+A: {""target_240"": 3.31, ""target_1440"": 3.35, ""confidence"": 1.0}
+
+Q: [165813017.69, 23979.0, 2.5, -0.29, -9.41, 16.65, 0.09, -1.0, 3.89, 3.87, 2.5, 3.87, 2.5, 3.88, 2.5]
+A: {""target_240"": 3.91, ""target_1440"": 4.05, ""confidence"": 1.0}
+
+Q: [222147431.51, 31946.0, 2.5, -0.94, -9.35, 22.18, 0.11, 0.99, 4.41, 4.4, 2.5, 4.4, 2.5, 4.39, 2.5]
+A: {""target_240"": 4.38, ""target_1440"": 4.47, ""confidence"": 1.0}
+
+Q: [274423496.55, 39914.0, 2.0, -0.91, -7.24, 27.72, -0.32, -0.95, 4.53, 4.53, 2.0, 4.53, 2.0, 4.52, 2.0]
+A: {""target_240"": 4.55, ""target_1440"": 3.04, ""confidence"": 1.0}
+
+Q: [311089770.45, 47881.0, 2.0, 0.57, -7.4, 33.25, 0.5, 0.86, 5.14, 5.15, 2.0, 4.66, 2.0, 5.13, 2.0]
+A: {""target_240"": 5.04, ""target_1440"": 5.16, ""confidence"": 1.0}
+
+Q: [353698931.12, 55849.0, 2.0, 0.05, -7.35, 38.78, -0.67, -0.74, 5.48, 5.48, 2.0, 5.47, 2.0, 5.48, 2.0]
+A: {""target_240"": 5.48, ""target_1440"": 5.54, ""confidence"": 1.0}
+
+Q: [393190010.8, 63816.0, 1.55, 0.35, -5.01, 44.32, 0.81, 0.59, 5.52, 5.51, 1.55, 5.52, 1.55, 5.52, 1.55]
+A: {""target_240"": 5.47, ""target_1440"": 5.54, ""confidence"": 1.0}
+
+Q: [423821644.6, 72000.0, 1.49, -0.56, -5.36, 50.0, -0.87, 0.5, 5.57, 5.61, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [479998217.57, 88707.0, 1.49, -0.58, -4.74, 61.6, 0.39, -0.92, 5.86, 5.86, 1.49, 5.86, 1.49, 5.86, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,,,,
+2025-02-18 15:55:00,qwen2.5-7b,Qwen2.5-7B,8000,compact_10,False,invalid_json,,"Q: [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52]
+A: {""target_240"": 1.91, ""target_1440"": 2.46, ""confidence"": 1.0}
+
+Q: [54504555.27, 8044.0, 2.5, -0.47, -10.48, 5.59, 0.48, -0.87, 3.03, 2.99, 2.5, 2.99, 2.5, 3.02, 2.5]
+A: {""target_240"": 3.0, ""target_1440"": 3.34, ""confidence"": 1.0}
+
+Q: [109820207.74, 16011.0, 2.5, -1.29, -9.87, 11.12, -0.3, 0.96, 3.33, 3.35, 2.5, 3.33, 2.5, 3.37, 2.43]
+A: {""target_240"": 3.31, ""target_1440"": 3.35, ""confidence"": 1.0}
+
+Q: [165813017.69, 23979.0, 2.5, -0.29, -9.41, 16.65, 0.09, -1.0, 3.89, 3.87, 2.5, 3.87, 2.5, 3.88, 2.5]
+A: {""target_240"": 3.91, ""target_1440"": 4.05, ""confidence"": 1.0}
+
+Q: [222147431.51, 31946.0, 2.5, -0.94, -9.35, 22.18, 0.11, 0.99, 4.41, 4.4, 2.5, 4.4, 2.5, 4.39, 2.5]
+A: {""target_240"": 4.38, ""target_1440"": 4.47, ""confidence"": 1.0}
+
+Q: [274423496.55, 39914.0, 2.0, -0.91, -7.24, 27.72, -0.32, -0.95, 4.53, 4.53, 2.0, 4.53, 2.0, 4.52, 2.0]
+A: {""target_240"": 4.55, ""target_1440"": 3.04, ""confidence"": 1.0}
+
+Q: [311089770.45, 47881.0, 2.0, 0.57, -7.4, 33.25, 0.5, 0.86, 5.14, 5.15, 2.0, 4.66, 2.0, 5.13, 2.0]
+A: {""target_240"": 5.04, ""target_1440"": 5.16, ""confidence"": 1.0}
+
+Q: [353698931.12, 55849.0, 2.0, 0.05, -7.35, 38.78, -0.67, -0.74, 5.48, 5.48, 2.0, 5.47, 2.0, 5.48, 2.0]
+A: {""target_240"": 5.48, ""target_1440"": 5.54, ""confidence"": 1.0}
+
+Q: [393190010.8, 63816.0, 1.55, 0.35, -5.01, 44.32, 0.81, 0.59, 5.52, 5.51, 1.55, 5.52, 1.55, 5.52, 1.55]
+A: {""target_240"": 5.47, ""target_1440"": 5.54, ""confidence"": 1.0}
+
+Q: [423821644.6, 72000.0, 1.49, -0.56, -5.36, 50.0, -0.87, 0.5, 5.57, 5.61, 1.49, 5.6, 1.49, 5.61, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [502274325.67, 96235.0, 1.49, -0.0, -4.67, 66.83, -0.85, -0.52, 5.9, 5.9, 1.49, 5.9, 1.49, 5.9, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [532605988.5, 104202.0, 1.49, -0.0, -4.01, 72.46, -0.83, -0.47, 5.9, 5.9, 1.49, 5.9, 1.49, 5.9, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [562937651.37, 112169.0, 1.49, -0.0, -3.35, 78.1, -0.81, -0.41, 5.9, 5.9, 1.49, 5.9, 1.49, 5.9, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [593269314.24, 120136.0, 1.49, -0.0, -2.69, 83.74, -0.79, -0.35, 5.9, 5.9, 1.49, 5.9, 1.49, 5.9, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [623600977.11, 128103.0, 1.49, -0.0, -2.03, 89.38, -0.77, -0.29, 5.9, 5.9, 1.49, 5.9, 1.49, 5.9, 1.49]
+A: {""target_240"": 5.59, ""target_1440"": 5.55, ""confidence"": 1.0}
+
+Q: [6",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,,,,
+2025-02-01 20:01:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_10,True,,1.0,"{""target_240"": 5.6, ""target_1440"": 5.55, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.6,4.2040026253967964e-05,5.55,0.0007167120372790759
+2025-02-05 00:30:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_10,True,,1.0,"{""target_240"": 5.6, ""target_1440"": 5.58, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.6,9.03932481859981e-05,5.58,0.002834243266393991
+2025-02-10 05:58:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_10,True,,1.0,"{""target_240"": 5.79, ""target_1440"": 5.78, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.79,0.000167783094652937,5.78,0.001017550117491867
+2025-02-13 10:27:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_10,True,,1.0,"{""target_240"": 5.84, ""target_1440"": 5.86, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.84,0.000748613543844831,5.86,6.78191695799315e-06
+2025-02-18 15:55:00,qwen2.5-7b-instruct,Qwen2.5-7B-Instruct,8001,compact_10,True,,1.0,"{""target_240"": 5.89, ""target_1440"": 5.85, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.89,0.00011167634787036982,5.85,0.003933736063535991
+2025-02-01 20:01:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_10,True,,1.0,"{""target_240"": 5.61, ""target_1440"": 5.57, ""confidence"": 1.0}",5.606483828055552,5.576771478055555,5.60649417637633,5.635816406866255,5.61,1.2363465142925407e-05,5.57,4.585291505685995e-05
+2025-02-05 00:30:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_10,True,,1.0,"{""target_240"": 5.58, ""target_1440"": 5.62, ""confidence"": 1.0}",5.609507536388886,5.633237611388886,5.5895106324562605,5.557555299029666,5.58,0.000870694703741427,5.62,0.0001752343552831501
+2025-02-10 05:58:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_10,True,,1.0,"{""target_240"": 5.81, ""target_1440"": 5.77, ""confidence"": 1.0}",5.802953111388888,5.8118990613888855,5.807096760123699,5.79781781077358,5.81,4.9658639097415646e-05,5.77,0.0017555313452696278
+2025-02-13 10:27:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_10,True,,1.0,"{""target_240"": 5.86, ""target_1440"": 5.86, ""confidence"": 1.0}",5.867360803055554,5.862604211388884,5.875362743863349,5.773092939758186,5.86,5.4181421622651135e-05,5.86,6.78191695799315e-06
+2025-02-18 15:55:00,qwen2.5-coder-7b-instruct,Qwen2.5-Coder-7B-Instruct,8002,compact_10,True,,1.0,"{""target_240"": 5.89, ""target_1440"": 5.95, ""confidence"": 1.0}",5.900567703055554,5.912719503055556,5.427192513647153,5.560649194221607,5.89,0.00011167634787036982,5.95,0.0013898354524246833

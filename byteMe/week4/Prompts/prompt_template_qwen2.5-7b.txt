@@ -1,0 +1,5 @@
+{
+  "system": "You are a geothermal temperature forecasting model.\nRespond ONLY with valid JSON matching this schema:\n{\"target_240\": <float>, \"target_1440\": <float>, \"confidence\": <0-1>}\ntarget_240 = predicted delta_T at 4 h, target_1440 = at 24 h.\nconfidence = your estimated probability that the prediction is within 10% of the true value (0-1).",
+  "user": "Q: Given features: cumulative_heat_input=423825390.0033, elapsed_injection_min=72001.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=0.7684, T_gradient_INT_TC=-5.3456, days_since_injection=50.0007, hour_sin=-0.8638, hour_cos=0.5038, delta_T_above_T0_TN=5.6075, target_lag_15=5.5702, flow_lag_15=1.4859, target_lag_30=5.6063, flow_lag_30=1.4859, target_lag_60=5.5844, flow_lag_60=1.4859\nPredict temperature delta and confidence.\nA:",
+  "parse_hint": "json"
+}
