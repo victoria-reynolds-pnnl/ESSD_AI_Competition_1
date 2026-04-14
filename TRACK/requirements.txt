@@ -1,0 +1,14 @@
+pandas>=2.2,<3
+
+# Install dependencies on Windows:
+#   py -m pip install -r TRACK/requirements.txt
+#
+# Run feature generation for all cleaned CSV files from the workspace root:
+#   python TRACK/Scripts/add_features.py
+#
+# Default paths:
+#   input root:  TRACK/Data/cleaned
+#   output root: TRACK/Data/cleaned_with_features
+#
+# Optional path overrides:
+#   python TRACK/Scripts/add_features.py --input-root TRACK/Data/cleaned --output-root TRACK/Data/cleaned_with_features

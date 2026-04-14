@@ -1,0 +1,150 @@
+{
+	"fields": [
+		{
+			"names": "start_date",
+			"description": "Event start date in ISO format (YYYY-MM-DD).",
+			"data_types": [
+				"string"
+			],
+			"examples": [
+				"1980-01-06"
+			]
+		},
+		{
+			"names": "end_date",
+			"description": "Event end date in ISO format (YYYY-MM-DD).",
+			"data_types": [
+				"string"
+			],
+			"examples": [
+				"1980-01-12"
+			]
+		},
+		{
+			"names": "centroid_date",
+			"description": "Representative midpoint date for the event in ISO format (YYYY-MM-DD).",
+			"data_types": [
+				"string"
+			],
+			"examples": [
+				"1980-01-11"
+			]
+		},
+		{
+			"names": "duration_days",
+			"description": "Event duration measured in whole days.",
+			"data_types": [
+				"integer"
+			],
+			"examples": [
+				7
+			]
+		},
+		{
+			"names": "nerc_id",
+			"description": "NERC region identifier associated with the event.",
+			"data_types": [
+				"string"
+			],
+			"examples": [
+				"NERC"
+			]
+		},
+		{
+			"names": "spatial_coverage",
+			"description": "Spatial extent metric for the event (coverage in dataset-defined units).",
+			"data_types": [
+				"number"
+			],
+			"examples": [
+				48.0
+			]
+		},
+		{
+			"names": "highest_temperature_k",
+			"description": "Peak heat-wave temperature value in Kelvin.",
+			"data_types": [
+				"number"
+			],
+			"examples": [
+				311.7061073825
+			]
+		},
+		{
+			"names": "lowest_temperature_k",
+			"description": "Minimum cold-snap temperature value in Kelvin.",
+			"data_types": [
+				"number"
+			],
+			"examples": [
+				258.5427111111
+			]
+		},
+		{
+			"names": "inter_event_recovery_interval_days",
+			"description": "Gap in days between the current event end date and the next event start date within the same region.",
+			"data_types": [
+				"number",
+				"null"
+			],
+			"examples": [
+				6.0,
+				null
+			]
+		},
+		{
+			"names": "cumulative_heat_stress_index",
+			"description": "Running cumulative stress index within each region-year, based on event temperature multiplied by duration.",
+			"data_types": [
+				"number"
+			],
+			"examples": [
+				1809.7989777778
+			]
+		},
+		{
+			"names": "yearly_max_heat_wave_intensity",
+			"description": "Maximum event temperature observed for the region in that calendar year.",
+			"data_types": [
+				"number"
+			],
+			"examples": [
+				272.7129824561
+			]
+		},
+		{
+			"names": "yearly_max_heat_wave_duration",
+			"description": "Maximum event duration observed for the region in that calendar year.",
+			"data_types": [
+				"integer"
+			],
+			"examples": [
+				17
+			]
+		},
+		{
+			"names": "yearly_max_heat_wave_intensity_trend",
+			"description": "Year-over-year change in yearly maximum intensity within each region.",
+			"data_types": [
+				"number",
+				"null"
+			],
+			"examples": [
+				0.6321052632,
+				null
+			]
+		},
+		{
+			"names": "yearly_max_heat_wave_duration_trend",
+			"description": "Year-over-year change in yearly maximum duration within each region.",
+			"data_types": [
+				"number",
+				"null"
+			],
+			"examples": [
+				6.0,
+				null
+			]
+		}
+	]
+}
