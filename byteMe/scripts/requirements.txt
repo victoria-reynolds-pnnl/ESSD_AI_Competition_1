@@ -1,0 +1,5 @@
+# Requirements for clean_and_feature_engineer.py
+# Install with: pip install -r requirements.txt
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.11.0
