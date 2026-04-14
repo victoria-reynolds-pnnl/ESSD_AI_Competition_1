@@ -1,0 +1,444 @@
+Column,dtype,Units,Transformations,Non-null count
+Injection EC,float64,µS/cm,negatives flagged (HITL),1682
+Net Flow,float64,L/min,clipped negative→0,1682
+TL Interval Flow,float64,L/min,clipped negative→0,1682
+TL Bottom Flow,float64,L/min,clipped negative→0,1682
+TL Collar Flow,float64,L/min,clipped negative→0,1682
+TL Interval EC,float64,µS/cm,negatives flagged (HITL),1682
+TL Bottom EC,float64,µS/cm,negatives flagged (HITL),1682
+TL Interval Pressure,float64,psi,clipped <-5psi→0,1682
+TL Bottom Pressure,float64,psi,clipped <-5psi→0,1682
+TL Packer Pressure,float64,psi,clipped <-5psi→0,1682
+TL-TEC-INT-U,float64,°C,clipped 0–100°C,1682
+TL-TEC-INT-L,float64,°C,clipped 0–100°C,1682
+TL-TEC-BOT-U,float64,°C,clipped 0–100°C,1682
+TL-TEC-BOT-L,float64,°C,clipped 0–100°C,1682
+TN Interval Flow,float64,L/min,clipped negative→0,1682
+TN Bottom Flow,float64,L/min,clipped negative→0,1682
+TN Collar Flow,float64,L/min,clipped negative→0,1682
+TN Interval EC,float64,µS/cm,negatives flagged (HITL),1682
+TN Bottom EC,float64,µS/cm,negatives flagged (HITL),1682
+TN Interval Pressure,float64,psi,clipped <-5psi→0,1682
+TN Bottom Pressure,float64,psi,clipped <-5psi→0,1682
+TN Packer Pressure,float64,psi,clipped <-5psi→0,1682
+TN-TEC-INT-U,float64,°C,clipped 0–100°C,1682
+TN-TEC-INT-L,float64,°C,clipped 0–100°C,1682
+TN-TEC-BOT-U,float64,°C,clipped 0–100°C,1682
+TN-TEC-BOT-L,float64,°C,clipped 0–100°C,1682
+TC Interval Flow,float64,L/min,clipped negative→0,1682
+TC Bottom Flow,float64,L/min,clipped negative→0,1682
+TC Collar Flow,float64,L/min,clipped negative→0,1682
+TC Interval EC,float64,µS/cm,negatives flagged (HITL),1682
+TC Bottom EC,float64,µS/cm,negatives flagged (HITL),1682
+TC Interval Pressure,float64,psi,clipped <-5psi→0,1682
+TC Bottom Pressure,float64,psi,clipped <-5psi→0,1682
+Injection Pressure,float64,psi,clipped <-5psi→0,1682
+TC Packer Pressure,float64,psi,clipped <-5psi→0,1682
+TC-TEC-INT-U,float64,°C,clipped 0–100°C,1682
+TC-TEC-INT-L,float64,°C,clipped 0–100°C,1682
+TC-TEC-BOT-U,float64,°C,clipped 0–100°C,1682
+TC-TEC-BOT-L,float64,°C,clipped 0–100°C,1682
+TU Interval Flow,float64,L/min,clipped negative→0,1682
+TU Bottom Flow,float64,L/min,clipped negative→0,1682
+TU Collar Flow,float64,L/min,clipped negative→0,1682
+TU Interval EC,float64,µS/cm,negatives flagged (HITL),1682
+TU Bottom EC,float64,µS/cm,negatives flagged (HITL),1682
+TU Interval Pressure,float64,psi,clipped <-5psi→0,1682
+TU Bottom Pressure,float64,psi,clipped <-5psi→0,1682
+PT 403,float64,—,None,1682
+TU Packer Pressure,float64,psi,clipped <-5psi→0,1682
+TU-TEC-INT-U,float64,°C,clipped 0–100°C,1682
+TU-TEC-INT-L,float64,°C,clipped 0–100°C,1682
+TU-TEC-BOT-U,float64,°C,clipped 0–100°C,1682
+TU-TEC-BOT-L,float64,°C,clipped 0–100°C,1682
+TS Interval Flow,float64,L/min,clipped negative→0,1682
+TS Bottom Flow,float64,L/min,clipped negative→0,1682
+TS Collar Flow,float64,L/min,clipped negative→0,1682
+TS Interval EC,float64,µS/cm,negatives flagged (HITL),1682
+TS Bottom EC,float64,µS/cm,negatives flagged (HITL),1682
+TS Interval Pressure,float64,psi,clipped <-5psi→0,1682
+TS Bottom Pressure,float64,psi,clipped <-5psi→0,1682
+PT 503,float64,—,None,1682
+PT 504,float64,—,None,1682
+TS Packer Pressure,float64,psi,clipped <-5psi→0,1682
+TL Packer Center Depth,float64,ft,zeros→median; z-score cap,1682
+TN Packer Center Depth,float64,ft,zeros→median; z-score cap,1682
+TC Packer Center Depth,float64,ft,zeros→median; z-score cap,1682
+TU Packer Center Depth,float64,ft,zeros→median; z-score cap,1682
+TS Packer Center Depth,float64,ft,zeros→median; z-score cap,0
+Phase,str,categorical,one-hot encoded (see Phase_*),1702
+Total_Production_Flow,float64,L/min,engineered: sum(producer interval flows),1702
+Pressure_Differential,float64,psi,engineered: Injection Pressure − mean(producer interval pressures),1682
+Depth_Consistency_Flag,int64,binary,None,1702
+TC_Impedance_Proxy,float64,psi / (L/min),engineered: Pressure/(Net Flow+ε),1682
+TL Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+TL Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+TN Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+TN Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+TU Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+TU Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+TS Interval EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+TS Bottom EC__MixFrac,float64,fraction (0–1),engineered: (EC_prod−EC_base)/(EC_inj−EC_base); clipped 0–1,1682
+Net Flow__lag_1h,float64,L/min,None,1681
+Net Flow__lag_3h,float64,L/min,None,1679
+Net Flow__lag_12h,float64,L/min,None,1670
+Net Flow__lag_24h,float64,L/min,None,1658
+Injection Pressure__lag_1h,float64,psi,None,1681
+Injection Pressure__lag_3h,float64,psi,None,1679
+Injection Pressure__lag_12h,float64,psi,None,1670
+Injection Pressure__lag_24h,float64,psi,None,1658
+Injection EC__lag_1h,float64,µS/cm,None,1681
+Injection EC__lag_3h,float64,µS/cm,None,1679
+Injection EC__lag_12h,float64,µS/cm,None,1670
+Injection EC__lag_24h,float64,µS/cm,None,1658
+TC Interval Pressure__lag_1h,float64,psi,None,1681
+TC Interval Pressure__lag_3h,float64,psi,None,1679
+TC Interval Pressure__lag_12h,float64,psi,None,1670
+TC Interval Pressure__lag_24h,float64,psi,None,1658
+Total_Production_Flow__lag_1h,float64,L/min,None,1701
+Total_Production_Flow__lag_3h,float64,L/min,None,1699
+Total_Production_Flow__lag_12h,float64,L/min,None,1690
+Total_Production_Flow__lag_24h,float64,L/min,None,1678
+Pressure_Differential__lag_1h,float64,psi,None,1681
+Pressure_Differential__lag_3h,float64,psi,None,1679
+Pressure_Differential__lag_12h,float64,psi,None,1670
+Pressure_Differential__lag_24h,float64,psi,None,1658
+TC_Impedance_Proxy__lag_1h,float64,psi / (L/min),None,1681
+TC_Impedance_Proxy__lag_3h,float64,psi / (L/min),None,1679
+TC_Impedance_Proxy__lag_12h,float64,psi / (L/min),None,1670
+TC_Impedance_Proxy__lag_24h,float64,psi / (L/min),None,1658
+TL-TEC-INT-U__lag_1h,float64,°C,None,1681
+TL-TEC-INT-U__lag_3h,float64,°C,None,1679
+TL-TEC-INT-U__lag_12h,float64,°C,None,1670
+TL-TEC-INT-U__lag_24h,float64,°C,None,1658
+TL-TEC-INT-L__lag_1h,float64,°C,None,1681
+TL-TEC-INT-L__lag_3h,float64,°C,None,1679
+TL-TEC-INT-L__lag_12h,float64,°C,None,1670
+TL-TEC-INT-L__lag_24h,float64,°C,None,1658
+TL-TEC-BOT-U__lag_1h,float64,°C,None,1681
+TL-TEC-BOT-U__lag_3h,float64,°C,None,1679
+TL-TEC-BOT-U__lag_12h,float64,°C,None,1670
+TL-TEC-BOT-U__lag_24h,float64,°C,None,1658
+TL-TEC-BOT-L__lag_1h,float64,°C,None,1681
+TL-TEC-BOT-L__lag_3h,float64,°C,None,1679
+TL-TEC-BOT-L__lag_12h,float64,°C,None,1670
+TL-TEC-BOT-L__lag_24h,float64,°C,None,1658
+TN-TEC-INT-U__lag_1h,float64,°C,None,1681
+TN-TEC-INT-U__lag_3h,float64,°C,None,1679
+TN-TEC-INT-U__lag_12h,float64,°C,None,1670
+TN-TEC-INT-U__lag_24h,float64,°C,None,1658
+TN-TEC-INT-L__lag_1h,float64,°C,None,1681
+TN-TEC-INT-L__lag_3h,float64,°C,None,1679
+TN-TEC-INT-L__lag_12h,float64,°C,None,1670
+TN-TEC-INT-L__lag_24h,float64,°C,None,1658
+TN-TEC-BOT-U__lag_1h,float64,°C,None,1681
+TN-TEC-BOT-U__lag_3h,float64,°C,None,1679
+TN-TEC-BOT-U__lag_12h,float64,°C,None,1670
+TN-TEC-BOT-U__lag_24h,float64,°C,None,1658
+TN-TEC-BOT-L__lag_1h,float64,°C,None,1681
+TN-TEC-BOT-L__lag_3h,float64,°C,None,1679
+TN-TEC-BOT-L__lag_12h,float64,°C,None,1670
+TN-TEC-BOT-L__lag_24h,float64,°C,None,1658
+TC-TEC-INT-U__lag_1h,float64,°C,None,1681
+TC-TEC-INT-U__lag_3h,float64,°C,None,1679
+TC-TEC-INT-U__lag_12h,float64,°C,None,1670
+TC-TEC-INT-U__lag_24h,float64,°C,None,1658
+TC-TEC-INT-L__lag_1h,float64,°C,None,1681
+TC-TEC-INT-L__lag_3h,float64,°C,None,1679
+TC-TEC-INT-L__lag_12h,float64,°C,None,1670
+TC-TEC-INT-L__lag_24h,float64,°C,None,1658
+TC-TEC-BOT-U__lag_1h,float64,°C,None,1681
+TC-TEC-BOT-U__lag_3h,float64,°C,None,1679
+TC-TEC-BOT-U__lag_12h,float64,°C,None,1670
+TC-TEC-BOT-U__lag_24h,float64,°C,None,1658
+TC-TEC-BOT-L__lag_1h,float64,°C,None,1681
+TC-TEC-BOT-L__lag_3h,float64,°C,None,1679
+TC-TEC-BOT-L__lag_12h,float64,°C,None,1670
+TC-TEC-BOT-L__lag_24h,float64,°C,None,1658
+TU-TEC-INT-U__lag_1h,float64,°C,None,1681
+TU-TEC-INT-U__lag_3h,float64,°C,None,1679
+TU-TEC-INT-U__lag_12h,float64,°C,None,1670
+TU-TEC-INT-U__lag_24h,float64,°C,None,1658
+TU-TEC-INT-L__lag_1h,float64,°C,None,1681
+TU-TEC-INT-L__lag_3h,float64,°C,None,1679
+TU-TEC-INT-L__lag_12h,float64,°C,None,1670
+TU-TEC-INT-L__lag_24h,float64,°C,None,1658
+TU-TEC-BOT-U__lag_1h,float64,°C,None,1681
+TU-TEC-BOT-U__lag_3h,float64,°C,None,1679
+TU-TEC-BOT-U__lag_12h,float64,°C,None,1670
+TU-TEC-BOT-U__lag_24h,float64,°C,None,1658
+TU-TEC-BOT-L__lag_1h,float64,°C,None,1681
+TU-TEC-BOT-L__lag_3h,float64,°C,None,1679
+TU-TEC-BOT-L__lag_12h,float64,°C,None,1670
+TU-TEC-BOT-L__lag_24h,float64,°C,None,1658
+TL Interval EC__lag_1h,float64,µS/cm,None,1681
+TL Interval EC__lag_3h,float64,µS/cm,None,1679
+TL Interval EC__lag_12h,float64,µS/cm,None,1670
+TL Interval EC__lag_24h,float64,µS/cm,None,1658
+TL Bottom EC__lag_1h,float64,µS/cm,None,1681
+TL Bottom EC__lag_3h,float64,µS/cm,None,1679
+TL Bottom EC__lag_12h,float64,µS/cm,None,1670
+TL Bottom EC__lag_24h,float64,µS/cm,None,1658
+TN Interval EC__lag_1h,float64,µS/cm,None,1681
+TN Interval EC__lag_3h,float64,µS/cm,None,1679
+TN Interval EC__lag_12h,float64,µS/cm,None,1670
+TN Interval EC__lag_24h,float64,µS/cm,None,1658
+TN Bottom EC__lag_1h,float64,µS/cm,None,1681
+TN Bottom EC__lag_3h,float64,µS/cm,None,1679
+TN Bottom EC__lag_12h,float64,µS/cm,None,1670
+TN Bottom EC__lag_24h,float64,µS/cm,None,1658
+TC Interval EC__lag_1h,float64,µS/cm,None,1681
+TC Interval EC__lag_3h,float64,µS/cm,None,1679
+TC Interval EC__lag_12h,float64,µS/cm,None,1670
+TC Interval EC__lag_24h,float64,µS/cm,None,1658
+TC Bottom EC__lag_1h,float64,µS/cm,None,1681
+TC Bottom EC__lag_3h,float64,µS/cm,None,1679
+TC Bottom EC__lag_12h,float64,µS/cm,None,1670
+TC Bottom EC__lag_24h,float64,µS/cm,None,1658
+TU Interval EC__lag_1h,float64,µS/cm,None,1681
+TU Interval EC__lag_3h,float64,µS/cm,None,1679
+TU Interval EC__lag_12h,float64,µS/cm,None,1670
+TU Interval EC__lag_24h,float64,µS/cm,None,1658
+TU Bottom EC__lag_1h,float64,µS/cm,None,1681
+TU Bottom EC__lag_3h,float64,µS/cm,None,1679
+TU Bottom EC__lag_12h,float64,µS/cm,None,1670
+TU Bottom EC__lag_24h,float64,µS/cm,None,1658
+TS Interval EC__lag_1h,float64,µS/cm,None,1681
+TS Interval EC__lag_3h,float64,µS/cm,None,1679
+TS Interval EC__lag_12h,float64,µS/cm,None,1670
+TS Interval EC__lag_24h,float64,µS/cm,None,1658
+TS Bottom EC__lag_1h,float64,µS/cm,None,1681
+TS Bottom EC__lag_3h,float64,µS/cm,None,1679
+TS Bottom EC__lag_12h,float64,µS/cm,None,1670
+TS Bottom EC__lag_24h,float64,µS/cm,None,1658
+Net Flow__roll_mean_3h,float64,L/min,None,1680
+Net Flow__roll_std_3h,float64,L/min,None,1680
+Net Flow__roll_mean_12h,float64,L/min,None,1683
+Net Flow__roll_std_12h,float64,L/min,None,1683
+Net Flow__roll_mean_24h,float64,L/min,None,1683
+Net Flow__roll_std_24h,float64,L/min,None,1683
+Injection Pressure__roll_mean_3h,float64,psi,None,1680
+Injection Pressure__roll_std_3h,float64,psi,None,1680
+Injection Pressure__roll_mean_12h,float64,psi,None,1683
+Injection Pressure__roll_std_12h,float64,psi,None,1683
+Injection Pressure__roll_mean_24h,float64,psi,None,1683
+Injection Pressure__roll_std_24h,float64,psi,None,1683
+Injection EC__roll_mean_3h,float64,µS/cm,None,1680
+Injection EC__roll_std_3h,float64,µS/cm,None,1680
+Injection EC__roll_mean_12h,float64,µS/cm,None,1683
+Injection EC__roll_std_12h,float64,µS/cm,None,1683
+Injection EC__roll_mean_24h,float64,µS/cm,None,1683
+Injection EC__roll_std_24h,float64,µS/cm,None,1683
+TC Interval Pressure__roll_mean_3h,float64,psi,None,1680
+TC Interval Pressure__roll_std_3h,float64,psi,None,1680
+TC Interval Pressure__roll_mean_12h,float64,psi,None,1683
+TC Interval Pressure__roll_std_12h,float64,psi,None,1683
+TC Interval Pressure__roll_mean_24h,float64,psi,None,1683
+TC Interval Pressure__roll_std_24h,float64,psi,None,1683
+Total_Production_Flow__roll_mean_3h,float64,L/min,None,1700
+Total_Production_Flow__roll_std_3h,float64,L/min,None,1700
+Total_Production_Flow__roll_mean_12h,float64,L/min,None,1698
+Total_Production_Flow__roll_std_12h,float64,L/min,None,1698
+Total_Production_Flow__roll_mean_24h,float64,L/min,None,1694
+Total_Production_Flow__roll_std_24h,float64,L/min,None,1694
+Pressure_Differential__roll_mean_3h,float64,psi,None,1680
+Pressure_Differential__roll_std_3h,float64,psi,None,1680
+Pressure_Differential__roll_mean_12h,float64,psi,None,1683
+Pressure_Differential__roll_std_12h,float64,psi,None,1683
+Pressure_Differential__roll_mean_24h,float64,psi,None,1683
+Pressure_Differential__roll_std_24h,float64,psi,None,1683
+TC_Impedance_Proxy__roll_mean_3h,float64,psi / (L/min),None,1680
+TC_Impedance_Proxy__roll_std_3h,float64,psi / (L/min),None,1680
+TC_Impedance_Proxy__roll_mean_12h,float64,psi / (L/min),None,1683
+TC_Impedance_Proxy__roll_std_12h,float64,psi / (L/min),None,1683
+TC_Impedance_Proxy__roll_mean_24h,float64,psi / (L/min),None,1683
+TC_Impedance_Proxy__roll_std_24h,float64,psi / (L/min),None,1683
+TL-TEC-INT-U__roll_mean_3h,float64,°C,None,1680
+TL-TEC-INT-U__roll_std_3h,float64,°C,None,1680
+TL-TEC-INT-U__roll_mean_12h,float64,°C,None,1683
+TL-TEC-INT-U__roll_std_12h,float64,°C,None,1683
+TL-TEC-INT-U__roll_mean_24h,float64,°C,None,1683
+TL-TEC-INT-U__roll_std_24h,float64,°C,None,1683
+TL-TEC-INT-L__roll_mean_3h,float64,°C,None,1680
+TL-TEC-INT-L__roll_std_3h,float64,°C,None,1680
+TL-TEC-INT-L__roll_mean_12h,float64,°C,None,1683
+TL-TEC-INT-L__roll_std_12h,float64,°C,None,1683
+TL-TEC-INT-L__roll_mean_24h,float64,°C,None,1683
+TL-TEC-INT-L__roll_std_24h,float64,°C,None,1683
+TL-TEC-BOT-U__roll_mean_3h,float64,°C,None,1680
+TL-TEC-BOT-U__roll_std_3h,float64,°C,None,1680
+TL-TEC-BOT-U__roll_mean_12h,float64,°C,None,1683
+TL-TEC-BOT-U__roll_std_12h,float64,°C,None,1683
+TL-TEC-BOT-U__roll_mean_24h,float64,°C,None,1683
+TL-TEC-BOT-U__roll_std_24h,float64,°C,None,1683
+TL-TEC-BOT-L__roll_mean_3h,float64,°C,None,1680
+TL-TEC-BOT-L__roll_std_3h,float64,°C,None,1680
+TL-TEC-BOT-L__roll_mean_12h,float64,°C,None,1683
+TL-TEC-BOT-L__roll_std_12h,float64,°C,None,1683
+TL-TEC-BOT-L__roll_mean_24h,float64,°C,None,1683
+TL-TEC-BOT-L__roll_std_24h,float64,°C,None,1683
+TN-TEC-INT-U__roll_mean_3h,float64,°C,None,1680
+TN-TEC-INT-U__roll_std_3h,float64,°C,None,1680
+TN-TEC-INT-U__roll_mean_12h,float64,°C,None,1683
+TN-TEC-INT-U__roll_std_12h,float64,°C,None,1683
+TN-TEC-INT-U__roll_mean_24h,float64,°C,None,1683
+TN-TEC-INT-U__roll_std_24h,float64,°C,None,1683
+TN-TEC-INT-L__roll_mean_3h,float64,°C,None,1680
+TN-TEC-INT-L__roll_std_3h,float64,°C,None,1680
+TN-TEC-INT-L__roll_mean_12h,float64,°C,None,1683
+TN-TEC-INT-L__roll_std_12h,float64,°C,None,1683
+TN-TEC-INT-L__roll_mean_24h,float64,°C,None,1683
+TN-TEC-INT-L__roll_std_24h,float64,°C,None,1683
+TN-TEC-BOT-U__roll_mean_3h,float64,°C,None,1680
+TN-TEC-BOT-U__roll_std_3h,float64,°C,None,1680
+TN-TEC-BOT-U__roll_mean_12h,float64,°C,None,1683
+TN-TEC-BOT-U__roll_std_12h,float64,°C,None,1683
+TN-TEC-BOT-U__roll_mean_24h,float64,°C,None,1683
+TN-TEC-BOT-U__roll_std_24h,float64,°C,None,1683
+TN-TEC-BOT-L__roll_mean_3h,float64,°C,None,1680
+TN-TEC-BOT-L__roll_std_3h,float64,°C,None,1680
+TN-TEC-BOT-L__roll_mean_12h,float64,°C,None,1683
+TN-TEC-BOT-L__roll_std_12h,float64,°C,None,1683
+TN-TEC-BOT-L__roll_mean_24h,float64,°C,None,1683
+TN-TEC-BOT-L__roll_std_24h,float64,°C,None,1683
+TC-TEC-INT-U__roll_mean_3h,float64,°C,None,1680
+TC-TEC-INT-U__roll_std_3h,float64,°C,None,1680
+TC-TEC-INT-U__roll_mean_12h,float64,°C,None,1683
+TC-TEC-INT-U__roll_std_12h,float64,°C,None,1683
+TC-TEC-INT-U__roll_mean_24h,float64,°C,None,1683
+TC-TEC-INT-U__roll_std_24h,float64,°C,None,1683
+TC-TEC-INT-L__roll_mean_3h,float64,°C,None,1680
+TC-TEC-INT-L__roll_std_3h,float64,°C,None,1680
+TC-TEC-INT-L__roll_mean_12h,float64,°C,None,1683
+TC-TEC-INT-L__roll_std_12h,float64,°C,None,1683
+TC-TEC-INT-L__roll_mean_24h,float64,°C,None,1683
+TC-TEC-INT-L__roll_std_24h,float64,°C,None,1683
+TC-TEC-BOT-U__roll_mean_3h,float64,°C,None,1680
+TC-TEC-BOT-U__roll_std_3h,float64,°C,None,1680
+TC-TEC-BOT-U__roll_mean_12h,float64,°C,None,1683
+TC-TEC-BOT-U__roll_std_12h,float64,°C,None,1683
+TC-TEC-BOT-U__roll_mean_24h,float64,°C,None,1683
+TC-TEC-BOT-U__roll_std_24h,float64,°C,None,1683
+TC-TEC-BOT-L__roll_mean_3h,float64,°C,None,1680
+TC-TEC-BOT-L__roll_std_3h,float64,°C,None,1680
+TC-TEC-BOT-L__roll_mean_12h,float64,°C,None,1683
+TC-TEC-BOT-L__roll_std_12h,float64,°C,None,1683
+TC-TEC-BOT-L__roll_mean_24h,float64,°C,None,1683
+TC-TEC-BOT-L__roll_std_24h,float64,°C,None,1683
+TU-TEC-INT-U__roll_mean_3h,float64,°C,None,1680
+TU-TEC-INT-U__roll_std_3h,float64,°C,None,1680
+TU-TEC-INT-U__roll_mean_12h,float64,°C,None,1683
+TU-TEC-INT-U__roll_std_12h,float64,°C,None,1683
+TU-TEC-INT-U__roll_mean_24h,float64,°C,None,1683
+TU-TEC-INT-U__roll_std_24h,float64,°C,None,1683
+TU-TEC-INT-L__roll_mean_3h,float64,°C,None,1680
+TU-TEC-INT-L__roll_std_3h,float64,°C,None,1680
+TU-TEC-INT-L__roll_mean_12h,float64,°C,None,1683
+TU-TEC-INT-L__roll_std_12h,float64,°C,None,1683
+TU-TEC-INT-L__roll_mean_24h,float64,°C,None,1683
+TU-TEC-INT-L__roll_std_24h,float64,°C,None,1683
+TU-TEC-BOT-U__roll_mean_3h,float64,°C,None,1680
+TU-TEC-BOT-U__roll_std_3h,float64,°C,None,1680
+TU-TEC-BOT-U__roll_mean_12h,float64,°C,None,1683
+TU-TEC-BOT-U__roll_std_12h,float64,°C,None,1683
+TU-TEC-BOT-U__roll_mean_24h,float64,°C,None,1683
+TU-TEC-BOT-U__roll_std_24h,float64,°C,None,1683
+TU-TEC-BOT-L__roll_mean_3h,float64,°C,None,1680
+TU-TEC-BOT-L__roll_std_3h,float64,°C,None,1680
+TU-TEC-BOT-L__roll_mean_12h,float64,°C,None,1683
+TU-TEC-BOT-L__roll_std_12h,float64,°C,None,1683
+TU-TEC-BOT-L__roll_mean_24h,float64,°C,None,1683
+TU-TEC-BOT-L__roll_std_24h,float64,°C,None,1683
+TL Interval EC__roll_mean_3h,float64,µS/cm,None,1680
+TL Interval EC__roll_std_3h,float64,µS/cm,None,1680
+TL Interval EC__roll_mean_12h,float64,µS/cm,None,1683
+TL Interval EC__roll_std_12h,float64,µS/cm,None,1683
+TL Interval EC__roll_mean_24h,float64,µS/cm,None,1683
+TL Interval EC__roll_std_24h,float64,µS/cm,None,1683
+TL Bottom EC__roll_mean_3h,float64,µS/cm,None,1680
+TL Bottom EC__roll_std_3h,float64,µS/cm,None,1680
+TL Bottom EC__roll_mean_12h,float64,µS/cm,None,1683
+TL Bottom EC__roll_std_12h,float64,µS/cm,None,1683
+TL Bottom EC__roll_mean_24h,float64,µS/cm,None,1683
+TL Bottom EC__roll_std_24h,float64,µS/cm,None,1683
+TN Interval EC__roll_mean_3h,float64,µS/cm,None,1680
+TN Interval EC__roll_std_3h,float64,µS/cm,None,1680
+TN Interval EC__roll_mean_12h,float64,µS/cm,None,1683
+TN Interval EC__roll_std_12h,float64,µS/cm,None,1683
+TN Interval EC__roll_mean_24h,float64,µS/cm,None,1683
+TN Interval EC__roll_std_24h,float64,µS/cm,None,1683
+TN Bottom EC__roll_mean_3h,float64,µS/cm,None,1680
+TN Bottom EC__roll_std_3h,float64,µS/cm,None,1680
+TN Bottom EC__roll_mean_12h,float64,µS/cm,None,1683
+TN Bottom EC__roll_std_12h,float64,µS/cm,None,1683
+TN Bottom EC__roll_mean_24h,float64,µS/cm,None,1683
+TN Bottom EC__roll_std_24h,float64,µS/cm,None,1683
+TC Interval EC__roll_mean_3h,float64,µS/cm,None,1680
+TC Interval EC__roll_std_3h,float64,µS/cm,None,1680
+TC Interval EC__roll_mean_12h,float64,µS/cm,None,1683
+TC Interval EC__roll_std_12h,float64,µS/cm,None,1683
+TC Interval EC__roll_mean_24h,float64,µS/cm,None,1683
+TC Interval EC__roll_std_24h,float64,µS/cm,None,1683
+TC Bottom EC__roll_mean_3h,float64,µS/cm,None,1680
+TC Bottom EC__roll_std_3h,float64,µS/cm,None,1680
+TC Bottom EC__roll_mean_12h,float64,µS/cm,None,1683
+TC Bottom EC__roll_std_12h,float64,µS/cm,None,1683
+TC Bottom EC__roll_mean_24h,float64,µS/cm,None,1683
+TC Bottom EC__roll_std_24h,float64,µS/cm,None,1683
+TU Interval EC__roll_mean_3h,float64,µS/cm,None,1680
+TU Interval EC__roll_std_3h,float64,µS/cm,None,1680
+TU Interval EC__roll_mean_12h,float64,µS/cm,None,1683
+TU Interval EC__roll_std_12h,float64,µS/cm,None,1683
+TU Interval EC__roll_mean_24h,float64,µS/cm,None,1683
+TU Interval EC__roll_std_24h,float64,µS/cm,None,1683
+TU Bottom EC__roll_mean_3h,float64,µS/cm,None,1680
+TU Bottom EC__roll_std_3h,float64,µS/cm,None,1680
+TU Bottom EC__roll_mean_12h,float64,µS/cm,None,1683
+TU Bottom EC__roll_std_12h,float64,µS/cm,None,1683
+TU Bottom EC__roll_mean_24h,float64,µS/cm,None,1683
+TU Bottom EC__roll_std_24h,float64,µS/cm,None,1683
+TS Interval EC__roll_mean_3h,float64,µS/cm,None,1680
+TS Interval EC__roll_std_3h,float64,µS/cm,None,1680
+TS Interval EC__roll_mean_12h,float64,µS/cm,None,1683
+TS Interval EC__roll_std_12h,float64,µS/cm,None,1683
+TS Interval EC__roll_mean_24h,float64,µS/cm,None,1683
+TS Interval EC__roll_std_24h,float64,µS/cm,None,1683
+TS Bottom EC__roll_mean_3h,float64,µS/cm,None,1680
+TS Bottom EC__roll_std_3h,float64,µS/cm,None,1680
+TS Bottom EC__roll_mean_12h,float64,µS/cm,None,1683
+TS Bottom EC__roll_std_12h,float64,µS/cm,None,1683
+TS Bottom EC__roll_mean_24h,float64,µS/cm,None,1683
+TS Bottom EC__roll_std_24h,float64,µS/cm,None,1683
+Net Flow__roc_1h,float64,L/min,None,1680
+Injection Pressure__roc_1h,float64,psi,None,1680
+Injection EC__roc_1h,float64,µS/cm,None,1680
+TC Interval Pressure__roc_1h,float64,psi,None,1680
+Total_Production_Flow__roc_1h,float64,L/min,None,1701
+Pressure_Differential__roc_1h,float64,psi,None,1680
+TC_Impedance_Proxy__roc_1h,float64,psi / (L/min),None,1680
+TL-TEC-INT-U__roc_1h,float64,°C,None,1680
+TL-TEC-INT-L__roc_1h,float64,°C,None,1680
+TL-TEC-BOT-U__roc_1h,float64,°C,None,1680
+TL-TEC-BOT-L__roc_1h,float64,°C,None,1680
+TN-TEC-INT-U__roc_1h,float64,°C,None,1680
+TN-TEC-INT-L__roc_1h,float64,°C,None,1680
+TN-TEC-BOT-U__roc_1h,float64,°C,None,1680
+TN-TEC-BOT-L__roc_1h,float64,°C,None,1680
+TC-TEC-INT-U__roc_1h,float64,°C,None,1680
+TC-TEC-INT-L__roc_1h,float64,°C,None,1680
+TC-TEC-BOT-U__roc_1h,float64,°C,None,1680
+TC-TEC-BOT-L__roc_1h,float64,°C,None,1680
+TU-TEC-INT-U__roc_1h,float64,°C,None,1680
+TU-TEC-INT-L__roc_1h,float64,°C,None,1680
+TU-TEC-BOT-U__roc_1h,float64,°C,None,1680
+TU-TEC-BOT-L__roc_1h,float64,°C,None,1680
+TL Interval EC__roc_1h,float64,µS/cm,None,1680
+TL Bottom EC__roc_1h,float64,µS/cm,None,1680
+TN Interval EC__roc_1h,float64,µS/cm,None,1680
+TN Bottom EC__roc_1h,float64,µS/cm,None,1680
+TC Interval EC__roc_1h,float64,µS/cm,None,1680
+TC Bottom EC__roc_1h,float64,µS/cm,None,1680
+TU Interval EC__roc_1h,float64,µS/cm,None,1680
+TU Bottom EC__roc_1h,float64,µS/cm,None,1680
+TS Interval EC__roc_1h,float64,µS/cm,None,1680
+TS Bottom EC__roc_1h,float64,µS/cm,None,1680
