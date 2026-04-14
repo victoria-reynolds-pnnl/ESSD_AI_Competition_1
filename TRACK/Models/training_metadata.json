@@ -1,0 +1,1609 @@
+{
+  "data_path": "Data/week2_clean.csv",
+  "date_column": "centroid_date",
+  "risk_score_column_for_cluster_ranking": "cumulative_heat_stress_index",
+  "features": [
+    "lowest_temperature_k",
+    "duration_days",
+    "nerc_id",
+    "spatial_coverage",
+    "yearly_max_heat_wave_intensity",
+    "yearly_max_heat_wave_duration",
+    "yearly_max_heat_wave_intensity_trend",
+    "yearly_max_heat_wave_duration_trend"
+  ],
+  "excluded_columns": [
+    "start_date",
+    "end_date",
+    "centroid_date",
+    "inter_event_recovery_interval_days",
+    "cumulative_heat_stress_index",
+    "risk_tier_3",
+    "high_risk"
+  ],
+  "train_fraction": 0.7,
+  "val_fraction": 0.15,
+  "test_fraction": 0.15,
+  "hdbscan_artifacts": {
+    "fallback_used": false,
+    "cluster_summary": [
+      {
+        "hdbscan_cluster": 112,
+        "avg_risk_score": 8604.747353245917,
+        "severity_rank": 0,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 18,
+        "avg_risk_score": 8938.684147172997,
+        "severity_rank": 1,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 24,
+        "avg_risk_score": 10512.13698511563,
+        "severity_rank": 2,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 190,
+        "avg_risk_score": 12251.605607465586,
+        "severity_rank": 3,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 89,
+        "avg_risk_score": 14152.62834138843,
+        "severity_rank": 4,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 157,
+        "avg_risk_score": 14707.174577669944,
+        "severity_rank": 5,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 9,
+        "avg_risk_score": 15000.647691110056,
+        "severity_rank": 6,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 21,
+        "avg_risk_score": 15027.9559615193,
+        "severity_rank": 7,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 125,
+        "avg_risk_score": 15537.760761743053,
+        "severity_rank": 8,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 8,
+        "avg_risk_score": 15961.332293105648,
+        "severity_rank": 9,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 137,
+        "avg_risk_score": 18657.902292239174,
+        "severity_rank": 10,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 126,
+        "avg_risk_score": 19155.568330361377,
+        "severity_rank": 11,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 197,
+        "avg_risk_score": 20417.13762309244,
+        "severity_rank": 12,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 215,
+        "avg_risk_score": 21026.057295351082,
+        "severity_rank": 13,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 184,
+        "avg_risk_score": 21431.9550929924,
+        "severity_rank": 14,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 170,
+        "avg_risk_score": 22721.73412909838,
+        "severity_rank": 15,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 160,
+        "avg_risk_score": 22829.51288118027,
+        "severity_rank": 16,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 210,
+        "avg_risk_score": 23257.059340388092,
+        "severity_rank": 17,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 185,
+        "avg_risk_score": 26239.18185705783,
+        "severity_rank": 18,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 102,
+        "avg_risk_score": 26602.34380743055,
+        "severity_rank": 19,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 145,
+        "avg_risk_score": 26743.99666150665,
+        "severity_rank": 20,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 34,
+        "avg_risk_score": 27457.76144369473,
+        "severity_rank": 21,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 22,
+        "avg_risk_score": 27470.738754487233,
+        "severity_rank": 22,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 71,
+        "avg_risk_score": 27561.95493783528,
+        "severity_rank": 23,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 200,
+        "avg_risk_score": 27693.9975301772,
+        "severity_rank": 24,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 199,
+        "avg_risk_score": 27889.728351001722,
+        "severity_rank": 25,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 189,
+        "avg_risk_score": 28582.10446135953,
+        "severity_rank": 26,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 147,
+        "avg_risk_score": 28791.630729842967,
+        "severity_rank": 27,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 208,
+        "avg_risk_score": 29061.713626035988,
+        "severity_rank": 28,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 161,
+        "avg_risk_score": 30089.362525866723,
+        "severity_rank": 29,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 203,
+        "avg_risk_score": 31458.296919433567,
+        "severity_rank": 30,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 214,
+        "avg_risk_score": 32821.13598079318,
+        "severity_rank": 31,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 99,
+        "avg_risk_score": 32979.7541256035,
+        "severity_rank": 32,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 177,
+        "avg_risk_score": 33191.743047808006,
+        "severity_rank": 33,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 211,
+        "avg_risk_score": 33343.69220704536,
+        "severity_rank": 34,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 206,
+        "avg_risk_score": 34488.314899703146,
+        "severity_rank": 35,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 90,
+        "avg_risk_score": 34986.851035684595,
+        "severity_rank": 36,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 115,
+        "avg_risk_score": 35176.03152100646,
+        "severity_rank": 37,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 198,
+        "avg_risk_score": 35978.93391970938,
+        "severity_rank": 38,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 182,
+        "avg_risk_score": 36554.62644805761,
+        "severity_rank": 39,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 209,
+        "avg_risk_score": 36557.45580448386,
+        "severity_rank": 40,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 155,
+        "avg_risk_score": 37221.003494079625,
+        "severity_rank": 41,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 204,
+        "avg_risk_score": 37326.25467348734,
+        "severity_rank": 42,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 164,
+        "avg_risk_score": 37655.05326002052,
+        "severity_rank": 43,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 178,
+        "avg_risk_score": 37658.88497747926,
+        "severity_rank": 44,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 98,
+        "avg_risk_score": 37804.11224910737,
+        "severity_rank": 45,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 153,
+        "avg_risk_score": 39722.70439807012,
+        "severity_rank": 46,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 156,
+        "avg_risk_score": 39991.70290853096,
+        "severity_rank": 47,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 192,
+        "avg_risk_score": 40015.896148943284,
+        "severity_rank": 48,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 136,
+        "avg_risk_score": 40117.02155383893,
+        "severity_rank": 49,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 205,
+        "avg_risk_score": 40179.69758767913,
+        "severity_rank": 50,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 191,
+        "avg_risk_score": 41243.57747373724,
+        "severity_rank": 51,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 188,
+        "avg_risk_score": 42676.73175138494,
+        "severity_rank": 52,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 152,
+        "avg_risk_score": 42947.7971896979,
+        "severity_rank": 53,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 111,
+        "avg_risk_score": 43086.18715156792,
+        "severity_rank": 54,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 207,
+        "avg_risk_score": 43189.60869000705,
+        "severity_rank": 55,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 221,
+        "avg_risk_score": 43478.25876649403,
+        "severity_rank": 56,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 132,
+        "avg_risk_score": 43489.39423583163,
+        "severity_rank": 57,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 104,
+        "avg_risk_score": 44560.03700151445,
+        "severity_rank": 58,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 175,
+        "avg_risk_score": 45488.54155846923,
+        "severity_rank": 59,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 216,
+        "avg_risk_score": 46066.12205068933,
+        "severity_rank": 60,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 110,
+        "avg_risk_score": 46378.76689697212,
+        "severity_rank": 61,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 109,
+        "avg_risk_score": 46974.82585645803,
+        "severity_rank": 62,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 91,
+        "avg_risk_score": 47203.382711858896,
+        "severity_rank": 63,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 220,
+        "avg_risk_score": 47330.97973175003,
+        "severity_rank": 64,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 131,
+        "avg_risk_score": 47445.77376226353,
+        "severity_rank": 65,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 202,
+        "avg_risk_score": 48361.77432352403,
+        "severity_rank": 66,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 142,
+        "avg_risk_score": 48652.44738023156,
+        "severity_rank": 67,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 116,
+        "avg_risk_score": 49375.20513277059,
+        "severity_rank": 68,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 121,
+        "avg_risk_score": 49608.12625762031,
+        "severity_rank": 69,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 172,
+        "avg_risk_score": 50529.971938701565,
+        "severity_rank": 70,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 78,
+        "avg_risk_score": 51318.492343911814,
+        "severity_rank": 71,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 179,
+        "avg_risk_score": 51936.83500691956,
+        "severity_rank": 72,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 196,
+        "avg_risk_score": 53133.022425084164,
+        "severity_rank": 73,
+        "risk_tier_3": 0
+      },
+      {
+        "hdbscan_cluster": 135,
+        "avg_risk_score": 53353.24495024193,
+        "severity_rank": 74,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 176,
+        "avg_risk_score": 55073.27033351703,
+        "severity_rank": 75,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 195,
+        "avg_risk_score": 55099.16609890883,
+        "severity_rank": 76,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 212,
+        "avg_risk_score": 55366.367857177414,
+        "severity_rank": 77,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 201,
+        "avg_risk_score": 55549.39310571141,
+        "severity_rank": 78,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 58,
+        "avg_risk_score": 55596.2560884774,
+        "severity_rank": 79,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 169,
+        "avg_risk_score": 55641.12170288556,
+        "severity_rank": 80,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 163,
+        "avg_risk_score": 56587.30514762945,
+        "severity_rank": 81,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 141,
+        "avg_risk_score": 57559.51984686908,
+        "severity_rank": 82,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 180,
+        "avg_risk_score": 57901.15066328835,
+        "severity_rank": 83,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 146,
+        "avg_risk_score": 58151.638012224976,
+        "severity_rank": 84,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 173,
+        "avg_risk_score": 58608.734153755286,
+        "severity_rank": 85,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 73,
+        "avg_risk_score": 59937.67721421914,
+        "severity_rank": 86,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 103,
+        "avg_risk_score": 60121.402243397184,
+        "severity_rank": 87,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 30,
+        "avg_risk_score": 60158.94634302309,
+        "severity_rank": 88,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 181,
+        "avg_risk_score": 60250.927321137446,
+        "severity_rank": 89,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": -1,
+        "avg_risk_score": 61535.075865151295,
+        "severity_rank": 90,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 187,
+        "avg_risk_score": 61719.86872309401,
+        "severity_rank": 91,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 133,
+        "avg_risk_score": 62373.62208633706,
+        "severity_rank": 92,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 150,
+        "avg_risk_score": 62485.125375359545,
+        "severity_rank": 93,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 186,
+        "avg_risk_score": 62755.1703799916,
+        "severity_rank": 94,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 219,
+        "avg_risk_score": 63326.78713620596,
+        "severity_rank": 95,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 134,
+        "avg_risk_score": 63720.77397599607,
+        "severity_rank": 96,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 106,
+        "avg_risk_score": 64176.11500557537,
+        "severity_rank": 97,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 107,
+        "avg_risk_score": 64715.55748535623,
+        "severity_rank": 98,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 26,
+        "avg_risk_score": 65226.18168790813,
+        "severity_rank": 99,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 25,
+        "avg_risk_score": 65311.20330611552,
+        "severity_rank": 100,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 80,
+        "avg_risk_score": 65500.38270023351,
+        "severity_rank": 101,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 118,
+        "avg_risk_score": 65757.32231762225,
+        "severity_rank": 102,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 123,
+        "avg_risk_score": 65942.2187863592,
+        "severity_rank": 103,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 213,
+        "avg_risk_score": 66148.75369965381,
+        "severity_rank": 104,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 154,
+        "avg_risk_score": 66674.54429783615,
+        "severity_rank": 105,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 57,
+        "avg_risk_score": 66746.18169469674,
+        "severity_rank": 106,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 1,
+        "avg_risk_score": 66801.73973271897,
+        "severity_rank": 107,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 138,
+        "avg_risk_score": 66836.34800511843,
+        "severity_rank": 108,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 167,
+        "avg_risk_score": 67397.45979626745,
+        "severity_rank": 109,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 29,
+        "avg_risk_score": 69253.42526333126,
+        "severity_rank": 110,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 128,
+        "avg_risk_score": 69531.45220633663,
+        "severity_rank": 111,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 119,
+        "avg_risk_score": 69547.18963694431,
+        "severity_rank": 112,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 162,
+        "avg_risk_score": 69824.50470108009,
+        "severity_rank": 113,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 114,
+        "avg_risk_score": 70254.09311740217,
+        "severity_rank": 114,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 124,
+        "avg_risk_score": 70268.77791289857,
+        "severity_rank": 115,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 151,
+        "avg_risk_score": 70310.94545132564,
+        "severity_rank": 116,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 218,
+        "avg_risk_score": 70606.42631793997,
+        "severity_rank": 117,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 193,
+        "avg_risk_score": 70814.70984092727,
+        "severity_rank": 118,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 105,
+        "avg_risk_score": 71140.1293339784,
+        "severity_rank": 119,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 96,
+        "avg_risk_score": 71534.84911864254,
+        "severity_rank": 120,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 51,
+        "avg_risk_score": 71969.51308249438,
+        "severity_rank": 121,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 84,
+        "avg_risk_score": 72714.57603205155,
+        "severity_rank": 122,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 171,
+        "avg_risk_score": 72897.76358182232,
+        "severity_rank": 123,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 77,
+        "avg_risk_score": 73203.37199073879,
+        "severity_rank": 124,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 168,
+        "avg_risk_score": 73722.24670770111,
+        "severity_rank": 125,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 52,
+        "avg_risk_score": 73741.56758068771,
+        "severity_rank": 126,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 17,
+        "avg_risk_score": 73801.99704071214,
+        "severity_rank": 127,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 74,
+        "avg_risk_score": 74004.03117270881,
+        "severity_rank": 128,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 75,
+        "avg_risk_score": 74101.17104600188,
+        "severity_rank": 129,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 97,
+        "avg_risk_score": 74640.39327152376,
+        "severity_rank": 130,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 158,
+        "avg_risk_score": 74863.53081963478,
+        "severity_rank": 131,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 108,
+        "avg_risk_score": 74909.26174844083,
+        "severity_rank": 132,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 129,
+        "avg_risk_score": 75897.21849892418,
+        "severity_rank": 133,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 174,
+        "avg_risk_score": 76016.3816235472,
+        "severity_rank": 134,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 82,
+        "avg_risk_score": 76046.5610625048,
+        "severity_rank": 135,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 86,
+        "avg_risk_score": 76548.78793268657,
+        "severity_rank": 136,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 100,
+        "avg_risk_score": 78452.3439542098,
+        "severity_rank": 137,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 95,
+        "avg_risk_score": 79322.81598278889,
+        "severity_rank": 138,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 194,
+        "avg_risk_score": 79573.70312829595,
+        "severity_rank": 139,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 101,
+        "avg_risk_score": 79762.52588923655,
+        "severity_rank": 140,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 87,
+        "avg_risk_score": 79806.26986039008,
+        "severity_rank": 141,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 122,
+        "avg_risk_score": 80053.56055643117,
+        "severity_rank": 142,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 16,
+        "avg_risk_score": 80706.41793895302,
+        "severity_rank": 143,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 183,
+        "avg_risk_score": 80930.30040665668,
+        "severity_rank": 144,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 130,
+        "avg_risk_score": 80956.15594462799,
+        "severity_rank": 145,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 72,
+        "avg_risk_score": 81086.49209204187,
+        "severity_rank": 146,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 79,
+        "avg_risk_score": 81630.42326305663,
+        "severity_rank": 147,
+        "risk_tier_3": 1
+      },
+      {
+        "hdbscan_cluster": 120,
+        "avg_risk_score": 81826.62007981054,
+        "severity_rank": 148,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 148,
+        "avg_risk_score": 81909.11078098399,
+        "severity_rank": 149,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 94,
+        "avg_risk_score": 82653.42334706007,
+        "severity_rank": 150,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 49,
+        "avg_risk_score": 83824.79912956741,
+        "severity_rank": 151,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 217,
+        "avg_risk_score": 84593.42294053241,
+        "severity_rank": 152,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 139,
+        "avg_risk_score": 84790.7044026413,
+        "severity_rank": 153,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 88,
+        "avg_risk_score": 85981.43518323901,
+        "severity_rank": 154,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 149,
+        "avg_risk_score": 86364.21453839996,
+        "severity_rank": 155,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 85,
+        "avg_risk_score": 86676.59260343607,
+        "severity_rank": 156,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 14,
+        "avg_risk_score": 87051.78858518868,
+        "severity_rank": 157,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 117,
+        "avg_risk_score": 88684.06312254633,
+        "severity_rank": 158,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 159,
+        "avg_risk_score": 88756.51025598995,
+        "severity_rank": 159,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 143,
+        "avg_risk_score": 89017.25052871041,
+        "severity_rank": 160,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 27,
+        "avg_risk_score": 89667.63825244122,
+        "severity_rank": 161,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 83,
+        "avg_risk_score": 90769.525934523,
+        "severity_rank": 162,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 144,
+        "avg_risk_score": 90811.303823595,
+        "severity_rank": 163,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 44,
+        "avg_risk_score": 91317.06787638583,
+        "severity_rank": 164,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 81,
+        "avg_risk_score": 91339.90181423064,
+        "severity_rank": 165,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 140,
+        "avg_risk_score": 93881.18083752955,
+        "severity_rank": 166,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 127,
+        "avg_risk_score": 95279.36073361467,
+        "severity_rank": 167,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 42,
+        "avg_risk_score": 96455.52351354432,
+        "severity_rank": 168,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 166,
+        "avg_risk_score": 96695.07293240698,
+        "severity_rank": 169,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 31,
+        "avg_risk_score": 96953.29247266197,
+        "severity_rank": 170,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 66,
+        "avg_risk_score": 99263.52574501188,
+        "severity_rank": 171,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 48,
+        "avg_risk_score": 102139.44304878169,
+        "severity_rank": 172,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 56,
+        "avg_risk_score": 103663.354598871,
+        "severity_rank": 173,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 69,
+        "avg_risk_score": 104509.7485008067,
+        "severity_rank": 174,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 15,
+        "avg_risk_score": 105626.0363765929,
+        "severity_rank": 175,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 23,
+        "avg_risk_score": 108999.79527336765,
+        "severity_rank": 176,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 68,
+        "avg_risk_score": 111005.48608900132,
+        "severity_rank": 177,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 62,
+        "avg_risk_score": 114475.63151571497,
+        "severity_rank": 178,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 36,
+        "avg_risk_score": 117559.7570844271,
+        "severity_rank": 179,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 43,
+        "avg_risk_score": 117813.30981382825,
+        "severity_rank": 180,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 46,
+        "avg_risk_score": 117917.45410764635,
+        "severity_rank": 181,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 10,
+        "avg_risk_score": 118664.14315647517,
+        "severity_rank": 182,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 64,
+        "avg_risk_score": 119879.00985713379,
+        "severity_rank": 183,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 6,
+        "avg_risk_score": 123729.58182312426,
+        "severity_rank": 184,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 33,
+        "avg_risk_score": 125080.67347530801,
+        "severity_rank": 185,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 35,
+        "avg_risk_score": 125822.08916395868,
+        "severity_rank": 186,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 0,
+        "avg_risk_score": 128783.84681269393,
+        "severity_rank": 187,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 67,
+        "avg_risk_score": 129613.70565401582,
+        "severity_rank": 188,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 40,
+        "avg_risk_score": 129924.69555681015,
+        "severity_rank": 189,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 92,
+        "avg_risk_score": 130736.67521664166,
+        "severity_rank": 190,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 76,
+        "avg_risk_score": 131521.72204667848,
+        "severity_rank": 191,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 165,
+        "avg_risk_score": 131902.39246773106,
+        "severity_rank": 192,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 28,
+        "avg_risk_score": 133294.45940391018,
+        "severity_rank": 193,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 4,
+        "avg_risk_score": 133584.50955814298,
+        "severity_rank": 194,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 63,
+        "avg_risk_score": 134205.39594553286,
+        "severity_rank": 195,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 55,
+        "avg_risk_score": 136455.88310756395,
+        "severity_rank": 196,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 70,
+        "avg_risk_score": 137349.97073726496,
+        "severity_rank": 197,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 113,
+        "avg_risk_score": 138854.15724317037,
+        "severity_rank": 198,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 47,
+        "avg_risk_score": 139098.96464722292,
+        "severity_rank": 199,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 45,
+        "avg_risk_score": 140179.43149018477,
+        "severity_rank": 200,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 53,
+        "avg_risk_score": 141693.58186208623,
+        "severity_rank": 201,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 32,
+        "avg_risk_score": 143133.17209490633,
+        "severity_rank": 202,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 2,
+        "avg_risk_score": 145059.09634306107,
+        "severity_rank": 203,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 12,
+        "avg_risk_score": 145480.46012715803,
+        "severity_rank": 204,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 93,
+        "avg_risk_score": 147206.42285539338,
+        "severity_rank": 205,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 54,
+        "avg_risk_score": 147537.24349182178,
+        "severity_rank": 206,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 61,
+        "avg_risk_score": 149248.56840885442,
+        "severity_rank": 207,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 39,
+        "avg_risk_score": 150498.96959138958,
+        "severity_rank": 208,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 37,
+        "avg_risk_score": 151146.10123968156,
+        "severity_rank": 209,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 41,
+        "avg_risk_score": 155543.29667665687,
+        "severity_rank": 210,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 5,
+        "avg_risk_score": 167438.92741698338,
+        "severity_rank": 211,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 59,
+        "avg_risk_score": 171731.34894872777,
+        "severity_rank": 212,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 65,
+        "avg_risk_score": 172028.72169572487,
+        "severity_rank": 213,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 50,
+        "avg_risk_score": 179244.94998806404,
+        "severity_rank": 214,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 11,
+        "avg_risk_score": 179753.4983784289,
+        "severity_rank": 215,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 60,
+        "avg_risk_score": 179877.0926746606,
+        "severity_rank": 216,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 7,
+        "avg_risk_score": 188840.95732364693,
+        "severity_rank": 217,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 13,
+        "avg_risk_score": 196930.3342028509,
+        "severity_rank": 218,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 38,
+        "avg_risk_score": 207815.13493316938,
+        "severity_rank": 219,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 20,
+        "avg_risk_score": 243080.50700144412,
+        "severity_rank": 220,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 3,
+        "avg_risk_score": 260561.67890768766,
+        "severity_rank": 221,
+        "risk_tier_3": 2
+      },
+      {
+        "hdbscan_cluster": 19,
+        "avg_risk_score": 263428.9299942151,
+        "severity_rank": 222,
+        "risk_tier_3": 2
+      }
+    ],
+    "n_clusters_found": 223,
+    "cluster_to_tier": {
+      "112": 0,
+      "18": 0,
+      "24": 0,
+      "190": 0,
+      "89": 0,
+      "157": 0,
+      "9": 0,
+      "21": 0,
+      "125": 0,
+      "8": 0,
+      "137": 0,
+      "126": 0,
+      "197": 0,
+      "215": 0,
+      "184": 0,
+      "170": 0,
+      "160": 0,
+      "210": 0,
+      "185": 0,
+      "102": 0,
+      "145": 0,
+      "34": 0,
+      "22": 0,
+      "71": 0,
+      "200": 0,
+      "199": 0,
+      "189": 0,
+      "147": 0,
+      "208": 0,
+      "161": 0,
+      "203": 0,
+      "214": 0,
+      "99": 0,
+      "177": 0,
+      "211": 0,
+      "206": 0,
+      "90": 0,
+      "115": 0,
+      "198": 0,
+      "182": 0,
+      "209": 0,
+      "155": 0,
+      "204": 0,
+      "164": 0,
+      "178": 0,
+      "98": 0,
+      "153": 0,
+      "156": 0,
+      "192": 0,
+      "136": 0,
+      "205": 0,
+      "191": 0,
+      "188": 0,
+      "152": 0,
+      "111": 0,
+      "207": 0,
+      "221": 0,
+      "132": 0,
+      "104": 0,
+      "175": 0,
+      "216": 0,
+      "110": 0,
+      "109": 0,
+      "91": 0,
+      "220": 0,
+      "131": 0,
+      "202": 0,
+      "142": 0,
+      "116": 0,
+      "121": 0,
+      "172": 0,
+      "78": 0,
+      "179": 0,
+      "196": 0,
+      "135": 1,
+      "176": 1,
+      "195": 1,
+      "212": 1,
+      "201": 1,
+      "58": 1,
+      "169": 1,
+      "163": 1,
+      "141": 1,
+      "180": 1,
+      "146": 1,
+      "173": 1,
+      "73": 1,
+      "103": 1,
+      "30": 1,
+      "181": 1,
+      "-1": 1,
+      "187": 1,
+      "133": 1,
+      "150": 1,
+      "186": 1,
+      "219": 1,
+      "134": 1,
+      "106": 1,
+      "107": 1,
+      "26": 1,
+      "25": 1,
+      "80": 1,
+      "118": 1,
+      "123": 1,
+      "213": 1,
+      "154": 1,
+      "57": 1,
+      "1": 1,
+      "138": 1,
+      "167": 1,
+      "29": 1,
+      "128": 1,
+      "119": 1,
+      "162": 1,
+      "114": 1,
+      "124": 1,
+      "151": 1,
+      "218": 1,
+      "193": 1,
+      "105": 1,
+      "96": 1,
+      "51": 1,
+      "84": 1,
+      "171": 1,
+      "77": 1,
+      "168": 1,
+      "52": 1,
+      "17": 1,
+      "74": 1,
+      "75": 1,
+      "97": 1,
+      "158": 1,
+      "108": 1,
+      "129": 1,
+      "174": 1,
+      "82": 1,
+      "86": 1,
+      "100": 1,
+      "95": 1,
+      "194": 1,
+      "101": 1,
+      "87": 1,
+      "122": 1,
+      "16": 1,
+      "183": 1,
+      "130": 1,
+      "72": 1,
+      "79": 1,
+      "120": 2,
+      "148": 2,
+      "94": 2,
+      "49": 2,
+      "217": 2,
+      "139": 2,
+      "88": 2,
+      "149": 2,
+      "85": 2,
+      "14": 2,
+      "117": 2,
+      "159": 2,
+      "143": 2,
+      "27": 2,
+      "83": 2,
+      "144": 2,
+      "44": 2,
+      "81": 2,
+      "140": 2,
+      "127": 2,
+      "42": 2,
+      "166": 2,
+      "31": 2,
+      "66": 2,
+      "48": 2,
+      "56": 2,
+      "69": 2,
+      "15": 2,
+      "23": 2,
+      "68": 2,
+      "62": 2,
+      "36": 2,
+      "43": 2,
+      "46": 2,
+      "10": 2,
+      "64": 2,
+      "6": 2,
+      "33": 2,
+      "35": 2,
+      "0": 2,
+      "67": 2,
+      "40": 2,
+      "92": 2,
+      "76": 2,
+      "165": 2,
+      "28": 2,
+      "4": 2,
+      "63": 2,
+      "55": 2,
+      "70": 2,
+      "113": 2,
+      "47": 2,
+      "45": 2,
+      "53": 2,
+      "32": 2,
+      "2": 2,
+      "12": 2,
+      "93": 2,
+      "54": 2,
+      "61": 2,
+      "39": 2,
+      "37": 2,
+      "41": 2,
+      "5": 2,
+      "59": 2,
+      "65": 2,
+      "50": 2,
+      "11": 2,
+      "60": 2,
+      "7": 2,
+      "13": 2,
+      "38": 2,
+      "20": 2,
+      "3": 2,
+      "19": 2
+    }
+  },
+  "binary_high_risk_definition": "risk_tier_3 == 2",
+  "logistic_regression_best_params": {
+    "C": 0.01
+  },
+  "logistic_regression_val_f1": 0.6066139628103775,
+  "logistic_regression_val_auc_roc": 0.8636854840865946,
+  "xgboost_best_params": {
+    "n_estimators": 100,
+    "max_depth": 3,
+    "learning_rate": 0.05
+  },
+  "xgboost_val_f1": 0.5963210702341137,
+  "xgboost_val_auc_roc": 0.9155272505031851
+}

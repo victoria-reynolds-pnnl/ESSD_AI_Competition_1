@@ -1,0 +1,36 @@
+{
+  "model_mapping": {
+    "model_1": "logistic_regression",
+    "model_2": "xgboost"
+  },
+  "summary_metrics_file": "Interpretability\\interpretability_metrics.csv",
+  "saved_figures": [
+    "Visualizations\\logistic_regression_confusion_matrix.png",
+    "Visualizations\\logistic_regression_feature_importance.png",
+    "Visualizations\\xgboost_confusion_matrix.png",
+    "Visualizations\\xgboost_feature_importance.png",
+    "Visualizations\\xgboost_shap_summary.png",
+    "Visualizations\\xgboost_shap_high_risk_case.png",
+    "Visualizations\\xgboost_shap_low_risk_case.png",
+    "Visualizations\\xgboost_shap_incorrect_case.png",
+    "Visualizations\\precision_recall_comparison.png",
+    "Visualizations\\error_by_region.png",
+    "Visualizations\\false_negative_rate_by_region.png",
+    "Visualizations\\calibration_curve.png"
+  ],
+  "extra_outputs": [
+    "Interpretability\\logistic_regression_test_predictions.csv",
+    "Interpretability\\logistic_regression_false_positives.csv",
+    "Interpretability\\logistic_regression_false_negatives.csv",
+    "Interpretability\\xgboost_test_predictions.csv",
+    "Interpretability\\xgboost_false_positives.csv",
+    "Interpretability\\xgboost_false_negatives.csv",
+    "Interpretability\\xgboost_shap_case_notes.json",
+    "Interpretability\\error_by_region_summary.csv",
+    "Interpretability\\false_negative_rate_by_region.csv",
+    "Interpretability\\error_analysis_notes.md",
+    "Interpretability\\calibration_brier_scores.csv",
+    "Interpretability\\calibration_curve_points.csv",
+    "Interpretability\\calibration_notes.md"
+  ]
+}

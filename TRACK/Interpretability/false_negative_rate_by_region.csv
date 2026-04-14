@@ -1,0 +1,3 @@
+nerc_id,positive_actual,false_negative,false_negative_rate,model
+NERC,6846,1007,0.14709319310546304,logistic_regression
+NERC,6846,2566,0.3748174116272276,xgboost

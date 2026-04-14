@@ -1,0 +1,9 @@
+feature,importance
+num__yearly_max_heat_wave_intensity,2.9590515642465465
+num__yearly_max_heat_wave_duration,2.6913804997020123
+num__duration_days,1.5770601643846227
+num__spatial_coverage,0.5627237391557499
+num__yearly_max_heat_wave_duration_trend,0.42840821411821384
+num__yearly_max_heat_wave_intensity_trend,0.1703101449626447
+num__lowest_temperature_k,0.05873941593249199
+cat__nerc_id_NERC,6.770414367888707e-05
