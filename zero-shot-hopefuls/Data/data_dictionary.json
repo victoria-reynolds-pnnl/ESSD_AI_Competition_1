@@ -1,0 +1,290 @@
+[
+  {
+    "field_name": "lat",
+    "description": "Latitude of grid cell center (WGS84)",
+    "data_type": "float64",
+    "example_value": 37.25,
+    "source": "ComExDBM grid coordinates",
+    "context": "0.5-degree resolution grid covering CONUS"
+  },
+  {
+    "field_name": "lon",
+    "description": "Longitude of grid cell center (WGS84)",
+    "data_type": "float64",
+    "example_value": -105.75,
+    "source": "ComExDBM grid coordinates",
+    "context": "0.5-degree resolution grid covering CONUS"
+  },
+  {
+    "field_name": "year",
+    "description": "ISO calendar year of the observation week",
+    "data_type": "int",
+    "example_value": 2015,
+    "source": "Derived from date",
+    "context": "Data spans 2001-2020"
+  },
+  {
+    "field_name": "week",
+    "description": "ISO calendar week number (1-53)",
+    "data_type": "int",
+    "example_value": 28,
+    "source": "Derived from date",
+    "context": "Filtered to fire season weeks (April-October, approx weeks 14-44)"
+  },
+  {
+    "field_name": "tmax",
+    "description": "Weekly mean of daily maximum temperature (degrees C)",
+    "data_type": "float64",
+    "example_value": 35.2,
+    "source": "CPC Global Unified Temperature via ComExDBM 01_HeatWave",
+    "context": "Aggregated as weekly mean of daily values"
+  },
+  {
+    "field_name": "tmin",
+    "description": "Weekly mean of daily minimum temperature (degrees C)",
+    "data_type": "float64",
+    "example_value": 18.7,
+    "source": "CPC Global Unified Temperature via ComExDBM 01_HeatWave",
+    "context": "Aggregated as weekly mean of daily values"
+  },
+  {
+    "field_name": "tmean",
+    "description": "Weekly mean of daily mean temperature (degrees C)",
+    "data_type": "float64",
+    "example_value": 27.0,
+    "source": "CPC Global Unified Temperature via ComExDBM 01_HeatWave",
+    "context": "Aggregated as weekly mean of daily values"
+  },
+  {
+    "field_name": "HI02",
+    "description": "Heatwave indicator: 1 if any day in the week had tmean exceeding the 95th percentile for 3+ consecutive days",
+    "data_type": "int",
+    "example_value": 1,
+    "source": "ComExDBM 01_HeatWave",
+    "context": "Primary heatwave definition used for compound event labeling. Weekly max aggregation."
+  },
+  {
+    "field_name": "HI05",
+    "description": "Heatwave indicator: 1 if any day in the week had tmax exceeding the 95th percentile for 3+ consecutive days",
+    "data_type": "int",
+    "example_value": 0,
+    "source": "ComExDBM 01_HeatWave",
+    "context": "Secondary heatwave definition based on maximum temperature. Weekly max aggregation."
+  },
+  {
+    "field_name": "FHS_c9",
+    "description": "Weekly total count of highest-confidence (level 9) fire hotspot pixels (1km) within the 0.5-degree grid cell",
+    "data_type": "float64",
+    "example_value": 5.0,
+    "source": "MODIS MOD14A1 via ComExDBM 02_FireData",
+    "context": "Aggregated as weekly sum. Zero means no fire detected."
+  },
+  {
+    "field_name": "maxFRP_c9",
+    "description": "Weekly mean of daily maximum fire radiative power (MW) at highest confidence level",
+    "data_type": "float64",
+    "example_value": 42.3,
+    "source": "MODIS MOD14A1 via ComExDBM 02_FireData",
+    "context": "Aggregated as weekly mean. Measures fire intensity."
+  },
+  {
+    "field_name": "BA_km2",
+    "description": "Weekly total fire burned area in square kilometers within the grid cell",
+    "data_type": "float64",
+    "example_value": 1.2,
+    "source": "MODIS MCD64A1 via FIRED algorithm, ComExDBM 02_FireData",
+    "context": "Aggregated as weekly sum."
+  },
+  {
+    "field_name": "pdsi",
+    "description": "Weekly mean Palmer Drought Severity Index (-5 extreme drought to +5 extreme wet)",
+    "data_type": "float64",
+    "example_value": -2.5,
+    "source": "gridMET via ComExDBM 03_DroughtData",
+    "context": "Aggregated as weekly mean. Negative values indicate drought."
+  },
+  {
+    "field_name": "pdsi_category",
+    "description": "Most frequent PDSI drought category during the week (0=extreme drought to 10=extreme wet, 5=near normal)",
+    "data_type": "int",
+    "example_value": 3,
+    "source": "gridMET via ComExDBM 03_DroughtData",
+    "context": "Categories: 0=extreme drought, 1=severe, 2=moderate, 3=mild drought, 4=incipient dry, 5=near normal, 6-10=wet categories"
+  },
+  {
+    "field_name": "spi90d",
+    "description": "Weekly mean Standardized Precipitation Index at 90-day timescale",
+    "data_type": "float64",
+    "example_value": -1.2,
+    "source": "gridMET via ComExDBM 03_DroughtData",
+    "context": "Aggregated as weekly mean. Negative values indicate below-normal precipitation."
+  },
+  {
+    "field_name": "spei90d",
+    "description": "Weekly mean Standardized Precipitation-Evapotranspiration Index at 90-day timescale",
+    "data_type": "float64",
+    "example_value": -0.8,
+    "source": "gridMET via ComExDBM 03_DroughtData",
+    "context": "Aggregated as weekly mean. Accounts for both precipitation and evapotranspiration."
+  },
+  {
+    "field_name": "air_sfc",
+    "description": "Weekly mean daily surface air temperature (K)",
+    "data_type": "float64",
+    "example_value": 300.5,
+    "source": "NARR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean. From NCEP North American Regional Reanalysis."
+  },
+  {
+    "field_name": "apcp",
+    "description": "Weekly mean daily accumulated precipitation (kg/m^2)",
+    "data_type": "float64",
+    "example_value": 2.1,
+    "source": "NARR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean of daily 3-hour accumulated values."
+  },
+  {
+    "field_name": "soilm",
+    "description": "Weekly mean soil moisture (kg/m^2)",
+    "data_type": "float64",
+    "example_value": 320.0,
+    "source": "NARR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean."
+  },
+  {
+    "field_name": "lhtfl",
+    "description": "Weekly mean latent heat flux (W/m^2)",
+    "data_type": "float64",
+    "example_value": 85.3,
+    "source": "NARR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean."
+  },
+  {
+    "field_name": "shtfl",
+    "description": "Weekly mean sensible heat flux (W/m^2)",
+    "data_type": "float64",
+    "example_value": 45.6,
+    "source": "NARR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean."
+  },
+  {
+    "field_name": "rhum_2m",
+    "description": "Weekly mean relative humidity at 2 meters (%)",
+    "data_type": "float64",
+    "example_value": 42.5,
+    "source": "NARR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean."
+  },
+  {
+    "field_name": "BCOC",
+    "description": "Weekly mean black carbon + organic carbon aerosol concentration",
+    "data_type": "float64",
+    "example_value": 0.0025,
+    "source": "MERRA-2 via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean. Indicator of biomass burning aerosols."
+  },
+  {
+    "field_name": "LAI",
+    "description": "Weekly mean Leaf Area Index (m^2/m^2)",
+    "data_type": "float64",
+    "example_value": 2.1,
+    "source": "NOAA CDR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean. Vegetation density indicator."
+  },
+  {
+    "field_name": "NDVI",
+    "description": "Weekly mean Normalized Difference Vegetation Index (-1 to 1)",
+    "data_type": "float64",
+    "example_value": 0.45,
+    "source": "NOAA CDR via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean. Vegetation health indicator."
+  },
+  {
+    "field_name": "FWI",
+    "description": "Weekly mean Fire Weather Index",
+    "data_type": "float64",
+    "example_value": 18.5,
+    "source": "GFWED (NASA) via ComExDBM 04_Meteorological_Variables",
+    "context": "Aggregated as weekly mean. Higher values indicate greater fire risk."
+  },
+  {
+    "field_name": "compound_hw_drought",
+    "description": "Binary: 1 if heatwave (HI02=1) AND drought (pdsi_category <= 3, mild drought or worse) co-occurred during the week",
+    "data_type": "int",
+    "example_value": 1,
+    "source": "Engineered from HI02 and pdsi_category",
+    "context": "Core compound event label. Weekly max of daily compound indicator."
+  },
+  {
+    "field_name": "fire_during_compound",
+    "description": "Binary: 1 if fire activity (FHS_c9 > 0) occurred during compound heatwave+drought conditions in the week",
+    "data_type": "int",
+    "example_value": 0,
+    "source": "Engineered from compound_hw_drought and FHS_c9",
+    "context": "Triple-compound event: wildfire during heatwave+drought. Weekly max."
+  },
+  {
+    "field_name": "wind_speed",
+    "description": "Weekly mean surface wind speed (m/s), derived from U and V wind components at 1000 hPa",
+    "data_type": "float64",
+    "example_value": 4.2,
+    "source": "Engineered: sqrt(uwnd^2 + vwnd^2)",
+    "context": "Known wildfire driver. Aggregated as weekly mean."
+  },
+  {
+    "field_name": "seasonal_sin",
+    "description": "Sine component of cyclical day-of-year encoding: sin(2*pi*DOY/365)",
+    "data_type": "float64",
+    "example_value": 0.97,
+    "source": "Engineered from date",
+    "context": "Captures seasonal patterns without discontinuity at year boundary. End-of-week value."
+  },
+  {
+    "field_name": "seasonal_cos",
+    "description": "Cosine component of cyclical day-of-year encoding: cos(2*pi*DOY/365)",
+    "data_type": "float64",
+    "example_value": -0.25,
+    "source": "Engineered from date",
+    "context": "Captures seasonal patterns without discontinuity at year boundary. End-of-week value."
+  },
+  {
+    "field_name": "tmean_7d_avg",
+    "description": "7-day rolling average of daily mean temperature at end of week (degrees C)",
+    "data_type": "float64",
+    "example_value": 28.3,
+    "source": "Engineered: 7-day rolling mean of tmean per grid cell",
+    "context": "Captures recent warming trend. End-of-week value."
+  },
+  {
+    "field_name": "drought_trend_14d",
+    "description": "14-day change in PDSI (current minus 14 days ago). Negative = worsening drought.",
+    "data_type": "float64",
+    "example_value": -0.15,
+    "source": "Engineered: pdsi difference over 14-day lag per grid cell",
+    "context": "Captures whether drought is worsening or improving. End-of-week value."
+  },
+  {
+    "field_name": "fwi_7d_max",
+    "description": "Maximum Fire Weather Index over the preceding 7 days at end of week",
+    "data_type": "float64",
+    "example_value": 25.8,
+    "source": "Engineered: 7-day rolling max of FWI per grid cell",
+    "context": "Captures persistence of fire-favorable conditions. End-of-week value."
+  },
+  {
+    "field_name": "target_compound_1wk",
+    "description": "Forecast target: compound_hw_drought value for the NEXT week (1-week lead)",
+    "data_type": "int",
+    "example_value": 0,
+    "source": "Engineered: 1-week forward shift of compound_hw_drought per grid cell",
+    "context": "Primary forecast target for 1-week ahead prediction."
+  },
+  {
+    "field_name": "target_compound_2wk",
+    "description": "Forecast target: compound_hw_drought value 2 weeks ahead (2-week lead)",
+    "data_type": "int",
+    "example_value": 0,
+    "source": "Engineered: 2-week forward shift of compound_hw_drought per grid cell",
+    "context": "Secondary forecast target for 2-week ahead prediction."
+  }
+]
