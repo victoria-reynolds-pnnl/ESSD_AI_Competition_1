@@ -1,7 +1,0 @@
-# requirements.txt
-# Pinned versions chosen for broad compatibility with the code as written.
-
-numpy==1.26.4
-pandas==2.2.2
-matplotlib==3.8.4
-torch==2.2.2
