@@ -1,0 +1,3 @@
+# Week 2 cleaning workflow dependencies
+# The current cleaning pipeline in scripts/cleaning.py uses only the Python standard library.
+# This file is included because the Week 2 deliverables explicitly require requirements.txt.
