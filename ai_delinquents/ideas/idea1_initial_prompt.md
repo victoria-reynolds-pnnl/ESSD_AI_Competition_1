@@ -1,0 +1,1 @@
+Please give us a plan for a technical workflow that will implement idea1, look at that idea file to understand all the details of what we are thinking, the plan should provide high level information about how the idea will be achieved. The risk should be quantified with known statistical methods and evaluidated against trusted data. 
