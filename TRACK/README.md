@@ -77,32 +77,23 @@ recall are the more informative metrics.
 
 ---
 
-## Comparison Summary
+## Week 4 LLM Benchmark Comparison Summary
 
-Week 3 trained two supervised ML models on engineered features using the same
-chronological test split:
+The following table summarizes the performance of the Week 4 LLM benchmark results compared directly against the Week 3 supervised ML baseline models (Logistic Regression, XGBoost) across the common chronological test split.
 
-| Model | Test F1 | Test Accuracy | Test Precision | Test Recall |
-|-------|---------|---------------|----------------|-------------|
-| Logistic Regression | 0.766 | 0.855 | 0.694 | 0.854 |
-| XGBoost | 0.750 | 0.884 | 0.781 | 0.721 |
+### Final Week 4 Results Table
 
-The LLM benchmark notebook evaluates up to four vLLM-hosted models
-(ports 8000, 8001, 8002) under zero-shot (v2) and few-shot (v3) prompts.
+| Model | Classification | Prompt | F1 | Accuracy | Precision | Recall |
+|-------|----------------|--------|----|----------|-----------|--------|
+| **Week 3 (Baseline)** | Logistic Regression | N/A | **0.766** | 0.855 | 0.695 | 0.853 |
+| **Week 3 (Baseline)** | XGBoost | N/A | **0.750** | 0.884 | 0.938 | 0.625 |
+| **Week 4 (New)** | Gemma-3-12b-it | Few-Shot (v3) | 0.628 | 0.677 | 0.463 | 0.976 |
+| **Week 4 (New)** | Phi-3.5-mini-instruct | Few-Shot (v3) | 0.576 | 0.631 | 0.424 | 0.896 |
+| **Week 4 (New)** | Phi-mini-MoE-instruct | Zero-Shot (v2) | 0.437 | 0.279 | 0.279 | 1.000 |
 
-### Key Results Summary
-
-| Model | Prompt | F1 | Accuracy | Precision | Recall |
-|-------|--------|----|----------|-----------|--------|
-| **Week 3 Logistic Regression** | N/A | **0.766** | 0.855 | 0.695 | 0.853 |
-| **Week 3 XGBoost** | N/A | **0.750** | 0.884 | 0.938 | 0.625 |
-| Gemma-3-12b-it | Few-Shot (v3) | 0.628 | 0.677 | 0.463 | 0.976 |
-| Phi-3.5-mini-instruct | Few-Shot (v3) | 0.576 | 0.631 | 0.424 | 0.896 |
-| Phi-mini-MoE-instruct | Zero-Shot (v2) | 0.437 | 0.279 | 0.279 | 1.000 |
-
-Because the LLM receives the same seven features as raw text with no
-feature engineering, gradient-based optimisation, or threshold tuning, we
-expect LLM F1 to fall below the supervised baselines. The comparison table
+Because the Week 4 LLMs receive the same seven features as raw text with no
+feature engineering or gradient-based optimisation, we expect LLM F1 to fall
+below the supervised baselines established in Week 3. The comparison table
 produced in Step 6 of the notebook shows side-by-side F1, accuracy, precision,
 recall, and AUC-ROC for every model+prompt combination alongside the ML
 baselines, making it straightforward to quantify the gap and to identify
