@@ -1,0 +1,8 @@
+{
+  "system_prompt": "Given the geothermal temperature forecasting task, predict the temperature deltas at 15, 60, 240, and 1440 minutes horizons using the provided features. Use the labeled training data to guide the model's predictions. Ensure the output adheres to the specified JSON schema.",
+  "user_template": "Predict the geothermal temperature deltas for the following features: {features_json}. Output the predictions in the format: {'target_15': <float>, 'target_60': <float>, 'target_240': <float>, 'target_1440': <float>, 'confidence': <0-1>}. Use the labeled training data as a reference for your predictions.",
+  "strategy_notes": "The system message is designed to be clear and instructive, guiding the model on the task at hand. The user template includes placeholders for the features JSON, which will be replaced with actual data during model inference. The JSON schema is specified to ensure the output is in the correct format. Few-shot examples are not included in this prompt to maintain focus on the core task and avoid overwhelming the model with too much data. The prompt is kept concise to fit within the token limit and to ensure clarity.",
+  "round": 9,
+  "parse_rate": 1.0,
+  "mse": 0.001347239594605031
+}
