@@ -1,0 +1,52 @@
+[
+  {
+    "t": "2/11/2025  11:00:00 PM",
+    "input_features": {
+      "Injection Pressure": 4981.6798,
+      "Pressure_Differential": 4353.3743,
+      "TC Interval Pressure": 4991.9235,
+      "TN Interval Flow": 0.0008,
+      "TL Collar Flow": 0.1707,
+      "TC-TEC-INT-L": 43.2451,
+      "TC-TEC-INT-L__lag_12h": 43.3222,
+      "TC-TEC-INT-L__lag_24h": 43.1582,
+      "TC-TEC-INT-L__roll_mean_12h": 43.3166,
+      "TC-TEC-INT-L__roll_mean_24h": 43.2913,
+      "TN-TEC-BOT-U": 30.4198,
+      "TN-TEC-BOT-U__lag_12h": 30.4127,
+      "TN-TEC-BOT-U__lag_24h": 30.3488,
+      "TN-TEC-BOT-U__roll_mean_12h": 30.4158,
+      "TN-TEC-BOT-U__roll_mean_24h": 30.3955
+    },
+    "output_json": {
+      "t+1": "2/12/2025  12:00:00 AM",
+      "prediction": 4982.9503,
+      "confidence": 0.82
+    }
+  },
+  {
+    "t": "2/12/2025  12:00:00 AM",
+    "input_features": {
+      "Injection Pressure": 4982.9503,
+      "Pressure_Differential": 4354.5854,
+      "TC Interval Pressure": 4992.9041,
+      "TN Interval Flow": 0.0009,
+      "TL Collar Flow": 0.1708,
+      "TC-TEC-INT-L": 43.2164,
+      "TC-TEC-INT-L__lag_12h": 43.3474,
+      "TC-TEC-INT-L__lag_24h": 43.1934,
+      "TC-TEC-INT-L__roll_mean_12h": 43.3102,
+      "TC-TEC-INT-L__roll_mean_24h": 43.2949,
+      "TN-TEC-BOT-U": 30.4324,
+      "TN-TEC-BOT-U__lag_12h": 30.4153,
+      "TN-TEC-BOT-U__lag_24h": 30.1394,
+      "TN-TEC-BOT-U__roll_mean_12h": 30.4164,
+      "TN-TEC-BOT-U__roll_mean_24h": 30.3985
+    },
+    "output_json": {
+      "t+1": "2/12/2025  1:00:00 AM",
+      "prediction": 4982.1107,
+      "confidence": 0.91
+    }
+  }
+]
