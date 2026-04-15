@@ -10,6 +10,28 @@
 
 ---
 
+## Model Endpoints
+Use the following locally hosted model endpoints for benchmarking:
+
+```python
+MODEL_ENDPOINTS = [
+    {'label': 'phi-3.5-mini-instruct', 'model_name': 'Phi-3.5-mini-instruct', 'host': 'localhost', 'port': 8000},
+    {'label': 'phi-mini-moe-instruct', 'model_name': 'Phi-mini-MoE-instruct', 'host': 'localhost', 'port': 8001},
+    {'label': 'gemma-3-12b-it', 'model_name': 'gemma-3-12b-it', 'host': 'localhost', 'port': 8002},
+]
+```
+
+| Label | Model Name | Host | Port |
+|---|---|---|---|
+| `phi-3.5-mini-instruct` | Phi-3.5-mini-instruct | localhost | 8000 |
+| `phi-mini-moe-instruct` | Phi-mini-MoE-instruct | localhost | 8001 |
+| `gemma-3-12b-it` | gemma-3-12b-it | localhost | 8002 |
+
+- Each model should be queried independently
+- Results CSVs should be saved per model using the `label` field as the filename identifier
+
+---
+
 ## What We're Looking For
 - Reproducible notebook run in JupyterHub
 - No R this time
@@ -25,7 +47,7 @@
 
 ### 1. LLM Benchmarking Notebook (`llm_benchmark.ipynb`)
 - Loads in your Week 3 target and test set
-- Queries at least one LLM
+- Queries at least one LLM (endpoints listed above)
 - Converts the LLM response into a structured prediction
 - Evaluates on Week 3 test set with same metrics
 
@@ -41,13 +63,14 @@
 
 ### 4. Results CSVs (per LLM tested)
 - Include prompt, raw outputs, parsed predictions
+- Name files using the model `label` field (e.g. `phi-3.5-mini-instruct_results_clean_1.csv`)
 
 ---
 
 ## Folder Structure
 
 ```
-ai_delinquents/
+team_folder/
 ├── README.md
 ├── Notebooks/
 │   └── llm_benchmark.ipynb
@@ -55,7 +78,7 @@ ai_delinquents/
 │   ├── prompt_template.txt
 │   └── few_shot_samples.json
 └── Results/
-    └── {model_name}_results_clean_{iteration_number}.py
+    └── {model_label}_results_clean_{iteration_number}.csv
 ```
 
 > `few_shot_samples.json` should contain the few-shot examples used in your prompt
