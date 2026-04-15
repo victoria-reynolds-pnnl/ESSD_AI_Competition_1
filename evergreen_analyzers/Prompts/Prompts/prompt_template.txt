@@ -1,0 +1,6 @@
+Classify this river flow reading.
+Flow rate: 6460.0 cfs
+21-day rolling average: 6460.00 cfs
+Allowed labels: ["High", "Medium", "Low"]
+Return ONLY JSON: {"prediction": "<label>", "confidence": <0_to_1_float>}
+No extra text.
