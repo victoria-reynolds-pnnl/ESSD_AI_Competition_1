@@ -1,0 +1,31 @@
+[
+  {
+    "note": "Dry year example — below-median SWE, El Nino signal. Selected from lower tercile of training set.",
+    "water_year": "PLACEHOLDER — populated by notebook from train_split.csv lower tercile",
+    "selection_rule": "~17th percentile of target_volume in WY 1985-2012",
+    "features_included": [
+      "apr1_swe_inches",
+      "apr1_swe_anomaly_pct",
+      "djf_nino34",
+      "djf_pdo",
+      "djf_pna",
+      "jan_mar_mean_q_cfs",
+      "oct_mar_volume_kcfs_days"
+    ],
+    "output_format": {"prediction_kcfs_days": "<actual target_volume for this year>"}
+  },
+  {
+    "note": "Median year example — near-average conditions across all predictors.",
+    "water_year": "PLACEHOLDER — populated by notebook from train_split.csv median",
+    "selection_rule": "~50th percentile of target_volume in WY 1985-2012",
+    "features_included": ["same as above"],
+    "output_format": {"prediction_kcfs_days": "<actual target_volume for this year>"}
+  },
+  {
+    "note": "Wet year example — above-median SWE, La Nina or neutral ENSO. Selected from upper tercile.",
+    "water_year": "PLACEHOLDER — populated by notebook from train_split.csv upper tercile",
+    "selection_rule": "~83rd percentile of target_volume in WY 1985-2012",
+    "features_included": ["same as above"],
+    "output_format": {"prediction_kcfs_days": "<actual target_volume for this year>"}
+  }
+]

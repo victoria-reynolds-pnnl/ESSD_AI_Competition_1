@@ -66,23 +66,45 @@ pixi add <package>                  # add a new dependency
 | `oct_mar_volume_kcfs_days` | Oct-Mar cumulative naturalized flow volume | 0.55 |
 | `target_volume` | Apr-Sep naturalized flow volume (kcfs-days) | — |
 
-### Week 3 (EDA and visualization)
+### Week 3 (EDA, model training, and evaluation — delivered ~4/9)
 
-- `scripts/04_eda_plots.py` — reproducible EDA script; reads `data/clean/`, saves 8 PNGs to `plots/`
-  - `01_target_distribution.png` — histogram + KDE of target variable
-  - `02_target_timeseries.png` — annual target volume with OLS trend line
-  - `03_feature_correlations.png` — Pearson correlation heatmap of feature matrix
-  - `04_swe_vs_target_enso.png` — SWE vs target scatter, colored by DJF ENSO phase
-  - `05_monthly_hydrograph.png` — box plots of monthly naturalized flow (seasonal cycle)
-  - `06_climate_indices_timeseries.png` — PDO, Nino3.4, PNA time series
-  - `07_snotel_station_heatmap.png` — Apr 1 SWE per station × water year heatmap
-  - `08_predictor_scatter_matrix.png` — pairplot of top 5 predictors
-- `seaborn` added as a project dependency (`pixi add seaborn`)
+**File location**: `ai_delinquents/week_3_files/`
 
-## Next Steps (planned)
+EDA:
+- `scripts/04_eda_plots.py` — reads `data/clean/`, saves 8 PNGs to `plots/`
 
-- `scripts/04_train_model.py` — XGBoost + MLR + climatology baseline, LOYO cross-validation, quantile forecasts
-- `scripts/05_evaluate.py` — NSE, KGE, CRPS metrics; comparison against operational forecasts
+Training and evaluation pipeline:
+- `scripts/train.py` — temporal split (train WY 1985–2012 / test WY 2013–2018), optuna LOYO hyperparameter tuning, trains climatology + MLR + XGBoost (point + quantile), saves models to `models/` and predictions to `outputs/`
+- `scripts/evaluate.py` — NSE, KGE, RMSE, CRPS, PI coverage; saves `outputs/metrics_summary.csv` and `outputs/model_performance_summary.txt`
+- `scripts/interpretability.py` — 3 figures saved to `visualizations/`
+
+**Test set results (WY 2013–2018):**
+
+| Model | NSE | KGE | RMSE (kcfs-days) |
+|---|---|---|---|
+| Climatology | −0.03 | −0.41 | 8,488 |
+| MLR | **0.77** | **0.74** | **4,034** |
+| XGBoost | 0.46 | 0.50 | 6,170 |
+
+MLR outperforms XGBoost on the test set — expected given small sample size (34 years). XGBoost PI coverage was ~67% (target ~80%).
+
+### Week 4 (LLM benchmarking — delivered ~4/16)
+
+**File location**: `ai_delinquents/week_4_files/`
+
+- `Notebooks/llm_benchmark.ipynb` — benchmarks three locally hosted LLMs on the same regression task as Week 3; uses `DRY_RUN` flag for local testing (set to `False` on JupyterHub)
+- `Prompts/prompt_template.txt` and `few_shot_samples.json` — versioned prompt artifacts
+- `Results/` — per-model clean/raw CSVs and metrics summary
+
+**LLM test set results (WY 2013–2018, same split as Week 3):**
+
+| Model | Prompt | NSE | RMSE (kcfs-days) |
+|---|---|---|---|
+| gemma-3-12b-it | v2 few-shot | 0.33 | 6,817 |
+| Phi-3.5-mini-instruct | v1 zero-shot | 0.12 | 7,824 |
+| Phi-mini-MoE-instruct | v2 few-shot | −0.57 | 10,472 |
+
+Key findings: 100% parse success; dominant LLM failure mode is regression to the mean (compressed prediction variance); gemma (12B) substantially outperforms Phi models; few-shot prompting benefits larger models but hurt Phi-3.5-mini; LLMs cannot match purpose-built regression models on low-dimensional tabular tasks.
 
 ## Data Sources
 
