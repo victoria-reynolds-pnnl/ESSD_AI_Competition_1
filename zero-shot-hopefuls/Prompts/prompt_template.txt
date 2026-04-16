@@ -1,0 +1,59 @@
+You are a climate hazard forecasting system. Your task is to predict whether a compound heatwave+drought event will occur in the NEXT week based on current climate observations.
+
+A compound event is defined as: a heatwave (mean temperature exceeding the 95th percentile for 3+ consecutive days) co-occurring with drought (Palmer Drought Severity Index category <= 3, indicating mild drought or worse).
+
+Given the following climate observations for a 0.5-degree grid cell during a single week, predict whether a compound heatwave+drought event will occur in the following week.
+
+## Current Week Observations
+
+**Temperature:**
+- Max temperature (tmax): {tmax} C
+- Min temperature (tmin): {tmin} C
+- Mean temperature (tmean): {tmean} C
+- 7-day rolling mean temperature (tmean_7d_avg): {tmean_7d_avg} C
+
+**Heatwave Indicators:**
+- HI02 (heatwave active, tmean-based): {HI02}
+- HI05 (heatwave active, tmax-based): {HI05}
+
+**Drought Indices:**
+- Palmer Drought Severity Index (pdsi): {pdsi} (-5=extreme drought to +5=extreme wet)
+- PDSI category (pdsi_category): {pdsi_category} (0=extreme drought, 5=near normal, 10=extreme wet)
+- 90-day Standardized Precipitation Index (spi90d): {spi90d}
+- 90-day Standardized Precipitation-Evapotranspiration Index (spei90d): {spei90d}
+- 14-day drought trend (drought_trend_14d): {drought_trend_14d} (negative=worsening)
+
+**Fire Activity:**
+- Fire hotspot count (FHS_c9): {FHS_c9}
+- Max fire radiative power (maxFRP_c9): {maxFRP_c9} MW
+- Burned area (BA_km2): {BA_km2} km2
+- Fire Weather Index (FWI): {FWI}
+- 7-day max FWI (fwi_7d_max): {fwi_7d_max}
+
+**Meteorological:**
+- Surface air temperature (air_sfc): {air_sfc} K
+- Precipitation (apcp): {apcp} kg/m2
+- Soil moisture (soilm): {soilm} kg/m2
+- Latent heat flux (lhtfl): {lhtfl} W/m2
+- Sensible heat flux (shtfl): {shtfl} W/m2
+- Relative humidity at 2m (rhum_2m): {rhum_2m} %
+- Wind speed (wind_speed): {wind_speed} m/s
+- Biomass burning aerosol (BCOC): {BCOC}
+
+**Vegetation:**
+- Leaf Area Index (LAI): {LAI} m2/m2
+- NDVI: {NDVI}
+
+**Seasonal:**
+- seasonal_sin: {seasonal_sin}
+- seasonal_cos: {seasonal_cos}
+
+## Task
+
+Based on these observations, predict whether a compound heatwave+drought event will occur NEXT WEEK.
+
+Return ONLY valid JSON with this exact schema:
+{{"prediction": 0 or 1, "confidence": <float between 0.0 and 1.0>}}
+
+Where prediction=1 means a compound event is predicted, prediction=0 means no compound event.
+No extra text, explanation, or formatting outside the JSON.

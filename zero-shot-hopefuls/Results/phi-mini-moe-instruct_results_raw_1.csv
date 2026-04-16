@@ -1,0 +1,6001 @@
+row_index,model_label,model_name,endpoint_port,prompt_version,ground_truth,ml_lgb_prediction,ml_lgb_probability,llm_prediction,llm_confidence,parse_ok,parse_error,raw_response
+0,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.020860352730132,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+1,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2535256673393206,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+2,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.102602350937172,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+3,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+4,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+5,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+6,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0207654275156114,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+7,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+8,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0799409580985262,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+9,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+10,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.6618055584406066,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+11,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+12,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+13,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+14,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+15,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0225251116965585,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+16,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+17,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+18,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0283355274077156,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+19,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+20,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0178257543653875,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+21,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+22,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.020226548972622,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+23,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+24,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+25,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+26,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0274011967206008,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+27,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+28,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0249529568232982,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+29,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+30,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+31,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+32,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+33,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1460187347649092,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+34,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+35,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+36,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+37,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+38,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+39,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+40,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+41,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1391424691435931,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+42,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+43,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0221208814152887,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+44,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+45,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+46,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+47,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+48,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+49,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+50,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+51,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+52,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159068157352821,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+53,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0194941732455687,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+54,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6834314262467054,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+55,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+56,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+57,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7401236675533011,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+58,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+59,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+60,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+61,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6018948819328759,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+62,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+63,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+64,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+65,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0183928774371474,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+66,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+67,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+68,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+69,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+70,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0862691560357464,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+71,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.019382199464894,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+72,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+73,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+74,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+75,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+76,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+77,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+78,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+79,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+80,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+81,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+82,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+83,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+84,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+85,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+86,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+87,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+88,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+89,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0445086691251727,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+90,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+91,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+92,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+93,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+94,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0185738120492697,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+95,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+96,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+97,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+98,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+99,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+100,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+101,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+102,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+103,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+104,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+105,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+106,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1854358551161143,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+107,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+108,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+109,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+110,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+111,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5114958285517927,1,0.75,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.75
+}
+```"
+112,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+113,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+114,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6410258741876192,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+115,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0638566465245941,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+116,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+117,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+118,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+119,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+120,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+121,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+122,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+123,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+124,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+125,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+126,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+127,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+128,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+129,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0328103431298333,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+130,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+131,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+132,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+133,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+134,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+135,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+136,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+137,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+138,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6555214910772164,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+139,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+140,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+141,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0185161825067621,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+142,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0182178030424931,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+143,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+144,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0243334438755953,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+145,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+146,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+147,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+148,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+149,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+150,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+151,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+152,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+153,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+154,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2796495783927667,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+155,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+156,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+157,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+158,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+159,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+160,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+161,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+162,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+163,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+164,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+165,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+166,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+167,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0210362337651462,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+168,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+169,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+170,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0169196203352024,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+171,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+172,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+173,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0166700852494529,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+174,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+175,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0173477420599839,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+176,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1094162462997075,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+177,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+178,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+179,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+180,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+181,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+182,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5335916402570166,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+183,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167303721577224,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+184,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+185,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.7195223296943453,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+186,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.133377610076136,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+187,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+188,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+189,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0281257360673852,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+190,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+191,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+192,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0172170413144678,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+193,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+194,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+195,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1077103101867045,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+196,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+197,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+198,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+199,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+200,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4777482465299377,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+201,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+202,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+203,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+204,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+205,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+206,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+207,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0170038190489558,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+208,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+209,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+210,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+211,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+212,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0184902693106732,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+213,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+214,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+215,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0185665570170269,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+216,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+217,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159068157352821,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+218,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+219,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+220,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+221,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0225251116965585,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+222,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+223,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+224,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+225,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6587330731181233,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+226,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+227,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+228,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4620712590927505,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+229,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+230,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0222205031129297,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+231,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+232,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0160833426241766,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+233,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+234,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+235,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+236,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+237,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+238,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0225251116965585,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+239,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+240,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7334446021296293,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+241,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+242,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+243,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0844631105450178,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+244,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+245,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+246,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+247,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+248,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0497403545621597,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+249,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+250,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+251,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+252,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+253,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+254,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+255,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+256,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.6845945323395093,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+257,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1804607828168575,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+258,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+259,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6876367411791694,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+260,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0225251116965585,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+261,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+262,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+263,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+264,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+265,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0166700852494529,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+266,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+267,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6494605860042232,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+268,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1645105782385413,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+269,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+270,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+271,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+272,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+273,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.7347983795786235,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+274,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+275,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.4777482465299377,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+276,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0172170413144678,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+277,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+278,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0367968063691273,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+279,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+280,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0201253043735012,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+281,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+282,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+283,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0182178030424931,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+284,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2276174228732283,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+285,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+286,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+287,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+288,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+289,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+290,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+291,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+292,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+293,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+294,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+295,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.6715801373353097,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+296,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+297,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+298,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7401236675533011,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+299,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+300,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+301,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+302,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+303,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+304,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+305,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+306,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+307,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+308,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0282658714935421,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+309,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+310,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+311,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+312,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+313,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+314,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+315,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0432568216450449,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+316,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5873404390103375,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+317,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.6659824666471664,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+318,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+319,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+320,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+321,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+322,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+323,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+324,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+325,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+326,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+327,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+328,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+329,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+330,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+331,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+332,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+333,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+334,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6863783249778556,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+335,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+336,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+337,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.061579835212706,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+338,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+339,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+340,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+341,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5491164440952359,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+342,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+343,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+344,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+345,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+346,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+347,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+348,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+349,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+350,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0183928774371474,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+351,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1950859677391556,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+352,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+353,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+354,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6361977981076731,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+355,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+356,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+357,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+358,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+359,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+360,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+361,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+362,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+363,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+364,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+365,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+366,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+367,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+368,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+369,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+370,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+371,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+372,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+373,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+374,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.516264580717687,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+375,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+376,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+377,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0723659479921087,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+378,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+379,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+380,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+381,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+382,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+383,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+384,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+385,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+386,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+387,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+388,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+389,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5970541750663512,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+390,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+391,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+392,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+393,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0170561752160735,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+394,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+395,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+396,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0490665995651105,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+397,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.057274899660457,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+398,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+399,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+400,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7094395869190091,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+401,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+402,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0198705190443376,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+403,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+404,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+405,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0274011967206008,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+406,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+407,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+408,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+409,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+410,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+411,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+412,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+413,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0958314160843456,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+414,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0357186663198717,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+415,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+416,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0175604150276227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+417,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+418,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+419,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+420,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.6028154070098836,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+421,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+422,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+423,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+424,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+425,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4382700401692545,1,0.75,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.75
+}
+```"
+426,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+427,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+428,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+429,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+430,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+431,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+432,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0201253043735012,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+433,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+434,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179146786521187,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+435,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6510010923567215,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+436,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+437,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+438,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+439,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+440,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0170038190489558,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+441,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+442,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+443,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167772013097921,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+444,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+445,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.017069228988524,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+446,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0226864074320552,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+447,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+448,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+449,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+450,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0272535245142783,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+451,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+452,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0184556247783843,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+453,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+454,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+455,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+456,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.017692282704642,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+457,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0391000134805925,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+458,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+459,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0187820860472387,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+460,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+461,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+462,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+463,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,1,0.75,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.75
+}
+```"
+464,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+465,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+466,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+467,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+468,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+469,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+470,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+471,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+472,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+473,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+474,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+475,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+476,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+477,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+478,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+479,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+480,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+481,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+482,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.6117646495146047,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+483,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+484,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+485,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+486,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+487,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+488,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+489,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174673011842364,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+490,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+491,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+492,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+493,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+494,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+495,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+496,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+497,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+498,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0225905630729409,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+499,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+500,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+501,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0243962387919801,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+502,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+503,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0166848728081544,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+504,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0220794140657599,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+505,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+506,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+507,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+508,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+509,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+510,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+511,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+512,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+513,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.6175042282307909,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+514,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+515,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+516,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+517,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+518,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+519,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6715801373353097,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+520,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+521,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+522,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+523,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+524,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+525,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+526,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+527,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+528,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+529,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+530,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+531,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+532,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2293438939946677,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+533,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0197754926741587,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+534,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+535,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+536,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+537,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0218695196149807,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+538,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174673011842364,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+539,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+540,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+541,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+542,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0188466507919944,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+543,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0541294126579063,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+544,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+545,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+546,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+547,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0172984789509638,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+548,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+549,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+550,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+551,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+552,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2730376620504506,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+553,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+554,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0288772539458148,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+555,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+556,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+557,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+558,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+559,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0182604242510435,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+560,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+561,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+562,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+563,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+564,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+565,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+566,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+567,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+568,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0169197266528032,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+569,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+570,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5768344893286493,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+571,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+572,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0356739028285625,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+573,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+574,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+575,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+576,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+577,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+578,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+579,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+580,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.019587983768214,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+581,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7401236675533011,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+582,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+583,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+584,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+585,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+586,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+587,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2292375811058742,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+588,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+589,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+590,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+591,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0701618945725893,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+592,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0172170413144678,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+593,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+594,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+595,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+596,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+597,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0456818757188544,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+598,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+599,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+600,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.2572380545407983,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+601,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+602,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+603,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+604,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+605,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+606,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2837346340679025,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+607,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.103250890730175,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+608,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2164539243929105,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+609,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+610,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+611,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0265835313578907,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+612,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+613,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0641841761534818,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+614,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+615,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+616,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+617,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+618,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+619,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0169975874187063,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+620,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+621,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+622,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1044243635634442,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+623,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+624,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7288456707920274,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+625,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+626,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+627,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+628,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0172170413144678,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+629,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+630,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+631,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2392003223245697,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+632,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.1962055584929086,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+633,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+634,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+635,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+636,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7334446021296293,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+637,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+638,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0328957274623902,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+639,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+640,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0184556247783843,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+641,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+642,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+643,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+644,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+645,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+646,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+647,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+648,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.020226548972622,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+649,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+650,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+651,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+652,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+653,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+654,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+655,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+656,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0221337217104476,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+657,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+658,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+659,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+660,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+661,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+662,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.026516998049831,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+663,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+664,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0193786678513221,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+665,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+666,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+667,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+668,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+669,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+670,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+671,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.7401236675533011,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+672,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+673,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+674,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0494688232083567,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+675,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+676,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+677,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167182672329199,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+678,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+679,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+680,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+681,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+682,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+683,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7322027875656737,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+684,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+685,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+686,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2817258342914513,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+687,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0167303721577224,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+688,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+689,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+690,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+691,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+692,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+693,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+694,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+695,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+696,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.6575074641813806,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+697,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.7401236675533011,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+698,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0164764362031222,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+699,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+700,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0178257543653875,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+701,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+702,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0295937165618482,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+703,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5982593868127549,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+704,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+705,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+706,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+707,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+708,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+709,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+710,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+711,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+712,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+713,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+714,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+715,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+716,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+717,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+718,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5881743286605468,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+719,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+720,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+721,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+722,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+723,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+724,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+725,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+726,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0170482173882966,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+727,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+728,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+729,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+730,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+731,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+732,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+733,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+734,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+735,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.018668350139184,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+736,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+737,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+738,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+739,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6324384204130333,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+740,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.019664267886189,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+741,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+742,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+743,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+744,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+745,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+746,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+747,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+748,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4480627887483567,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+749,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+750,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+751,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+752,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+753,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+754,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+755,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+756,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0164764362031222,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+757,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+758,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+759,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6479747647677788,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+760,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+761,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+762,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+763,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+764,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+765,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+766,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+767,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+768,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+769,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+770,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+771,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0618950305373945,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+772,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0170561752160735,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+773,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+774,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0164764362031222,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+775,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+776,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+777,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0212523555540262,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+778,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0173469910386151,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+779,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+780,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+781,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+782,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+783,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+784,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+785,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4090143560474541,1,0.75,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.75
+}
+```"
+786,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.6715801373353097,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+787,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+788,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+789,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+790,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+791,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+792,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+793,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+794,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+795,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+796,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+797,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+798,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6451223621478435,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+799,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+800,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4938642300043026,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+801,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+802,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+803,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+804,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5021358047237376,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+805,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6415135339729302,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+806,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+807,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+808,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4243598164165157,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+809,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+810,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+811,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+812,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0164764362031222,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+813,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+814,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+815,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+816,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+817,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+818,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0298754803102959,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+819,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+820,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+821,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+822,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+823,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+824,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+825,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+826,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+827,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+828,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+829,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+830,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+831,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+832,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+833,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+834,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.6848183476934471,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+835,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+836,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+837,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+838,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+839,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+840,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+841,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+842,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+843,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+844,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.2352994407794197,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+845,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+846,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+847,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+848,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+849,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+850,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+851,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+852,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+853,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+854,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+855,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0364048671467152,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+856,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+857,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+858,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+859,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+860,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+861,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+862,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+863,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+864,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+865,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+866,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+867,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+868,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+869,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168271422489374,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+870,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+871,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+872,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+873,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+874,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+875,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.7334446021296293,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+876,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+877,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+878,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7211548456582404,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+879,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+880,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+881,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+882,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+883,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+884,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+885,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+886,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+887,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+888,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+889,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+890,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+891,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.289917593906282,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+892,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+893,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+894,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+895,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+896,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+897,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+898,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+899,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+900,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+901,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+902,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+903,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+904,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+905,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+906,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+907,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+908,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+909,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+910,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+911,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+912,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+913,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+914,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+915,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.6364099644153653,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+916,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0191580923227825,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+917,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0457562579751959,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+918,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+919,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+920,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+921,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.019789799117305,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+922,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+923,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0988263540092406,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+924,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.7349292439826033,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+925,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+926,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+927,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+928,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+929,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+930,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0311259113949034,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+931,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.5335916402570166,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+932,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+933,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+934,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7330377459122921,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+935,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+936,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+937,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+938,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+939,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+940,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+941,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+942,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.95,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.95
+}
+```"
+943,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+944,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179755870369861,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+945,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+946,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+947,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+948,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+949,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+950,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+951,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+952,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+953,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+954,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+955,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+956,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+957,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+958,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+959,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+960,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+961,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0183980177320762,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+962,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168271422489374,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+963,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+964,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+965,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,1,0.7401236675533011,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+966,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+967,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174482412450147,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+968,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+969,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+970,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+971,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0185148589045724,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+972,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+973,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0168116105309565,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+974,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+975,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0179583774403273,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+976,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+977,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+978,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+979,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+980,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+981,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+982,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+983,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,1,0.6575834776379499,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+984,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.020226548972622,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+985,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+986,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.4247956921899562,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+987,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,1,0.85,True,," ```json
+{
+  ""prediction"": 1,
+  ""confidence"": 0.85
+}
+```"
+988,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.6018948819328759,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+989,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0274011967206008,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+990,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+991,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+992,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,1,0,0.2649128063001893,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+993,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+994,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+995,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+996,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+997,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0174673011842364,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+998,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.3090803733388338,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"
+999,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1,0,0,0.0159805845857227,0,0.0,True,," ```json
+{
+  ""prediction"": 0,
+  ""confidence"": 0.0
+}
+```"

@@ -1,49 +1,44 @@
 # Zero Shot Hopefuls - Compound Hazard Forecasting
 
-## Week 3: ML Model Training and Assessment
+## Week 4: LLM Benchmarking vs ML Model
 
-### Train/Test Split Strategy
+### Approach Report
 
-We use a strictly chronological split to respect the temporal structure of the data and prevent data leakage from future climate conditions into training. **Train (2001-2015):** 1,593,527 rows (75%) spanning 15 years that capture a wide range of compound event frequencies (1.25% to 12.02% annual positive rate). **Validation (2016-2017):** 216,192 rows (10%) used exclusively for hyperparameter tuning and classification threshold selection; these years include both a moderate-event year (2016, 1.68%) and a low-event year (2017, 1.15%), testing model robustness under varying conditions. **Test (2018-2020):** 314,154 rows (15%) held out entirely until final evaluation. Data was never shuffled, and each row is assigned to exactly one split based on its year. We excluded `compound_hw_drought` and `fire_during_compound` from the feature set because they are definitionally linked to the target variable (`target_compound_1wk` is the 1-week forward shift of `compound_hw_drought`); including them would inflate metrics through autocorrelation rather than learning from the underlying physical drivers. All 26 retained features (temperature, drought indices, meteorological variables, and engineered temporal features) represent information observable at or before the prediction week. The test set was evaluated exactly once; those numbers are final.
+We benchmarked three locally-hosted LLMs (Phi-3.5-mini-instruct, Phi-mini-MoE-instruct, gemma-3-12b-it) on the same 1-week-ahead compound heatwave+drought prediction task from Week 3. The core challenge was adapting a tabular numerical prediction task — 26 climate features per grid cell — for small language models (7-12B parameters) that lack native numerical reasoning capabilities. We designed prompts that present each feature with its human-readable name, units, and domain context (e.g., "Palmer Drought Severity Index (pdsi): -2.45, range -5=extreme drought to +5=extreme wet"), grouped by category (temperature, drought, fire, meteorological, vegetation, seasonal). Output was constrained to strict JSON format: `{"prediction": 0 or 1, "confidence": 0.0-1.0}`. We tested four prompt versions: v1 (zero-shot, all 26 features), v2 (few-shot with 5 labeled training examples), v3 (zero-shot, top 8 SHAP-important features only), and v3_few (few-shot, top 8 features). The best-performing version per model was selected based on parse reliability and accuracy on a 20-row iteration subset, then run against the full 1,000-row stratified test sample. Few-shot examples were drawn exclusively from the training set (2001-2015) to prevent data leakage. LLM responses were parsed defensively: a regex extracts JSON objects from potentially markdown-wrapped or verbose responses, then validates prediction values and confidence ranges.
 
-### Model Performance Summary
+### Error Analysis
 
-| Model               | Split      | F1     | AUC-ROC | Precision | Recall | Brier Score | Threshold |
-| ------------------- | ---------- | ------ | ------- | --------- | ------ | ----------- | --------- |
-| Logistic Regression | Validation | 0.4736 | 0.9792  | 0.4384    | 0.5149 | 0.0350      | 0.86      |
-| Logistic Regression | Test       | 0.5790 | 0.9813  | 0.5184    | 0.6557 | 0.0422      | 0.86      |
-| LightGBM            | Validation | 0.5435 | 0.9892  | 0.4374    | 0.7177 | 0.0151      | 0.65      |
-| LightGBM            | Test       | 0.6432 | 0.9886  | 0.5385    | 0.7984 | 0.0196      | 0.65      |
+All three models achieved a 100% parse success rate — every response was valid JSON with the correct schema, so output formatting was not a failure mode. The primary errors were prediction errors, particularly around the class-imbalanced positive class. Phi-3.5-mini-instruct was the most conservative predictor (29 positive predictions vs 27 actual), producing 14 false negatives (missed 52% of compound events) and 16 false positives. In contrast, Phi-mini-MoE-instruct and gemma-3-12b-it over-predicted positive events (142 and 109 respectively), catching 70% of real events but at the cost of many false alarms (123 and 90 false positives). Confidence calibration was problematic across all models: gemma-3-12b-it reported near-identical confidence (mean 0.92, range 0.75-0.95) regardless of correctness, making its confidence scores useless for ranking. Phi-mini-MoE-instruct showed an inverted calibration pattern — higher confidence on incorrect predictions (0.81) than correct ones (0.02). Phi-3.5-mini-instruct similarly reported higher confidence when wrong (0.74) than when right (0.31), suggesting these small models cannot meaningfully self-assess prediction quality on numerical tabular data.
 
-LightGBM outperforms Logistic Regression across all metrics on both validation and test sets. On the held-out test set, LightGBM achieves an F1 of 0.6432 versus 0.5790 for LR, with notably higher recall (0.80 vs 0.66), meaning it catches 80% of compound events while maintaining 54% precision. Both models show excellent discriminative ability (AUC > 0.98), indicating they rank compound-event weeks much higher than non-event weeks. LightGBM's lower Brier score (0.020 vs 0.042) indicates better-calibrated probability estimates. Classification thresholds were optimized on the validation set to maximize F1 — the default 0.5 threshold would predict nearly all weeks as non-events given the 4% positive rate. The LR threshold (0.86) is notably higher than LightGBM's (0.65) because `class_weight="balanced"` shifts the LR probability distribution upward. We chose F1 as the primary metric because accuracy alone would be 96% by always predicting negative; AUC-ROC for threshold-independent discrimination relevant to operational decision-making; and Brier score because downstream users need well-calibrated probabilities for risk assessment under uncertainty.
+### Comparison Summary
 
-### HITL Review
+| Model                        | F1         | AUC-ROC    | Precision  | Recall     | Brier Score | Parse Rate |
+| ---------------------------- | ---------- | ---------- | ---------- | ---------- | ----------- | ---------- |
+| LightGBM (Week 3)            | **0.6441** | **0.9870** | **0.5938** | 0.7037     | **0.0200**  | —          |
+| Logistic Regression (Week 3) | 0.5283     | 0.9812     | 0.5385     | 0.5185     | 0.0415      | —          |
+| Phi-3.5-mini-instruct (LLM)  | 0.4643     | 0.8323     | 0.4483     | 0.4815     | 0.1494      | 100%       |
+| Phi-mini-MoE-instruct (LLM)  | 0.2249     | 0.7935     | 0.1338     | **0.7037** | 0.1005      | 100%       |
+| gemma-3-12b-it (LLM)         | 0.2794     | 0.3879     | 0.1743     | **0.7037** | 0.8313      | 100%       |
 
-**Does the model behavior make sense given domain expectations?** Yes. SHAP analysis shows PDSI (Palmer Drought Severity Index) as the top feature driving LightGBM predictions, with a clear threshold effect: PDSI values below approximately -1 (drought conditions) produce strongly positive SHAP values, while normal or wet conditions (PDSI > 0) push predictions toward non-events. Seasonal features rank highly, which is physically expected since compound heatwave+drought events are concentrated in summer months. The heatwave indicator HI02 has strong positive SHAP impact when active (value=1). The Logistic Regression coefficients tell a consistent story: seasonal_cos (most negative, capturing summer peak), pdsi (negative — lower PDSI means more drought means higher risk), and tmax (positive — higher temperatures increase risk) are the top three. Both models agree that drought indices and temperature/heatwave variables are the primary drivers, which aligns with the physical definition of compound heatwave+drought events.
+LightGBM decisively outperforms all three LLMs on this task. The best-performing LLM (Phi-3.5-mini-instruct) achieved F1=0.4643 versus LightGBM's 0.6441 — a 28% relative gap. The performance difference is most visible in discriminative ability: LightGBM's AUC of 0.987 means it nearly perfectly ranks compound-event weeks above non-event weeks, while even the best LLM (Phi-3.5-mini, AUC=0.832) struggles to distinguish between them. Phi-mini-MoE and gemma-3-12b-it achieved high recall (0.70, matching LightGBM) but at the cost of precision collapsing to 0.13-0.17, meaning ~85% of their positive predictions were false alarms. Gemma's AUC of 0.39 (below random chance at 0.50) indicates its confidence scores are inversely correlated with actual risk — actively misleading. The Brier scores tell a similar story: LightGBM's well-calibrated probabilities (Brier=0.020) contrast sharply with gemma's 0.831 (near-maximum miscalibration). These results confirm that for structured numerical prediction tasks with clear decision boundaries, purpose-built ML models trained on domain data substantially outperform zero-shot LLM reasoning. The LLMs' strength lies in their ability to attempt the task with no training data at all — Phi-3.5-mini achieved a reasonable F1 of 0.46 purely from prompt-based reasoning about feature descriptions, which would be a useful starting point when labeled data is unavailable. However, once labeled data exists, ML models are the clear choice for operational compound hazard forecasting.
 
-**Any concerning spurious correlations?** BCOC (black carbon + organic carbon aerosol concentration) ranks 6th in LightGBM feature importance, which warrants scrutiny. BCOC is an indicator of biomass burning aerosols — it could be detecting co-occurring wildfire smoke during hot, dry conditions rather than causally driving compound events. This is likely a correlational signal (fires happen when it's hot and dry) rather than a causal one. In a deployment scenario, BCOC might not be available as a real-time predictor 1-2 weeks ahead, so this dependency should be monitored. Fire variables (FHS_c9, BA_km2, maxFRP_c9) rank at the bottom, suggesting the model is not using concurrent fire activity as a shortcut — the BCOC signal appears to capture a different, more diffuse aerosol pattern.
-
-**Any high-risk failure modes?** The most concerning failure mode is performance during low-event years. The validation set (2016-2017) has only a 1.41% positive rate compared to the training set's 4.72%, and the test set sits at 2.65%. While the model handles this variation well (test F1 actually exceeds validation F1, likely because 2018 and 2020 have more typical event rates), 2019 specifically had only 0.36% compound events — the lowest in the entire 20-year record. The model likely over-predicts in such anomalous years, generating false alarms. Additionally, the model treats each grid cell independently without explicit spatial modeling, so it cannot learn that adjacent cells tend to experience compound events simultaneously. Clustered false negatives in specific regions (e.g., transition zones between climate regimes) may indicate spatial blind spots.
-
-### Failures and Limitations
-
-The 4% class imbalance means even with class-weight balancing and threshold optimization, the model produces a non-trivial false alarm rate — on the test set, LightGBM generated 5,702 false positives alongside 6,654 true positives (precision 54%). For operational use, this 1:1 TP/FP ratio may require further threshold adjustment depending on the cost asymmetry between missed events and false alarms. Extreme low-event years like 2019 (0.36% positive rate) are poorly represented in training and may exhibit degraded precision. Spatial autocorrelation is not explicitly modeled: adjacent 0.5-degree grid cells share atmospheric conditions but are treated as independent observations, which inflates the effective sample size and may cause overly optimistic uncertainty estimates. The compound event definition uses a fixed PDSI category threshold (<=3, mild drought or worse) that may not be universally appropriate across all climate zones — arid regions in the Southwest may have structurally different drought dynamics than the humid Southeast. Our temporal features look back at most 14 days (drought_trend_14d), but drought builds over months to years; incorporating longer-horizon antecedent conditions (e.g., 90-day or seasonal PDSI trend) could improve lead-time prediction. Finally, the 20-year record (2001-2020) may be insufficient to capture decadal oscillation patterns (e.g., PDO, AMO) that modulate compound event frequency.
-
-### Reproducibility Steps
-
-First create a directory named "dataset" at root, within it have the "ComExDBM_CONUS" dataset.
+### Repeatability Steps
 
 ```bash
-# From the repository root:
+# 1. Prepare the test subset (run from repo root, requires Week 2/3 data):
 source .venv/Scripts/activate
-uv pip install -r zero-shot-hopefuls/requirements.txt
-         # ~5 min: exports CSV, JSON, data dictionary
+python zero-shot-hopefuls/Scripts/prepare_llm_subset.py
 
-# Week 3 pipeline (requires Week 2 outputs):
-python zero-shot-hopefuls/Scripts/train.py                 # ~5 min: splits data, trains LR + LightGBM, saves models
-python zero-shot-hopefuls/Scripts/evaluate.py              # ~1 min: optimizes thresholds, evaluates on test set
-python zero-shot-hopefuls/Scripts/interpretability.py      # ~2 min: SHAP analysis, feature importance, visualizations
+# 2. Run the benchmark notebook on JupyterHub:
+#    - Log in to https://rcjh.pnl.gov/ (username: first_name.last_name)
+#    - Activate the ai_comp conda environment
+#    - Open zero-shot-hopefuls/Notebooks/llm_benchmark.ipynb
+#    - Run all cells (Steps 1-4 work offline; Steps 5-10 require LLM endpoints)
 ```
+
+**Role of AI:** Claude (Anthropic) was used to generate the benchmark notebook, data preparation script, prompt templates, and README sections. All AI-generated code is cited in comments. Claude also assisted with prompt design strategy, feature presentation approach for tabular data, and error analysis framework. All AI-generated code was reviewed by the team.
+
+---
 
 **Role of AI:** Claude (Anthropic) was used to generate the training, evaluation, and interpretability scripts, with each AI-generated section cited in code comments. Claude also assisted with split strategy design, feature selection rationale (leakage analysis), metric selection justification, and HITL review framing. All AI-generated code was reviewed by the team.
 
@@ -51,29 +46,16 @@ python zero-shot-hopefuls/Scripts/interpretability.py      # ~2 min: SHAP analys
 
 ```
 zero-shot-hopefuls/
-  Data/
-    original_sample.csv                        # 1,000-row raw daily data sample
-    cleaned_compound_hazard_weekly.csv         # Cleaned dataset (2019-2020 subset, CSV format)
-    cleaned_compound_hazard_weekly.json        # Cleaned dataset (10K-row sample, JSON format)
-    data_dictionary.json                       # Feature dictionary with descriptions and sources
-    splits_indexed.csv                         # Train/val/test split assignments for every row
-  Models/
-    logistic_regression.pkl                    # Trained LR model + StandardScaler
-    lightgbm.pkl                               # Trained LightGBM model (best hyperparameters)
   Scripts/
-    01_load_and_merge.py                       # Load 4 NetCDF sources, merge, save daily data
-    02_clean_and_engineer.py                   # Clean, engineer 7 features, aggregate weekly
-    03_export.py                               # Export to CSV, JSON, data dictionary
-    train.py                                   # Chronological split, train LR + LightGBM, tune hyperparameters
-    evaluate.py                                # Threshold optimization, test-set evaluation, results CSV
-    interpretability.py                        # SHAP analysis, feature importance, visualization generation
-  Visualizations/
-    lr_coefficients.png                        # Logistic Regression standardized coefficients
-    lgb_feature_importance.png                 # LightGBM gain-based feature importance
-    lgb_shap_summary.png                       # SHAP beeswarm plot for LightGBM
-    lgb_shap_dependence_top.png                # SHAP dependence plot for top feature (pdsi)
-  Outputs/
-    ml_results.csv                             # Model performance metrics (F1, AUC, precision, recall, Brier)
+    prepare_llm_subset.py                      # Week 4: Sample test subset and generate ML baselines
+  Notebooks/
+    llm_benchmark.ipynb                        # Week 4: LLM benchmarking notebook (run on JupyterHub)
+  Prompts/
+    prompt_template.txt                        # Week 4: Final prompt template for LLM queries
+    few_shot_samples.json                      # Week 4: 5 labeled examples from training set
+  Results/
+    {model_name}_results_clean_{iter}.csv      # Week 4: Per-model clean results
+    {model_name}_results_raw_{iter}.csv        # Week 4: Per-model raw results with LLM responses
   requirements.txt                             # Python environment dependencies
   README.md                                    # This file
 ```
