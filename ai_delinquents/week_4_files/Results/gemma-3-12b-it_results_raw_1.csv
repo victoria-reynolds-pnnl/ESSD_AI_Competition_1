@@ -1,0 +1,17 @@
+water_year,model_label,model_name,endpoint_port,prompt_version,observed,pred_climatology,pred_mlr,pred_xgb,raw_response,prediction_kcfs_days,parse_ok,parse_error
+2013,gemma-3-12b-it,gemma-3-12b-it,8002,v2_few_shot,45780.8,44730.55,43671.90224185053,41102.19921875,"```json
+{""prediction_kcfs_days"": 38500}
+```",38500.0,True,
+2014,gemma-3-12b-it,gemma-3-12b-it,8002,v2_few_shot,48726.0,44730.55,47019.58536425538,45512.875,"{""prediction_kcfs_days"": 42500}",42500.0,True,
+2015,gemma-3-12b-it,gemma-3-12b-it,8002,v2_few_shot,31185.1,44730.55,35654.29212248327,43329.171875,"```json
+{""prediction_kcfs_days"": 38523}
+```",38523.0,True,
+2016,gemma-3-12b-it,gemma-3-12b-it,8002,v2_few_shot,41470.7,44730.55,46548.38585034403,45824.9921875,"```json
+{""prediction_kcfs_days"": 42350}
+```",42350.0,True,
+2017,gemma-3-12b-it,gemma-3-12b-it,8002,v2_few_shot,57104.3,44730.55,57556.880296067415,57363.765625,"```json
+{""prediction_kcfs_days"": 52345}
+```",52345.0,True,
+2018,gemma-3-12b-it,gemma-3-12b-it,8002,v2_few_shot,52976.8,44730.55,46320.73981313551,47529.94921875,"```json
+{""prediction_kcfs_days"": 42500}
+```",42500.0,True,
