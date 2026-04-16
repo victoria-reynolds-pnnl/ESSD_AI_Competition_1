@@ -1,0 +1,7 @@
+water_year,model_label,model_name,endpoint_port,prompt_version,observed,pred_mlr,pred_xgb,prediction_kcfs_days,parse_ok,parse_error
+2013,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,45780.8,43671.90224185053,41102.19921875,35000.0,True,
+2014,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,48726.0,47019.58536425538,45512.875,45000.0,True,
+2015,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,31185.1,35654.29212248327,43329.171875,35000.0,True,
+2016,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,41470.7,46548.38585034403,45824.9921875,45000.0,True,
+2017,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,57104.3,57556.880296067415,57363.765625,45000.0,True,
+2018,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,52976.8,46320.73981313551,47529.94921875,45000.0,True,
