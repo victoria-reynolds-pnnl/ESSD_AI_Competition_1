@@ -1,0 +1,23 @@
+[
+  {
+    "input_text": "Flow rate: 1200.0 cfs, 21-day rolling average: 1100.00 cfs",
+    "output_json": {
+      "prediction": "Low",
+      "confidence": 0.91
+    }
+  },
+  {
+    "input_text": "Flow rate: 15000.0 cfs, 21-day rolling average: 13500.00 cfs",
+    "output_json": {
+      "prediction": "High",
+      "confidence": 0.95
+    }
+  },
+  {
+    "input_text": "Flow rate: 6460.0 cfs, 21-day rolling average: 6460.00 cfs",
+    "output_json": {
+      "prediction": "Medium",
+      "confidence": 0.88
+    }
+  }
+]
