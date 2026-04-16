@@ -9,8 +9,9 @@ Track iterations for every prompt
 
 
 # Repeatability steps
+To reproduce results using JupyterHub:
 
-
-# Results CSV (per LLM tested) - add csvs to Results dir and remove this block
-### include prompt per LLM, raw outputs, parsed predictions
-### 1 csv per LLM
+1. Upload data files (`data_cleaned_split.csv` and `arima_arimax.csv`) located in `evergreen_analyzers/Notebooks/week3_artifacts` to jupyterhub root
+2. Run all cells in order starting at Step 1
+3. Change `ITERATION_NUMBER` in Step 2 to track different runs
+4. Results will be saved to `ROOT / Results` and Prompts will be saved to `ROOT / Prompts`
