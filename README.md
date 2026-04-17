@@ -1,10 +1,67 @@
-# Dataset links
 
-| Name | Format | Time range (Years) | Link |
-| --- | --- | --- | --- |
-| DEMO-FTES Test 1: Water Flow, Pressure, Temperature, and Electrical Conductivity Data | CSV (plus DOCX metadata) | 2024-2025 | https://gdr.openei.org/submissions/1730 |
-| USGS Water Data for Washington (water conditions and monitoring locations) | Web portal (various data types) | Varies (site dependent) | https://waterdata.usgs.gov/state/Washington/ |
-| Combined wildfire datasets for the United States and certain territories, 1800s-Present (combined wildland fire polygons) | Geospatial polygons | 1835-2020 | https://data.usgs.gov/datacatalog/data/USGS:61aa537dd34eb622f699df81 |
-| Heat wave and cold snap event library under various technical choices for NERC subregions in the conterminous U.S. | CSV | 44 | https://data.pnnl.gov/group/nodes/dataset/34393 |
-| An Inventory of AI-ready Benchmark Data for US Fires, Heatwaves, and Droughts | CSV | 20 | https://data.pnnl.gov/group/nodes/dataset/33650 |
-| Simulated wildfire burned area over the CONUS | CSV | 20 | https://data.pnnl.gov/group/nodes/dataset/34052 |
+# 📊 Project Presentation Guidelines & Schedule
+
+## 📌 Presentation Requirements
+
+### Problem Framing
+- Clear definition of:
+  - Task
+  - Goals
+  - Success criteria
+
+### Methodology
+- Data preprocessing
+- Data splitting strategy
+- Model selection
+
+### Results
+- Performance metrics on held-out test set
+- Supporting tables and visualizations
+
+### ML vs LLM Comparison
+- Fair comparison using the same data and evaluation metrics
+- Tradeoffs in:
+  - Performance
+  - Robustness
+  - Effort
+
+### Interpretability & Limitations
+- Key drivers of predictions
+- Biases, risks, and assumptions
+
+### Learning Outcomes
+- Key insights gained at each stage of the project
+
+---
+
+## ⏰ Presentation Logistics
+
+- There is only a **1-minute transition** between presentations  
+- Please **join early** to avoid delays  
+- For rescheduling, contact **Victoria Reynolds**
+
+---
+
+## 📅 Presentation Schedule
+
+### 🗓️ Friday — April 24, 2026
+
+| Team            | Time               |
+|-----------------|-------------------|
+| AI Delinquents  | 10:05 AM – 10:15 AM |
+| byteMe          | 10:16 AM – 10:26 AM |
+| Data Duelists   | 10:27 AM – 10:37 AM |
+| TRACK           | 10:38 AM – 10:48 AM |
+| majik_phi       | 10:49 AM – 10:59 AM |
+
+---
+
+### 🗓️ Monday — April 27, 2026
+
+| Team                          | Time               |
+|--------------------------------|-------------------|
+| Sub-Terra Tensor Tinkerers     | 10:05 AM – 10:15 AM |
+| SubSignal                      | 10:16 AM – 10:26 AM |
+| Terra Trenders                 | 10:27 AM – 10:37 AM |
+| Evergreen Analyzers            | 10:38 AM – 10:48 AM |
+| zero-shot-hopefuls             | 10:49 AM – 10:59 AM |
