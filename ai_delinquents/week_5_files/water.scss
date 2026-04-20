@@ -1,0 +1,99 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$presentation-heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$presentation-heading-color: #0d4c73;
+$body-bg: #f4f9fd;
+$body-color: #1a2634;
+$link-color: #1565c0;
+$selection-bg: #b3d9f7;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.25em;
+$code-block-bg: #e8f4fd;
+
+/*-- scss:rules --*/
+
+/* Title slide — deep ocean gradient */
+.reveal .slides section.title-slide,
+.reveal .title-slide {
+  background: linear-gradient(150deg, #063a5c 0%, #1a7ab5 55%, #4fb3e8 100%) !important;
+}
+.reveal .title-slide h1,
+.reveal .title-slide h2,
+.reveal .title-slide .subtitle,
+.reveal .title-slide .author,
+.reveal .title-slide .date,
+.reveal .title-slide p {
+  color: #ffffff !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+/* Slide headings with teal underline */
+.reveal h2 {
+  color: #0d4c73;
+  border-bottom: 3px solid #4fb3e8;
+  padding-bottom: 0.15em;
+}
+
+/* Progress bar */
+.reveal .progress {
+  height: 5px;
+}
+.reveal .progress span {
+  background: linear-gradient(90deg, #1a7ab5, #4fb3e8);
+}
+
+/* Footer */
+.reveal .footer {
+  color: #5a8fa8;
+  font-size: 0.45em;
+}
+
+/* Slide number */
+.reveal .slide-number {
+  color: #4a7fa5;
+  background: rgba(255,255,255,0.7);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* Table styling */
+.reveal table thead th {
+  background-color: #1a7ab5;
+  color: #ffffff;
+}
+.reveal table tr:nth-child(even) {
+  background-color: #e8f4fd;
+}
+.reveal table {
+  border-collapse: collapse;
+  font-size: 0.85em;
+}
+.reveal table td, .reveal table th {
+  padding: 4px 10px;
+}
+
+/* Bold text in deep blue */
+.reveal strong {
+  color: #0d4c73;
+}
+
+/* Code blocks */
+.reveal pre {
+  background: #e8f4fd;
+  border-left: 4px solid #4fb3e8;
+  box-shadow: none;
+}
+
+/* Subtle wave accent on regular slides via bottom border */
+.reveal .slides section:not(.title-slide) {
+  border-bottom: 2px solid #d0eaf8;
+}
+
+/* Callout-style highlight box */
+.reveal .callout {
+  background: #d0eaf8;
+  border-left: 4px solid #1a7ab5;
+  padding: 0.4em 0.8em;
+  border-radius: 4px;
+  margin-top: 0.5em;
+}

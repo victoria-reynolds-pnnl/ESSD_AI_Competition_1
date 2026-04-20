@@ -9,7 +9,7 @@
 <link href="presentation_files/libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.36">
 
-  <meta name="author" content="Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo">
+  <meta name="author" content="Cameron Bracken, Stefan Rose, Amanda Lawter, Matt Sturtevant, Jana Simo">
   <meta name="dcterms.date" content="2026-04-20">
   <title>Columbia River Basin Water Supply Forecasting</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-29a23eb107db9ba47863dad3a155616d.css">
+  <link rel="stylesheet" href="presentation_files/libs/revealjs/dist/theme/quarto-eb761abdc33f4f736a5f5f921c09e8ff.css">
   <link href="presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="presentation_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -135,7 +135,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Columbia River Basin Water Supply Forecasting</h1>
-  <p class="subtitle">AI Delinquents | ESSD AI Competition 2025</p>
+  <p class="subtitle">AI Delinquents | ESSD AI Competition 2026</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -154,9 +154,9 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 <div class="column" style="width:50%;">
 <p><strong>Why it matters</strong></p>
 <ul>
-<li>Snowmelt-driven Columbia Basin supplies hydropower, agriculture, and municipal water for the Pacific Northwest</li>
-<li>Forecasts issued each April 1 inform reservoir operations for the coming summer</li>
-<li>Existing NRCS/NWRFC forecasts use statistical methods — can ML improve on them?</li>
+<li>Columbia Basin snowmelt drives hydropower, agriculture, and municipal water across the PNW</li>
+<li>April 1 forecasts inform summer reservoir operations</li>
+<li>Can ML improve on existing NRCS/NWRFC statistical forecasts?</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p><strong>Success criteria</strong></p>
@@ -174,7 +174,7 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 </tr>
 <tr class="even">
 <td>RMSE</td>
-<td>&lt; 8,488 kcfs-days (beat climatology)</td>
+<td>&lt; 8,488 kcfs-days</td>
 </tr>
 <tr class="odd">
 <td>Skill score</td>
@@ -182,7 +182,7 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 </tr>
 </tbody>
 </table>
-<p><strong>Target variable:</strong> Apr–Sep naturalized flow volume (kcfs-days) <strong>Forecast window:</strong> Conditions known by April 1</p>
+<p><strong>Target:</strong> Apr–Sep naturalized flow (kcfs-days) <strong>Forecast date:</strong> April 1</p>
 </div></div>
 <aside class="notes">
 <p>Stefan or Cameron — set the scene. The Dalles is the most important control point on the Columbia River. Naturalized flow removes reservoir regulation effects so we’re modeling the basin’s actual water supply, not what operators decided to release. Our success bar was simply: beat the climatology (historical average) on the held-out test set.</p>
@@ -202,7 +202,7 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 <h2>Data &amp; Key Predictors</h2>
 <div class="columns">
 <div class="column" style="width:48%;">
-<p><strong>Four data sources → 7 features</strong></p>
+<p><strong>Four sources → 7 features</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -218,12 +218,12 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 <td><strong>0.79</strong></td>
 </tr>
 <tr class="even">
-<td>Jan–Mar mean flow (cfs)</td>
+<td>Jan–Mar mean flow</td>
 <td>BPA natural flow</td>
 <td>0.56</td>
 </tr>
 <tr class="odd">
-<td>Oct–Mar volume (kcfs-days)</td>
+<td>Oct–Mar volume</td>
 <td>BPA natural flow</td>
 <td>0.55</td>
 </tr>
@@ -244,17 +244,17 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 </tr>
 </tbody>
 </table>
-<p>34 complete water years (WY 1985–2018)</p>
+<p>34 water years (WY 1985–2018)</p>
 </div><div class="column" style="width:52%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../week_3_files/visualizations/eda_plots/04_swe_vs_target_enso.png"></p>
-<figcaption>Snowpack is the dominant predictor. La Niña years (blue) consistently produce higher runoff at a given SWE level than El Niño years (red).</figcaption>
+<p><img data-src="presentation_figures/04_swe_vs_target_enso.png"></p>
+<figcaption>La Niña years (blue) produce higher runoff than El Niño years (red) at the same SWE — ENSO modulates snowpack’s effect.</figcaption>
 </figure>
 </div>
 </div></div>
 <aside class="notes">
-<p>Amanda or Jana — highlight that we used naturalized (BPA modified) flow, not observed regulated flow. The scatter plot shows the two key signals: snowpack (r = 0.79) and ENSO phase. La Niña winters enhance Pacific Northwest precipitation; El Niño suppresses it — the vertical spread at any SWE value reflects that teleconnection. This guided our feature engineering choices.</p>
+<p>Amanda or Jana — we used naturalized (BPA modified) flow, not observed regulated flow. The scatter plot shows the two key signals: snowpack (r = 0.79) and ENSO phase. La Niña winters enhance PNW precipitation; El Niño suppresses it. This guided our feature engineering choices.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -275,14 +275,14 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 <p></p><figure class=""><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-  A[Raw Data\n4 sources] --&gt; B[Clean &amp; QA/QC\n02_clean_data.py]
-  B --&gt; C[Feature Engineering\n03_feature_engineering.py]
+  A[Raw Data\n4 sources] --&gt; B[Clean &amp; QA/QC]
+  B --&gt; C[Feature Engineering]
   C --&gt; D{Temporal Split}
   D --&gt;|WY 1985–2012\n28 years| E[Train/Val\nLOYO CV]
   D --&gt;|WY 2013–2018\n6 years| F[Test\nheld out]
-  E --&gt; G[Tune XGBoost\noptuna 50 trials]
-  E --&gt; H[Fit MLR\nStandardScaler]
-  G --&gt; I[Evaluate\non test set]
+  E --&gt; G[Tune XGBoost\noptuna]
+  E --&gt; H[Fit MLR]
+  G --&gt; I[Evaluate]
   H --&gt; I
 </pre>
 </div>
@@ -290,9 +290,9 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 </div>
 </div>
 </div>
-<p><strong>Leakage prevention:</strong> Temporal split only — no future data used in training. Hyperparameter tuning done inside LOYO folds on training years only. Test set locked until final evaluation.</p>
+<p><strong>Leakage prevention:</strong> Temporal split + hyperparameter tuning inside LOYO folds only. Test set locked until final evaluation.</p>
 <aside class="notes">
-<p>Matt — walk through the pipeline. The key design decision is the temporal split: we held out the 6 most recent years (2013–2018) as a true holdout. Leave-One-Year-Out cross-validation within the training set tuned XGBoost hyperparameters without ever seeing the test years. This mirrors how operational forecasts work — you never have future data.</p>
+<p>Matt — the key design decision is the temporal split: we held out the 6 most recent years as a true holdout. Leave-One-Year-Out CV within training tuned XGBoost hyperparameters without ever touching the test years. This mirrors how operational forecasts work.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -308,15 +308,15 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 <section id="ml-results" class="slide level2">
 <h2>ML Results</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
+<div class="column" style="width:58%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../week_3_files/visualizations/obs_vs_pred_timeseries.png"></p>
-<figcaption>MLR closely tracks observed volumes across 34 years. XGBoost prediction intervals (blue band) provide uncertainty quantification but undercover at ~67%.</figcaption>
+<p><img data-src="presentation_figures/obs_vs_pred_timeseries.png"></p>
+<figcaption>MLR tracks observations closely; XGBoost prediction intervals (blue band) undercover at ~67% vs 80% target.</figcaption>
 </figure>
 </div>
-</div><div class="column" style="width:45%;">
-<p><strong>Test set performance (WY 2013–2018)</strong></p>
+</div><div class="column" style="width:42%;">
+<p><strong>Test set (WY 2013–2018)</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -343,11 +343,11 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 </tr>
 </tbody>
 </table>
-<p><strong>MLR outperforms XGBoost</strong> — expected with n=34. Linear relationships dominate at this sample size; XGBoost’s nonlinear capacity is a liability without more data.</p>
-<p>LOYO CV NSE: MLR = 0.69, XGBoost = 0.44 — consistent with test set, no overfitting signal.</p>
+<p><strong>MLR wins</strong> — with n=34, linear relationships dominate. XGBoost needs more data to exploit nonlinearities.</p>
+<p>LOYO CV consistent: MLR = 0.69, XGBoost = 0.44.</p>
 </div></div>
 <aside class="notes">
-<p>Cameron — the headline finding is that the simple linear model won. This is physically reasonable: Apr 1 SWE is linearly correlated with spring runoff (r = 0.79). XGBoost would likely outperform MLR with a longer training record. The prediction intervals from XGBoost quantile regression have ~67% coverage vs the 80% target — the model is somewhat overconfident.</p>
+<p>Cameron — the simple linear model won. Physically reasonable: Apr 1 SWE is linearly correlated with spring runoff (r = 0.79). XGBoost would likely outperform MLR with a longer training record. PI undercoverage reflects mild overconfidence in the quantile models.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -366,21 +366,21 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 <div class="column" style="width:52%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../week_3_files/visualizations/feature_importance.png"></p>
-<figcaption>Antecedent flow conditions (Jan–Mar Q, Oct–Mar volume) top the importance ranking — reflecting that early-season runoff integrates temperature, precipitation, and snowmelt signals that are only partially captured by Apr 1 SWE alone.</figcaption>
+<p><img data-src="presentation_figures/feature_importance.png"></p>
+<figcaption>Antecedent flow conditions top the ranking — early-season runoff integrates temperature, precip, and melt that SWE alone misses.</figcaption>
 </figure>
 </div>
 </div><div class="column" style="width:48%;">
 <p><strong>What the model learned</strong></p>
 <ul>
-<li><strong>Antecedent flow</strong> (Jan–Mar, Oct–Mar) ranked highest — captures early snowmelt and baseflow that SWE alone misses</li>
-<li><strong>Apr 1 SWE</strong> still central — both raw inches and anomaly % appear, reflecting scale and departure from median</li>
-<li><strong>Climate indices</strong> (PDO, PNA, Nino3.4) provide secondary modulation — the ENSO scatter plot pattern is reflected here</li>
+<li><strong>Antecedent flow</strong> (Jan–Mar, Oct–Mar) ranked highest — integrates early snowmelt and base flow</li>
+<li><strong>Apr 1 SWE</strong> central — both raw inches and anomaly % matter</li>
+<li><strong>Climate indices</strong> secondary — PDO/PNA/ENSO modulate but don’t dominate</li>
 </ul>
-<p><strong>Physical check:</strong> Rankings align with operational forecaster intuition. No spurious features.</p>
+<p><strong>Physical check:</strong> Rankings match operational forecaster intuition. No spurious features.</p>
 </div></div>
 <aside class="notes">
-<p>Stefan — the feature importance is physically interpretable, which is a good sign. Operational NRCS forecasters weight snowpack heavily but also use antecedent flow as a quality check on snowpack accumulation. The fact that Jan–Mar flow tops the list makes sense: by Jan–Mar you have more current information than the Oct–Mar integral.</p>
+<p>Stefan — the feature importance is physically interpretable. NRCS operational forecasters weight snowpack heavily but use antecedent flow as a quality check. Jan–Mar flow tops the list because by Jan–Mar you have more current information than the Oct–Mar integral captures.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -393,12 +393,11 @@ Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
           display:block!important;
       }</style></aside>
 </section>
-<section id="llm-benchmarking-approach" class="slide level2">
-<h2>LLM Benchmarking Approach</h2>
+<section id="llm-benchmarking" class="slide level2">
+<h2>LLM Benchmarking</h2>
 <p><strong>Can a general-purpose LLM predict streamflow volume from a text description of predictors?</strong></p>
 <div class="columns">
 <div class="column" style="width:55%;">
-<p><strong>Prompt design</strong></p>
 <pre><code>You are a hydrologist forecasting seasonal water supply.
 Given conditions for a water year, predict the total
 April–September naturalized streamflow volume.
@@ -407,14 +406,13 @@ Rules:
 - Return ONLY: {"prediction_kcfs_days": &lt;number&gt;}
 - Typical range: 28,000–71,000 kcfs-days
 
-Water year 2013 conditions:
+Water year 2013:
 - Apr 1 SWE: 25.2 inches (−12% vs median)
 - DJF Nino3.4: −0.43 (La Niña)
-- Jan–Mar mean flow: 103,131 cfs
-...</code></pre>
+- Jan–Mar flow: 103,131 cfs ...</code></pre>
 <ul>
-<li><strong>v1:</strong> Zero-shot (format constraint only)</li>
-<li><strong>v2:</strong> 3 few-shot examples (dry/median/wet training years)</li>
+<li><strong>v1:</strong> Zero-shot</li>
+<li><strong>v2:</strong> 3 few-shot examples (dry / median / wet)</li>
 </ul>
 </div><div class="column" style="width:45%;">
 <p><strong>Three endpoints tested</strong></p>
@@ -422,33 +420,33 @@ Water year 2013 conditions:
 <thead>
 <tr class="header">
 <th>Model</th>
-<th>Size</th>
+<th>Params</th>
 <th>Port</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Phi-3.5-mini-instruct</td>
+<td>Phi-3.5-mini</td>
 <td>~3.8B</td>
 <td>8000</td>
 </tr>
 <tr class="even">
-<td>Phi-mini-MoE-instruct</td>
+<td>Phi-mini-MoE</td>
 <td>~7B</td>
 <td>8001</td>
 </tr>
 <tr class="odd">
-<td>gemma-3-12b-it</td>
+<td>gemma-3-12b</td>
 <td>12B</td>
 <td>8002</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Same test split as Week 3</strong> WY 2013–2018, n = 6</p>
-<p><strong>Parse success: 100%</strong> Strict JSON format worked on every query</p>
+<p>Same test split as Week 3 (WY 2013–2018)</p>
+<p><strong>Parse success: 100%</strong> Strict JSON worked on every query</p>
 </div></div>
 <aside class="notes">
-<p>Matt or Amanda — the key challenge here was adapting a classification tutorial to a regression task. We had to design the prompt to elicit a specific numeric prediction, not a label. The 100% parse success rate validated the prompt format design. We tested both zero-shot and few-shot, then selected the better-performing version per model for the final benchmark.</p>
+<p>Matt or Amanda — the core challenge was adapting a classification tutorial to regression. 100% parse success validated the prompt design. We tested zero-shot vs few-shot, then used the better-performing version per model for the final benchmark.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -464,8 +462,8 @@ Water year 2013 conditions:
 <section id="ml-vs-llm-results" class="slide level2">
 <h2>ML vs LLM: Results</h2>
 
-<img data-src="../week_4_files/Results/llm_vs_ml_comparison_1.png" class="r-stretch"><div class="columns">
-<div class="column" style="width:60%;">
+<img data-src="presentation_figures/llm_vs_ml_comparison_1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"><div class="columns">
+<div class="column" style="width:55%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -477,7 +475,7 @@ Water year 2013 conditions:
 </thead>
 <tbody>
 <tr class="odd">
-<td>MLR</td>
+<td><strong>MLR</strong></td>
 <td>ML</td>
 <td><strong>0.77</strong></td>
 <td><strong>4,034</strong></td>
@@ -489,7 +487,7 @@ Water year 2013 conditions:
 <td>6,170</td>
 </tr>
 <tr class="odd">
-<td>gemma-3-12b-it</td>
+<td>gemma-3-12b</td>
 <td>LLM</td>
 <td>0.33</td>
 <td>6,817</td>
@@ -503,18 +501,18 @@ Water year 2013 conditions:
 <tr class="odd">
 <td>Phi-mini-MoE</td>
 <td>LLM</td>
-<td><strong>−0.57</strong></td>
-<td><strong>10,472</strong></td>
+<td>−0.57</td>
+<td>10,472</td>
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:40%;">
-<p><strong>Key finding:</strong> All LLMs showed <strong>compressed prediction variance</strong> — clustering near climatology regardless of input</p>
-<p>WY 2017 (wet): MLR predicted 57,557 vs observed 57,104. Phi-mini-MoE predicted 40,000.</p>
-<p>Phi-mini-MoE was the only model <em>worse than predicting the mean every year</em></p>
+</div><div class="column" style="width:45%;">
+<p><strong>Dominant failure mode:</strong> LLMs regress to the mean — Phi-3.5-mini returned exactly 45,000 kcfs-days on 4 of 6 years</p>
+<p><strong>WY 2017 (wet year):</strong> MLR: 57,557 ✓ · Phi-mini-MoE: 40,000 ✗</p>
+<p>Phi-mini-MoE was the <strong>only model worse than climatology</strong></p>
 </div></div>
 <aside class="notes">
-<p>Cameron — this is the headline slide. The left panel of the figure shows the flat-line behavior of the Phi models — they barely respond to the strong 2017 signal. Gemma is the best LLM by far (12B parameters vs ~4-7B for Phi), suggesting model scale matters more than prompt engineering for this task. Note that gemma still beat XGBoost — so a large general LLM can partially compete with a tuned ML model.</p>
+<p>Cameron — the left panel shows the flat-line LLM behavior. Gemma (12B) substantially outperforms the Phi models, suggesting model scale matters more than prompt engineering for this task. Even gemma still beat XGBoost — so a capable LLM can partially compete with a tuned ML model.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -531,27 +529,26 @@ Water year 2013 conditions:
 <h2>Limitations &amp; Risks</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Model limitations</strong></p>
+<p><strong>ML</strong></p>
 <ul>
-<li><strong>Small training set (n=28):</strong> XGBoost constrained by data volume; MLR dominates</li>
-<li><strong>Short test window (n=6):</strong> Single anomalous year shifts NSE by ±0.1–0.2</li>
-<li><strong>XGBoost PI undercoverage:</strong> ~67% vs 80% target — overconfident intervals</li>
-<li><strong>No future climate:</strong> Models assume stationarity; climate change may shift the SWE–runoff relationship</li>
+<li>Small training set (n=28) — limits XGBoost</li>
+<li>Short test window (n=6) — one year swings NSE ±0.15</li>
+<li>PI undercoverage (~67% vs 80% target)</li>
+<li>Stationarity assumption — climate change may shift SWE–runoff relationships</li>
 </ul>
-<p><strong>WY 2015 — hardest year</strong></p>
-<p>Record drought (−51% SWE, strong El Niño). <em>Every</em> model missed it. True: 31,185; Best prediction: Phi-mini-MoE at 30,000 (likely coincidental).</p>
+<p><strong>WY 2015 — worst miss for all models</strong> Record drought, −51% SWE, strong El Niño. Every model predicted 30–44k; observed: 31k.</p>
 </div><div class="column" style="width:50%;">
-<p><strong>LLM-specific limitations</strong></p>
+<p><strong>LLM</strong></p>
 <ul>
-<li><strong>Regression to the mean:</strong> LLMs anchor near climatology — they lack a learned feature-to-volume mapping</li>
-<li><strong>Numeric reasoning:</strong> Numbers are tokens, not quantities — proportional scaling to extremes is unreliable</li>
-<li><strong>Not fine-tuned:</strong> General-purpose models with no exposure to Columbia Basin hydrology</li>
-<li><strong>Prompt version confound:</strong> Zero-shot was better for Phi-3.5-mini; few-shot better for larger models — comparison not fully controlled</li>
+<li>Compressed variance — anchors near climatology regardless of inputs</li>
+<li>Numbers are tokens, not quantities — extremes unreliable</li>
+<li>Not domain-fine-tuned</li>
+<li>Zero-shot better for small models; few-shot better for large — confounds comparison</li>
 </ul>
-<p><strong>Next steps:</strong> Longer training record (BPA extends to WY 1929), fine-tuned LLM, sub-basin disaggregation</p>
+<p><strong>Next steps</strong> Extend training record to WY 1929 · Fine-tune LLM · Sub-basin forecasts</p>
 </div></div>
 <aside class="notes">
-<p>Jana or Stefan — be honest about limitations. The WY 2015 miss is the most important failure case operationally — that year caught everyone off guard, including NRCS. The LLM limitation around numeric reasoning is a fundamental one, not a prompt design problem. Domain-specific fine-tuning would likely close much of the gap.</p>
+<p>Jana or Stefan — WY 2015 is the most important failure operationally — it caught NRCS off-guard too. The LLM numeric reasoning limitation is structural, not a prompt problem. Fine-tuning on BPA/SNOTEL data would likely close much of the gap.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -568,15 +565,15 @@ Water year 2013 conditions:
 <h2>What We Learned</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Modeling</strong> Simple models win with small data. MLR outperformed XGBoost because 34 water years isn’t enough to exploit nonlinear interactions. Model selection must match sample size.</p>
-<p><strong>Data</strong> Naturalized flow data was essential — regulated flow would have added noise from operator decisions. Feature engineering (SWE anomaly, DJF indices) added more predictive value than raw inputs alone.</p>
-<p><strong>ML vs LLM</strong> LLMs are impressive generalists but poor tabular regressors. Parse reliability was perfect; prediction accuracy was not. Model scale mattered more than prompt engineering.</p>
+<p><strong>Modeling</strong> Simple beats complex at small n — match model choice to data volume</p>
+<p><strong>Data</strong> Naturalized flow + domain-driven feature engineering were the foundation</p>
+<p><strong>ML vs LLM</strong> Parse reliability: perfect. Prediction accuracy: not. Scale &gt; prompt design.</p>
 </div><div class="column" style="width:50%;">
-<p><strong>From mistakes</strong> WY 2015 exposed our biggest gap: no model handled extreme out-of-distribution inputs well. XGBoost had the <em>worst</em> miss on 2015 despite the best CV score — a reminder that CV metrics don’t guarantee robustness to extremes.</p>
-<p><strong>As a team</strong> Git branching by week kept deliverables organized across 5 members with different expertise. Reproducibility (pixi environments, seeded models, locked dependencies) paid off when re-running analyses. AI-assisted coding accelerated development but required careful domain review at every step.</p>
+<p><strong>From mistakes</strong> CV score ≠ robustness to extremes — WY 2015 humbled every model</p>
+<p><strong>As a team</strong> Weekly git branches + reproducible environments + domain review at every step made handoffs seamless</p>
 </div></div>
 <aside class="notes">
-<p>All team members — go around the room for this slide, each person speaking to one bullet. This is the culmination slide. Emphasize that the most valuable learning wasn’t the metrics — it was the process: designing a reproducible pipeline, making deliberate modeling choices, and honestly documenting where things failed.</p>
+<p>All team members — go around for one bullet each. The most valuable learning wasn’t the metrics — it was building a reproducible, defensible pipeline and being honest about where it failed.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -593,7 +590,7 @@ Water year 2013 conditions:
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>AI Delinquents | ESSD AI Competition 2025</p>
+<p>AI Delinquents | ESSD AI Competition 2026</p>
 </div>
 </div></div>
 

@@ -5,13 +5,12 @@ author: "Cameron Bracken, Stefan Rose, Matt Sturtevant, Amanda Lawter, Jana Simo
 date: today
 format:
   revealjs:
-    theme: white
+    theme: [default, water.scss]
     slide-number: true
-    logo: ""
+    progress: true
     footer: "AI Delinquents | ESSD AI Competition 2025"
     fig-align: center
     highlight-style: github
-    code-block-height: 400px
     transition: fade
     smaller: true
   pptx:
@@ -28,9 +27,9 @@ format:
 ::: {.column width="50%"}
 **Why it matters**
 
-- Snowmelt-driven Columbia Basin supplies hydropower, agriculture, and municipal water for the Pacific Northwest
-- Forecasts issued each April 1 inform reservoir operations for the coming summer
-- Existing NRCS/NWRFC forecasts use statistical methods — can ML improve on them?
+- Columbia Basin snowmelt drives hydropower, agriculture, and municipal water across the PNW
+- April 1 forecasts inform summer reservoir operations
+- Can ML improve on existing NRCS/NWRFC statistical forecasts?
 :::
 
 ::: {.column width="50%"}
@@ -39,11 +38,11 @@ format:
 | Metric | Target |
 |---|---|
 | NSE | > 0 (beat mean) |
-| RMSE | < 8,488 kcfs-days (beat climatology) |
+| RMSE | < 8,488 kcfs-days |
 | Skill score | > 0 vs climatology |
 
-**Target variable:** Apr–Sep naturalized flow volume (kcfs-days)
-**Forecast window:** Conditions known by April 1
+**Target:** Apr–Sep naturalized flow (kcfs-days)
+**Forecast date:** April 1
 :::
 
 ::::
@@ -59,28 +58,28 @@ Stefan or Cameron — set the scene. The Dalles is the most important control po
 :::: {.columns}
 
 ::: {.column width="48%"}
-**Four data sources → 7 features**
+**Four sources → 7 features**
 
 | Feature | Source | r |
 |---|---|---|
 | Apr 1 SWE anomaly (%) | NRCS SNOTEL (16 stations) | **0.79** |
-| Jan–Mar mean flow (cfs) | BPA natural flow | 0.56 |
-| Oct–Mar volume (kcfs-days) | BPA natural flow | 0.55 |
+| Jan–Mar mean flow | BPA natural flow | 0.56 |
+| Oct–Mar volume | BPA natural flow | 0.55 |
 | DJF Nino3.4 | NOAA PSL | −0.46 |
 | DJF PDO | NOAA PSL | −0.45 |
 | DJF PNA | NOAA PSL | −0.40 |
 
-34 complete water years (WY 1985–2018)
+34 water years (WY 1985–2018)
 :::
 
 ::: {.column width="52%"}
-![Snowpack is the dominant predictor. La Niña years (blue) consistently produce higher runoff at a given SWE level than El Niño years (red).](../week_3_files/visualizations/eda_plots/04_swe_vs_target_enso.png)
+![La Niña years (blue) produce higher runoff than El Niño years (red) at the same SWE — ENSO modulates snowpack's effect.](presentation_figures/04_swe_vs_target_enso.png)
 :::
 
 ::::
 
 ::: {.notes}
-Amanda or Jana — highlight that we used naturalized (BPA modified) flow, not observed regulated flow. The scatter plot shows the two key signals: snowpack (r = 0.79) and ENSO phase. La Niña winters enhance Pacific Northwest precipitation; El Niño suppresses it — the vertical spread at any SWE value reflects that teleconnection. This guided our feature engineering choices.
+Amanda or Jana — we used naturalized (BPA modified) flow, not observed regulated flow. The scatter plot shows the two key signals: snowpack (r = 0.79) and ENSO phase. La Niña winters enhance PNW precipitation; El Niño suppresses it. This guided our feature engineering choices.
 :::
 
 ---
@@ -89,21 +88,21 @@ Amanda or Jana — highlight that we used naturalized (BPA modified) flow, not o
 
 ```{mermaid}
 flowchart LR
-  A[Raw Data\n4 sources] --> B[Clean & QA/QC\n02_clean_data.py]
-  B --> C[Feature Engineering\n03_feature_engineering.py]
+  A[Raw Data\n4 sources] --> B[Clean & QA/QC]
+  B --> C[Feature Engineering]
   C --> D{Temporal Split}
   D -->|WY 1985–2012\n28 years| E[Train/Val\nLOYO CV]
   D -->|WY 2013–2018\n6 years| F[Test\nheld out]
-  E --> G[Tune XGBoost\noptuna 50 trials]
-  E --> H[Fit MLR\nStandardScaler]
-  G --> I[Evaluate\non test set]
+  E --> G[Tune XGBoost\noptuna]
+  E --> H[Fit MLR]
+  G --> I[Evaluate]
   H --> I
 ```
 
-**Leakage prevention:** Temporal split only — no future data used in training. Hyperparameter tuning done inside LOYO folds on training years only. Test set locked until final evaluation.
+**Leakage prevention:** Temporal split + hyperparameter tuning inside LOYO folds only. Test set locked until final evaluation.
 
 ::: {.notes}
-Matt — walk through the pipeline. The key design decision is the temporal split: we held out the 6 most recent years (2013–2018) as a true holdout. Leave-One-Year-Out cross-validation within the training set tuned XGBoost hyperparameters without ever seeing the test years. This mirrors how operational forecasts work — you never have future data.
+Matt — the key design decision is the temporal split: we held out the 6 most recent years as a true holdout. Leave-One-Year-Out CV within training tuned XGBoost hyperparameters without ever touching the test years. This mirrors how operational forecasts work.
 :::
 
 ---
@@ -112,12 +111,12 @@ Matt — walk through the pipeline. The key design decision is the temporal spli
 
 :::: {.columns}
 
-::: {.column width="55%"}
-![MLR closely tracks observed volumes across 34 years. XGBoost prediction intervals (blue band) provide uncertainty quantification but undercover at ~67%.](../week_3_files/visualizations/obs_vs_pred_timeseries.png)
+::: {.column width="58%"}
+![MLR tracks observations closely; XGBoost prediction intervals (blue band) undercover at ~67% vs 80% target.](presentation_figures/obs_vs_pred_timeseries.png)
 :::
 
-::: {.column width="45%"}
-**Test set performance (WY 2013–2018)**
+::: {.column width="42%"}
+**Test set (WY 2013–2018)**
 
 | Model | NSE | RMSE |
 |---|---|---|
@@ -125,15 +124,15 @@ Matt — walk through the pipeline. The key design decision is the temporal spli
 | **MLR** | **0.77** | **4,034** |
 | XGBoost | 0.46 | 6,170 |
 
-**MLR outperforms XGBoost** — expected with n=34. Linear relationships dominate at this sample size; XGBoost's nonlinear capacity is a liability without more data.
+**MLR wins** — with n=34, linear relationships dominate. XGBoost needs more data to exploit nonlinearities.
 
-LOYO CV NSE: MLR = 0.69, XGBoost = 0.44 — consistent with test set, no overfitting signal.
+LOYO CV consistent: MLR = 0.69, XGBoost = 0.44.
 :::
 
 ::::
 
 ::: {.notes}
-Cameron — the headline finding is that the simple linear model won. This is physically reasonable: Apr 1 SWE is linearly correlated with spring runoff (r = 0.79). XGBoost would likely outperform MLR with a longer training record. The prediction intervals from XGBoost quantile regression have ~67% coverage vs the 80% target — the model is somewhat overconfident.
+Cameron — the simple linear model won. Physically reasonable: Apr 1 SWE is linearly correlated with spring runoff (r = 0.79). XGBoost would likely outperform MLR with a longer training record. PI undercoverage reflects mild overconfidence in the quantile models.
 :::
 
 ---
@@ -143,36 +142,34 @@ Cameron — the headline finding is that the simple linear model won. This is ph
 :::: {.columns}
 
 ::: {.column width="52%"}
-![Antecedent flow conditions (Jan–Mar Q, Oct–Mar volume) top the importance ranking — reflecting that early-season runoff integrates temperature, precipitation, and snowmelt signals that are only partially captured by Apr 1 SWE alone.](../week_3_files/visualizations/feature_importance.png)
+![Antecedent flow conditions top the ranking — early-season runoff integrates temperature, precip, and melt that SWE alone misses.](presentation_figures/feature_importance.png)
 :::
 
 ::: {.column width="48%"}
 **What the model learned**
 
-- **Antecedent flow** (Jan–Mar, Oct–Mar) ranked highest — captures early snowmelt and baseflow that SWE alone misses
-- **Apr 1 SWE** still central — both raw inches and anomaly % appear, reflecting scale and departure from median
-- **Climate indices** (PDO, PNA, Nino3.4) provide secondary modulation — the ENSO scatter plot pattern is reflected here
+- **Antecedent flow** (Jan–Mar, Oct–Mar) ranked highest — integrates early snowmelt and base flow
+- **Apr 1 SWE** central — both raw inches and anomaly % matter
+- **Climate indices** secondary — PDO/PNA/ENSO modulate but don't dominate
 
-**Physical check:** Rankings align with operational forecaster intuition. No spurious features.
+**Physical check:** Rankings match operational forecaster intuition. No spurious features.
 :::
 
 ::::
 
 ::: {.notes}
-Stefan — the feature importance is physically interpretable, which is a good sign. Operational NRCS forecasters weight snowpack heavily but also use antecedent flow as a quality check on snowpack accumulation. The fact that Jan–Mar flow tops the list makes sense: by Jan–Mar you have more current information than the Oct–Mar integral.
+Stefan — the feature importance is physically interpretable. NRCS operational forecasters weight snowpack heavily but use antecedent flow as a quality check. Jan–Mar flow tops the list because by Jan–Mar you have more current information than the Oct–Mar integral captures.
 :::
 
 ---
 
-## LLM Benchmarking Approach
+## LLM Benchmarking
 
 **Can a general-purpose LLM predict streamflow volume from a text description of predictors?**
 
 :::: {.columns}
 
 ::: {.column width="55%"}
-**Prompt design**
-
 ```
 You are a hydrologist forecasting seasonal water supply.
 Given conditions for a water year, predict the total
@@ -182,70 +179,67 @@ Rules:
 - Return ONLY: {"prediction_kcfs_days": <number>}
 - Typical range: 28,000–71,000 kcfs-days
 
-Water year 2013 conditions:
+Water year 2013:
 - Apr 1 SWE: 25.2 inches (−12% vs median)
 - DJF Nino3.4: −0.43 (La Niña)
-- Jan–Mar mean flow: 103,131 cfs
-...
+- Jan–Mar flow: 103,131 cfs ...
 ```
 
-- **v1:** Zero-shot (format constraint only)
-- **v2:** 3 few-shot examples (dry/median/wet training years)
+- **v1:** Zero-shot
+- **v2:** 3 few-shot examples (dry / median / wet)
 :::
 
 ::: {.column width="45%"}
 **Three endpoints tested**
 
-| Model | Size | Port |
+| Model | Params | Port |
 |---|---|---|
-| Phi-3.5-mini-instruct | ~3.8B | 8000 |
-| Phi-mini-MoE-instruct | ~7B | 8001 |
-| gemma-3-12b-it | 12B | 8002 |
+| Phi-3.5-mini | ~3.8B | 8000 |
+| Phi-mini-MoE | ~7B | 8001 |
+| gemma-3-12b | 12B | 8002 |
 
-**Same test split as Week 3**
-WY 2013–2018, n = 6
+Same test split as Week 3 (WY 2013–2018)
 
 **Parse success: 100%**
-Strict JSON format worked on every query
+Strict JSON worked on every query
 :::
 
 ::::
 
 ::: {.notes}
-Matt or Amanda — the key challenge here was adapting a classification tutorial to a regression task. We had to design the prompt to elicit a specific numeric prediction, not a label. The 100% parse success rate validated the prompt format design. We tested both zero-shot and few-shot, then selected the better-performing version per model for the final benchmark.
+Matt or Amanda — the core challenge was adapting a classification tutorial to regression. 100% parse success validated the prompt design. We tested zero-shot vs few-shot, then used the better-performing version per model for the final benchmark.
 :::
 
 ---
 
 ## ML vs LLM: Results
 
-![](../week_4_files/Results/llm_vs_ml_comparison_1.png)
+![](presentation_figures/llm_vs_ml_comparison_1.png){width=90% fig-align="center"}
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="55%"}
 | Model | Type | NSE | RMSE |
 |---|---|---|---|
-| MLR | ML | **0.77** | **4,034** |
+| **MLR** | ML | **0.77** | **4,034** |
 | XGBoost | ML | 0.46 | 6,170 |
-| gemma-3-12b-it | LLM | 0.33 | 6,817 |
+| gemma-3-12b | LLM | 0.33 | 6,817 |
 | Phi-3.5-mini | LLM | 0.12 | 7,824 |
-| Phi-mini-MoE | LLM | **−0.57** | **10,472** |
+| Phi-mini-MoE | LLM | −0.57 | 10,472 |
 :::
 
-::: {.column width="40%"}
-**Key finding:**
-All LLMs showed **compressed prediction variance** — clustering near climatology regardless of input
+::: {.column width="45%"}
+**Dominant failure mode:** LLMs regress to the mean — Phi-3.5-mini returned exactly 45,000 kcfs-days on 4 of 6 years
 
-WY 2017 (wet): MLR predicted 57,557 vs observed 57,104. Phi-mini-MoE predicted 40,000.
+**WY 2017 (wet year):** MLR: 57,557 ✓ · Phi-mini-MoE: 40,000 ✗
 
-Phi-mini-MoE was the only model *worse than predicting the mean every year*
+Phi-mini-MoE was the **only model worse than climatology**
 :::
 
 ::::
 
 ::: {.notes}
-Cameron — this is the headline slide. The left panel of the figure shows the flat-line behavior of the Phi models — they barely respond to the strong 2017 signal. Gemma is the best LLM by far (12B parameters vs ~4-7B for Phi), suggesting model scale matters more than prompt engineering for this task. Note that gemma still beat XGBoost — so a large general LLM can partially compete with a tuned ML model.
+Cameron — the left panel shows the flat-line LLM behavior. Gemma (12B) substantially outperforms the Phi models, suggesting model scale matters more than prompt engineering for this task. Even gemma still beat XGBoost — so a capable LLM can partially compete with a tuned ML model.
 :::
 
 ---
@@ -255,33 +249,34 @@ Cameron — this is the headline slide. The left panel of the figure shows the f
 :::: {.columns}
 
 ::: {.column width="50%"}
-**Model limitations**
+**ML**
 
-- **Small training set (n=28):** XGBoost constrained by data volume; MLR dominates
-- **Short test window (n=6):** Single anomalous year shifts NSE by ±0.1–0.2
-- **XGBoost PI undercoverage:** ~67% vs 80% target — overconfident intervals
-- **No future climate:** Models assume stationarity; climate change may shift the SWE–runoff relationship
+- Small training set (n=28) — limits XGBoost
+- Short test window (n=6) — one year swings NSE ±0.15
+- PI undercoverage (~67% vs 80% target)
+- Stationarity assumption — climate change may shift SWE–runoff relationships
 
-**WY 2015 — hardest year**
-
-Record drought (−51% SWE, strong El Niño). *Every* model missed it. True: 31,185; Best prediction: Phi-mini-MoE at 30,000 (likely coincidental).
+**WY 2015 — worst miss for all models**
+Record drought, −51% SWE, strong El Niño.
+Every model predicted 30–44k; observed: 31k.
 :::
 
 ::: {.column width="50%"}
-**LLM-specific limitations**
+**LLM**
 
-- **Regression to the mean:** LLMs anchor near climatology — they lack a learned feature-to-volume mapping
-- **Numeric reasoning:** Numbers are tokens, not quantities — proportional scaling to extremes is unreliable
-- **Not fine-tuned:** General-purpose models with no exposure to Columbia Basin hydrology
-- **Prompt version confound:** Zero-shot was better for Phi-3.5-mini; few-shot better for larger models — comparison not fully controlled
+- Compressed variance — anchors near climatology regardless of inputs
+- Numbers are tokens, not quantities — extremes unreliable
+- Not domain-fine-tuned
+- Zero-shot better for small models; few-shot better for large — confounds comparison
 
-**Next steps:** Longer training record (BPA extends to WY 1929), fine-tuned LLM, sub-basin disaggregation
+**Next steps**
+Extend training record to WY 1929 · Fine-tune LLM · Sub-basin forecasts
 :::
 
 ::::
 
 ::: {.notes}
-Jana or Stefan — be honest about limitations. The WY 2015 miss is the most important failure case operationally — that year caught everyone off guard, including NRCS. The LLM limitation around numeric reasoning is a fundamental one, not a prompt design problem. Domain-specific fine-tuning would likely close much of the gap.
+Jana or Stefan — WY 2015 is the most important failure operationally — it caught NRCS off-guard too. The LLM numeric reasoning limitation is structural, not a prompt problem. Fine-tuning on BPA/SNOTEL data would likely close much of the gap.
 :::
 
 ---
@@ -292,25 +287,25 @@ Jana or Stefan — be honest about limitations. The WY 2015 miss is the most imp
 
 ::: {.column width="50%"}
 **Modeling**
-Simple models win with small data. MLR outperformed XGBoost because 34 water years isn't enough to exploit nonlinear interactions. Model selection must match sample size.
+Simple beats complex at small n — match model choice to data volume
 
 **Data**
-Naturalized flow data was essential — regulated flow would have added noise from operator decisions. Feature engineering (SWE anomaly, DJF indices) added more predictive value than raw inputs alone.
+Naturalized flow + domain-driven feature engineering were the foundation
 
 **ML vs LLM**
-LLMs are impressive generalists but poor tabular regressors. Parse reliability was perfect; prediction accuracy was not. Model scale mattered more than prompt engineering.
+Parse reliability: perfect. Prediction accuracy: not. Scale > prompt design.
 :::
 
 ::: {.column width="50%"}
 **From mistakes**
-WY 2015 exposed our biggest gap: no model handled extreme out-of-distribution inputs well. XGBoost had the *worst* miss on 2015 despite the best CV score — a reminder that CV metrics don't guarantee robustness to extremes.
+CV score ≠ robustness to extremes — WY 2015 humbled every model
 
 **As a team**
-Git branching by week kept deliverables organized across 5 members with different expertise. Reproducibility (pixi environments, seeded models, locked dependencies) paid off when re-running analyses. AI-assisted coding accelerated development but required careful domain review at every step.
+Weekly git branches + reproducible environments + domain review at every step made handoffs seamless
 :::
 
 ::::
 
 ::: {.notes}
-All team members — go around the room for this slide, each person speaking to one bullet. This is the culmination slide. Emphasize that the most valuable learning wasn't the metrics — it was the process: designing a reproducible pipeline, making deliberate modeling choices, and honestly documenting where things failed.
+All team members — go around for one bullet each. The most valuable learning wasn't the metrics — it was building a reproducible, defensible pipeline and being honest about where it failed.
 :::
