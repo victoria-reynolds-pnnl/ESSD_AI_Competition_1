@@ -1,0 +1,134 @@
+"""
+evaluate.py — Week 3 Cold Extremes: Test-Set Evaluation
+
+Loads Models/model_1.pkl, predicts on the held-out test period (2019–2024)
+using the final m5.4 model coefficients, and writes:
+
+    Output/ml_results.csv  — overall + per-year MAE for the test set
+
+Predictions are computed in pure Python using the stored fixed-effect
+coefficient table (population-level, year random effect = 0).
+No R installation required at evaluation time.
+
+Note: R-generated test predictions from test.R are also available at
+      Output/predict_test_from_m5.4tv.csv for cross-validation.
+
+Prerequisites
+-------------
+Run Scripts/train.py first to generate:
+  - Models/model_1.pkl
+  - Output/cold_test_df.csv
+
+Requirements
+------------
+  Python : pandas, numpy  (see requirements.txt)
+"""
+
+import pickle
+import pathlib
+import sys
+
+import numpy as np
+import pandas as pd
+
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+from model import NegBinWrapper  # noqa: F401 — required for pickle to find the class
+
+ROOT   = pathlib.Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "Output"
+
+
+# ── 1. Load model wrapper ─────────────────────────────────────────────────────
+pkl_path = ROOT / "Models" / "model_1.pkl"
+if not pkl_path.exists():
+    raise FileNotFoundError(
+        f"{pkl_path} not found. Run Scripts/train.py first."
+    )
+
+with open(pkl_path, "rb") as fh:
+    model = pickle.load(fh)
+
+print(f"Loaded model: {model.formula}")
+print(f"Family      : {model.family}")
+print(f"Trained on years: {model.train_years[0]}–{model.train_years[1]}")
+
+
+# ── 2. Load and validate test data ────────────────────────────────────────────
+test_csv = OUTPUT / "cold_test_df.csv"
+if not test_csv.exists():
+    raise FileNotFoundError(
+        f"{test_csv} not found. Run Scripts/train.py first."
+    )
+
+test_df = pd.read_csv(test_csv)
+
+if not test_df["start_yr"].between(2019, 2024).all():
+    raise ValueError(
+        "cold_test_df.csv does not appear to contain 2019-2024 rows only."
+    )
+
+print(f"\nTest rows loaded : {len(test_df):,}  "
+      f"({test_df['start_yr'].min()}–{test_df['start_yr'].max()})")
+print(f"Unique NERC IDs  : {test_df['NERC_ID'].nunique()}")
+print(f"Unique cold types: {test_df['extreme_type'].nunique()}")
+
+
+# ── 3. Predict (population-level, year random effect = 0) ────────────────────
+print("\nGenerating predictions …")
+test_df["pred"] = model.predict(
+    test_df[["extreme_type", "NERC_ID", "start_yr"]]
+)
+print("   ✓ Predictions complete.")
+
+
+# ── 4. Compute MAE ────────────────────────────────────────────────────────────
+def mae(y: pd.Series, yhat: pd.Series) -> float:
+    return float(np.mean(np.abs(y - yhat)))
+
+
+overall_mae = mae(test_df["n_extreme"], test_df["pred"])
+
+per_year = (
+    test_df.groupby("start_yr")
+    .apply(lambda g: mae(g["n_extreme"], g["pred"]), include_groups=False)
+    .reset_index()
+    .rename(columns={"start_yr": "year", 0: "mae"})
+)
+
+
+# ── 5. Build ml_results.csv ───────────────────────────────────────────────────
+summary_row = pd.DataFrame(
+    [
+        {
+            "model":   "m5.4tv",
+            "split":   "test",
+            "years":   "2019-2024",
+            "mae":     round(overall_mae, 6),
+            "formula": model.formula,
+            "family":  model.family,
+            "note":    "overall MAE across all NERC regions and cold types",
+        }
+    ]
+)
+
+per_year_rows = per_year.copy()
+per_year_rows.insert(0, "model",   "m5.4tv")
+per_year_rows.insert(1, "split",   "test")
+per_year_rows.insert(2, "years",   per_year_rows["year"].astype(str))
+per_year_rows.insert(4, "formula", model.formula)
+per_year_rows.insert(5, "family",  model.family)
+per_year_rows.insert(6, "note",    "per-year MAE")
+per_year_rows = per_year_rows.drop(columns="year")
+
+ml_results = pd.concat([summary_row, per_year_rows], ignore_index=True)
+
+out_path = OUTPUT / "ml_results.csv"
+ml_results.to_csv(out_path, index=False)
+
+# ── 6. Print summary ──────────────────────────────────────────────────────────
+print(f"\n{'─'*40}")
+print(f"Test MAE (2019–2024) : {overall_mae:.4f} events / region-year")
+print(f"{'─'*40}")
+print("\nPer-year breakdown:")
+print(per_year.to_string(index=False))
+print(f"\nResults saved → {out_path.relative_to(ROOT)}")
