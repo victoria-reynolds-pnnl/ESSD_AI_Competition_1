@@ -1,3 +1,0 @@
-nerc_id,false_negative,false_positive,model
-NERC,1007,2559,logistic_regression
-NERC,2566,281,xgboost

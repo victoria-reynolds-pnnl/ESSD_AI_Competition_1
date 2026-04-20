@@ -1,3 +1,0 @@
-model,brier_score
-xgboost,0.09986597299575806
-logistic_regression,0.11180699207952219
