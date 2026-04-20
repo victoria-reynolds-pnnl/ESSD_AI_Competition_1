@@ -10,6 +10,25 @@ Common failures included malformed JSON, invalid value types or ranges, and inco
 
 Based on MAE by region, the statistical regression model performed better overall than the LLM-based regression in predicting the number of events for each class. This is consistent with the fundamental difference between the two approaches: the LLM relies on contextual matching, while the statistical model is designed specifically for regression. However, there is also a key distinction in output format: the LLM predicts exact integer counts, whereas the statistical regression produces estimated counts as floating-point values.
 
+| Region | LLM MAE | Regression MAE |
+|---|---:|---:|
+| NERC1  | 4.833333 | 2.397490 |
+| NERC2  | 6.166667 | 1.170530 |
+| NERC3  | 4.833333 | 3.383684 |
+| NERC4  | 5.500000 | 2.022420 |
+| NERC5  | 3.833333 | 2.626505 |
+| NERC6  | 3.833333 | 2.373134 |
+| NERC7  | 2.666667 | 2.919246 |
+| NERC8  | 5.833333 | 3.916989 |
+| NERC9  | 6.166667 | 2.667303 |
+| NERC10 | 6.666667 | 1.877288 |
+| NERC11 | 6.000000 | 2.838670 |
+| NERC12 | 3.166667 | 2.973450 |
+| NERC15 | 4.166667 | 2.827884 |
+| NERC17 | 2.833333 | 3.441790 |
+| NERC18 | 4.833333 | 2.934488 |
+| NERC20 | 3.500000 | 3.010190 |
+
 ## Repeatability Steps:
 
 Run the following notebook: `/Notebooks/llm_prediction.ipynb`
