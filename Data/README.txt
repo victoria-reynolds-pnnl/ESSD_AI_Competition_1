@@ -1,0 +1,1 @@
+Training and testing datasets are all stored in this "merged_GH_UD.csv" file. The training and testing will be separately processed by training script ("Advanced_Script_1_Original.py) and testing script ("Advanced_Script_1_Updated.py). 
