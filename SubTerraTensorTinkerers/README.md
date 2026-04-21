@@ -21,6 +21,7 @@ We included data from the entire field campaign (Train, Test, Validate from ML m
 The LLM achieves near-perfect recall (1.000) across all splits and horizons — it never misses a genuine threshold crossing. Performance on Test is excellent (F1=0.984 at +1h), competitive with the Kalman Filter. The weakness is precision in Train and Validate periods, where false positives occur when pressure is rising slowly from well below threshold or transitioning between regimes — the model correctly identifies the upward trajectory but overestimates crossing imminence. Crucially, false positives are consistently lower-confidence (0.48–0.78) while true positives carry high confidence (0.88–0.98), meaning a simple confidence threshold filter would substantially reduce false alarms without sacrificing recall.
 
 3. Comparison Summary
+
 | Model   | Split    | Horizon | Precision | Recall | F1    |
 |---------|----------|---------|-----------|--------|-------|
 | KF      | Test     | +1h     | 0.996     | 0.955  | 0.975 |
