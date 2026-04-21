@@ -1,0 +1,104 @@
+# Week 4 Summary: LLM Benchmarking Assignment
+
+## Goals
+- Benchmark one or more LLMs on the **exact same prediction task** as Week 3's ML model
+- Learn how to interact and manipulate an LLM directly
+
+## Core Requirement
+- Use the **same target definition** and the **same hold out test split** from Week 3
+- Use a small subset of data
+
+---
+
+## Model Endpoints
+Use the following locally hosted model endpoints for benchmarking:
+
+```python
+MODEL_ENDPOINTS = [
+    {'label': 'phi-3.5-mini-instruct', 'model_name': 'Phi-3.5-mini-instruct', 'host': 'localhost', 'port': 8000},
+    {'label': 'phi-mini-moe-instruct', 'model_name': 'Phi-mini-MoE-instruct', 'host': 'localhost', 'port': 8001},
+    {'label': 'gemma-3-12b-it', 'model_name': 'gemma-3-12b-it', 'host': 'localhost', 'port': 8002},
+]
+```
+
+| Label | Model Name | Host | Port |
+|---|---|---|---|
+| `phi-3.5-mini-instruct` | Phi-3.5-mini-instruct | localhost | 8000 |
+| `phi-mini-moe-instruct` | Phi-mini-MoE-instruct | localhost | 8001 |
+| `gemma-3-12b-it` | gemma-3-12b-it | localhost | 8002 |
+
+- Each model should be queried independently
+- Results CSVs should be saved per model using the `label` field as the filename identifier
+
+---
+
+## What We're Looking For
+- Reproducible notebook run in JupyterHub
+- No R this time
+  - Reference: https://www.dataquest.io/blog/jupyter-notebook-tutorial/
+- Clean prompt design and outputs
+- Reliable parsing to structured predictions
+- Metrics computed comparably to Week 3
+- Clear ML vs LLM comparison and concrete error analysis
+
+---
+
+## Deliverables
+
+### 1. LLM Benchmarking Notebook (`llm_benchmark.ipynb`)
+- Loads in your Week 3 target and test set
+- Queries at least one LLM (endpoints listed above)
+- Converts the LLM response into a structured prediction
+- Evaluates on Week 3 test set with same metrics
+
+### 2. Prompt Set
+- Final prompt template text
+- Few-shot examples (if used)
+- Reference: https://huggingface.co/docs/transformers/en/tasks/prompting
+
+### 3. `README.md`
+- Approach (your prompting and validation strategy)
+- Error analysis (2-3 sentences and include failure examples)
+- Repeatability steps
+
+### 4. Results CSVs (per LLM tested)
+- Include prompt, raw outputs, parsed predictions
+- Name files using the model `label` field (e.g. `phi-3.5-mini-instruct_results_clean_1.csv`)
+
+---
+
+## Folder Structure
+
+```
+team_folder/
+├── README.md
+├── Notebooks/
+│   └── llm_benchmark.ipynb
+├── Prompts/
+│   ├── prompt_template.txt
+│   └── few_shot_samples.json
+└── Results/
+    └── {model_label}_results_clean_{iteration_number}.csv
+```
+
+> `few_shot_samples.json` should contain the few-shot examples used in your prompt
+
+---
+
+## Prompt Design Guidelines
+
+### Be Explicit About Output Format
+- Example: *"Return ONLY valid JSON with keys: prediction, confidence"*
+
+### Minimize Degrees of Freedom
+- Restrict responses to particular labels or a numeric range
+
+### Prevent Leakage
+- Do **not** include true labels in the prompt
+- Do **not** provide answers to the prediction set in your few-shot examples
+
+### If Using Few-Shot Examples
+- Select **2–5 high-quality, representative examples**
+
+### Iterations
+- Track **all iterations and results** for each prompt version
