@@ -95,7 +95,7 @@ Full per-horizon breakdowns are in `Results/llm_benchmark_performance.csv` and `
 
 - **Neither LLMs nor XGBoost consistently beat the persistence baseline.** Persistence wins 7/12 matchups and is the best method at every +1440 min comparison.
 - **Auto-designed prompts catastrophically failed for gemma** (MSE >1, R² as low as −78). phi-3.5's auto-prompt was poor but functional (MSE 0.003–0.011, R² 0.29–0.84). phi-mini-moe's auto-prompt was competitive (MSE 0.000282–0.001695, R² 0.87–0.98).
-- **Manual LLMs outperform XGBoost on every horizon** (up to 6× lower MSE at 15 min), but this advantage narrows or disappears against persistence.
+- **Manual LLMs outperform XGBoost on every horizon except 1440m** (up to 6× lower MSE at 15 min), but this advantage narrows or disappears against persistence.
 - **phi-mini-moe-instruct is the most consistent LLM** — the only model to beat persistence at three horizons (+15m, +60m, +240m) with manual prompts, and its auto-prompt also remained competitive.
 - **gemma-3-12b-it beats persistence only at short horizons** (+15m, +60m) with manual prompts, with the best overall R² of 0.986 at +60m.
 - **≥5 few-shot examples are essential** for prediction accuracy; parse reliability drops at high shot counts (compact_20 fell to 40% for phi-3.5).
