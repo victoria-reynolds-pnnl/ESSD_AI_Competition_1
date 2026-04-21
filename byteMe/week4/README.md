@@ -39,7 +39,7 @@ Each LLM designs its own prompt via a meta-prompt (task description + 10 trainin
 
 ## Error Analysis
 
-The most common failure mode is **invalid JSON formatting**: models wrap output in markdown code fences (`` ```json ... ``` ``) or add explanatory text, breaking the parser. A second major failure is **zero-shot hallucination** — gemma on verbose_zeroshot produced MSE=32.8 vs 0.00015 with 10-shot (200,000× worse) despite 100% parse success, returning syntactically valid JSON with meaningless round-number values. Third, **sensitivity to prompt length**: phi-3.5's parse rate dropped from 100% to 60% simply by increasing from 10 to 20 compact examples, as the model switched from JSON to natural-language output (format drift). All models also report confidence of 0.85–1.0 regardless of accuracy (uncalibrated).
+The most common failure mode is **invalid JSON formatting**: models wrap output in markdown code fences (`` ```json ... ``` ``) or add explanatory text, breaking the parser. A second major failure is **zero-shot hallucination** — gemma on verbose_zeroshot produced MSE=33.4 vs 0.0001 with 10-shot (300,000× worse) despite 100% parse success, returning syntactically valid JSON with meaningless round-number values. Third, **sensitivity to prompt length**: phi-3.5's parse rate dropped from 100% to 40% simply by increasing from 10 to 20 compact examples, as the model switched from JSON to natural-language output (format drift). All models also report confidence of 0.85–1.0 regardless of accuracy (uncalibrated).
 
 ### Likely Causes
 
@@ -50,45 +50,56 @@ The most common failure mode is **invalid JSON formatting**: models wrap output 
 
 ### Parse Success Rates (5-sample validation)
 
-Two version/model combos had sub-100% parse success:
+Three version/model combos had sub-100% parse success:
 
 | Version | Model | Parse Rate | Issue |
 |---|---|---|---|
-| compact_20 | phi-3.5-mini-instruct | **60%** | Format drift — switched to natural language |
+| compact_20 | phi-3.5-mini-instruct | **40%** | Format drift — switched to natural language |
 | verbose_zeroshot | phi-mini-moe-instruct | **80%** | Missing target fields |
+| compact_zeroshot | phi-mini-moe-instruct | **80%** | Missing target fields |
 
-Zero-shot MSE can be **100,000×** worse than few-shot even when parsing succeeds — the models produce syntactically valid JSON with numerically meaningless predictions.
+Zero-shot MSE can be **300,000×** worse than few-shot even when parsing succeeds — the models produce syntactically valid JSON with numerically meaningless predictions.
 
 ### Agentic Loop Failures
 
 - Some rounds produced templates missing the `{features_json}` placeholder.
-- gemma converged to an identical strategy across all 10 rounds (no exploration).
-- Agentic prompts did not outperform manual prompts on any model.
+- gemma explored varied strategies across rounds but MSE was highly unstable (0.0014 to 34.3), with several rounds producing catastrophically bad predictions despite 100% parse success.
+- Agentic prompts did not outperform manual prompts for gemma or phi-3.5; phi-mini-moe's auto-prompt was competitive but still did not beat its manual prompt.
 
 ---
 
-## LLM vs ML Comparison Summary
+## LLM vs ML vs Persistence Baseline Comparison
 
-All three LLMs dramatically outperformed the Week 3 XGBoost baseline across all four horizons on the same 100-sample test set. The best LLM achieved 35× lower MSE at 15 min (R²=0.985 vs 0.485) and 3.7× lower at 1440 min (R²=0.895 vs 0.616). Few-shot prompting with ≥5 compact examples consistently delivered R²>0.97 through 240 min, while XGBoost peaked at R²=0.63. However, LLMs carry practical tradeoffs: JSON parse failures produce missing predictions (XGBoost always returns output), prompt sensitivity can collapse performance, inference is orders of magnitude slower, and predictions are opaque (no feature importances). **Note:** the large LLM-vs-ML gap may partly be an artifact of insufficiently cleaned input data in the Week 3 ML pipeline.
+All three LLMs, the XGBoost ML baseline, and auto-designed (agentic) LLM prompts were compared against a **persistence baseline** (predict that the future temperature delta equals the current value, i.e., y_t+h = y_t). **Neither the LLMs nor the ML model consistently beat the persistence baseline.** Persistence won 7 of 12 model×horizon matchups on MSE. Manual LLM prompts beat persistence only at short horizons for gemma-3-12b-it (+15m, +60m) and across three horizons for phi-mini-moe-instruct. All methods underperformed persistence at +1440 min. Auto-designed prompts catastrophically failed for gemma (MSE >1, R² < −72), while phi-3.5's auto-prompt was poor but not catastrophic, and phi-mini-moe's auto-prompt was competitive with its manual prompt.
 
-### Per-Model Results (100-Sample Test, Best Manual Prompt)
+### Full Results (100-Sample Test)
 
-| Model | Avg MSE (LLM) | Avg MSE (ML) | R² Range (LLM) | R² Range (ML) |
-|---|---|---|---|---|
-| gemma-3-12b-it | 0.000604 | 0.005718 | 0.874–0.986 | 0.485–0.631 |
-| phi-3.5-mini-instruct | 0.000546 | 0.005718 | 0.889–0.986 | 0.485–0.631 |
-| phi-mini-moe-instruct | 0.000531 | 0.005718 | 0.895–0.983 | 0.485–0.631 |
+| Model | Horizon | MSE Manual | MSE Auto | MSE ML | MSE Persist | Best |
+|---|---|---|---|---|---|---|
+| gemma-3-12b-it | +15m | **0.000255** | 1.025 | 0.00151 | 0.000338 | Manual LLM |
+| gemma-3-12b-it | +60m | **0.000194** | 1.026 | 0.00111 | 0.000281 | Manual LLM |
+| gemma-3-12b-it | +240m | 0.000443 | 1.026 | 0.00157 | **0.000313** | Persistence |
+| gemma-3-12b-it | +1440m | 0.001345 | 1.034 | 0.00111 | **0.001090** | Persistence |
+| phi-3.5-mini-instruct | +15m | 0.000390 | 0.00269 | 0.00151 | **0.000338** | Persistence |
+| phi-3.5-mini-instruct | +60m | 0.000346 | 0.00331 | 0.00111 | **0.000281** | Persistence |
+| phi-3.5-mini-instruct | +240m | 0.000611 | 0.00532 | 0.00157 | **0.000313** | Persistence |
+| phi-3.5-mini-instruct | +1440m | 0.001527 | 0.01103 | 0.00111 | **0.001090** | Persistence |
+| phi-mini-moe-instruct | +15m | **0.000250** | 0.000282 | 0.00151 | 0.000338 | Manual LLM |
+| phi-mini-moe-instruct | +60m | **0.000225** | 0.000252 | 0.00111 | 0.000281 | Manual LLM |
+| phi-mini-moe-instruct | +240m | **0.000297** | 0.000614 | 0.00157 | 0.000313 | Manual LLM |
+| phi-mini-moe-instruct | +1440m | 0.001471 | 0.001695 | 0.00111 | **0.001090** | Persistence |
 
-Manual prompts outperformed auto-designed (agentic) prompts on 11/12 model×horizon combinations. The gap widens at longer horizons — phi-3.5 auto-designed R² collapses to 0.26 at 1440 min vs 0.89 for manual. Full per-horizon breakdowns are in `Results/llm_benchmark_performance.csv` and `Results/agentic_benchmark_performance.csv`.
+Full per-horizon breakdowns are in `Results/llm_benchmark_performance.csv` and `Results/agentic_benchmark_performance.csv`.
 
 ### Key Takeaways
 
-- **LLMs outperform XGBoost on every horizon**, with the largest advantage at short horizons (25–35× lower MSE at 15 min).
-- **phi-mini-moe-instruct is the most consistent model** (best 1440-min R²=0.895, lowest cross-horizon variance).
-- **Manual prompt engineering beats agentic auto-design**, especially at longer horizons.
-- **≥5 few-shot examples are essential** for prediction accuracy; parse reliability is not guaranteed at high shot counts (compact_20 dropped to 60%).
-
----
+- **Neither LLMs nor XGBoost consistently beat the persistence baseline.** Persistence wins 7/12 matchups and is the best method at every +1440 min comparison.
+- **Auto-designed prompts catastrophically failed for gemma** (MSE >1, R² as low as −78). phi-3.5's auto-prompt was poor but functional (MSE 0.003–0.011, R² 0.29–0.84). phi-mini-moe's auto-prompt was competitive (MSE 0.000282–0.001695, R² 0.87–0.98).
+- **Manual LLMs outperform XGBoost on every horizon** (up to 6× lower MSE at 15 min), but this advantage narrows or disappears against persistence.
+- **phi-mini-moe-instruct is the most consistent LLM** — the only model to beat persistence at three horizons (+15m, +60m, +240m) with manual prompts, and its auto-prompt also remained competitive.
+- **gemma-3-12b-it beats persistence only at short horizons** (+15m, +60m) with manual prompts, with the best overall R² of 0.986 at +60m.
+- **≥5 few-shot examples are essential** for prediction accuracy; parse reliability drops at high shot counts (compact_20 fell to 40% for phi-3.5).
+- **The persistence baseline's strong performance** likely reflects high temporal autocorrelation in geothermal signals — temperature changes slowly, making "predict no change" hard to beat.
 
 ## Repeatability Steps
 

@@ -3,69 +3,66 @@
     "round": 0,
     "status": "meta_parse_failed",
     "error": "invalid_json",
-    "raw_design": " {\"system_message\": \"Welcome to the Geothermal Temperature Forecasting System. We will use the provided sensor data to predict temperature deltas at future horizons. Please input the data in the format specified below.\",\n\"user_template\": \"Please provide the sensor data in the following format: {features_json}\",\n\"strategy_notes\": \"The system message is informative and welcoming, setting the stage for the user to input data. The user template includes the placeholder {features_json} to ensure the "
+    "raw_design": " {\n  \"system_message\": \"Welcome to Geothermal Temperature Forecasting! Based on historical data and real-time sensor readings, we can predict temperature fluctuations at future horizons. The model will provide temperature deviations at 15, 30, 60, and 1440-minute intervals ahead of time. Please provide the required input features to generate the forecasts.\",\n  \"user_template\": \"Please provide the following input features: {features_json}\",\n  \"strategy_notes\": \"The prompt style is clear, direct, "
   },
   {
     "round": 1,
     "status": "meta_parse_failed",
     "error": "missing_system_prompt",
-    "raw_design": " {\"system_message\": \"Welcome to the Geothermal Temperature Forecasting System. We will use the provided sensor data to predict temperature deltas at future horizons. Please input the data in the following format: {features_json}. The system will then generate predictions for the next four time horizons.\",\n\n\"user_template\": \"Please input the sensor data in the following format: {features_json}. The system will then generate predictions for the next four time horizons.\",\n\n\"strategy_notes\": \"The sy"
+    "raw_design": " ```json\n{\n  \"system_message\": \"Welcome to Geothermal Temperature Forecasting! Based on historical data and real-time sensor readings, we can predict temperature fluctuations at future horizons. The model utilizes machine learning algorithms and a comprehensive understanding of geothermal processes. Please provide the required features for accurate predictions.\",\n  \"user_template\": \"Based on the given features, predict the temperature deltas at future horizons.\",\n  \"strategy_notes\": \"The system "
   },
   {
     "round": 2,
-    "status": "meta_parse_failed",
-    "error": "missing_placeholder",
-    "raw_design": " {\"system_prompt\": \"Welcome to the Geothermal Temperature Forecasting System. We will use the provided sensor data to predict temperature deltas at future horizons. Please input the data in the following format: [cumulative_heat_input, elapsed_injection_min, net_flow_rolling_6h, TC_INT_delta, T_gradient_INT_TC, days_since_injection, hour_sin, hour_cos, delta_T_above_T0_TN, target_lag_15, flow_lag_15, target_lag_30, flow_lag_30, target_lag_60, flow_lag_60, target_15, target_60, target_240, target"
-  },
-  {
-    "round": 3,
     "status": "ok",
     "parse_rate": 0.0,
     "mse": null,
-    "strategy_notes": "The system prompt is designed to be clear and concise, providing a step-by-step guide for the user to input the data and understand the output format. The user template is designed to be flexible, allowing for a variety of input formats while still guiding the user towards the correct format. The output format is designed to be easily parseable and match the required schema.",
-    "system_prompt": "Welcome to the Geothermal Temperature Forecasting System. We will use the provided sensor data to predict temperature deltas at future horizons. Please input the data in the following format: {features_json}. The system will then output the predicted temperature deltas for the next four time horizons in the format: {output_json}.",
-    "user_template": "Please input the data in the following format: {features_json}. The system will then output the predicted temperature deltas for the next four time horizons in the format: {output_json}."
+    "strategy_notes": "Incorporate a few-shot learning approach using the provided labeled training data to enhance model performance. Format the input data in a structured tabular layout for ease of processing. Use a chain-of-thought reasoning technique to explain the forecasting process.",
+    "system_prompt": "As an advanced geothermal temperature forecasting model, your task is to analyze the provided sensor data and predict temperature changes at future time horizons. Utilize historical data trends, real-time sensor readings, and the given features to generate accurate temperature deltas. The output should be in the format of {'target_15': <float>, 'target_60': <float>, 'target_240': <float>, 'target_1440': <float>, 'confidence': <0-1>}. Ensure the prompt is clear, concise, and adheres to the required output schema.",
+    "user_template": "Please provide the input data in the following format: {{features_json}}"
+  },
+  {
+    "round": 3,
+    "status": "meta_parse_failed",
+    "error": "invalid_json",
+    "raw_design": " System message:\n```json\n{\n  \"system\": {\n    \"message\": \"Let's analyze the geothermal system's temperature forecasting. Please input the sensor data as a JSON object with the key 'features_json', containing all 15 input features. The model will forecast the temperature changes at four future horizons (15, 60, 240, 1440 minutes) as well as the prediction confidence as a float between 0 and 1.\",\n    \"tone\": \"Informative and encouraging\",\n    \"examples\": [\n      {\n        \"input\": [JSON STRING],\n  "
   },
   {
     "round": 4,
     "status": "meta_parse_failed",
-    "error": "invalid_json",
-    "raw_design": " System message:\n```json\n{\n  \"task\": \"Geothermal temperature forecasting\",\n  \"model\": \"GeoTempPredictor\",\n  \"instructions\": \"Given a set of sensor readings, predict the temperature deltas at four future horizons (15, 60, 240, and 1440 minutes).\",\n  \"example\": {\n    \"input\": [3691076.81, 77.0, 2.27, 0.29, -13.5, -0.65, 0.53, 0.66, 1.66, 1.55, 2.22, 2.23, 2.13, 0.25],\n    \"output\": {\n      \"target_15\": 5.859,\n      \"target_60\": 5.859,\n      \"target_240\": 5.859,\n      \"target_1440\": 5.859,\n      \"c"
+    "error": "missing_system_prompt",
+    "raw_design": " ```json\n{\n  \"system_message\": {\n    \"message\": \"We're now tasked with forecasting the geothermal temperature using the provided sensor readings. Here's how you should structure your input data:\",\n    \"instructions\": \"Please format your input data as a JSON object with the key 'features_json'. This object should contain an array of feature values corresponding to the input data points. Each value should follow the order provided in the feature list, and the output should be a JSON object with ke"
   },
   {
     "round": 5,
     "status": "ok",
     "parse_rate": 1.0,
-    "mse": 0.0003853794542161725,
-    "strategy_notes": "The system message content and tone are professional and informative. Few-shot examples are included to provide context and guidance. The input/output formatting style is compact and tabular, with clear instructions on the desired output format. The prompting technique used is chain-of-thought, as the system is asked to consider the cyclical nature of the data and make predictions based on the provided features.",
-    "system_prompt": "You are a geothermal energy forecasting model named GeoTempPredictor. Your task is to analyze the provided sensor data and predict the temperature deltas at four future horizons (15 minutes, 60 minutes, 240 minutes, and 1440 minutes). You will use the provided features to make your predictions. Please provide your predictions in the following format: {\"target_15\": <float>, \"target_60\": <float>, \"target_240\": <float>, \"target_1440\": <float>, \"confidence\": <0-1>}. Ensure that your predictions are based on the data provided and that you consider the cyclical nature of the data. If you are unsure about a prediction, please provide a confidence score between 0 and 1.",
-    "user_template": "Given the following sensor data: {features_json}, predict the temperature deltas at the following horizons: {horizons_json}."
+    "mse": 0.00042698319967109934,
+    "strategy_notes": "In this iteration, I have focused on clarifying the system_message to emphasize the task at hand (forecasting temperature deltas). I included a specific order for the {features_json} keys to reduce ambiguity. The user_template now explicitly asks for the 'features_json' and the future time horizons. The system_prompt also asks for a confidence score to provide a measure of the prediction's reliability. This structure should improve parse reliability and accuracy by providing more structured and clear instructions to the model.",
+    "system_prompt": "We are now tasked with forecasting the future geothermal temperature deltas using a set of sensor readings. Your input should include the following features in this order: {features_json}. Based on this data, predict the temperature delta at the following future time horizons: {target_15}, {target_60}, {target_240}, {target_1440}. Please provide a confidence score for your prediction. The format for your response should be a valid JSON object with keys 'target_15', 'target_60', 'target_240', 'target_1440', and 'confidence'.",
+    "user_template": "{'features_json': '{features_json}', 'target_15': '{target_15}', 'target_60': '{target_60}', 'target_240': '{target_240}', 'target_1440': '{target_1440}', 'confidence': '{confidence}'}"
   },
   {
     "round": 6,
     "status": "meta_parse_failed",
-    "error": "invalid_json",
-    "raw_design": " {\"system_message\": \"Welcome to the Geothermal Temperature Forecasting System. We will use the provided sensor data to predict temperature deltas at future horizons. Please input the data in the format specified below.\",\n\"user_template\": \"Please provide the sensor data in the following format: {features_json}\",\n\"strategy_notes\": \"The system message is informative and welcoming, setting the stage for the user to input data. The user template includes the placeholder {features_json} to ensure the "
+    "error": "missing_system_prompt",
+    "raw_design": " {\"system_message\": \"As a geothermal energy forecasting AI, I will analyze the provided sensor data to predict future temperature deltas using a time series forecasting model. My predictions will be based on patterns detected in the input data and will consider factors such as cumulative heat input, net flow, temperature gradient, and time since the last injection. I will provide confidence intervals for each prediction to account for uncertainty.\", \n\"user_template\": \"Given the input features: {"
   },
   {
     "round": 7,
     "status": "meta_parse_failed",
-    "error": "missing_system_prompt",
-    "raw_design": " {\"system_message\": \"Welcome to the Geothermal Temperature Forecasting System. We will use the provided sensor data to predict temperature deltas at future horizons. Please input the data in the following format: {features_json}. The system will then output the predicted temperature deltas for the next four time horizons in the format: {output_json}.\",\n\"user_template\": \"Please input the sensor data in the following format: {features_json}. The system will then output the predicted temperature de"
+    "error": "missing_placeholder",
+    "raw_design": " ```json\n{\n  \"system_prompt\": \"As a specialized Geothermal Energy Forecasting Model, your task is to analyze the provided sensor data and predict future temperature deltas at 4 time horizons: 15 minutes, 1 hour, 4 hours, and 24 hours. Use the provided sensor readings and temporal features to train a time series forecasting model with the following outputs: {features_json}. The model should provide target deltas for each horizon in the format: {target_15, target_60, target_240, target_1440}. Incl"
   },
   {
     "round": 8,
-    "status": "ok",
-    "parse_rate": 0.0,
-    "mse": null,
-    "strategy_notes": "The system prompt is designed to be clear and direct, providing a welcoming introduction to the forecasting system. The user template is designed to be flexible, allowing for a wide range of input formats. The strategy includes a few-shot example to provide context and improve parse reliability. The input/output formatting style is tabular, which is clear and easy to understand. The prompting technique is chain-of-thought, which encourages the model to think logically and make accurate predictions.",
-    "system_prompt": "Welcome to the Geothermal Temperature Forecasting System. We will use the provided sensor data to predict temperature deltas at future horizons. Please input the data in the following format: {features_json}.",
-    "user_template": "{'features_json': {features_json}},"
+    "status": "meta_parse_failed",
+    "error": "missing_placeholder",
+    "raw_design": " ```json\n{\n  \"system_prompt\": \"As an advanced Geothermal Energy Forecasting Model, you are tasked with analyzing the provided sensor data to accurately predict the future temperature deltas. You will utilize the given features and output structure to generate predictions for the upcoming four horizons. Ensure your model considers time series analysis and the cyclic nature of the data to deliver precise forecasts.\",\n  \"user_template\": \"<features_json>\",\n  \"strategy_notes\": \"Including few-shot exa"
   },
   {
     "round": 9,
     "status": "meta_parse_failed",
-    "error": "missing_system_prompt",
-    "raw_design": " {\"system_message\": \"Thank you for providing the sensor data. Based on the input, I will now proceed to predict the temperature deltas at future horizons using a machine learning model. The model will consider the following features: cumulative heat input, elapsed injection time, net flow, temperature gradient, days since first injection, cyclical hourly features, and target deltas at various time horizons.\", \"user_template\": \"Based on the provided sensor data, we can make a temperature forecast"
+    "error": "missing_user_template",
+    "raw_design": " ```json\n{\n  \"system_prompt\": \"Geothermal Energy Forecasting Model, your task is to analyze the provided sensor data and predict temperature deltas at 4 future horizons.\",\n  \"user_template\": {\"features_json\": \"{features_json}\"},\n  \"strategy_notes\": \"The system prompt is clear and informative, providing specific instructions. The template includes a placeholder for the user to input features in JSON format. To improve parse reliability and accuracy, consider including examples of expected output "
   }
 ]
