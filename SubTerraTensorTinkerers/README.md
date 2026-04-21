@@ -8,7 +8,7 @@
 
 **Team:** Scott Unger, Theresa Pham, Xi Tan, Ashton Kirol, Mike Parker
 
-  
+README generated from code and results prompts using AI Incubator gpt 5.2   
 
 1. Approach Report
 
