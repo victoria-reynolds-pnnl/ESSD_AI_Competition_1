@@ -21,18 +21,18 @@ We included data from the entire field campaign (Train, Test, Validate from ML m
 The LLM achieves near-perfect recall (1.000) across all splits and horizons — it never misses a genuine threshold crossing. Performance on Test is excellent (F1=0.984 at +1h), competitive with the Kalman Filter. The weakness is precision in Train and Validate periods, where false positives occur when pressure is rising slowly from well below threshold or transitioning between regimes — the model correctly identifies the upward trajectory but overestimates crossing imminence. Crucially, false positives are consistently lower-confidence (0.48–0.78) while true positives carry high confidence (0.88–0.98), meaning a simple confidence threshold filter would substantially reduce false alarms without sacrificing recall.
 
 3. Comparison Summary
-| Model | Split | Horizon | Precision | Recall | F1 |
-|---|---|---|---|---|---|
-| KF | Test | +1h | 0.996 | 0.955 | 0.975 |
-| KF | Test | +24h | 0.994 | 0.710 | 0.828 |
-| KF | Validate | +1h | 0.990 | 1.000 | 0.995 |
-| KF | Validate | +24h | 0.872 | 0.851 | 0.861 |
-| XGBoost | Test | +1h | 0.996 | 0.962 | 0.979 |
-| XGBoost | Validate | +1h | 0.677 | 0.946 | 0.789 |
-| LLM | Test | +1h | 0.989 | 0.978 | 0.984 |
-| LLM | Test | +24h | 0.923 | 0.903 | 0.913 |
-| LLM | Validate | +1h | 0.552 | 1.000 | 0.712 |
-| LLM | Validate | +24h | 0.530 | 1.000 | 0.693 |
+| Model   | Split    | Horizon | Precision | Recall | F1    |
+|---------|----------|---------|-----------|--------|-------|
+| KF      | Test     | +1h     | 0.996     | 0.955  | 0.975 |
+| KF      | Test     | +24h    | 0.994     | 0.710  | 0.828 |
+| KF      | Validate | +1h     | 0.990     | 1.000  | 0.995 |
+| KF      | Validate | +24h    | 0.872     | 0.851  | 0.861 |
+| XGBoost | Test     | +1h     | 0.996     | 0.962  | 0.979 |
+| XGBoost | Validate | +1h     | 0.677     | 0.946  | 0.789 |
+| LLM     | Test     | +1h     | 0.989     | 0.978  | 0.984 |
+| LLM     | Test     | +24h    | 0.923     | 0.903  | 0.913 |
+| LLM     | Validate | +1h     | 0.552     | 1.000  | 0.712 |
+| LLM     | Validate | +24h    | 0.530     | 1.000  | 0.693 |
 
 The Kalman Filter is the strongest overall baseline. It achieves near-perfect threshold detection (Validate F1=0.995 at +1h, 0.861 at +24h) with physically interpretable state decomposition and graceful degradation across horizons. The continuous state estimate naturally captures reservoir pressurisation history without requiring explicit feature engineering of duration or trajectory.
 
