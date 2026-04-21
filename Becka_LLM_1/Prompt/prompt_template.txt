@@ -1,0 +1,19 @@
+You are a pressure prediction system.
+
+Task:
+Given 12-hour pressure context at 10 nodes, predict next-hour pressures at each node.
+
+Input:
+- Current average pressure per node (10 values): {avg_pressure_list}
+- Pressure trend per node (last - first over the 12-hour window, 10 values): {trend_list}
+
+Output requirements:
+- Return ONLY 10 comma-separated numeric values in node order.
+- Do not include labels, markdown, units, or explanations.
+- Use this exact order:
+  tl_interval_pressure, tl_bottom_pressure, tn_interval_pressure, tn_bottom_pressure,
+  tc_interval_pressure, tc_bottom_pressure, tu_interval_pressure, tu_bottom_pressure,
+  ts_interval_pressure, ts_bottom_pressure
+
+Example output:
+125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0
