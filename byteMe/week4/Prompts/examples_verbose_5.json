@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "style": "verbose",
+    "features": [
+      "cumulative_heat_input",
+      "elapsed_injection_min",
+      "net_flow_rolling_6h",
+      "TC_INT_delta",
+      "T_gradient_INT_TC",
+      "days_since_injection",
+      "hour_sin",
+      "hour_cos",
+      "delta_T_above_T0_TN",
+      "target_lag_15",
+      "flow_lag_15",
+      "target_lag_30",
+      "flow_lag_30",
+      "target_lag_60",
+      "flow_lag_60"
+    ],
+    "targets": [
+      "target_15",
+      "target_60",
+      "target_240",
+      "target_1440"
+    ],
+    "response_schema": "{\"target_15\": <float>, \"target_60\": <float>, \"target_240\": <float>, \"target_1440\": <float>, \"confidence\": <0-1>}",
+    "num_examples": 5
+  },
+  "examples": [
+    {
+      "prompt": "Given features: cumulative_heat_input=369610.7014, elapsed_injection_min=77.0000, net_flow_rolling_6h=2.2727, TC_INT_delta=1.9085, T_gradient_INT_TC=-13.9163, days_since_injection=0.0535, hour_sin=-0.6528, hour_cos=0.7576, delta_T_above_T0_TN=1.6635, target_lag_15=1.5464, flow_lag_15=2.2189, target_lag_30=1.3290, flow_lag_30=2.1309, target_lag_60=0.2832, flow_lag_60=1.5200\nPredict temperature delta and confidence.",
+      "completion": "{\"target_15\": 1.7177, \"target_60\": 1.7772, \"target_240\": 1.9063, \"target_1440\": 2.4649, \"confidence\": 1.0}"
+    },
+    {
+      "prompt": "Given features: cumulative_heat_input=123722271.1123, elapsed_injection_min=17988.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=0.7180, T_gradient_INT_TC=-9.7194, days_since_injection=12.4917, hour_sin=0.8910, hour_cos=-0.4540, delta_T_above_T0_TN=3.3766, target_lag_15=3.3725, flow_lag_15=2.5000, target_lag_30=3.3718, flow_lag_30=2.5000, target_lag_60=3.3688, flow_lag_60=2.5000\nPredict temperature delta and confidence.",
+      "completion": "{\"target_15\": 3.3744, \"target_60\": 3.3794, \"target_240\": 3.3985, \"target_1440\": 3.491, \"confidence\": 1.0}"
+    },
+    {
+      "prompt": "Given features: cumulative_heat_input=250368898.6617, elapsed_injection_min=35900.0000, net_flow_rolling_6h=2.5000, TC_INT_delta=-1.0826, T_gradient_INT_TC=-9.2417, days_since_injection=24.9306, hour_sin=-0.9962, hour_cos=0.0872, delta_T_above_T0_TN=4.5808, target_lag_15=4.5784, flow_lag_15=2.5000, target_lag_30=4.5727, flow_lag_30=2.5000, target_lag_60=4.5672, flow_lag_60=2.5000\nPredict temperature delta and confidence.",
+      "completion": "{\"target_15\": 4.5735, \"target_60\": 4.5834, \"target_240\": 4.6167, \"target_1440\": 4.7165, \"confidence\": 1.0}"
+    },
+    {
+      "prompt": "Given features: cumulative_heat_input=342935644.1176, elapsed_injection_min=53812.0000, net_flow_rolling_6h=2.0000, TC_INT_delta=-0.0645, T_gradient_INT_TC=-7.3939, days_since_injection=37.3694, hour_sin=0.9563, hour_cos=0.2924, delta_T_above_T0_TN=5.1382, target_lag_15=5.1297, flow_lag_15=2.0000, target_lag_30=5.1187, flow_lag_30=2.0000, target_lag_60=5.1218, flow_lag_60=2.0000\nPredict temperature delta and confidence.",
+      "completion": "{\"target_15\": 5.1404, \"target_60\": 5.1399, \"target_240\": 5.1822, \"target_1440\": 5.369, \"confidence\": 1.0}"
+    },
+    {
+      "prompt": "Given features: cumulative_heat_input=423989643.8188, elapsed_injection_min=72000.0000, net_flow_rolling_6h=1.4859, TC_INT_delta=-0.5563, T_gradient_INT_TC=-5.3635, days_since_injection=50.0000, hour_sin=-0.8660, hour_cos=0.5000, delta_T_above_T0_TN=5.5721, target_lag_15=5.6062, flow_lag_15=1.4859, target_lag_30=5.5980, flow_lag_30=1.4859, target_lag_60=5.6147, flow_lag_60=1.4859\nPredict temperature delta and confidence.",
+      "completion": "{\"target_15\": 5.6029, \"target_60\": 5.6023, \"target_240\": 5.5868, \"target_1440\": 5.553, \"confidence\": 1.0}"
+    }
+  ]
+}
