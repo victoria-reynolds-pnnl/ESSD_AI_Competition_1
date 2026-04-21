@@ -1,0 +1,173 @@
+"""
+train.py — Week 3 Cold Extremes: Model Training Pipeline
+
+Workflow
+--------
+1. Runs Scripts/regional_time_cold_zeros.R via Rscript
+   → panel construction, initial DHARMa diagnostics, walk-forward MAE,
+     split CSVs (cold_train_df.csv, cold_val_df.csv, cold_test_df.csv)
+2. Runs Scripts/test.R via Rscript
+   → fits final model m5.4 on training data → predicts val
+   → fits m5.4 on train+val (m5.4tv) → predicts test
+   → writes Output/predict_val_from_m5.4t.csv
+            Output/predict_test_from_m5.4t.csv
+            Output/predict_test_from_m5.4tv.csv
+3. Runs Scripts/save_coefs_m54.R via Rscript
+   → fits m5.4tv, saves Models/fit_m54tv.rds and Output/fit_m54_coefs.csv
+4. Reads Output/fit_m54_coefs.csv and pickles NegBinWrapper → Models/model_1.pkl
+5. Generates Data/splits_indexed.csv and Data/week2_clean.csv
+
+Model selection context
+-----------------------
+Scripts/regional_models.R documents the full model selection path
+(16 individual regional models, m1-m5 series AIC/BIC comparison) and can
+be run separately in RStudio after Step 1 to reproduce the selection decision.
+It is NOT included in this automated pipeline due to its ~30+ min runtime.
+
+Design note
+-----------
+Uses subprocess to call Rscript directly — no rpy2 required.
+Scripts with rstudioapi::getActiveDocumentContext() have that line patched
+at runtime to a hard-coded path. No permanent changes to source files.
+
+Requirements
+------------
+  Python : pandas, numpy  (see requirements.txt)
+  R      : tidyverse, glmmTMB, DHARMa, lme4, rstudioapi  (>= 4.x)
+"""
+
+import os
+import pickle
+import pathlib
+import subprocess
+import sys
+import tempfile
+import shutil
+
+import numpy as np
+import pandas as pd
+
+# Locate Rscript (handles non-standard install paths on Windows)
+sys.path.insert(0, str(pathlib.Path(__file__).parent))
+import r_config
+from model import NegBinWrapper
+RSCRIPT = r_config.get_rscript_path()
+print(f"Using Rscript: {RSCRIPT}")
+
+# ── Paths ─────────────────────────────────────────────────────────────────────
+ROOT       = pathlib.Path(__file__).resolve().parents[1]
+SCRIPTS    = ROOT / "Scripts"
+MODELS_DIR = ROOT / "Models"
+OUTPUT     = ROOT / "Output"
+
+MODELS_DIR.mkdir(exist_ok=True)
+OUTPUT.mkdir(exist_ok=True)
+(ROOT / "Visualizations").mkdir(exist_ok=True)
+
+PKL_PATH = MODELS_DIR / "model_1.pkl"
+
+
+# ── Helper: run an R script via Rscript ───────────────────────────────────────
+def run_rscript(r_script: pathlib.Path) -> None:
+    """
+    Read *r_script*, replace the rstudioapi setwd() call with a hard-coded path,
+    write to a temp file, and run via Rscript.  No changes to the source file.
+    """
+    code = r_script.read_text(encoding="utf-8")
+    code = code.replace(
+        "setwd(dirname(getActiveDocumentContext()$path))",
+        f'setwd("{SCRIPTS.as_posix()}")',
+    )
+    with tempfile.NamedTemporaryFile(
+        suffix=".R", delete=False, mode="w", encoding="utf-8"
+    ) as tmp:
+        tmp.write(code)
+        tmp_path = tmp.name
+    try:
+        result = subprocess.run(
+            [RSCRIPT, "--vanilla", tmp_path],
+            check=True,
+        )
+    finally:
+        os.unlink(tmp_path)
+
+
+# ── Step 1: Panel construction, initial model comparison, split CSVs ──────────
+print("── Step 1: Running regional_time_cold_zeros.R …")
+run_rscript(SCRIPTS / "regional_time_cold_zeros.R")
+print("   ✓ Panel built, DHARMa diagnostics written, split CSVs saved.")
+
+# ── Step 2: Model selection — m1–5 AIC/BIC comparison, regional DHARMa ───────
+print("── Step 2: Running regional_models.R (model selection, ~30+ min) …")
+run_rscript(SCRIPTS / "regional_models.R")
+print("   ✓ AIC/BIC table, regional DHARMa, and coefficient tables saved.")
+
+# ── Step 3: Final model m5.4 — val and test predictions ──────────────────────
+print("── Step 3: Running test.R (m5.4 predictions on val and test) …")
+run_rscript(SCRIPTS / "test.R")
+print("   ✓ predict_val_from_m5.4t.csv, predict_test_from_m5.4t.csv,")
+print("   ✓ predict_test_from_m5.4tv.csv written to Output/.")
+
+# ── Step 4: Fit m5.4tv and save coefficient CSV ─────────────────────────────
+print("── Step 4: Running save_coefs_m54.R …")
+subprocess.run(
+    [RSCRIPT, "--vanilla", str(SCRIPTS / "save_coefs_m54.R")],
+    cwd=str(SCRIPTS),
+    check=True,
+)
+print("   ✓ Models/fit_m54tv.rds and Output/fit_m54_coefs.csv saved.")
+
+# ── Step 5: Load coefficient table and pickle NegBinWrapper ─────────────────
+coef_csv = OUTPUT / "fit_m54_coefs.csv"
+if not coef_csv.exists():
+    raise FileNotFoundError(
+        f"{coef_csv} not found — save_coefs_m54.R may have failed."
+    )
+
+coef_df     = pd.read_csv(coef_csv, index_col="term")
+dispersion  = float(coef_df["dispersion"].iloc[0])
+c_year_mean = float(coef_df["c_year_mean"].iloc[0])
+ref_extreme = str(coef_df["ref_extreme"].iloc[0])
+ref_nerc    = str(coef_df["ref_nerc"].iloc[0])
+
+print(f"   c_year centering mean  : {c_year_mean:.4f}")
+print(f"   Dispersion (size)      : {dispersion:.4f}")
+print(f"   Ref extreme_type       : {ref_extreme}")
+print(f"   Ref NERC_ID            : {ref_nerc}")
+
+rds_path = MODELS_DIR / "fit_m54tv.rds"
+wrapper  = NegBinWrapper(rds_path, coef_df, dispersion, c_year_mean,
+                         ref_extreme, ref_nerc)
+with open(PKL_PATH, "wb") as fh:
+    pickle.dump(wrapper, fh)
+print(f"   ✓ Python wrapper pickled → {PKL_PATH.relative_to(ROOT)}")
+
+# ── Step 6: Generate splits_indexed.csv and week2_clean.csv ─────────────────
+print("── Step 6: Generating Data/splits_indexed.csv and Data/week2_clean.csv …")
+
+train_split = pd.read_csv(OUTPUT / "cold_train_df.csv"); train_split["split"] = "train"
+val_split   = pd.read_csv(OUTPUT / "cold_val_df.csv");   val_split["split"]   = "val"
+test_split  = pd.read_csv(OUTPUT / "cold_test_df.csv");  test_split["split"]  = "test"
+
+splits = pd.concat([train_split, val_split, test_split], ignore_index=True)
+splits.insert(0, "row_id", range(len(splits)))
+splits_path = ROOT / "Data" / "splits_indexed.csv"
+splits.to_csv(splits_path, index=False)
+print(f"   ✓ splits_indexed.csv written: {len(splits):,} rows → {splits_path.relative_to(ROOT)}")
+
+week2_src = ROOT / "Data" / "region_yr_extreme_count.csv"
+week2_dst = ROOT / "Data" / "week2_clean.csv"
+if not week2_dst.exists():
+    shutil.copy(week2_src, week2_dst)
+    print(f"   ✓ week2_clean.csv written → {week2_dst.relative_to(ROOT)}")
+else:
+    print(f"   – week2_clean.csv already exists, skipped.")
+
+# ── Summary ───────────────────────────────────────────────────────────────────
+print(f"\nModel : {wrapper.formula}")
+print(f"Family: {wrapper.family}")
+print(f"Dispersion (size): {dispersion:.4f}")
+print(f"c_year centering mean: {c_year_mean:.4f}")
+print("\nFixed effects (first 10 terms, log scale):")
+print(coef_df[["Estimate", "Std. Error", "Pr(>|z|)"]].head(10).to_string())
+print("\nTraining complete.")

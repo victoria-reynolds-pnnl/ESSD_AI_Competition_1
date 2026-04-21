@@ -1,0 +1,33 @@
+# =============================================================================
+# requirements.txt — Week 3 Cold Extremes Submission
+# Python package dependencies (pinned versions)
+# =============================================================================
+# To recreate the environment:
+#   pip install -r requirements.txt
+# =============================================================================
+
+# --- Core scientific stack (pinned) ---
+numpy==2.2.4
+pandas==2.2.3
+matplotlib==3.10.0
+
+# NOTE: rpy2 is NOT required.
+# Python scripts call Rscript via subprocess (more reliable on Windows).
+# r_config.py auto-detects the R 4.5.3 installation path.
+
+# =============================================================================
+# R 4.5.3 package dependencies (pinned versions)
+# =============================================================================
+# Reinstall with:
+#   & "C:\Program Files\R\R-4.5.3\bin\Rscript.exe" -e "install.packages(c('tidyverse','lme4','glmmTMB','DHARMa','broom.mixed','sjPlot','rstudioapi'), lib=Sys.getenv('R_LIBS_USER'), repos='https://cloud.r-project.org')"
+#
+# Verified versions used in this submission:
+#   tidyverse    == 2.0.0
+#   lme4         == 2.0.1
+#   glmmTMB      == 1.1.14
+#   DHARMa       == 0.4.7
+#   broom.mixed  == 0.2.9
+#   sjPlot       == 2.9.0
+#   rstudioapi   == 0.18.0
+#   R            == 4.5.3
+# =============================================================================

@@ -1,0 +1,109 @@
+# libraries
+# lines 1-19 not written by AI
+# lines 20-80 code written by AI previously
+## but copied over from previous script
+## and adapted as needed to complete tasks
+## gpt 5.2 from model garden
+
+#R packages needed for code to run
+library(tidyverse) # data wrangling 
+library(rstudioapi) # helps set path so works on any machine
+
+# fit mixed models
+library(glmmTMB) # fit model
+
+## set working directory & get data
+setwd(dirname(getActiveDocumentContext()$path))
+
+train_df <- read.csv("../Output/cold_train_df.csv")
+val_df <- read.csv("../Output/cold_val_df.csv")
+test_df <- read.csv("../Output/cold_test_df.csv")
+
+train_df$data <- "train"
+val_df$data <- "validate"
+
+nerc_levels <- c(
+  "NERC1","NERC2","NERC3","NERC4","NERC5","NERC6","NERC7","NERC8",
+  "NERC9","NERC10","NERC11","NERC12","NERC15","NERC17","NERC18","NERC20"
+)
+train_df$NERC_ID <- factor(train_df$NERC_ID, levels = nerc_levels)
+val_df$NERC_ID   <- factor(val_df$NERC_ID,   levels = nerc_levels)
+test_df$NERC_ID   <- factor(test_df$NERC_ID,   levels = nerc_levels)
+
+### create c_year
+train_df$c_year <- train_df$start_yr - mean(train_df$start_yr, na.rm=TRUE)
+val_df$c_year <- val_df$start_yr - mean(val_df$start_yr, na.rm=TRUE)
+test_df$c_year <- test_df$start_yr - mean(test_df$start_yr, na.rm=TRUE)
+
+# create longer_df
+# update c_year
+longer_df <- rbind(train_df, val_df)
+longer_df$c_year <- longer_df$start_yr - mean(longer_df$start_yr, na.rm=TRUE)
+
+# save centering means — prediction frames must use the SAME mean as the fitted model
+c_year_train_mean <- mean(train_df$start_yr,  na.rm = TRUE)  # used for m5.4t predictions
+c_year_tv_mean    <- mean(longer_df$start_yr, na.rm = TRUE)  # used for m5.4tv predictions
+
+# run selected model on training data
+## then predict val
+## then predict test
+m5.4t <- glmmTMB(
+  
+  n_extreme ~ c_year * extreme_type + as.factor(NERC_ID) + (1 | start_yr),
+  
+  data = train_df,
+  
+  family = nbinom2(link = "log")
+  
+)
+
+val_comp <- val_df %>%
+  mutate(
+    c_year = start_yr - c_year_train_mean,  # re-centre to match m5.4t training
+    pred_m5.4t = predict(m5.4t, newdata = ., type = "response", 
+                        allow.new.levels = TRUE),
+  )
+test_comp <- test_df %>%
+  mutate(
+    c_year = start_yr - c_year_train_mean,  # re-centre to match m5.4t training
+    pred_m5.4t = predict(m5.4t, newdata = ., type = "response", 
+                         allow.new.levels = TRUE),
+  )
+
+
+# run selected model on training + validation data
+## then predict test
+m5.4tv <- glmmTMB(
+  
+  n_extreme ~ c_year * extreme_type + as.factor(NERC_ID) + (1 | start_yr),
+  
+  data = longer_df,
+  
+  family = nbinom2(link = "log")
+  
+)
+
+test_comp_tv <- test_df %>%
+  mutate(
+    c_year = start_yr - c_year_tv_mean,  # re-centre to match m5.4tv (train+val) training
+    pred_m5.4tv = predict(m5.4tv, newdata = ., type = "response", 
+                         allow.new.levels = TRUE),
+  )
+
+# not written by AI
+## write predictions of val & test
+## based only on training data 
+write.csv(val_comp, 
+          "../Output/predict_val_from_m5.4t.csv",
+          row.names = FALSE, 
+          na = "")
+write.csv(test_comp, 
+          "../Output/predict_test_from_m5.4t.csv",
+          row.names = FALSE, na = "")
+
+### ## write predictions of test
+## based training plus validation data 
+write.csv(test_comp_tv, 
+          "../Output/predict_test_from_m5.4tv.csv",
+          row.names = FALSE, 
+          na = "")
