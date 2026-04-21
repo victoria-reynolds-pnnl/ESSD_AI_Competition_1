@@ -1,0 +1,6 @@
+Classify the network narrative.
+Labels: ["high_risk", "low_risk"]
+Output JSON: {{"prediction": "<label>", "confidence": <float>}}
+No other text.
+
+[EXAMPLE NARRATIVE: Network analysis showing edge weights and connectivity patterns]

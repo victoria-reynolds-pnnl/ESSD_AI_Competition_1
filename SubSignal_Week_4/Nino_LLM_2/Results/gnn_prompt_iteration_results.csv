@@ -1,0 +1,504 @@
+sample_id,model_label,model_name,endpoint_port,version,ground_truth,prediction,confidence,parse_ok,parse_error,raw_response,is_correct
+1117,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.9,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.9
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there is limited interdependency between nodes.
+- The strongest edges are between Transport Lines (TL), which are moderate and represent primary signal transmission pathways, suggesting a structured and predictable network behavior.
+- The stable weight range and associated sensor readings (net_flow and injection_pressure) suggest consistency and stability in the network's operation.
+- The confidence level is set at 0.9, reflecting a high level of certainty in the low-risk classification based on the provided information.
+
+Note: The confidence value is an illustrative example and would ideally be determined by a more sophisticated analysis or model in a real-world application.",True
+1369,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there is limited interdependency between nodes.
+- The strongest edges are between Transport Lines (TL), which are moderate and represent primary signal transmission pathways, suggesting a structured and predictable network behavior.
+- The stable weight range and associated sensor readings (net_flow and injection_pressure) suggest consistency and stability in the network's operation.
+- The high confidence level (0.95) reflects the low-risk classification based on the provided information.
+
+Note: The confidence value is an illustrative example. In a real-world application, this would be determined by a model trained on similar data.",True
+423,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there are fewer pathways for potential failures or disruptions.
+- The strongest edges are between Transport Lines (TL), which are moderate and represent primary signal transmission pathways. This suggests a structured and reliable part of the network.
+- The stable weight range and associated sensor readings (net_flow=0.66, injection_pressure=0.54) indicate consistency and stability in the network's operation.
+- The high confidence level (0.95) reflects the low-risk assessment based on the provided information.
+
+Note: The confidence value is an illustrative example. In a real-world application, confidence would be determined by a model's output based on historical data and the specific context of the network.",True
+414,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there are fewer pathways for potential issues to propagate.
+- The strongest edges are between Transport Lines (TL), which are moderate and represent primary signal transmission pathways, suggesting a well-defined structure.
+- The stable weight range and associated sensor readings (net_flow=0.66, injection_pressure=0.54) suggest consistency and reliability in the network's operation.
+- The high confidence level (0.95) reflects the low-risk assessment based on the provided information.
+
+Note: The confidence value is an illustrative example. In a real-world application, this would be determined by a model trained on similar data.",True
+452,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there are fewer pathways for potential failures or attacks to propagate.
+- The strongest edges are between Transport Lines (TL), which are moderate and represent primary signal transmission pathways. This suggests a structured and somewhat resilient network.
+- The stable weight range and associated sensor readings (net_flow=0.66, injection_pressure=0.56) indicate consistency and stability in the network's operation.
+- The high confidence level (0.95) reflects the low-risk assessment based on the provided information.
+
+Note: The confidence value is an illustrative example. In a real-world application, confidence would be determined by a model trained on historical data and the specific context of the network being analyzed.",True
+862,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there are fewer pathways for potential issues to propagate.
+- The strongest edges are between Transport Lines (TL), which are moderate and represent primary signal transmission pathways. This suggests a structured and reliable network.
+- The stable weight range and associated sensor readings (net_flow=0.17, injection_pressure=0.71) further support the notion of a stable and low-risk network.
+- The confidence level is set at 0.95, reflecting a high level of certainty in the low-risk classification based on the provided information.
+
+Note: The confidence value is an illustrative example and would ideally be determined by a more sophisticated analysis or machine learning model trained on similar network data.",True
+1064,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there are fewer pathways for potential failures or attacks to propagate.
+- The strongest edges are between Transport Lines (TL), which are moderate and represent primary signal transmission pathways. This suggests a structured and somewhat resilient network.
+- The stable weight range and associated sensor readings (net_flow=0.17, injection_pressure=0.78) indicate consistency and stability in the network's operation.
+- The high confidence level (0.95) reflects the low-risk assessment based on the provided information.
+
+Note: The confidence value is an illustrative example. In a real-world application, this would be determined by a model trained on historical data and the specific context of the network being analyzed.",True
+742,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a low-risk scenario as there are fewer pathways for potential failures or attacks to propagate.
+- The strongest edges are between Transport Lines (TL) with a moderate weight of 0.30, suggesting that the network has some level of robustness in its primary signal transmission pathways.
+- The stable weight range and associated sensor readings (net_flow=0.17, injection_pressure=0.69) further support the notion of a consistent and stable network topology.
+- The high confidence level (0.95) reflects the low-risk classification based on the provided information.
+
+Note: The confidence value is an illustrative example and would normally be determined by a model trained on similar data. In a real-world application, this would be generated by an algorithm analyzing the input data.",True
+1117,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.9,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.90
+}
+```
+
+Explanation:
+- The mean edge weight is close to zero, indicating weak coupling between nodes, which is typical for a sparsely connected network.
+- The standard deviation is zero, suggesting that the edge weights are consistent and do not fluctuate much, which implies a stable network topology.
+- The network is described as having nodes that operate quasi-independently, which is not inherently risky but does limit the network's robustness to failures.
+- The strongest edges are between Transport Lines (TL), which are likely critical for the network's function, but the weight is only moderate (0.42), which is not indicative of a high-risk scenario.
+- The sensor readings (net_flow and injection_pressure) are within expected ranges for a stable network.
+- Given the information, the risk level is assessed as ""low_risk"" with a high confidence level (0.90) because the network appears stable and the critical connections are not overly stressed. However, the quasi-independence of nodes could be a point of concern in the event of a failure, but it is not enough to classify the network as high risk.",True
+1369,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.9,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.90
+}
+```
+
+Explanation:
+- The mean edge weight is close to zero, indicating weak connections, but the standard deviation is zero, which suggests consistency in the network's connectivity.
+- The network is described as sparsely connected with quasi-independent nodes, which typically implies a lower risk of systemic failure since the failure of one node is less likely to affect others.
+- The strongest edges are between Transport Lines (TL), which are identified as primary signal transmission pathways. The presence of these strong connections, despite the overall weak coupling, suggests that critical communication within the network is maintained.
+- The stable weight range and associated sensor readings (net_flow and injection_pressure) indicate that the network's topology is consistent and not fluctuating, which is a positive sign for reliability.
+- Given the above points, the risk level is assessed as ""low_risk"" with a high confidence level of 0.90, as the network appears to be stable and resilient despite its weak overall connectivity. The strongest connections within the network are likely to ensure that critical functions are preserved.",True
+423,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.9,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.90
+}
+```
+
+Explanation:
+- The mean edge weight is close to zero, which indicates weak coupling between nodes, but it is stable (standard deviation is zero), suggesting consistency in the network's connectivity.
+- The network is described as sparsely connected with quasi-independent nodes, which typically implies a lower risk of systemic failure since the failure of one node is less likely to affect others.
+- The strongest edges are between Transport Lines (TL), which are identified as primary signal transmission pathways. The provided sensor readings (net_flow=0.66, injection_pressure=0.54) are within a stable range, further supporting the notion of a consistent and reliable network.
+- The confidence level is set at 0.90, reflecting a high degree of certainty based on the provided data, which does not indicate any immediate or significant risk factors.
+
+Note: The confidence level is somewhat subjective and would ideally be based on a more comprehensive analysis, including historical data, failure rates, and other contextual information not provided in the narrative.",True
+414,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.9,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.90
+}
+```
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a lower risk of systemic failure since the failure of one node is less likely to propagate.
+- The strongest edges are between Transport Lines (TL), which are identified as primary signal transmission pathways. The moderate weight (w=0.45) and stable weight range suggest that these connections are reliable.
+- Sensor readings (net_flow=0.66, injection_pressure=0.54) are within a stable range, further supporting the notion of a consistent and reliable network topology.
+- The high confidence level (0.90) reflects the positive indicators of network stability and reliability based on the provided data.
+
+Note: The confidence level is subjective and would ideally be based on historical data, expert analysis, or a more sophisticated model. Here, it is an estimated value given the limited information provided.",True
+452,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.9,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.90
+}
+```
+
+Explanation:
+- The mean edge weight is close to zero, which indicates weak coupling between nodes, but the standard deviation is zero, suggesting consistency in the network's connectivity pattern.
+- The network is described as sparsely connected with quasi-independent nodes, which typically implies a lower risk of systemic failure since the impact of a single node's failure is limited.
+- The strongest edges are between Transport Lines (TL), which are likely critical for the network's function, but the weights are moderate (0.46), not indicating a high risk of failure.
+- The stable weight range and consistent network topology across the observation window further support the low risk assessment.
+- The confidence level is set at 0.90, reflecting a high degree of certainty in the low risk prediction based on the provided data. However, it is not set at 1.0 due to the inherent uncertainties in network behavior and the lack of information on potential external threats or failures.",True
+862,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+```
+
+Explanation:
+- The mean edge weight is close to zero, which indicates weak coupling between nodes, but it is stable (standard deviation is zero), suggesting consistency in the network's connectivity.
+- The network is described as sparsely connected with quasi-independent nodes, which typically implies a lower risk of systemic failure since the failure of one node is less likely to affect others.
+- The strongest edges are between Transport Lines (TL), which are identified as primary signal transmission pathways. The presence of stable weights for these edges suggests that the critical connections are functioning as expected.
+- The sensor readings (net_flow and injection_pressure) are within a range that does not indicate abnormal behavior.
+- Given the information provided, there is a high level of confidence in the assessment of low risk due to the stability and consistency of the network's topology and the fact that the critical connections are not showing signs of weakness.
+
+The confidence level is set at 0.95, reflecting a high degree of certainty based on the provided data, but it is not absolute due to the inherent uncertainties in network analysis and the lack of information on potential external threats or failures not captured by the edge weights and topology.",True
+1064,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}
+```
+
+Explanation:
+- The mean edge weight is close to zero, which indicates weak coupling between nodes, but it is stable (standard deviation is zero), suggesting consistency in the network's connectivity.
+- The network is described as sparsely connected, which typically implies a lower risk of systemic failure since there are fewer points of failure.
+- The strongest edges are between Transport Lines (TL), which are likely critical infrastructure, but the weight is moderate (0.42), not indicating a high risk of failure.
+- The stable weight range and consistent network topology across the observation window further support the low risk assessment.
+- The confidence level is set at 0.95, reflecting a high degree of certainty in the low risk prediction based on the provided data.
+
+Note: The confidence level is subjective and would ideally be based on historical data, expert knowledge, and additional context not provided in the narrative.",True
+742,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v2_contextual,low_risk,low_risk,0.9,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.90
+}
+```
+
+Explanation:
+- The network is described as sparsely connected with weak average coupling, which typically indicates a lower risk of systemic failure since the failure of one node is less likely to propagate.
+- The strongest edges are between Transport Lines (TL), which are identified as primary signal transmission pathways. The moderate weight (w=0.30) and stable weight range suggest that these connections are reliable.
+- The associated sensor readings (net_flow=0.17, injection_pressure=0.69) are within a range that does not indicate abnormal behavior.
+- The high confidence level (0.90) reflects the relatively stable and predictable nature of the network based on the provided data.
+
+Note: The confidence level is subjective and would ideally be based on historical data, expert analysis, and additional context not provided in the narrative. The value of 0.90 is an illustrative example.",True
+1117,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.94,True,," {""prediction"": ""low_risk"", ""confidence"": 0.94}
+
+Explanation:
+The narrative describes a network that is sparsely connected with weak average coupling, indicating limited interaction between nodes. The mention of nodes operating quasi-independently with limited information flow further supports a low-risk assessment. The strongest edges are between Transport Lines (TL) and are described as moderate with a weight of 0.42, which suggests some level of connectivity but not enough to raise the risk level. The stable weight range with a mean of -0.159 and a standard deviation of 0.000 indicates consistency in the network's topology, which is a positive sign. The associated sensor readings (net_flow=-0.27 and injection_pressure=0.75) do not suggest any immediate issues. Therefore, the prediction is ""low_risk"" with a high confidence level of 0.94, reflecting the overall stability and consistency of the network despite its sparse connectivity.",True
+1369,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.94,True,," {""prediction"": ""low_risk"", ""confidence"": 0.94}
+
+Explanation:
+The narrative describes a network that is sparsely connected with weak average coupling, indicating limited interaction between nodes. The mention of nodes operating quasi-independently with limited information flow further supports the low risk assessment. The strongest edges are between Transport Lines (TL) and are described as moderate with a weight of 0.44, which suggests some level of connectivity but not strong enough to indicate high risk. The stable weight range with a mean of -0.116 and a standard deviation of 0.000 indicates consistency in the network's topology, which is a positive sign. The associated sensor readings (net_flow and injection_pressure) do not suggest any anomalies or instabilities. Therefore, the prediction is ""low_risk"" with a high confidence level of 0.94, reflecting the overall stability and consistency of the network despite its sparse connectivity.",True
+423,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.94,True,," {""prediction"": ""low_risk"", ""confidence"": 0.94}
+
+Explanation:
+- The mean edge weight is negative (-0.225), which indicates weak coupling between nodes.
+- The standard deviation is 0.000, suggesting no variability in edge weights, which implies a stable network topology.
+- The network is described as sparsely connected with quasi-independent nodes, which typically indicates a lower risk of network failure or significant disruption.
+- The strongest edges are between Transport Lines (TL) and are described as moderate with a weight of 0.39, which is not indicative of high risk.
+- The stable weight range and consistent network topology across the observation window further support the low risk prediction.
+- The high confidence level (0.94) reflects the strong indicators of low risk based on the provided narrative.",True
+414,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.94,True,," {""prediction"": ""low_risk"", ""confidence"": 0.94}
+
+Explanation:
+The narrative describes a network that is sparsely connected with weak average coupling, indicating limited interaction between nodes. The mention of nodes operating quasi-independently with limited information flow further supports the low risk assessment. The strongest edges are between Transport Lines (TL) and are described as moderate with a weight of 0.45, which suggests some level of connectivity but not strong enough to indicate high risk. The stable weight range and associated sensor readings (net_flow=0.66, injection_pressure=0.54) suggest consistency in the network's operation, which is a characteristic of a low-risk network. The confidence level is set high due to the clear indication of a stable and low-risk network structure.",True
+452,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.94,True,," {""prediction"": ""low_risk"", ""confidence"": 0.94}
+
+Explanation:
+- The mean edge weight is close to zero (-0.086), indicating weak coupling between nodes.
+- The standard deviation is zero (std=0.000), which suggests that there is no variability in the edge weights, further supporting a stable but weak network structure.
+- The active edges are minimal (0/1), reinforcing the notion of a sparse network.
+- The strongest edges are described as ""moderate"" with a weight of 0.46, which is not indicative of high risk but also not strong enough to suggest a robust network.
+- The stable weight range and consistent network topology across the observation window suggest that the network is not prone to sudden changes or failures.
+- The sensor readings (net_flow=0.66, injection_pressure=0.56) are relatively stable, which supports the low risk prediction.
+- The overall narrative points to a network that is functioning with limited information flow and quasi-independence of nodes, which is characteristic of a low-risk scenario in terms of connectivity and potential for disruption.
+- The confidence level is set at 0.94, reflecting a high level of certainty in the low-risk prediction based on the provided narrative.",True
+862,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.94,True,," {""prediction"": ""low_risk"", ""confidence"": 0.94}
+
+Explanation:
+- The mean edge weight is close to zero (-0.136), indicating weak coupling between nodes.
+- The standard deviation is zero (std=0.000), which suggests that there is no variability in the edge weights, reinforcing the notion of a stable but weak network.
+- The active edges are minimal (0/1), further supporting the idea of a sparse and stable network.
+- The strongest edges are described as ""moderate"" with a weight of 0.43, which is not indicative of high risk but rather a controlled and stable flow within the network.
+- The associated sensor readings (net_flow=0.17, injection_pressure=0.71) are relatively low, which aligns with the narrative of a network that operates with limited information flow and quasi-independence of nodes.
+- The overall description points to a network that is stable and not prone to high risk, hence the ""low_risk"" prediction with a high confidence level of 0.94.",True
+1064,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.94,True,," {""prediction"": ""low_risk"", ""confidence"": 0.94}
+
+Explanation:
+The narrative describes a network that is sparsely connected with weak average coupling, indicating limited interaction between nodes. The mention of nodes operating quasi-independently with limited information flow further supports a low-risk assessment. The strongest edges are between Transport Lines (TL) and are described as moderate with a weight of 0.42, which suggests some level of connectivity but not strong enough to indicate high risk. The stable weight range and associated sensor readings (net_flow=0.17, injection_pressure=0.78) imply consistency in the network's operation. Overall, the description aligns with a low-risk scenario due to the network's stability and limited connectivity, hence the high confidence level in the prediction.",True
+742,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v3_few_shot,low_risk,low_risk,0.87,True,," {""prediction"": ""low_risk"", ""confidence"": 0.87}
+
+Explanation:
+The narrative describes a network that is sparsely connected with weak average coupling, indicating limited interaction between nodes. The mention of nodes operating quasi-independently with limited information flow further supports the low risk assessment. The strongest edges are between Transport Lines (TL) and are described as moderate with a weight of 0.30, which suggests some level of connectivity but not strong enough to indicate high risk. The stable weight range and associated sensor readings (net_flow=0.17, injection_pressure=0.69) suggest consistency in the network's topology, which is a positive sign. However, the overall description leans more towards a low risk due to the sparse and weak connectivity, hence the confidence level is set at 0.87.",True
+1117,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.92,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.92
+}",True
+1369,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}",True
+423,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}",True
+414,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}",True
+452,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}",True
+862,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}",True
+1064,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}",True
+742,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v1_minimal,low_risk,low_risk,0.95,True,," {
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.95
+}",True
+1117,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```
+
+
+The network is described as sparsely connected with weak average coupling, which implies a low risk of cascading failures due to the limited interdependencies between nodes. The strongest edges are identified as primary signal transmission pathways, which are moderate in weight, indicating they are not the most critical connections but are still significant. The stable weight range and consistent network topology further support a low risk assessment. The confidence level is set at 0.95, reflecting a high degree of certainty in the low-risk prediction based on the provided narrative.",True
+1369,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```",True
+423,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```",True
+414,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```",True
+452,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```",True
+862,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```",True
+1064,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```
+
+
+The network is described as sparsely connected with weak average coupling, which typically indicates a lower risk of cascading failures due to the limited number of connections between nodes. The strongest edges are identified as primary signal transmission pathways, which are crucial for the network's operation but do not necessarily indicate a high risk of failure. The stable weight range and consistent network topology further support a low-risk assessment. The confidence level is set at 0.95, reflecting a high degree of certainty in the low-risk prediction based on the provided narrative.",True
+742,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v2_contextual,low_risk,low_risk,0.95,True,," ```json
+
+{
+
+  ""prediction"": ""low_risk"",
+
+  ""confidence"": 0.95
+
+}
+
+```",True
+1117,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,low_risk,0.92,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.92
+}
+```",True
+1369,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,low_risk,0.92,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.92
+}
+```",True
+423,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,high_risk,0.92,True,," ```json
+{
+  ""prediction"": ""high_risk"",
+  ""confidence"": 0.92
+}
+```",False
+414,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,low_risk,0.92,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.92
+}
+```",True
+452,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,low_risk,0.92,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.92
+}
+```",True
+862,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,low_risk,0.85,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.85
+}
+```",True
+1064,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,low_risk,0.92,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.92
+}
+```",True
+742,phi-mini-moe-instruct,Phi-mini-MoE-instruct,8001,v3_few_shot,low_risk,low_risk,0.92,True,," ```json
+{
+  ""prediction"": ""low_risk"",
+  ""confidence"": 0.92
+}
+```",True
+1117,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+1369,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+423,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+414,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+452,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+862,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+1064,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+742,gemma-3-12b-it,gemma-3-12b-it,8002,v1_minimal,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+1117,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+1369,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+423,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+414,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+452,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+862,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+1064,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+742,gemma-3-12b-it,gemma-3-12b-it,8002,v2_contextual,low_risk,low_risk,0.85,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.85}
+```",True
+1117,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+1369,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+423,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+414,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+452,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+862,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+1064,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
+742,gemma-3-12b-it,gemma-3-12b-it,8002,v3_few_shot,low_risk,low_risk,0.95,True,,"```json
+{""prediction"": ""low_risk"", ""confidence"": 0.95}
+```",True
