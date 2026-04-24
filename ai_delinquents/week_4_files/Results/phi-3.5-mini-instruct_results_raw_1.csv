@@ -1,7 +1,0 @@
-water_year,model_label,model_name,endpoint_port,prompt_version,observed,pred_climatology,pred_mlr,pred_xgb,raw_response,prediction_kcfs_days,parse_ok,parse_error
-2013,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,45780.8,44730.55,43671.90224185053,41102.19921875," {""prediction_kcfs_days"": 35000}",35000.0,True,
-2014,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,48726.0,44730.55,47019.58536425538,45512.875," {""prediction_kcfs_days"": 45000}",45000.0,True,
-2015,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,31185.1,44730.55,35654.29212248327,43329.171875," {""prediction_kcfs_days"": 35000}",35000.0,True,
-2016,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,41470.7,44730.55,46548.38585034403,45824.9921875," {""prediction_kcfs_days"": 45000}",45000.0,True,
-2017,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,57104.3,44730.55,57556.880296067415,57363.765625," {""prediction_kcfs_days"": 45000}",45000.0,True,
-2018,phi-3.5-mini-instruct,Phi-3.5-mini-instruct,8000,v1,52976.8,44730.55,46320.73981313551,47529.94921875," {""prediction_kcfs_days"": 45000}",45000.0,True,

@@ -1,3 +1,0 @@
-model_type,model_label,model_name,endpoint_port,rows_total,rows_valid,invalid_rate,rmse,mae
-Week3_ML,week3-xgb,Week3 ML - XGB,,254,254,0.0,1.0274000759238346,0.7404736128032172
-Week4_LLM,gemma-3-12b-it,gemma-3-12b-it,8002.0,254,254,0.0,18.50592051791538,17.028992775658963

@@ -1,0 +1,17 @@
+Here are the list of prompts I used in ChatGPT to input known water information and get predicted gage height and flooding information.
+
+1. Ignore all of our previous chats. Using this data, can you predict whether flooding will or has occurred in Mabton or Kiona based upon current upstream discharge values from Union gap and Mabton? Please provide a place to enter the discharge values from both locations within this chat, then provide the predicted gage height values at Mabton and Kiona based upon the input. Finally, provide an RMSE value for the predicted gage heights.
+
+2. Union Gap Discharge (cfs): 2700 
+Mabton Discharge (cfs): 712
+
+3. Union Gap Discharge (cfs): 7330 
+Mabton Discharge (cfs): 9650
+
+4. Union Gap Discharge (cfs): 5040 
+Mabton Discharge (cfs): 7530
+
+5. Please provide references for the data and information you used to generate the results values.
+
+6. Provide references on how you interpreted this data.
+
