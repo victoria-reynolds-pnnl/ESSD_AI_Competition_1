@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "style": "verbose",
+    "features": [
+      "cumulative_heat_input",
+      "elapsed_injection_min",
+      "net_flow_rolling_6h",
+      "TC_INT_delta",
+      "T_gradient_INT_TC",
+      "days_since_injection",
+      "hour_sin",
+      "hour_cos",
+      "delta_T_above_T0_TN",
+      "target_lag_15",
+      "flow_lag_15",
+      "target_lag_30",
+      "flow_lag_30",
+      "target_lag_60",
+      "flow_lag_60"
+    ],
+    "targets": [
+      "target_15",
+      "target_60",
+      "target_240",
+      "target_1440"
+    ],
+    "response_schema": "{\"target_15\": <float>, \"target_60\": <float>, \"target_240\": <float>, \"target_1440\": <float>, \"confidence\": <0-1>}",
+    "num_examples": 1
+  },
+  "examples": [
+    {
+      "prompt": "Given features: cumulative_heat_input=369610.7014, elapsed_injection_min=77.0000, net_flow_rolling_6h=2.2727, TC_INT_delta=1.9085, T_gradient_INT_TC=-13.9163, days_since_injection=0.0535, hour_sin=-0.6528, hour_cos=0.7576, delta_T_above_T0_TN=1.6635, target_lag_15=1.5464, flow_lag_15=2.2189, target_lag_30=1.3290, flow_lag_30=2.1309, target_lag_60=0.2832, flow_lag_60=1.5200\nPredict temperature delta and confidence.",
+      "completion": "{\"target_15\": 1.7177, \"target_60\": 1.7772, \"target_240\": 1.9063, \"target_1440\": 2.4649, \"confidence\": 1.0}"
+    }
+  ]
+}

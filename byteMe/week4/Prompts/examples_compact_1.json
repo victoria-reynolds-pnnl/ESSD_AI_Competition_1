@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "style": "compact",
+    "features": [
+      "cumulative_heat_input",
+      "elapsed_injection_min",
+      "net_flow_rolling_6h",
+      "TC_INT_delta",
+      "T_gradient_INT_TC",
+      "days_since_injection",
+      "hour_sin",
+      "hour_cos",
+      "delta_T_above_T0_TN",
+      "target_lag_15",
+      "flow_lag_15",
+      "target_lag_30",
+      "flow_lag_30",
+      "target_lag_60",
+      "flow_lag_60"
+    ],
+    "targets": [
+      "target_15",
+      "target_60",
+      "target_240",
+      "target_1440"
+    ],
+    "response_schema": "{\"target_15\": <float>, \"target_60\": <float>, \"target_240\": <float>, \"target_1440\": <float>, \"confidence\": <0-1>}",
+    "num_examples": 1
+  },
+  "examples": [
+    {
+      "i": [
+        369610.7,
+        77.0,
+        2.27,
+        1.91,
+        -13.92,
+        0.05,
+        -0.65,
+        0.76,
+        1.66,
+        1.55,
+        2.22,
+        1.33,
+        2.13,
+        0.28,
+        1.52
+      ],
+      "completion": "{\"target_15\": 1.72, \"target_60\": 1.78, \"target_240\": 1.91, \"target_1440\": 2.46, \"confidence\": 1.0}"
+    }
+  ]
+}

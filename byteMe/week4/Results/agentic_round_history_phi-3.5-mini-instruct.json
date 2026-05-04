@@ -1,0 +1,77 @@
+[
+  {
+    "round": 0,
+    "status": "meta_parse_failed",
+    "error": "invalid_json",
+    "raw_design": " ```json\n{\n  \"system_prompt\": \"Given the following geothermal sensor readings and historical data, forecast the temperature deltas at 15, 60, 240, and 1440 minutes horizons. Use the provided input features and outputs from previous examples to infer patterns and predict the future temperature deltas. Ensure your predictions adhere to the required output JSON schema.\",\n  \"user_template\": \"Please forecast the geothermal temperature deltas for the following input features: {features_json}. Based on"
+  },
+  {
+    "round": 1,
+    "status": "meta_parse_failed",
+    "error": "invalid_json",
+    "raw_design": " ```json\n{\n  \"system_prompt\": \"Forecast the geothermal temperature deltas at 15, 60, 240, and 1440-minute horizons using the given sensor readings. Input features include cumulative heat input, elapsed injection time, net flow rate, temperature change, and various cyclical and lag features. Use the provided example data to understand the expected format, and ensure your prediction adheres to the output schema of target deltas and a confidence score. Example usage: {'input': [369610.7, 77.0, 2.27"
+  },
+  {
+    "round": 2,
+    "status": "ok",
+    "parse_rate": 0.6,
+    "mse": 0.001814449779301481,
+    "strategy_notes": "The system prompt has been reformulated to clearly articulate the task, specifying the expected output format and the features to be used. The user template includes the placeholder {features_json} to ensure that the user provides the correct data structure for the model. The prompt emphasizes the importance of considering cyclical patterns and historical trends, which are critical for time series forecasting. The output format has been explicitly stated to maintain consistency and ease of parsing. Few-shot examples (first five rows of labeled data) from the training data set are included to provide the model with a clear example of the expected format and content. This approach should enhance the model's ability to generate accurate predictions within the specified JSON schema.",
+    "system_prompt": "Given sensor readings, forecast the geothermal temperature deltas at 15, 60, 240, and 1440-minute horizons. Use the following features: cumulative_heat_input, elapsed_injection_min, net_flow_rolling_6h, TC_INT_delta, T_gradient_INT_TC, days_since_injection, hour_sin, hour_cos, delta_T_above_T0_TN, target_lag_15, flow_lag_15, target_lag_30, flow_lag_30, target_lag_60, flow_lag_60. Employ a time series prediction model that accounts for cyclical patterns and historical trends. Provide the forecast in the specified JSON format with confidence scores.",
+    "user_template": "Predict the geothermal temperature deltas at 15, 60, 240, and 1440-minute horizons for the sensor readings: {features_json}. Ensure your output follows the format: {'target_15': <float>, 'target_60': <float>, 'target_240': <float>, 'target_1440': <float>, 'confidence': <0-1>}."
+  },
+  {
+    "round": 3,
+    "status": "meta_parse_failed",
+    "error": "invalid_json",
+    "raw_design": " System Prompt:\n```\nPlease predict the geothermal temperature delta at 4 future horizons (15 min, 30 min, 60 min, 1440 min) based on the provided sensor readings. For each horizon, use the following features: cumulative_heat_input, elapsed_injection_min, net_flow_rolling_6h, TC_INT_delta, T_gradient_INT_TC, days_since_injection, hour_sin, hour_cos, delta_T_above_T0_TN, target_lag_15, flow_lag_15, target_lag_30, flow_lag_30, target_lag_60, flow_lag_60. Use the provided labeled training data to gu"
+  },
+  {
+    "round": 4,
+    "status": "ok",
+    "parse_rate": 1.0,
+    "mse": 0.002589936840567536,
+    "strategy_notes": "I included a brief example to demonstrate the expected input and output format to guide the model. The user template is designed to be flexible, allowing the placeholder {features_json} to be replaced with specific data. This should improve the model's ability to parse and generate the correct output format. The system prompt emphasizes the importance of adhering to the output schema, which should help in maintaining accuracy. By providing clear instructions and an example, the model can better understand the task at hand.",
+    "system_prompt": "Given the following sensor readings, predict the geothermal temperature delta at four future horizons (15 minutes, 30 minutes, 60 minutes, and 1440 minutes). Use the provided features to construct your predictions and ensure your response adheres to the specified output schema. For example, if the input features are ['cumulative_heat_input', 'elapsed_injection_min', 'net_flow_rolling_6h', 'TC_INT_delta', 'T_gradient_INT_TC', 'days_since_injection', 'hour_sin', 'hour_cos', 'delta_T_above_T0_TN', 'target_lag_15', 'flow_lag_15', 'target_lag_30', 'flow_lag_30', 'target_lag_60', 'flow_lag_60'], the output should be a JSON object with the keys 'target_15', 'target_60', 'target_240', and 'target_1440', each associated with a float prediction value. Ensure your predictions reflect a confidence level between 0 and 1.",
+    "user_template": "Using the input features {features_json}, generate the prediction in the following JSON format: {{\"target_15\": <float>, \"target_60\": <float>, \"target_240\": <float>, \"target_1440\": <float>, \"confidence\": <0-1>}}"
+  },
+  {
+    "round": 5,
+    "status": "meta_parse_failed",
+    "error": "invalid_json",
+    "raw_design": " ```json\n{\n  \"system_prompt\": \"Using the provided geothermal data features, predict the temperature delta at 15, 60, 240, and 1440 minutes horizons from the latest sensor readings. Apply a predictive model that considers cumulative heat input, elapsed injection time, and various other time-sensitive features. Ensure the prediction adheres to the output schema with target values for each horizon and a confidence level. Use the provided few-shot examples as a guide for the model's prediction strat"
+  },
+  {
+    "round": 6,
+    "status": "ok",
+    "parse_rate": 1.0,
+    "mse": 0.0025700546680473696,
+    "strategy_notes": "The system message includes a clear description and schema for input and expected output. It specifies the use of a regression model to predict temperature deltas and acknowledges the cyclical nature of the data. The inclusion of several examples, formatted in the specified schema, will serve as a few-shot learning technique to guide the model in understanding the input-output relationship and increase prediction confidence. The user template incorporates the exact placeholder {features_json} for seamless data insertion and clear guidance for the user to provide their data in the correct format.",
+    "system_prompt": "Given the geothermal sensor data, predict temperature deltas at 15, 60, 240, and 1440-minute horizons. Input features include cumulative_heat_input, elapsed_injection_min, net_flow_rolling_6h, TC_INT_delta, T_gradient_INT_TC, days_since_injection, hour_sin, hour_cos, delta_T_above_T0_TN, and lagged values of delta_T and flow at intervals of 15, 30, and 60 minutes. Utilize a regression model to forecast the target temperature deltas while considering historical data trends and cyclical time-of-day effects. Ensure the output adheres to the following schema: {'target_15': <float>, 'target_60': <float>, 'target_240': <float>, 'target_1440': <float>, 'confidence': <0-1>}. Limit the context window to approximately 3500 tokens to maintain focus. For increased model confidence, include a few-shot learning approach with these examples: [{'input': [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52], 'output': {'target_15': 1.72, 'target_60': 1.78, 'target_240': 1.91, 'target_1440': 2.46}}, ..., {'input': [423989643.82, 72000.0, 1.49, -0.56, -5.36, 50.0, -0.87, 0.5, 5.57, 5.61, 1.49, 5.6, 1.49, 5.61, 1.49], 'output': {'target_15': 5.6, 'target_60': 5.6, 'target_240': 5.59, 'target_1440': 5.55}}].",
+    "user_template": "Please predict the temperature deltas at 15, 60, 240, and 1440 minutes using the following sensor data features: {features_json}. The output should be in the format: '{\"target_15\": <float>, \"target_60\": <float>, \"target_240\": <float>, \"target_1440\": <float>, \"confidence\": <0-1>}'. Include a few-shot learning approach with the provided examples to enhance the model's confidence in its predictions."
+  },
+  {
+    "round": 7,
+    "status": "ok",
+    "parse_rate": 0.0,
+    "mse": null,
+    "strategy_notes": "The user template includes placeholders for the input features and the expected output JSON format, ensuring the user understands the data structure and task requirements. Few-shot examples are provided to illustrate the expected output format and demonstrate the relationship between input features and forecasted deltas. The verbose input/output formatting style makes it easier to visualize and understand the data without sacrificing clarity. This approach encourages users to think critically about how the features relate to the forecasting task while providing clear guidance on the expected output format.",
+    "system_prompt": "Given a set of sensor readings related to geothermal temperature forecasting, predict the temperature deltas at 15, 60, 240, and 1440 minutes horizons. Utilize the provided features: cumulative_heat_input, elapsed_injection_min, net_flow_rolling_6h, TC_INT_delta, T_gradient_INT_TC, days_since_injection, hour_sin, hour_cos, delta_T_above_T0_TN, target_lag_15, flow_lag_15, target_lag_30, flow_lag_30, target_lag_60, flow_lag_60. Analyze the pattern from the given examples and apply your understanding to generate the forecasts. Ensure your output matches the required JSON schema with targets for each horizon and a confidence level.",
+    "user_template": "Using the features: {features_json}, predict the temperature deltas at horizons 15, 60, 240, and 1440 minutes. Provide the output in the following format: {output_json}"
+  },
+  {
+    "round": 8,
+    "status": "ok",
+    "parse_rate": 0.0,
+    "mse": null,
+    "strategy_notes": "This prompting strategy includes a concise, informative format that directly references the required JSON schema. It provides clear guidance on the input and output structure, using a few-shot example to illustrate the correct format. By specifying the order of features, the model has a clear context for prediction. The example output includes confidence levels, which could help the model understand the expected range of accuracy. This strategy aims to improve parse reliability and accuracy by clearly defining the expected output and using a few-shot example to demonstrate the format.",
+    "system_prompt": "Utilize the provided labeled training data to predict geothermal temperature deltas for the next 4 horizons. Employ a regression approach based on the given features and historical patterns. Ensure the output adheres to the specified schema, including confidence levels. Here are a few examples to guide the model: {'input': [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52], 'output': {'target_15': 1.72, 'target_60': 1.78, 'target_240': 1.91, 'target_1440': 2.46, 'confidence': 0.95}}. Keep the input data structured as a list of 15 numerical features in the same order as provided. Maintain a concise yet informative format, following the given JSON schema.",
+    "user_template": "Given the features: {features_json}, predict the temperature deltas (target_15, target_60, target_240, target_1440) and confidence level. Example data: {'input': [369610.7, 77.0, 2.27, 1.91, -13.92, 0.05, -0.65, 0.76, 1.66, 1.55, 2.22, 1.33, 2.13, 0.28, 1.52], 'output': {'target_15': {value}, 'target_60': {value}, 'target_240': {value}, 'target_1440': {value}, 'confidence': {confidence_value}}}"
+  },
+  {
+    "round": 9,
+    "status": "meta_parse_failed",
+    "error": "invalid_json",
+    "raw_design": " ```json\n{\n  \"system_prompt\": \"Using the provided labeled training data, predict the geothermal temperature deltas at 15, 60, 240, and 1440 minutes ahead, based on the input features. Ensure to include the confidence level for each prediction. Use the format: {'target_15': <float>, 'target_60': <float>, 'target_240': <float>, 'target_1440': <float>, 'confidence': <0-1>}. Use the available examples to demonstrate the prediction pattern and provide insights.\",\n  \"user_template\": \"Given the input f"
+  }
+]

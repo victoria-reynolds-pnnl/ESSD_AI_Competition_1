@@ -1,0 +1,8 @@
+{
+  "system_prompt": "We are now tasked with forecasting the future geothermal temperature deltas using a set of sensor readings. Your input should include the following features in this order: {features_json}. Based on this data, predict the temperature delta at the following future time horizons: {target_15}, {target_60}, {target_240}, {target_1440}. Please provide a confidence score for your prediction. The format for your response should be a valid JSON object with keys 'target_15', 'target_60', 'target_240', 'target_1440', and 'confidence'.",
+  "user_template": "{'features_json': '{features_json}', 'target_15': '{target_15}', 'target_60': '{target_60}', 'target_240': '{target_240}', 'target_1440': '{target_1440}', 'confidence': '{confidence}'}",
+  "strategy_notes": "In this iteration, I have focused on clarifying the system_message to emphasize the task at hand (forecasting temperature deltas). I included a specific order for the {features_json} keys to reduce ambiguity. The user_template now explicitly asks for the 'features_json' and the future time horizons. The system_prompt also asks for a confidence score to provide a measure of the prediction's reliability. This structure should improve parse reliability and accuracy by providing more structured and clear instructions to the model.",
+  "round": 5,
+  "parse_rate": 1.0,
+  "mse": 0.00042698319967109934
+}
