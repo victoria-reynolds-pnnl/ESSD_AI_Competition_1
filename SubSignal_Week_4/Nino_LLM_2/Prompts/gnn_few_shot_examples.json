@@ -1,0 +1,17 @@
+[
+  {
+    "narrative": "Network analysis shows strong, stable edge weights across all node pairs (mean=0.65, std=0.12). Consistent activation patterns suggest synchronized operation.",
+    "prediction": "high_risk",
+    "confidence": 0.89
+  },
+  {
+    "narrative": "Sparse connectivity observed (mean=0.15, std=0.08) with few active edges. Nodes operate quasi-independently with minimal coupling.",
+    "prediction": "low_risk",
+    "confidence": 0.91
+  },
+  {
+    "narrative": "Mixed edge weight patterns (mean=0.32, std=0.38) with moderate variance. Some regions show coupling while others remain disconnected.",
+    "prediction": "moderate_risk",
+    "confidence": 0.83
+  }
+]

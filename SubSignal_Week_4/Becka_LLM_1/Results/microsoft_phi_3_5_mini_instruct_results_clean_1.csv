@@ -1,0 +1,111 @@
+model_name,iteration_number,window_idx,timestamp,parse_ok,latency_sec,prompt,raw_output,parsed_prediction,true_tl_interval_pressure,ml_tl_interval_pressure,llm_tl_interval_pressure,true_tl_bottom_pressure,ml_tl_bottom_pressure,llm_tl_bottom_pressure,true_tn_interval_pressure,ml_tn_interval_pressure,llm_tn_interval_pressure,true_tn_bottom_pressure,ml_tn_bottom_pressure,llm_tn_bottom_pressure,true_tc_interval_pressure,ml_tc_interval_pressure,llm_tc_interval_pressure,true_tc_bottom_pressure,ml_tc_bottom_pressure,llm_tc_bottom_pressure,true_tu_interval_pressure,ml_tu_interval_pressure,llm_tu_interval_pressure,true_tu_bottom_pressure,ml_tu_bottom_pressure,llm_tu_bottom_pressure,true_ts_interval_pressure,ml_ts_interval_pressure,llm_ts_interval_pressure,true_ts_bottom_pressure,ml_ts_bottom_pressure,llm_ts_bottom_pressure
+microsoft/Phi-3.5-mini-instruct,1,0,2024-12-11T10:00:00,True,6.929396040737629,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.3, -0.4, -0.0, -1.8, -0.1, -3.3, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.0, 0.0, -0.0, -0.0, -0.0, -0.0, -0.0, 0.0, 0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.3, -0.3, -0.4, -0.0, -1.8, -0.1, -3.3, -0.4, -0.4, -0.4","{""tl_interval_pressure"": -0.3, ""tl_bottom_pressure"": -0.3, ""tn_interval_pressure"": -0.4, ""tn_bottom_pressure"": -0.0, ""tc_interval_pressure"": -1.8, ""tc_bottom_pressure"": -0.1, ""tu_interval_pressure"": -3.3, ""tu_bottom_pressure"": -0.4, ""ts_interval_pressure"": -0.4, ""ts_bottom_pressure"": -0.4}",-0.342358704,-0.3423574513460761,-0.3,-0.259933066,-0.2599083233944003,-0.3,-0.412128162,-0.4120872324119925,-0.4,-0.003637127,-0.0036368497547999,-0.0,-1.781966759,-1.781989765358296,-1.8,-0.146098234,-0.146096200946068,-0.1,-3.297305179,-3.29582082002456,-3.3,-0.386927517,-0.3869290291209274,-0.4,-0.405153903,-0.405154822510681,-0.4,-0.367261654,-0.3672623222005594,-0.4
+microsoft/Phi-3.5-mini-instruct,1,1,2024-12-11T17:00:00,True,2.428225808311254,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.3, -0.4, -0.0, -1.8, -0.1, -3.2, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [0.0, 0.0, -0.0, -0.0, -0.0, 0.0, 1.4, -0.0, 0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.3, -0.3, -0.4, -0.0, -1.8, -0.1, -3.2, -0.4, -0.4, -0.4","{""tl_interval_pressure"": -0.3, ""tl_bottom_pressure"": -0.3, ""tn_interval_pressure"": -0.4, ""tn_bottom_pressure"": -0.0, ""tc_interval_pressure"": -1.8, ""tc_bottom_pressure"": -0.1, ""tu_interval_pressure"": -3.2, ""tu_bottom_pressure"": -0.4, ""ts_interval_pressure"": -0.4, ""ts_bottom_pressure"": -0.4}",-0.342451195,-0.3424506368811089,-0.3,-0.255469271,-0.2554912709824857,-0.3,-0.412237232,-0.4122738017320878,-0.4,-0.00355077,-0.0035510058924837,-0.0,-1.782012293,-1.7819796738485345,-1.8,-0.143937656,-0.1439388972517323,-0.1,-0.265831173,-0.2673244786184083,-3.2,-0.388342558,-0.3883391411199082,-0.4,-0.40505246,-0.4050495625682097,-0.4,-0.366960735,-0.3669582795867493,-0.4
+microsoft/Phi-3.5-mini-instruct,1,2,2024-12-12T02:00:00,True,2.419921002350748,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.2, 0.1, 0.0, -1.7, -0.1, 0.8, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [0.0, 0.1, 2.4, 0.0, 0.4, 0.1, 4.6, 0.0, 0.0, 0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","0.1, 0.2, 0.3, 0.0, 0.4, 0.1, 0.5, 0.0, 0.0, 0.0","{""tl_interval_pressure"": 0.1, ""tl_bottom_pressure"": 0.2, ""tn_interval_pressure"": 0.3, ""tn_bottom_pressure"": 0.0, ""tc_interval_pressure"": 0.4, ""tc_bottom_pressure"": 0.1, ""tu_interval_pressure"": 0.5, ""tu_bottom_pressure"": 0.0, ""ts_interval_pressure"": 0.0, ""ts_bottom_pressure"": 0.0}",-0.138485801,-0.1384856666112562,0.1,-0.164394794,-0.1643932635687331,0.2,1.9280647,1.928067134989307,0.3,0.033663889,0.0336639008523955,0.0,-1.35988862,-1.35988959016798,0.4,-0.033800749,-0.0338006670166022,0.1,1.083416917,1.083421339069774,0.5,-0.37651714,-0.3765171042262693,0.0,-0.405104029,-0.4051039935742559,0.0,-0.366970709,-0.366970673899248,0.0
+microsoft/Phi-3.5-mini-instruct,1,3,2024-12-12T13:00:00,False,4.311787231359631,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [0.2, 2.0, 1.8, 0.0, -1.4, 0.1, 0.7, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [0.6, 5.2, -0.4, 0.0, -0.0, 0.3, -1.0, 0.0, -0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","To predict the next-hour pressures, we can use the pressure trend as a simple linear extrapolation. We'll add the trend to the current average pressure for each node:
+
+Node 1: 0.2 + 0.6 = 0.8
+Node 2","{""tl_interval_pressure"": null, ""tl_bottom_pressure"": null, ""tn_interval_pressure"": null, ""tn_bottom_pressure"": null, ""tc_interval_pressure"": null, ""tc_bottom_pressure"": null, ""tu_interval_pressure"": null, ""tu_bottom_pressure"": null, ""ts_interval_pressure"": null, ""ts_bottom_pressure"": null}",0.068768609,0.0687678445922721,,3.205731797,3.205726975610688,,0.766605777,0.7665986387869266,,0.03414522,0.0341451990215159,,-1.579584555,-1.5795825845817917,,0.126544068,0.126543662002316,,1.297983911,1.2979755354008626,,-0.367174408,-0.3671747825910996,,-0.405281164,-0.4052815360667156,,-0.368187048,-0.3681873964030308,
+microsoft/Phi-3.5-mini-instruct,1,4,2024-12-12T14:00:00,True,2.4159953300841157,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [0.2, 2.2, 1.7, 0.0, -1.4, 0.1, 0.7, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [0.2, 3.4, -1.2, 0.0, -0.2, 0.2, 0.2, 0.0, -0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","0.2, 2.4, 1.5, 0.0, -1.2, 0.2, 0.8, -0.4, -0.4, -0.4","{""tl_interval_pressure"": 0.2, ""tl_bottom_pressure"": 2.4, ""tn_interval_pressure"": 1.5, ""tn_bottom_pressure"": 0.0, ""tc_interval_pressure"": -1.2, ""tc_bottom_pressure"": 0.2, ""tu_interval_pressure"": 0.8, ""tu_bottom_pressure"": -0.4, ""ts_interval_pressure"": -0.4, ""ts_bottom_pressure"": -0.4}",-0.340194261,-0.3401925646892481,0.2,-0.210325781,-0.2103195663887234,2.4,-0.411324214,-0.4113148752674765,1.5,0.03614403,0.0361440246782124,0.0,-1.781125647,-1.7811268516208911,-1.2,-0.13304741,-0.1330466222739719,0.2,3.793357737,3.79335998287253,0.8,-0.389834849,-0.3898335209238397,-0.4,-0.405285178,-0.4052838247226546,-0.4,-0.368131923,-0.3681306731549959,-0.4
+microsoft/Phi-3.5-mini-instruct,1,5,2024-12-12T23:00:00,True,3.109977005980909,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.2, 0.9, 1.4, 0.0, -1.7, -0.1, -0.7, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.7, -4.7, 0.8, -0.0, -0.3, -0.4, -3.7, -0.0, -0.0, 0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.29, 0.89, 1.39, -0.01, -1.74, -0.11, -0.74, -0.41, -0.41, -0.39
+
+Note: These","{""tl_interval_pressure"": -0.29, ""tl_bottom_pressure"": 0.89, ""tn_interval_pressure"": 1.39, ""tn_bottom_pressure"": -0.01, ""tc_interval_pressure"": -1.74, ""tc_bottom_pressure"": -0.11, ""tu_interval_pressure"": -0.74, ""tu_bottom_pressure"": -0.41, ""ts_interval_pressure"": -0.41, ""ts_bottom_pressure"": -0.39}",-0.340359957,-0.3403603592209072,-0.29,-0.203235145,-0.2032421416375453,0.89,2.335546298,2.33553503799436,1.39,0.024638885,0.0246388197979585,-0.01,-1.781978164,-1.7819737720167856,-1.74,-0.145364615,-0.1453649304490768,-0.11,-3.381850361,-3.3818660354469703,-0.74,-0.389029248,-0.3890289873760588,-0.41,-0.405454929,-0.4054546381258793,-0.41,-0.368037918,-0.3680376623602193,-0.39
+microsoft/Phi-3.5-mini-instruct,1,6,2024-12-13T06:00:00,True,2.4174377699382603,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.2, 2.3, 0.0, -1.3, -0.1, -3.4, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [0.0, 0.0, 0.0, -0.0, 1.6, 0.0, -0.0, 0.0, 0.0, 0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","0.0, 0.0, 0.0, -0.0, 1.6, 0.0, -0.0, 0.0, 0.0, 0.0","{""tl_interval_pressure"": 0.0, ""tl_bottom_pressure"": 0.0, ""tn_interval_pressure"": 0.0, ""tn_bottom_pressure"": -0.0, ""tc_interval_pressure"": 1.6, ""tc_bottom_pressure"": 0.0, ""tu_interval_pressure"": -0.0, ""tu_bottom_pressure"": 0.0, ""ts_interval_pressure"": 0.0, ""ts_bottom_pressure"": 0.0}",-0.340266622,-0.3402669423864392,0.0,-0.218701174,-0.2187014011867258,0.0,2.339189729,2.3391890189084528,0.0,0.027460288,0.0274602935939316,-0.0,-0.198148023,-0.1981480571223853,1.6,-0.129717371,-0.1297174972414034,0.0,-3.383368316,-3.383371863599143,-0.0,-0.388523264,-0.3885236313794946,0.0,-0.405453552,-0.4054539346526179,0.0,-0.368466667,-0.3684670197731789,0.0
+microsoft/Phi-3.5-mini-instruct,1,7,2024-12-13T08:00:00,True,2.4238482448272407,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.2, 2.3, 0.0, -1.0, -0.1, -3.4, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [0.0, 0.0, 0.0, 0.0, 1.6, 0.0, -0.0, 0.0, 0.0, 0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","0.0, 0.0, 0.0, 0.0, 1.6, 0.0, -0.0, 0.0, 0.0, 0.0","{""tl_interval_pressure"": 0.0, ""tl_bottom_pressure"": 0.0, ""tn_interval_pressure"": 0.0, ""tn_bottom_pressure"": 0.0, ""tc_interval_pressure"": 1.6, ""tc_bottom_pressure"": 0.0, ""tu_interval_pressure"": -0.0, ""tu_bottom_pressure"": 0.0, ""ts_interval_pressure"": 0.0, ""ts_bottom_pressure"": 0.0}",-0.340512239,-0.3405125870026727,0.0,-0.217499528,-0.217499813200364,0.0,2.339960644,2.339959800239177,0.0,0.026762479,0.0267624846121426,0.0,-0.197359146,-0.1973591896661339,1.6,-0.128821833,-0.1288219711273749,0.0,-3.383191516,-3.383195101180386,-0.0,-0.388126855,-0.3881272482881809,0.0,-0.405500701,-0.4055011103144474,0.0,-0.368798397,-0.3687987742942979,0.0
+microsoft/Phi-3.5-mini-instruct,1,8,2024-12-13T09:00:00,True,2.435573223978281,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.2, 2.3, 0.0, -0.9, -0.1, -3.4, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [0.0, 0.0, 0.0, 0.0, 1.5, 0.0, -0.0, 0.0, -0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","0.0, 0.0, 0.0, 0.0, 1.5, 0.0, -0.0, 0.0, -0.0, -0.0","{""tl_interval_pressure"": 0.0, ""tl_bottom_pressure"": 0.0, ""tn_interval_pressure"": 0.0, ""tn_bottom_pressure"": 0.0, ""tc_interval_pressure"": 1.5, ""tc_bottom_pressure"": 0.0, ""tu_interval_pressure"": -0.0, ""tu_bottom_pressure"": 0.0, ""ts_interval_pressure"": -0.0, ""ts_bottom_pressure"": -0.0}",-0.340629139,-0.3406295547651945,0.0,-0.216114118,-0.2161149076732642,0.0,2.34013188,2.3401303232948925,0.0,0.026424741,0.0264247446289025,0.0,-0.197218486,-0.1972183694931264,1.5,-0.127704007,-0.1277041804527366,0.0,-3.383273796,-3.383274271992639,-0.0,-0.387988054,-0.3879884714103736,0.0,-0.405532729,-0.4055331595901594,-0.0,-0.368058465,-0.3680588619957632,-0.0
+microsoft/Phi-3.5-mini-instruct,1,9,2024-12-13T11:00:00,False,3.110332297161221,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.2, 2.3, 0.0, -0.6, -0.1, -3.4, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.0, -0.0, 0.0, 0.0, 1.6, 0.0, -0.0, 0.0, -0.0, 0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","120.1, 119.8, 123.7, 120.4, 121.9, 119.6, 116.5, 117.1, 116.7,","{""tl_interval_pressure"": null, ""tl_bottom_pressure"": null, ""tn_interval_pressure"": null, ""tn_bottom_pressure"": null, ""tc_interval_pressure"": null, ""tc_bottom_pressure"": null, ""tu_interval_pressure"": null, ""tu_bottom_pressure"": null, ""ts_interval_pressure"": null, ""ts_bottom_pressure"": null}",-0.34058371,-0.3405838880871212,,-0.216905463,-0.2169058990941487,,2.339999143,2.3399983602094,,0.024745284,0.0247452847304554,,-0.197242363,-0.1972422782438608,,-0.128788062,-0.1287881380613934,,-3.383802452,-3.383801670173078,,-0.388062476,-0.3880626435229065,,-0.405450904,-0.4054510757907841,,-0.368513992,-0.3685141503883711,
+microsoft/Phi-3.5-mini-instruct,1,10,2024-12-14T04:00:00,True,2.917851692996919,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.2, 0.3, 0.0, -0.2, -0.1, -0.9, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.0, -0.0, -2.6, -0.1, 0.7, -0.4, 0.6, -0.0, -0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.39, -0.29, 0.31, 0.01, -0.21, -0.11, -0.91, -0.41, -0.41, -0.41","{""tl_interval_pressure"": -0.39, ""tl_bottom_pressure"": -0.29, ""tn_interval_pressure"": 0.31, ""tn_bottom_pressure"": 0.01, ""tc_interval_pressure"": -0.21, ""tc_bottom_pressure"": -0.11, ""tu_interval_pressure"": -0.91, ""tu_bottom_pressure"": -0.41, ""ts_interval_pressure"": -0.41, ""ts_bottom_pressure"": -0.41}",-0.342453673,-0.3424507436858214,-0.39,-0.26665591,-0.2666530625486618,-0.29,-0.399393642,-0.3993865820989258,0.31,0.004858652,0.0048586016801855,0.01,0.120213106,0.1202130858341818,-0.21,-0.132914293,-0.1329131250724875,-0.11,-0.271662325,-0.2716390172646437,-0.91,-0.391512549,-0.3915092851572399,-0.41,-0.40611441,-0.4061110186937041,-0.41,-0.373702619,-0.3736994926121684,-0.41
+microsoft/Phi-3.5-mini-instruct,1,11,2024-12-14T07:00:00,True,2.7235048692673445,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.3, -0.0, 0.0, -0.1, -0.1, -0.4, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.0, -0.0, -1.5, -0.0, 1.1, 0.0, 1.4, -0.0, -0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.35, -0.35, -0.15, 0.05, -0.15, -0.1, -0.45, -0.4, -0.4, -0.4","{""tl_interval_pressure"": -0.35, ""tl_bottom_pressure"": -0.35, ""tn_interval_pressure"": -0.15, ""tn_bottom_pressure"": 0.05, ""tc_interval_pressure"": -0.15, ""tc_bottom_pressure"": -0.1, ""tu_interval_pressure"": -0.45, ""tu_bottom_pressure"": -0.4, ""ts_interval_pressure"": -0.4, ""ts_bottom_pressure"": -0.4}",-0.34263397,-0.3426313797227489,-0.35,-0.266728605,-0.2667241109015698,-0.35,-0.401301476,-0.4012924318790305,-0.15,0.005671852,0.0056718288712353,0.05,0.143412793,0.1434119275436717,-0.15,-0.12921529,-0.1292142235324171,-0.1,-0.299271629,-0.2992698906387578,-0.45,-0.391353114,-0.3913504638158021,-0.4,-0.406114517,-0.4061117817909216,-0.4,-0.373027587,-0.3730250656405142,-0.4
+microsoft/Phi-3.5-mini-instruct,1,12,2024-12-14T10:00:00,True,2.905131632927805,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.3, -0.4, 0.0, 0.1, -0.1, -0.3, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.0, -0.0, -0.0, -0.0, 0.1, -0.0, 0.0, 0.0, 0.0, 0.1]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.35, -0.35, -0.45, -0.05, 0.15, -0.05, -0.05, -0.05, -0.05, 0.15","{""tl_interval_pressure"": -0.35, ""tl_bottom_pressure"": -0.35, ""tn_interval_pressure"": -0.45, ""tn_bottom_pressure"": -0.05, ""tc_interval_pressure"": 0.15, ""tc_bottom_pressure"": -0.05, ""tu_interval_pressure"": -0.05, ""tu_bottom_pressure"": -0.05, ""ts_interval_pressure"": -0.05, ""ts_bottom_pressure"": 0.15}",-0.342911907,-0.3429104928235238,-0.35,-0.267287484,-0.2672810087078955,-0.35,-0.401938842,-0.4019292090136004,-0.45,0.004638151,0.0046381607864164,-0.05,0.158318739,0.1583168717985454,0.15,-0.128653683,-0.1286530177022055,-0.05,-0.31472858,-0.3147528261938374,-0.05,-0.391537162,-0.3915361861526761,-0.05,-0.406292554,-0.4062915805271025,-0.05,-0.373881441,-0.3738805418509445,0.15
+microsoft/Phi-3.5-mini-instruct,1,13,2024-12-14T12:00:00,True,2.4276329982094467,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.3, -0.4, 0.0, 0.1, -0.1, -0.3, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.0, -0.0, -0.0, -0.0, 0.1, 0.0, -0.0, -0.0, -0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.3, -0.3, -0.4, 0.0, 0.1, -0.1, -0.3, -0.4, -0.4, -0.4","{""tl_interval_pressure"": -0.3, ""tl_bottom_pressure"": -0.3, ""tn_interval_pressure"": -0.4, ""tn_bottom_pressure"": 0.0, ""tc_interval_pressure"": 0.1, ""tc_bottom_pressure"": -0.1, ""tu_interval_pressure"": -0.3, ""tu_bottom_pressure"": -0.4, ""ts_interval_pressure"": -0.4, ""ts_bottom_pressure"": -0.4}",-0.342894321,-0.3428945479193193,-0.3,-0.270734908,-0.2707360193590382,-0.3,-0.401753487,-0.4017550617240999,-0.4,0.001293287,0.0012932862758072,0.0,0.171422031,0.1714222063731731,0.1,-0.127207938,-0.1272080473952686,-0.1,-0.319807203,-0.3197993077520729,-0.3,-0.392867214,-0.3928673393173676,-0.4,-0.406256442,-0.4062565621877523,-0.4,-0.373859967,-0.3738600776141739,-0.4
+microsoft/Phi-3.5-mini-instruct,1,14,2024-12-14T14:00:00,True,2.902186661027372,"Based on this 12-hour pressure history at 10 nodes:
+Current average pressure per node: [-0.3, -0.3, -0.4, 0.0, 0.1, -0.1, -0.3, -0.4, -0.4, -0.4]
+Pressure trend (last - first): [-0.0, -0.0, -0.0, -0.0, 0.1, 0.0, -0.1, -0.0, -0.0, -0.0]
+
+Predict the next-hour pressures at each of the 10 nodes.
+Return ONLY 10 comma-separated numbers (one per node).
+Example: 125.3, 128.5, 121.0, 119.8, 122.4, 120.1, 118.9, 117.5, 116.2, 115.0","-0.35, -0.35, -0.45, -0.05, 0.15, -0.15, -0.35, -0.45, -0.45, -0.45","{""tl_interval_pressure"": -0.35, ""tl_bottom_pressure"": -0.35, ""tn_interval_pressure"": -0.45, ""tn_bottom_pressure"": -0.05, ""tc_interval_pressure"": 0.15, ""tc_bottom_pressure"": -0.15, ""tu_interval_pressure"": -0.35, ""tu_bottom_pressure"": -0.45, ""ts_interval_pressure"": -0.45, ""ts_bottom_pressure"": -0.45}",-0.342804014,-0.3428039795769254,-0.35,-0.268234697,-0.2682353861860783,-0.35,-0.402426369,-0.4024271028809391,-0.45,0.001906427,0.0019064226110734,-0.05,0.181650899,0.1816511171868671,0.15,-0.127464377,-0.1274643797420068,-0.15,-0.326141977,-0.3261392012628511,-0.35,-0.39338727,-0.3933871475935798,-0.45,-0.406323978,-0.4063238465028663,-0.45,-0.374557077,-0.3745569560338217,-0.45

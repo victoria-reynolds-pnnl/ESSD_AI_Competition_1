@@ -1,0 +1,53 @@
+[
+  {
+    "example_id": 1,
+    "window_id": 0,
+    "start_time": "2024-12-10T21:00:00",
+    "end_time": "2024-12-11T08:00:00",
+    "regime_label": "idle",
+    "window_summary_text": "net_flow: start=-1.773, end=-1.774, delta=-0.001, mean=-1.773, std=0.000\ninjection_pressure: start=-1.780, end=-1.780, delta=-0.000, mean=-1.779, std=0.000\ndelta_P_delta_Q: start=-0.001, end=0.006, delta=+0.007, mean=0.033, std=0.084\ntc_injecting_max: 0\ntc_producing_max: 0\nnode_pressure_traces:\ntl_interval_pressure: start=-0.342, end=-0.342, delta=-0.001, mean=-0.342, std=0.000\ntl_bottom_pressure: start=-0.267, end=-0.260, delta=+0.007, mean=-0.263, std=0.002\ntn_interval_pressure: start=-0.412, end=-0.412, delta=-0.000, mean=-0.412, std=0.000\ntn_bottom_pressure: start=-0.000, end=-0.003, delta=-0.003, mean=-0.002, std=0.001\ntc_interval_pressure: start=-1.782, end=-1.782, delta=-0.000, mean=-1.782, std=0.000\ntc_bottom_pressure: start=-0.144, end=-0.145, delta=-0.001, mean=-0.145, std=0.001\ntu_interval_pressure: start=-3.386, end=-3.298, delta=+0.088, mean=-3.270, std=0.085\ntu_bottom_pressure: start=-0.390, end=-0.387, delta=+0.003, mean=-0.388, std=0.001\nts_interval_pressure: start=-0.405, end=-0.405, delta=+0.000, mean=-0.405, std=0.000\nts_bottom_pressure: start=-0.366, end=-0.367, delta=-0.001, mean=-0.367, std=0.000",
+    "output_json": {
+      "top_pairs": [
+        "tn_bottom_pressure__tu_interval_pressure",
+        "tc_bottom_pressure__tu_interval_pressure",
+        "tc_interval_pressure__tu_interval_pressure"
+      ],
+      "confidence": 0.8,
+      "rationale": "Select the strongest recurring co-movement pairs from the 12-hour window."
+    }
+  },
+  {
+    "example_id": 2,
+    "window_id": 29,
+    "start_time": "2024-12-12T02:00:00",
+    "end_time": "2024-12-12T13:00:00",
+    "regime_label": "injecting",
+    "window_summary_text": "net_flow: start=-1.773, end=-0.878, delta=+0.895, mean=-1.699, std=0.248\ninjection_pressure: start=-1.356, end=-1.577, delta=-0.220, mean=-1.393, std=0.065\ndelta_P_delta_Q: start=10.775, end=-0.006, delta=-10.781, mean=2.173, std=6.593\ntc_injecting_max: 1\ntc_producing_max: 0\nnode_pressure_traces:\ntl_interval_pressure: start=-0.138, end=0.069, delta=+0.207, mean=0.227, std=0.140\ntl_bottom_pressure: start=-0.164, end=3.206, delta=+3.370, mean=2.240, std=1.767\ntn_interval_pressure: start=1.928, end=0.767, delta=-1.161, mean=1.658, std=0.294\ntn_bottom_pressure: start=0.034, end=0.034, delta=+0.000, mean=0.033, std=0.001\ntc_interval_pressure: start=-1.360, end=-1.580, delta=-0.220, mean=-1.397, std=0.065\ntc_bottom_pressure: start=-0.034, end=0.127, delta=+0.160, mean=0.111, std=0.088\ntu_interval_pressure: start=1.083, end=1.298, delta=+0.215, mean=0.670, std=0.314\ntu_bottom_pressure: start=-0.377, end=-0.367, delta=+0.009, mean=-0.367, std=0.006\nts_interval_pressure: start=-0.405, end=-0.405, delta=-0.000, mean=-0.405, std=0.000\nts_bottom_pressure: start=-0.367, end=-0.368, delta=-0.001, mean=-0.368, std=0.001",
+    "output_json": {
+      "top_pairs": [
+        "tl_bottom_pressure__tu_interval_pressure",
+        "tl_bottom_pressure__tn_interval_pressure",
+        "tc_bottom_pressure__tl_bottom_pressure"
+      ],
+      "confidence": 0.8,
+      "rationale": "Select the strongest recurring co-movement pairs from the 12-hour window."
+    }
+  },
+  {
+    "example_id": 3,
+    "window_id": 120,
+    "start_time": "2024-12-15T21:00:00",
+    "end_time": "2024-12-16T08:00:00",
+    "regime_label": "injecting",
+    "window_summary_text": "net_flow: start=0.658, end=0.658, delta=-0.000, mean=0.658, std=0.000\ninjection_pressure: start=0.263, end=0.291, delta=+0.028, mean=0.278, std=0.008\ndelta_P_delta_Q: start=0.763, end=0.599, delta=-0.164, mean=0.408, std=0.828\ntc_injecting_max: 1\ntc_producing_max: 0\nnode_pressure_traces:\ntl_interval_pressure: start=-0.343, end=-0.343, delta=-0.000, mean=-0.343, std=0.000\ntl_bottom_pressure: start=-0.280, end=-0.278, delta=+0.002, mean=-0.283, std=0.003\ntn_interval_pressure: start=-0.407, end=-0.407, delta=-0.001, mean=-0.407, std=0.000\ntn_bottom_pressure: start=-0.007, end=-0.007, delta=+0.000, mean=-0.007, std=0.002\ntc_interval_pressure: start=0.259, end=0.288, delta=+0.029, mean=0.274, std=0.008\ntc_bottom_pressure: start=-0.123, end=-0.121, delta=+0.002, mean=-0.126, std=0.003\ntu_interval_pressure: start=-0.193, end=-0.206, delta=-0.013, mean=-0.198, std=0.004\ntu_bottom_pressure: start=-0.392, end=-0.392, delta=-0.000, mean=-0.392, std=0.000\nts_interval_pressure: start=-0.407, end=-0.407, delta=-0.000, mean=-0.407, std=0.000\nts_bottom_pressure: start=-0.377, end=-0.376, delta=+0.001, mean=-0.377, std=0.001",
+    "output_json": {
+      "top_pairs": [
+        "tn_interval_pressure__ts_interval_pressure",
+        "tn_interval_pressure__tu_bottom_pressure",
+        "ts_interval_pressure__tu_bottom_pressure"
+      ],
+      "confidence": 0.8,
+      "rationale": "Select the strongest recurring co-movement pairs from the 12-hour window."
+    }
+  }
+]

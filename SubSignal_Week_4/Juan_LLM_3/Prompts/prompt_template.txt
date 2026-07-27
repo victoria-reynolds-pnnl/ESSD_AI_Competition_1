@@ -1,0 +1,36 @@
+You are analyzing a 12-hour pressure window from a subsurface monitoring system.
+
+Task:
+- Infer the strongest connected undirected node pairs in this window.
+- Return exactly the top {top_k} undirected pairs.
+- Base your answer on shared movement patterns, relative co-movement, operational context, and whether pressure changes appear persistent rather than isolated.
+- Do not infer causal truth. Choose the pairs that most likely match the connectivity pattern encoded in the benchmark labels.
+
+Allowed pair ids:
+{allowed_pair_ids_json}
+
+Few-shot examples:
+{few_shot_block}
+
+Return ONLY valid JSON with this schema:
+{{
+  "top_pairs": ["pair_id_1", "pair_id_2", "pair_id_3"],
+  "confidence": 0.0,
+  "rationale": "short explanation"
+}}
+
+Rules:
+- Use only pair ids from the allowed list.
+- Return exactly {top_k} unique pair ids.
+- Confidence must be a number from 0 to 1.
+- No markdown.
+- No prose outside JSON.
+
+Window metadata:
+- window_id: {window_id}
+- start_time: {start_time}
+- end_time: {end_time}
+- regime_label: {regime_label}
+
+Window summary:
+{window_summary_text}
