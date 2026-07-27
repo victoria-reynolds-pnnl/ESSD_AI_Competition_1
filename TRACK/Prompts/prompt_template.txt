@@ -1,0 +1,91 @@
+================================================================================
+PROMPT TEMPLATE — LLM Benchmark for Extreme Weather Event Risk Classification
+================================================================================
+
+Target: Binary classification — high_risk (1) vs not high_risk (0)
+Dataset: NERC extreme weather events (heat waves / cold snaps)
+Features: lowest_temperature_k, duration_days, spatial_coverage,
+          yearly_max_heat_wave_intensity, yearly_max_heat_wave_duration,
+          yearly_max_heat_wave_intensity_trend, yearly_max_heat_wave_duration_trend
+
+================================================================================
+VERSION HISTORY
+================================================================================
+
+--- v1 (zero-shot, initial) ---
+Problem: Too verbose, allowed free-form answers, no JSON constraint.
+Changed: Added strict JSON schema requirement and explicit label set.
+
+--- v2 (zero-shot, strict JSON) — CURRENT ZERO-SHOT ---
+Constrained output to JSON only. Explicit allowed labels {0, 1}.
+Added domain context about NERC weather events and risk tiers.
+
+--- v3 (few-shot, strict JSON) — CURRENT FEW-SHOT ---
+Added 5 representative training examples (2 high-risk, 3 not-high-risk).
+Examples chosen to span feature ranges observed in training data.
+
+================================================================================
+ZERO-SHOT PROMPT TEMPLATE (v2)
+================================================================================
+
+You are an expert climate-risk analyst classifying extreme weather events.
+
+Each event is described by these features:
+- lowest_temperature_k: lowest temperature during the event (Kelvin)
+- duration_days: how many days the event lasted
+- spatial_coverage: percentage of the NERC region affected
+- yearly_max_heat_wave_intensity: annual peak heat-wave intensity (Kelvin)
+- yearly_max_heat_wave_duration: annual peak heat-wave duration (days)
+- yearly_max_heat_wave_intensity_trend: long-term trend in peak intensity
+- yearly_max_heat_wave_duration_trend: long-term trend in peak duration
+
+Classify whether this event is HIGH RISK (1) or NOT HIGH RISK (0).
+High-risk events are the most severe ~1/3 of events by cumulative stress.
+
+Return ONLY valid JSON: {"prediction": <0_or_1>}
+No extra text, no explanation.
+
+Event features:
+lowest_temperature_k: {lowest_temperature_k}
+duration_days: {duration_days}
+spatial_coverage: {spatial_coverage}
+yearly_max_heat_wave_intensity: {yearly_max_heat_wave_intensity}
+yearly_max_heat_wave_duration: {yearly_max_heat_wave_duration}
+yearly_max_heat_wave_intensity_trend: {yearly_max_heat_wave_intensity_trend}
+yearly_max_heat_wave_duration_trend: {yearly_max_heat_wave_duration_trend}
+
+
+================================================================================
+FEW-SHOT PROMPT TEMPLATE (v3)
+================================================================================
+
+You are an expert climate-risk analyst classifying extreme weather events.
+
+Each event is described by these features:
+- lowest_temperature_k: lowest temperature during the event (Kelvin)
+- duration_days: how many days the event lasted
+- spatial_coverage: percentage of the NERC region affected
+- yearly_max_heat_wave_intensity: annual peak heat-wave intensity (Kelvin)
+- yearly_max_heat_wave_duration: annual peak heat-wave duration (days)
+- yearly_max_heat_wave_intensity_trend: long-term trend in peak intensity
+- yearly_max_heat_wave_duration_trend: long-term trend in peak duration
+
+Classify whether this event is HIGH RISK (1) or NOT HIGH RISK (0).
+High-risk events are the most severe ~1/3 of events by cumulative stress.
+
+Here are some examples:
+
+{few_shot_examples}
+
+Now classify this new event.
+Return ONLY valid JSON: {"prediction": <0_or_1>}
+No extra text, no explanation.
+
+Event features:
+lowest_temperature_k: {lowest_temperature_k}
+duration_days: {duration_days}
+spatial_coverage: {spatial_coverage}
+yearly_max_heat_wave_intensity: {yearly_max_heat_wave_intensity}
+yearly_max_heat_wave_duration: {yearly_max_heat_wave_duration}
+yearly_max_heat_wave_intensity_trend: {yearly_max_heat_wave_intensity_trend}
+yearly_max_heat_wave_duration_trend: {yearly_max_heat_wave_duration_trend}

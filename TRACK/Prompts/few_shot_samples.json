@@ -1,0 +1,57 @@
+{
+  "description": "Few-shot examples for LLM benchmarking, selected from TRAINING set only",
+  "source": "week_3/Data/week3_labeled_with_tiers.csv (split == 'train')",
+  "selection_criteria": "2 high_risk + 3 not-high_risk with complete features (non-null trends)",
+  "examples": [
+    {
+      "lowest_temperature_k": 271.56,
+      "duration_days": 8,
+      "spatial_coverage": 43.21,
+      "yearly_max_heat_wave_intensity": 274.61,
+      "yearly_max_heat_wave_duration": 74,
+      "yearly_max_heat_wave_intensity_trend": 1.174,
+      "yearly_max_heat_wave_duration_trend": 35.0,
+      "high_risk": 1
+    },
+    {
+      "lowest_temperature_k": 262.60,
+      "duration_days": 11,
+      "spatial_coverage": 35.31,
+      "yearly_max_heat_wave_intensity": 274.61,
+      "yearly_max_heat_wave_duration": 74,
+      "yearly_max_heat_wave_intensity_trend": 1.174,
+      "yearly_max_heat_wave_duration_trend": 35.0,
+      "high_risk": 1
+    },
+    {
+      "lowest_temperature_k": 244.38,
+      "duration_days": 6,
+      "spatial_coverage": 100.0,
+      "yearly_max_heat_wave_intensity": 274.83,
+      "yearly_max_heat_wave_duration": 19,
+      "yearly_max_heat_wave_intensity_trend": 0.267,
+      "yearly_max_heat_wave_duration_trend": 0.0,
+      "high_risk": 0
+    },
+    {
+      "lowest_temperature_k": 266.94,
+      "duration_days": 2,
+      "spatial_coverage": 53.44,
+      "yearly_max_heat_wave_intensity": 274.83,
+      "yearly_max_heat_wave_duration": 19,
+      "yearly_max_heat_wave_intensity_trend": 0.267,
+      "yearly_max_heat_wave_duration_trend": 0.0,
+      "high_risk": 0
+    },
+    {
+      "lowest_temperature_k": 252.03,
+      "duration_days": 3,
+      "spatial_coverage": 73.21,
+      "yearly_max_heat_wave_intensity": 274.83,
+      "yearly_max_heat_wave_duration": 19,
+      "yearly_max_heat_wave_intensity_trend": 0.267,
+      "yearly_max_heat_wave_duration_trend": 0.0,
+      "high_risk": 0
+    }
+  ]
+}
